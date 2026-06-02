@@ -27,7 +27,7 @@ const recipes = {
       region: "New Orleans, Baltimore, and the Atlantic and Gulf Coasts",
       notable: "New Orleans lore holds that the oyster loaf — locally called a peacemaker or La Médiatrice — was brought home by husbands as a peace offering after a late night out.",
       history: "The oyster loaf has deep roots in New Orleans Creole cooking, where oysters were so abundant in the early twentieth century they were considered a poor man's food. A creamy baked version traveled up the Atlantic Coast where Chesapeake and New England harvests made it a fashionable luncheon centerpiece. Both versions were largely displaced by the modern oyster po'boy and by declining oyster populations throughout the century.",
-      type: "Main",
+      type: "Luncheonette",
       description: "A hollowed-out loaf of bread filled with creamed oysters — a fashionable luncheon dish of the era, served hot from the oven.",
       ingredients: ["1 round loaf of white bread", "2 dozen fresh oysters, shucked", "2 tbsp butter", "1 tbsp flour", "1 cup cream", "1 tsp Worcestershire sauce", "Salt, cayenne pepper"],
       instructions: ["Cut top from bread loaf and hollow out interior, reserving crumbs.", "Brush inside with melted butter and toast in oven at 350°F until golden.", "Make a cream sauce: melt butter, whisk in flour, add cream, stir until thick.", "Add oysters to sauce with Worcestershire, season with salt and cayenne.", "Fill bread shell with oyster cream mixture, replace lid, and bake 15 minutes."]
@@ -47,7 +47,7 @@ const recipes = {
       region: "Urban East Coast; fashionable in New York, Boston, and Philadelphia supper clubs",
       notable: "The chafing dish was the centerpiece of Edwardian chafing dish parties, popularized by Fannie Farmer's 1898 book Chafing Dish Possibilities.",
       history: "Welsh Rarebit arrived in America from Britain in the 18th century, but the Edwardian craze for chafing dish cookery turned it into a social ritual. The chafing dish, an alcohol-fueled table cooking apparatus, allowed hosts to prepare food dramatically in front of guests, and Welsh Rarebit was its signature dish. By the 1910s, chafing dish supper parties were so fashionable that department stores sold elaborate sets. The dish faded as electric appliances replaced chafing dishes and formal at-home entertaining declined after World War I.",
-      type: "Main",
+      type: "Luncheonette",
       description: "A Welsh Rarebit variation served in a chafing dish at the table — melted cheese sauce with ale, ladled over toast, a staple of Edwardian suppers.",
       ingredients: ["1 lb sharp cheddar, grated", "½ cup dark ale or stout", "1 tsp dry mustard", "1 tsp Worcestershire sauce", "Pinch cayenne", "2 egg yolks", "Toast points for serving"],
       instructions: ["In the top pan of a chafing dish or double boiler, warm ale gently.", "Add cheese in handfuls, stirring constantly until melted.", "Stir in mustard, Worcestershire, and cayenne.", "Beat egg yolks and stir in slowly — do not boil.", "Serve immediately over toast points at the table."]
@@ -57,7 +57,7 @@ const recipes = {
       region: "Nationwide, particularly prevalent in the rural Midwest and South",
       notable: "U.S. Army mess halls served this so routinely during both World Wars that soldiers gave it the unprintable nickname SOS — a name that stuck for generations.",
       history: "Dried beef on toast predates the Civil War, when preserved beef was one of the few proteins that could survive without refrigeration. Creaming it with a white sauce was a standard technique for making it palatable and stretching it further. The Army adopted it for logistical reasons, and it was served in such quantities and of such variable quality that it acquired its famous nickname. Postwar, its association with institutional food gave it a stigma from which it never recovered.",
-      type: "Main",
+      type: "Luncheonette",
       description: "Thin-sliced salt-dried beef folded into a thick cream sauce and served over toast — a working-class staple that predates its Army reputation.",
       ingredients: ["4 oz dried beef, thinly sliced", "2 tbsp butter", "2 tbsp flour", "2 cups whole milk", "Black pepper"],
       instructions: ["Rinse dried beef in warm water to reduce saltiness; pat dry.", "Tear into bite-size pieces.", "Melt butter, whisk in flour, cook 1 minute.", "Add milk gradually, whisking until thick and smooth.", "Fold in beef, season generously with black pepper.", "Serve over thick-cut white toast."]
@@ -137,7 +137,7 @@ const recipes = {
       region: "Nationwide; associated with women's club luncheons, bridge clubs, and church teas",
       notable: "The ribbon sandwich was a fixture at suffragette fundraising teas in the 1910s, where elaborate presentation was considered essential to signal respectability.",
       history: "The ribbon sandwich was pure Edwardian ingenuity — alternating layers of white and whole wheat bread with contrasting fillings, pressed and sliced crosswise, producing a geometric striped effect that looked far more elaborate than the effort involved. They were the centerpiece of the American ladies' lunch circuit: bridge clubs, garden parties, church socials, and hospital auxiliaries. As formal daytime entertaining faded, the ribbon sandwich became a casualty of changing social structure.",
-      type: "Side",
+      type: "Luncheonette",
       description: "Stacked layers of white and brown bread with fillings of cream cheese and olive, pimento, or deviled ham — sliced to show colorful stripes, a ladies' tea classic.",
       ingredients: ["8 slices white bread", "8 slices whole wheat bread", "8 oz cream cheese, softened", "¼ cup stuffed olives, minced", "¼ cup pimentos, minced", "Soft butter"],
       instructions: ["Mix cream cheese with olives; set aside.", "Mix softened butter with pimentos; set aside.", "Alternate 3 slices (white, wheat, white) with different fillings between each layer.", "Wrap tightly in wax paper and refrigerate 1 hour.", "Trim crusts. Slice crosswise to reveal ribbon pattern."]
@@ -161,6 +161,46 @@ const recipes = {
       description: "A New England farmhouse pie made with reduced apple cider as a sweetener — intensely apple-flavored, barely sweet, profoundly old-fashioned.",
       ingredients: ["1 cup boiled cider (reduced from 4 cups fresh cider)", "3 eggs, beaten", "1 cup sugar", "2 tbsp butter, melted", "1 tsp cinnamon", "¼ tsp allspice", "1 unbaked 9-inch pie shell"],
       instructions: ["Preheat oven to 400°F.", "Boil 4 cups apple cider in a saucepan until reduced to 1 cup.", "Whisk together eggs, sugar, butter, spices, and boiled cider.", "Pour into unbaked pie shell.", "Bake 10 min at 400°F, then reduce to 325°F and bake 30-35 min until set.", "Cool completely before slicing."]
+    },
+    {
+      name: "Pimento Cream Cheese Sandwich",
+      region: "The American South; pimento cheese is particularly associated with Georgia, the Carolinas, and Virginia",
+      notable: "Pimento cheese is called 'the caviar of the South' — it is served at the Masters Tournament in Augusta every year, where it costs $1.50 and has not changed since 1949.",
+      history: "Pimento cream cheese began appearing in American cookbooks and advertisements around 1908, when cream cheese manufacturers began promoting it as a spread. The combination of cream cheese and canned pimentos was a product of the new processed food industry. In the South, it evolved into something far more personal — every family had their own recipe, often passed down for generations without being written down. The Masters Tournament's pimento cheese sandwich has been priced at $1.50 since 1949, making it one of the most underpriced foods in American sports.",
+      type: "Luncheonette",
+      description: "The Southern lunch counter classic — cream cheese, pimentos, sharp cheddar, and a touch of heat, spread generously on white bread.",
+      ingredients: ["8 oz cream cheese, softened", "1 cup sharp cheddar, finely grated", "1 jar (4 oz) diced pimentos, drained", "2 tbsp mayonnaise", "½ tsp onion powder", "¼ tsp cayenne pepper", "Salt and black pepper", "White sandwich bread"],
+      instructions: ["Beat cream cheese until smooth.", "Mix in cheddar, pimentos, and mayonnaise.", "Season with onion powder, cayenne, salt, and pepper.", "Refrigerate at least 1 hour — it firms up and the flavors meld.", "Spread generously on plain white bread.", "Trim crusts for a proper luncheonette presentation.", "Serve with a pickle spear and potato chips alongside."]
+    },
+    {
+      name: "Tomato Soup with Crackers",
+      region: "Nationwide; Campbell's Tomato Soup, introduced in 1897, made this the most widely eaten soup in American history",
+      notable: "Andy Warhol's 1962 Campbell's Soup Cans was inspired by the fact that he ate tomato soup for lunch every day for twenty years. The painting turned the most ordinary American lunch into high art.",
+      history: "Campbell's condensed tomato soup, introduced in 1897, became the best-selling canned product in American history within a decade. The combination of tomato soup and crackers — usually oyster crackers or saltines — was the standard American lunch counter offering from the 1900s through the 1960s. It cost a dime at most counters. Its decline as a serious lunch item came with the rise of fast food and the sandwich culture of the 1970s, though it never fully disappeared.",
+      type: "Luncheonette",
+      description: "The ten-cent American lunch — tomato soup made from condensed Campbell's, prepared with milk for richness, served with oyster crackers. Humble, perfect, and entirely of its era.",
+      ingredients: ["1 can (10.75 oz) Campbell's condensed tomato soup", "1 can whole milk (same measure as soup)", "1 tbsp butter", "Pinch of sugar", "Salt and black pepper", "Oyster crackers or saltines to serve"],
+      instructions: ["Empty condensed soup into a saucepan.", "Fill the empty can with whole milk. Add to pot.", "Heat over medium, stirring constantly — do not boil.", "Add butter, pinch of sugar, salt, and pepper.", "Serve in a wide, shallow bowl.", "Float oyster crackers on top.", "This is exactly how it was made at every lunch counter in America for sixty years."]
+    },
+    {
+      name: "Cucumber Cream Cheese Sandwich",
+      region: "Nationwide; particularly associated with ladies' luncheons, bridge parties, and afternoon tea culture in the 1910s-1950s",
+      notable: "The Lunken Airport counter menu listed 'American Cream Cheese' as a standalone sandwich at 15 cents — the cucumber variation was the more refined luncheon version of the same idea, served at hotel tea rooms and women's club luncheons across the country.",
+      history: "Cucumber and cream cheese on white bread was the quintessential ladies' luncheon sandwich of the early 20th century. It came directly from the British tradition of afternoon tea, where delicate crustless finger sandwiches with mild, cooling fillings were considered appropriately refined. In America, it became the standard offering at bridge parties, garden parties, and women's club luncheons from the 1910s through the 1950s. The sandwich's association with a particular kind of formal feminine socializing — which faded dramatically after World War II — is exactly why it disappeared. The socializing changed; the sandwich went with it.",
+      type: "Luncheonette",
+      description: "Thin-sliced cucumber on cream cheese, on crustless white bread — the ladies' luncheon sandwich that defined a specific era of American social life.",
+      ingredients: ["1 English cucumber, very thinly sliced", "8 oz cream cheese, softened", "2 tbsp fresh dill or chives, minced", "1 tsp lemon juice", "Salt and white pepper", "Thin white sandwich bread, crusts removed"],
+      instructions: ["Salt cucumber slices lightly and let sit 10 minutes to draw out moisture.", "Pat completely dry with paper towels — wet cucumber ruins the bread.", "Beat cream cheese with herbs, lemon juice, salt, and white pepper until smooth.", "Spread cream cheese generously on one side of each bread slice.", "Lay cucumber slices in a single, slightly overlapping layer.", "Top with second slice. Press gently.", "Trim all four crusts with a sharp knife.", "Cut into rectangles or triangles — never squares.", "Arrange on a plate with the cut sides showing.", "Serve immediately — these do not keep."]
+    },
+    {
+      name: "Olive and Cream Cheese Sandwich",
+      region: "Nationwide; documented in American cookbooks since 1909; the Lunken Airport menu listed both 'American Cream Cheese' and 'Pimento Cream Cheese' — the olive variation was the cocktail party and luncheon version of the same base",
+      notable: "The olive and cream cheese sandwich appeared on the Lunken Airport counter alongside its pimento cousin — both were variations on the cream cheese sandwich template that American dairy companies had been promoting since the early 1900s. Philadelphia Cream Cheese ran advertisements featuring olive spreads throughout the 1920s and 30s.",
+      history: "Chopped olives folded into cream cheese appeared in American cookbooks as early as 1909, promoted heavily by cream cheese manufacturers seeking to expand the product's uses beyond cheesecake. The combination became a standard finger sandwich filling at ladies' luncheons and cocktail parties. Pimento-stuffed green olives were the most common choice, their briny, slightly sweet flavor contrasting with the cream cheese's richness. The sandwich peaked in the 1930s and 40s and faded by the 1960s as processed spreads replaced homemade ones and cocktail party culture changed.",
+      type: "Luncheonette",
+      description: "Chopped pimento-stuffed olives folded into cream cheese, spread on white bread — a cocktail party and luncheon staple from 1909 through the 1950s.",
+      ingredients: ["8 oz cream cheese, softened", "½ cup pimento-stuffed green olives, finely chopped", "2 tbsp olive brine", "1 tsp onion, very finely grated", "Black pepper", "White sandwich bread or crackers"],
+      instructions: ["Beat cream cheese until smooth.", "Fold in chopped olives, olive brine, and grated onion.", "Season with black pepper — the olives provide all the salt needed.", "Refrigerate 1 hour — the flavors meld and the spread firms up.", "Spread on thin white bread for sandwiches, or serve with crackers.", "For sandwiches: trim crusts and cut into fingers.", "For a cocktail party presentation: spread on rounds of white bread.", "This keeps refrigerated for 3 days — it's better on day two."]
     },
   ],
 
@@ -300,7 +340,7 @@ const recipes = {
       region: "Nationwide; a standard item on hotel dining room menus from New York to Los Angeles",
       notable: "Chicken croquettes were the signature luncheon dish at the Plaza Hotel in New York during the 1920s, served with cream sauce and buttered peas.",
       history: "The chicken croquette was the peak of American culinary ambition in the years before Julia Child and the French cooking revolution. Making proper croquettes required real skill: a stiff béchamel base, careful shaping, an even double-breading, and precise frying technique. Hotel dining rooms employed cooks specifically for croquette work. The dish faded as American tastes moved from French-technique cooking toward simpler preparations.",
-      type: "Main",
+      type: "Luncheonette",
       description: "Minced cooked chicken bound in a thick cream sauce, shaped into cylinders, breaded, and deep-fried — the peak of 1920s restaurant and home cooking.",
       ingredients: ["2 cups cooked chicken, finely minced", "3 tbsp butter", "3 tbsp flour", "¾ cup chicken broth", "¼ cup cream", "Salt, pepper, nutmeg", "1 egg, beaten", "Breadcrumbs", "Oil for frying"],
       instructions: ["Make thick sauce: melt butter, whisk in flour, add broth and cream. Cook until very thick.", "Fold in chicken. Season with salt, pepper, nutmeg.", "Spread in a pan and refrigerate until firm, at least 1 hour.", "Shape into cylinders or cones. Dip in egg, roll in breadcrumbs.", "Fry in 375°F oil until deep golden, about 3-4 minutes.", "Drain and serve with cream sauce."]
@@ -310,10 +350,50 @@ const recipes = {
       region: "New York City; created at the Waldorf Hotel on Fifth Avenue in 1893",
       notable: "Created by Oscar Tschirky, the legendary maître d' of the Waldorf Hotel, for a charity ball in 1893. The original recipe contained no walnuts — those were added later. Cole Porter reportedly ate it regularly.",
       history: "The Waldorf Salad is one of the most copied and corrupted recipes in American culinary history. Oscar Tschirky's original was strikingly simple: diced apple, celery, and mayonnaise, nothing else — a deliberate statement of American elegance. Over the following decades, walnuts, grapes, raisins, and countless other additions crept in, diluting the original's austere perfection. The dish's overexposure eventually made it seem passé.",
-      type: "Side/Salad",
+      type: "Luncheonette",
       description: "The original: apple, celery, and walnut in mayonnaise — no grapes, no extra additions. Simple, crisp, and exactly as Oscar Tschirky made it at the Waldorf Hotel.",
       ingredients: ["3 tart apples, cored and diced", "3 stalks celery, thinly sliced", "½ cup walnut halves", "½ cup mayonnaise", "1 tbsp lemon juice", "Salt", "Lettuce cups for serving"],
       instructions: ["Toss diced apple with lemon juice immediately to prevent browning.", "Combine apple, celery, and walnuts.", "Fold in mayonnaise. Season lightly with salt.", "Serve in crisp lettuce cups.", "Prepare no more than 1 hour before serving."]
+    },
+    {
+      name: "Liverwurst Sandwich",
+      region: "Nationwide; particularly associated with German-American communities in the Midwest and New York City delicatessens",
+      notable: "Liverwurst sandwiches were a standard item on the Lunken Airport menu in Cincinnati — the Lunken Special, Pilot's Delight, and Cockpit Special all appeared on the same counter menu that featured liverwurst as a standalone 15-cent option.",
+      history: "Liverwurst — from the German Leberwurst, liver sausage — arrived in America with the great German immigration of the mid-19th century. By the early 20th century it had crossed over into mainstream American deli culture and was one of the most widely eaten sandwich fillings in the country. Its decline began in the 1960s as organ meats fell from fashion in American cooking, and accelerated through the 1970s and 80s as health concerns about liver consumption grew. It survives in German-American delicatessens but has largely vanished from mainstream lunch counters.",
+      type: "Luncheonette",
+      description: "The German-American deli classic — liverwurst spread on rye with mustard, sliced onion, and a dill pickle. One of the great forgotten American sandwiches.",
+      ingredients: ["4 oz liverwurst (Braunschweiger)", "2 slices rye bread", "1 tbsp spicy brown or German mustard", "2-3 thin slices raw white onion", "2-3 slices dill pickle", "Optional: 1 leaf iceberg lettuce"],
+      instructions: ["Spread one slice of rye bread with mustard.", "Spread liverwurst generously on the other slice.", "Layer with thin raw onion slices and pickle.", "Press together.", "Slice diagonally.", "Serve with a full dill pickle spear on the side.", "This sandwich requires rye bread — white bread is wrong."]
+    },
+    {
+      name: "Egg Salad Sandwich",
+      region: "Nationwide; one of the universal American lunch counter sandwiches from the 1920s through the present",
+      notable: "The egg salad sandwich is among the most classically American sandwiches — it appears on the menu from the Lunken Airport counter (10 cents) to the White House staff cafeteria. Simple, cheap, and endlessly satisfying.",
+      history: "Egg salad as a sandwich filling emerged in the early 20th century as mayonnaise became commercially available and affordable. The Duke's, Hellmann's, and Kraft mayonnaise companies all promoted egg salad in their advertising from the 1920s onward. The combination of hard-boiled eggs, mayonnaise, and mustard became a standard lunch counter offering across America. At the Lunken Airport counter in Cincinnati, it was listed at 10 cents — one of the cheapest items on the menu. It has never fully gone away but has been largely displaced by more substantial sandwiches in lunch culture.",
+      type: "Luncheonette",
+      description: "The lunch counter egg salad sandwich as it was made at every American diner and café from the 1920s onward — simple, creamy, and best on white bread with iceberg lettuce.",
+      ingredients: ["6 hard-boiled eggs, peeled", "3 tbsp mayonnaise", "1 tsp yellow mustard", "1 stalk celery, finely diced", "Salt and white pepper", "Paprika for garnish", "White sandwich bread", "Iceberg lettuce"],
+      instructions: ["Chop hard-boiled eggs — some people prefer to mash, but chopped gives better texture.", "Mix with mayonnaise, mustard, and celery.", "Season generously with salt and white pepper.", "Refrigerate 30 minutes.", "Pile on white bread with iceberg lettuce.", "Sprinkle with paprika.", "Trim crusts for a proper lunch counter presentation.", "Serve immediately — egg salad waits for no one."]
+    },
+    {
+      name: "Tomato Stuffed with Chicken Salad",
+      region: "Nationwide; a standard cold plate offering at lunch counters, hotel dining rooms, and tea rooms from the 1920s through the 1960s",
+      notable: "The tomato stuffed with chicken salad appears on the Lunken Airport cold plate menu alongside celery hearts and a sliced egg — a presentation style that was universal at American lunch counters. The entire plate cost 35 cents.",
+      history: "The stuffed tomato as a presentation vessel for cold salads was enormously fashionable in American restaurant culture from the 1910s through the 1950s. It appeared in virtually every home economics cookbook, every hotel menu, and every luncheon guide of the era. The combination of a hollowed-out tomato filled with chicken salad, served on a cold plate with celery hearts and a sliced egg, was considered the ideal ladies' luncheon. Its decline was swift — by the 1970s it had essentially vanished from American menus, a casualty of the sandwich and the fast food revolution.",
+      type: "Luncheonette",
+      description: "The vanished American cold plate — a beefsteak tomato hollowed out and filled with creamy chicken salad, served on a bed of iceberg lettuce with celery hearts alongside.",
+      ingredients: ["4 large ripe beefsteak tomatoes", "2 cups cooked chicken, finely diced", "½ cup mayonnaise", "2 stalks celery, finely diced", "1 tbsp fresh lemon juice", "Salt and white pepper", "Iceberg lettuce for serving", "Celery hearts and sliced hard-boiled egg to garnish"],
+      instructions: ["Slice the top off each tomato. Hollow out carefully with a spoon, reserving the inside.", "Salt the inside of each tomato and turn upside down on a plate to drain for 15 minutes.", "Mix chicken with mayonnaise, celery, and lemon juice. Season with salt and white pepper.", "Fill each tomato generously with chicken salad.", "Arrange on a bed of iceberg lettuce.", "Place celery hearts alongside.", "Garnish with sliced hard-boiled egg.", "This is how it looked on every cold plate in America from 1930 to 1965."]
+    },
+    {
+      name: "Kentucky Hot Brown",
+      region: "Louisville, Kentucky; created at the Brown Hotel on Broadway by Chef Fred K. Schmidt in 1926",
+      notable: "The Brown Hotel drew over 1,200 guests every night in the 1920s for its dinner dance. When the band took a break around midnight and the dancers got hungry, Chef Schmidt needed something more impressive than ham and eggs. The Hot Brown was his answer — and it has been the signature dish of Louisville ever since.",
+      history: "Chef Fred K. Schmidt created the Hot Brown in 1926 at the Brown Hotel in Louisville, Kentucky, to feed late-night dancers who wanted something more glamorous than the standard ham and eggs supper. The open-faced sandwich — turkey on thick toast, blanketed in a rich Mornay sauce, finished under the broiler with bacon and tomato — was an immediate sensation. When the Brown Hotel closed in 1972, the recipe scattered across Louisville restaurants and was nearly lost before the hotel reopened in 1984 and Chef Joe Castro reconstructed the original. It has since become the official signature dish of Louisville and a Kentucky Derby tradition.",
+      type: "Luncheonette",
+      description: "Louisville's famous open-faced sandwich — roasted turkey on thick toast, smothered in rich Mornay sauce and broiled until bubbling, finished with crispy bacon and tomato. Invented at the Brown Hotel in 1926 for midnight-hungry dancers.",
+      ingredients: ["4 oz sliced roasted turkey breast", "2 slices thick white bread or Texas toast, toasted and crusts trimmed", "2 strips crispy bacon", "2 roma tomato halves", "MORNAY SAUCE: 2 tbsp butter", "2 tbsp flour", "1 cup whole milk", "¼ cup heavy cream", "¼ cup Pecorino Romano, grated", "Salt and white pepper", "Pinch nutmeg", "Paprika and fresh parsley to garnish"],
+      instructions: ["Make Mornay sauce: melt butter, whisk in flour, cook 1 minute.", "Add milk and cream gradually, whisking until smooth and thick.", "Remove from heat. Stir in half the cheese. Season with salt, pepper, and nutmeg.", "Place toast in a heatproof dish. Layer turkey generously over toast.", "Pour Mornay sauce over everything to cover completely.", "Add tomato halves alongside.", "Sprinkle with remaining cheese.", "Broil 4-5 minutes until sauce is bubbling and lightly browned.", "Cross two strips of bacon over the top.", "Dust with paprika and parsley.", "Serve immediately in the dish — this is not a portable sandwich."]
     },
   ],
 
@@ -353,7 +433,7 @@ const recipes = {
       region: "Nationwide; served in diners, Army mess halls, and homes from coast to coast",
       notable: "General Dwight Eisenhower reportedly complained about the quality of Army chipped beef during World War II, though it remained a standard military breakfast through the Korean War.",
       history: "Creamed chipped beef traces to the New England practice of drying and salting thin slices of beef for preservation. It became a Depression staple because dried beef was inexpensive, a little went a long way in a cream sauce, and it required no refrigeration. The Army adopted it for logistical reasons, and served it in such quantities and of such variable quality that it acquired its famous unprintable nickname. Postwar, its association with institutional food gave it a stigma from which it never recovered.",
-      type: "Main",
+      type: "Luncheonette",
       description: "Thin, dry-cured beef shredded into a thick milk gravy — nicknamed 'SOS' by soldiers, this was a Depression and wartime staple served over toast.",
       ingredients: ["4 oz chipped (dried) beef", "3 tbsp butter", "3 tbsp flour", "2 cups whole milk", "Black pepper", "White toast for serving"],
       instructions: ["Rinse chipped beef in warm water. Tear into small pieces.", "Melt butter in skillet. Whisk in flour; cook 1 min.", "Add milk gradually, whisking until smooth and thick.", "Fold in beef. Season generously with black pepper.", "Serve over hot toast. Salt cautiously — beef is already salty."]
@@ -468,6 +548,46 @@ const recipes = {
       ingredients: ["2 cups flour", "1 tsp baking soda", "2 tsp ginger", "1 tsp cinnamon", "½ tsp cloves", "½ cup lard or shortening", "1 cup sugar", "¼ cup molasses", "1 egg"],
       instructions: ["Cream lard and sugar. Beat in molasses and egg.", "Sift together flour, soda, and spices. Stir into wet mixture.", "Refrigerate dough 1 hour.", "Roll very thin (⅛ inch). Cut into rounds.", "Bake at 375°F for 10-12 minutes until dark and crisp.", "They harden as they cool — don't overbake."]
     },
+    {
+      name: "BLT Sandwich",
+      region: "Nationwide; the BLT became the definitive American lunch counter sandwich during the 1930s and 40s",
+      notable: "The BLT is consistently ranked as the second most popular sandwich in America after the club sandwich. Its appearance on American menus is first documented in the 1930s, though the combination of bacon, lettuce, and tomato is older.",
+      history: "The BLT as a named sandwich emerged in American lunch counter culture in the 1930s, though the combination of bacon with lettuce and tomato had appeared on club sandwiches and in home cooking for decades before that. The acronym BLT was in common use by the 1940s. The sandwich's success depended on three things: sliced white bread (Wonder Bread, introduced in 1921), commercially sliced bacon (widespread by the 1930s), and the year-round availability of hothouse tomatoes. The BLT represents the moment American deli food became standardized, reproducible, and available from coast to coast.",
+      type: "Luncheonette",
+      description: "The American lunch counter classic — crisp bacon, iceberg lettuce, ripe tomato, and mayonnaise on toasted white bread. Simple, perfect, and impossible to improve.",
+      ingredients: ["6 strips thick-cut bacon", "2 slices white sandwich bread, toasted", "2 tbsp mayonnaise", "2-3 leaves iceberg lettuce", "3-4 slices ripe tomato", "Salt and black pepper"],
+      instructions: ["Cook bacon in a skillet over medium heat until crisp but not brittle.", "Drain on paper towels.", "Toast bread to golden brown.", "Spread both slices generously with mayonnaise.", "Layer tomato on one slice. Season with salt and black pepper.", "Add crisp bacon.", "Top with iceberg lettuce — it should hang over the edges slightly.", "Close and cut diagonally.", "Serve immediately — a BLT waits for no one."]
+    },
+    {
+      name: "Malted Milk",
+      region: "Nationwide; malt shops and soda fountains were central to American social life from the 1920s through the 1950s",
+      notable: "The Lunken Airport menu listed 'Double Rich Chocolate Malted Milk' at 20 cents — twice the price of a plain malt — suggesting it was a premium item worth the extra dime. Every American airport, diner, and drugstore soda fountain served them.",
+      history: "Malted milk powder was invented by William Horlick in Racine, Wisconsin in 1887 as a health food for infants and invalids. James and Alice Bradley began selling it as a soda fountain drink in Chicago in the 1920s, and it spread nationwide. The malt shop became the central social institution of American adolescent life from the 1930s through the early 1960s — where teenagers met, dated, and spent their dimes. The rise of fast food chains in the late 1960s killed the independent soda fountain, and the malted milk became a nostalgic relic rather than a daily ritual.",
+      type: "Luncheonette",
+      description: "The American malt shop classic — ice cream, whole milk, and malted milk powder blended thick and served in the metal cup it was mixed in. The 1940s version was better than anything you can get today.",
+      ingredients: ["2 scoops vanilla or chocolate ice cream", "¾ cup whole milk (cold)", "3 tbsp malted milk powder (Carnation or Ovaltine)", "Optional: 2 tbsp chocolate syrup for a chocolate malt"],
+      instructions: ["Chill a metal mixing cup in the freezer for 10 minutes.", "Add ice cream, cold milk, and malted milk powder.", "Optional: add chocolate syrup.", "Mix with a milkshake machine or hand blender until smooth but still thick.", "Pour into a tall glass, leaving some in the metal mixing cup.", "Traditionally served with both the glass and the remaining malt in the mixing cup.", "Serve with a wide straw.", "The malt should be thick enough that the straw stands upright."]
+    },
+    {
+      name: "Sardine Sandwich",
+      region: "Nationwide; sardines were one of the cheapest proteins available during the Depression, appearing in 1930s cookbooks and newspaper columns offering budget meal solutions",
+      notable: "Sardine sandwiches were a Depression-era staple eaten by people who could not afford tuna or meat. By the 1950s, as commercial tuna fleets expanded and tuna became cheaper than sardines, the sardine sandwich was largely displaced. It survives today mainly among people who appreciate sardines as a sustainable seafood choice.",
+      history: "Canned sardines were introduced to the American market in the late 19th century and became enormously popular as an inexpensive, protein-dense pantry staple. During the Depression, when meat was unaffordable for millions of families, sardines provided cheap protein with no refrigeration required. The combination of sardines, raw onion, and mustard on bread appeared in dozens of 1930s budget cookbooks and newspaper columns. Their decline began in the 1950s when tuna — less pungent, more versatile, and briefly cheaper — took over the canned fish category. The sardine sandwich is now considered eccentric; in 1935 it was simply lunch.",
+      type: "Luncheonette",
+      description: "Canned sardines with thin-sliced raw onion and mustard on rye bread — the Depression-era budget lunch that fed millions when meat was unaffordable.",
+      ingredients: ["1 can sardines in olive oil, drained", "2-3 thin slices raw white or red onion", "1 tbsp spicy brown mustard", "1 tsp fresh lemon juice", "2 slices rye bread", "Optional: 1 leaf iceberg lettuce"],
+      instructions: ["Drain sardines thoroughly.", "Mash lightly with a fork — they should be rough, not paste-like.", "Mix in lemon juice.", "Spread mustard on both slices of rye bread.", "Layer sardines on one slice.", "Add thin raw onion slices.", "Close sandwich.", "Eat immediately — this is not a sandwich that improves with time.", "Note: this is an acquired taste. If you've never had it, start with a small portion."]
+    },
+    {
+      name: "Fall River Chow Mein Sandwich",
+      region: "Fall River, Massachusetts and surrounding southeastern New England; this regional oddity was popular from the 1920s through the 1960s and is still found at a handful of Massachusetts Chinese-American restaurants",
+      notable: "The Fall River Chow Mein Sandwich is one of the most genuinely bizarre regional American foods — crispy chow mein noodles between hamburger buns, drenched in thick brown gravy. It exists nowhere else in the world. Nathan's and Howard Johnson's once featured versions on their menus nationwide.",
+      history: "The chow mein sandwich emerged in Fall River, Massachusetts in the 1920s from the city's large Chinese-American community, which had arrived to work in the textile mills. The dish bridged two cultures in an unexpected way: American-style hamburger buns filled with Americanized Chinese chow mein noodles, drenched in a thick brown gravy that bore little resemblance to actual Chinese cooking. Fall River's Portuguese and working-class immigrant communities embraced it as an inexpensive, filling lunch. The dish spread briefly to Howard Johnson's and Nathan's menus in the 1940s and 50s before retreating to its New England home. Today it survives at a handful of Fall River restaurants that have served it continuously for nearly a century.",
+      type: "Luncheonette",
+      description: "The bizarre New England regional classic — crispy chow mein noodles piled on a hamburger bun and drenched in thick brown gravy. Nowhere else on earth serves this.",
+      ingredients: ["1 can (14 oz) La Choy or similar chow mein noodles (crispy)", "GRAVY: 2 cups chicken or beef broth", "2 tbsp cornstarch", "1 tbsp soy sauce", "1 tsp molasses or dark soy", "½ tsp sesame oil", "Salt and pepper", "2 soft hamburger buns"],
+      instructions: ["Make gravy: whisk cornstarch into ¼ cup cold broth until smooth.", "Heat remaining broth in a saucepan.", "Whisk in cornstarch mixture, soy sauce, and molasses.", "Stir over medium heat until thick and glossy.", "Add sesame oil. Season with salt and pepper.", "Toast hamburger buns lightly.", "Pile crispy chow mein noodles generously on the bottom bun.", "Ladle hot gravy liberally over noodles.", "Add top bun.", "Eat immediately — the noodles should go from crispy to pleasantly soggy as you eat.", "This is not a sandwich you can overthink."]
+    },
   ],
 
   "1940s": [
@@ -496,7 +616,7 @@ const recipes = {
       region: "Nationwide; the mock dish tradition flourished wherever wartime rationing created ingredient shortages",
       notable: "Wartime home economics pamphlets published by the USDA featured dozens of mock recipes — Mock Duck, Mock Chicken, Mock Apple Pie — as ways to maintain the appearance of normal eating under restricted conditions.",
       history: "The mock recipe was a distinctly wartime genre — a way to simulate an unavailable or expensive ingredient using something cheaper and accessible. Mock crab salad worked because canned tuna, shredded finely and dressed with the same flavors, produced something convincingly similar in texture and taste. The psychological importance of the mock recipe was as significant as its practical value: it allowed families to maintain a sense of normal eating even when normal ingredients were not available.",
-      type: "Salad",
+      type: "Luncheonette",
       description: "Flaked canned tuna dressed to resemble crab salad — a wartime ingenuity dish when real crab was expensive or unavailable.",
       ingredients: ["2 cans tuna, drained and flaked", "1 cup celery, minced", "1 tbsp onion, grated", "½ cup mayonnaise", "1 tsp lemon juice", "1 tsp dry mustard", "Salt, white pepper", "Lettuce for serving"],
       instructions: ["Flake tuna very finely to mimic crab texture.", "Mix with celery and onion.", "Combine mayonnaise, lemon juice, and mustard.", "Fold dressing into tuna mixture. Season.", "Serve chilled on lettuce or stuffed into tomatoes."]
@@ -526,7 +646,7 @@ const recipes = {
       region: "Nationwide; canned Pacific salmon from Alaska and the Pacific Northwest was one of the most widely distributed wartime proteins",
       notable: "Canned salmon was explicitly promoted by the U.S. government as an unrationed protein alternative during World War II, and recipes for creamed salmon appeared in nearly every wartime government cooking pamphlet.",
       history: "Canned salmon occupied a specific wartime role: unlike beef, pork, and butter, it was not formally rationed, making it a reliable fallback protein throughout the war years. The Pacific salmon canning industry had been established since the 1860s, and pink salmon in particular was cheap and widely distributed. Creamed salmon on toast followed the same formula as creamed chipped beef — a white sauce stretching a small amount of protein over a filling starch base. Its postwar disappearance from fashionable cooking was swift once fresh proteins became available again.",
-      type: "Main",
+      type: "Luncheonette",
       description: "Canned salmon folded into a cream sauce and served over toast — canned salmon was not rationed in the U.S. and became a wartime pantry staple.",
       ingredients: ["2 cans (14.75 oz) pink salmon", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "1 tsp lemon juice", "Salt, white pepper", "Toast for serving"],
       instructions: ["Drain salmon; remove bones and skin. Flake coarsely.", "Make cream sauce: melt butter, whisk in flour, add milk. Stir until thick.", "Fold in salmon. Add lemon juice. Season.", "Serve hot over toast. Garnish with a sprinkle of paprika."]
@@ -586,7 +706,7 @@ const recipes = {
       region: "East Coast cities, particularly New York and Boston, where British cultural influence remained strong in women's club culture",
       notable: "Watercress sandwiches were a staple at the wartime tea parties organized by British War Relief societies across American East Coast cities, where British-influenced entertaining traditions were consciously maintained.",
       history: "Watercress sandwiches came directly from English afternoon tea culture, where the contrast of peppery watercress against cold butter and white bread was considered one of the great simple pleasures of the table. During the war, with elaborate entertaining impossible, the simple watercress sandwich offered genuine elegance on minimal resources — watercress grew wild in streams, required no rationing, and cost almost nothing. The precise, crusts-trimmed presentation made them seem more formal than their ingredients warranted.",
-      type: "Side",
+      type: "Luncheonette",
       description: "Fresh watercress on thin buttered white bread — a delicate British-influenced sandwich that appeared at wartime teas and club lunches across America.",
       ingredients: ["1 bunch fresh watercress, thick stems removed", "Thin-sliced white bread", "Softened unsalted butter", "Salt", "White pepper"],
       instructions: ["Butter bread generously, going all the way to the edges.", "Lay a single layer of watercress on half the slices.", "Season lightly with salt and white pepper.", "Top with remaining slices, press gently.", "Trim all crusts with a sharp knife.", "Cut into fingers or triangles. Serve within 30 minutes."]
@@ -621,9 +741,49 @@ const recipes = {
       ingredients: ["2 cups flour", "1 tsp baking soda", "1 tsp cinnamon", "½ tsp cloves", "½ tsp nutmeg", "1 cup brown sugar", "1½ cups water", "1 cup raisins", "⅓ cup lard or vegetable shortening", "1 tsp salt"],
       instructions: ["Boil together water, sugar, raisins, lard, spices, and salt for 3 minutes.", "Cool completely.", "Sift flour and baking soda. Stir into cooled raisin mixture.", "Pour into a greased 9-inch pan.", "Bake at 325°F for 45-55 minutes until a toothpick comes out clean.", "Serve plain or with a dusting of powdered sugar."]
     },
+    {
+      name: "The Pilots Delight",
+      region: "Lunken Airport, Cincinnati, Ohio; a documented menu item at the airport lunch counter, circa 1945-1955",
+      notable: "The Lunken Airport counter menu featured several aviation-themed sandwiches — the Lunken Special, the Pilot's Delight, the Cockpit Special, and the Hi-Flyer — each a variation on the club sandwich format. Lunken Airport, opened in 1925, was Cincinnati's main commercial airport until 1947.",
+      history: "Lunken Municipal Airport in Cincinnati was the primary commercial airport for the region from its opening in 1925 through the late 1940s. The airport lunch counter served travelers, pilots, and ground crews with a menu that mixed standard American diner fare with aviation-themed specialty sandwiches. The Pilot's Delight — sliced chicken, bacon, lettuce, and tomato on toasted bread — was a variation on the club sandwich made fashionable for the airport setting. The menu has survived in the Lunken Airport archives and represents one of the most complete records of mid-century American airport food culture.",
+      type: "Luncheonette",
+      description: "From the Lunken Airport lunch counter menu: sliced chicken, crisp bacon, lettuce, and tomato on toasted bread — the aviation-era club sandwich at 45 cents.",
+      ingredients: ["3 slices white sandwich bread, toasted", "3 oz sliced cooked chicken breast", "3 strips crisp bacon", "2 leaves iceberg lettuce", "3 slices ripe tomato", "2 tbsp mayonnaise", "Salt and black pepper", "Toothpick with olive or pickle flag"],
+      instructions: ["Toast all three slices of bread.", "Spread mayonnaise on all three slices.", "First layer: place chicken and half the lettuce on bottom toast slice.", "Place middle toast slice on top.", "Second layer: bacon, tomato, remaining lettuce.", "Season tomato with salt and pepper.", "Top with third slice.", "Cut diagonally into 4 triangles.", "Secure each triangle with a toothpick.", "Serve with potato chips and a dill pickle.", "This is exactly how it was served at the Lunken Airport counter."]
+    },
+    {
+      name: "Postum (Grain Coffee Substitute)",
+      region: "Nationwide; Postum was created by C.W. Post in Battle Creek, Michigan in 1895 and became one of the best-selling beverages in America",
+      notable: "At its peak in the 1920s-40s, Postum outsold coffee in some American markets. The Lunken Airport menu listed it at 5 cents alongside coffee, hot tea, and iced tea. It was discontinued by Kraft Foods in 2007, then relaunched by a small company in 2013.",
+      history: "Charles William Post created Postum in 1895 in Battle Creek, Michigan as a health alternative to coffee. Post was a patient at John Harvey Kellogg's sanitarium, where coffee was forbidden, and he created a roasted grain beverage as a substitute. Post's marketing genius — he ran aggressive anti-coffee campaigns calling coffee 'brain poison' and 'nerve-jangling' — made Postum enormously successful. During World War II, coffee rationing made Postum genuinely necessary rather than optional, and its sales peaked. After the war, coffee's return to abundance ended Postum's moment, and it gradually declined until Kraft discontinued it in 2007.",
+      type: "Luncheonette",
+      description: "The grain-based coffee substitute that millions of Americans drank for breakfast — roasted wheat bran and molasses brewed like coffee. Nutty, slightly sweet, and completely caffeine-free.",
+      ingredients: ["2 tsp Postum powder (or roasted chicory/grain powder as substitute)", "8 oz boiling water", "Whole milk or cream to taste", "Sugar to taste"],
+      instructions: ["Bring water to a full boil.", "Add Postum powder and stir vigorously.", "Pour into a cup.", "Add milk or cream and sugar to taste.", "Postum is stronger and slightly sweeter than coffee — use less powder for a lighter cup.", "Serve in a heavy ceramic diner mug.", "This was the 5-cent morning drink for millions of Americans who couldn't afford or chose not to drink coffee."]
+    },
+    {
+      name: "Monte Cristo Sandwich",
+      region: "Nationwide; floating around American cookbooks since the 1930s as 'French Toasted Cheese Sandwich'; named Monte Cristo in Southern California in the 1950s and immortalized at Disneyland from 1966 onward",
+      notable: "The Monte Cristo became nationally famous when Disneyland put it on the menu at the Blue Bayou and Tahitian Terrace restaurants in 1966 — served with powdered sugar and raspberry jam, an oddly perfect combination. It has been on the Disneyland menu almost continuously ever since.",
+      history: "The Monte Cristo is an American adaptation of the French croque monsieur — a hot, pressed ham and cheese sandwich — that went through several evolutions before landing on its signature form. American versions appeared as 'French Toasted Cheese Sandwiches' in 1930s cookbooks. By the 1950s the name Monte Cristo was in use in Southern California restaurants. Its apotheosis came in 1966 when Disneyland placed it on two of its restaurant menus, serving it dusted with powdered sugar alongside raspberry jam. This apparently bizarre combination — savory fried sandwich with jam and powdered sugar — is in fact a French tradition and is genuinely excellent.",
+      type: "Luncheonette",
+      description: "Ham, turkey, and Swiss cheese between white bread, dipped in egg batter and pan-fried until golden, dusted with powdered sugar and served with raspberry jam — the Disneyland classic.",
+      ingredients: ["2 slices thick white bread", "2 oz sliced ham", "2 oz sliced turkey", "2 slices Swiss cheese", "EGG BATTER: 1 egg", "¼ cup milk", "Pinch salt", "Butter for frying", "Powdered sugar to finish", "Raspberry jam to serve"],
+      instructions: ["Layer ham, turkey, and both slices of cheese between the bread.", "Beat egg with milk and salt in a shallow dish.", "Melt butter generously in a skillet over medium heat.", "Dip sandwich in egg batter, coating both sides thoroughly.", "Cook 3-4 minutes per side until deep golden brown and cheese is melted.", "Remove to a plate.", "Dust generously with powdered sugar immediately.", "Serve with raspberry jam alongside for dipping.", "The powdered sugar is not optional — it's the point."]
+    },
   ],
 
   "1950s": [
+    {
+      name: "Olive Loaf Sandwich",
+      region: "Nationwide; olive loaf's heyday was from the 1940s to 1970s, sold alongside bologna and liverwurst at deli counters in every American supermarket",
+      notable: "Olive loaf — along with its sister products pimento loaf and pickle loaf — was marketed specifically to middle- and working-class families as an affordable, festive-looking deli option. The bright green olive dots made it visually distinctive on the deli slicer.",
+      history: "Olive loaf is a processed meat product made from ground pork studded with pimento-stuffed green olives, encased and sliced like bologna. It was introduced in the mid-20th century as part of the American deli's golden age, when supermarket deli counters expanded enormously and packaged luncheon meats reached every household. Oscar Mayer and other major producers sold millions of pounds of olive loaf through the 1950s, 60s, and 70s. Its decline began in the 1980s and 90s as health concerns about processed meats reshaped American eating habits, and the category of novelty luncheon meats — pickle loaf, pimento loaf, olive loaf — all but vanished from mainstream delis.",
+      type: "Luncheonette",
+      description: "Sliced olive loaf — pork studded with pimento-stuffed green olives — on soft white bread with yellow mustard. A deli counter staple from the 1940s through the 1970s that has almost completely vanished.",
+      ingredients: ["4-6 thin slices olive loaf (available at some deli counters; if unavailable, bologna with sliced olives approximates it)", "2 slices soft white sandwich bread", "1 tbsp yellow mustard", "Optional: 1 leaf iceberg lettuce"],
+      instructions: ["Spread yellow mustard on one slice of white bread.", "Layer olive loaf slices generously.", "Add lettuce if using.", "Top with second slice of bread.", "Cut diagonally.", "This sandwich requires soft white bread and yellow mustard only — anything else is wrong.", "Serve with potato chips and a dill pickle.", "Note: if you can find actual olive loaf at a deli counter, buy more than you need."]
+    },
     {
       name: "Tuna Noodle Casserole",
       region: "Nationwide; the casserole was a defining feature of postwar suburban American cooking, and tuna noodle was its most widespread specimen",
@@ -773,6 +933,26 @@ const recipes = {
       description: "Canned creamed corn and whole kernel corn baked in a custardy egg mixture with crackers on top — a mid-century casserole side that has all but disappeared.",
       ingredients: ["1 can (15 oz) creamed corn", "1 can (15 oz) whole kernel corn, drained", "2 eggs, beaten", "½ cup milk", "1 small onion, grated", "1 cup crushed crackers", "2 tbsp butter", "Salt and pepper"],
       instructions: ["Preheat oven to 350°F. Butter a 1½-quart baking dish.", "Mix both corns, eggs, milk, and onion. Season.", "Stir in half the crackers.", "Pour into baking dish.", "Toss remaining crackers with melted butter. Spread on top.", "Bake 40-45 minutes until set and golden."]
+    },
+    {
+      name: "Grilled Cheese and Tomato Soup",
+      region: "Nationwide; this pairing became the definitive American lunch in the 1950s — served in school cafeterias, diners, and home kitchens from coast to coast",
+      notable: "The grilled cheese and tomato soup combination was so culturally embedded that it appeared in virtually every American school cafeteria from the 1950s onward. Campbell's promoted the pairing aggressively in their advertising, and it became one of the most universally shared American food memories.",
+      history: "Grilled cheese sandwiches became widespread after Kraft introduced processed American cheese slices in the 1950s — the perfectly melting, consistent cheese made the sandwich reproducible at scale. Campbell's tomato soup and the grilled cheese sandwich were promoted together in advertising campaigns that cemented their pairing in the American consciousness. The combination became the standard Friday lunch in Catholic school cafeterias (no meat), the sick-day meal, and the after-school snack of an entire generation.",
+      type: "Luncheonette",
+      description: "The quintessential American lunch pairing — a perfectly golden grilled cheese sandwich alongside a bowl of hot tomato soup. Simple enough to make in ten minutes, impossible to improve.",
+      ingredients: ["2 slices white sandwich bread", "2 tbsp butter, softened", "2 slices American cheese (Kraft Singles for authenticity)", "1 can Campbell's condensed tomato soup", "1 can whole milk"],
+      instructions: ["Butter the outside faces of both bread slices generously.", "Place cheese between slices, buttered sides out.", "Heat a cast iron skillet or griddle over medium-low heat.", "Cook sandwich 3-4 minutes until deep golden. Flip. Cook another 2-3 minutes.", "For soup: combine condensed tomato soup with one can of whole milk.", "Heat over medium, stirring. Do not boil.", "Cut sandwich diagonally.", "Serve immediately with the soup alongside for dipping.", "The soup is for dipping. This is non-negotiable."]
+    },
+    {
+      name: "Celery Hearts with Olives",
+      region: "Nationwide; celery hearts as a table relish or cold plate accompaniment were standard at lunch counters and hotel dining rooms from the 1920s through the 1960s",
+      notable: "The Lunken Airport cold plate menu included 'Celery Hearts, Sliced Egg' as a standalone 35-cent plate — a reminder that a single stalk of properly trimmed celery heart was once considered a legitimate meal component.",
+      history: "Before the vegetable crudité platter became fashionable in the 1970s, celery hearts were a standalone table item at American restaurants. They were placed on the table before the meal at better establishments, served as part of cold plates at lunch counters, and offered as a relish alongside heavier dishes. The celery heart — the pale, tender inner stalks — was considered a delicacy compared to the tougher outer stalks. Paired with olives (pimento-stuffed green olives were standard), it was a light starter or accompaniment. The practice of serving celery as a serious food item rather than a garnish has almost entirely disappeared.",
+      type: "Luncheonette",
+      description: "Crisp pale celery hearts, trimmed and chilled, served alongside green olives stuffed with pimento — the forgotten American table relish that appeared at every proper lunch counter.",
+      ingredients: ["1 head celery, pale inner hearts only", "Ice water", "1 jar pimento-stuffed green olives", "Optional: radishes, carrot sticks"],
+      instructions: ["Trim outer celery stalks. Reserve only the pale, tender inner heart.", "Cut celery hearts into 4-inch lengths.", "Soak in ice water for 30 minutes — this crisps and curls them slightly.", "Drain and pat dry.", "Arrange on a small plate alongside drained olives.", "Serve chilled as a table relish or cold plate accompaniment.", "This is the entire recipe. Celery and olives were once enough."]
     },
   ],
 
@@ -1738,8 +1918,12 @@ export default function RecipeBook() {
   const getDisplayList = () => {
     let list;
     if (specialTab === "all") {
-      const recs = filter === "Dessert" ? allRecipes.filter(r => r.type === "Dessert") : allRecipes;
-      list = filter === "Dessert" ? recs : [...recs, ...allPresidents];
+      const recs = filter === "Dessert"
+        ? allRecipes.filter(r => r.type === "Dessert")
+        : filter === "Luncheonette"
+        ? allRecipes.filter(r => r.type === "Luncheonette")
+        : allRecipes;
+      list = filter === "Dessert" || filter === "Luncheonette" ? recs : [...recs, ...allPresidents];
     }
     else if (specialTab === "presidents") list = allPresidents;
     else if (specialTab === "favorites") {
@@ -1757,7 +1941,11 @@ export default function RecipeBook() {
       const mPres = allPresidents.filter(p => made.has(p.name));
       list = [...mRecs, ...mPres];
     }
-    else list = filter === "Dessert" ? decRecipes.filter(r => r.type === "Dessert") : decRecipes;
+    else list = filter === "Dessert"
+      ? decRecipes.filter(r => r.type === "Dessert")
+      : filter === "Luncheonette"
+      ? decRecipes.filter(r => r.type === "Luncheonette")
+      : decRecipes;
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(r =>
@@ -1949,7 +2137,7 @@ export default function RecipeBook() {
         {/* Filter pills — decade view and all-tab only */}
         {(!specialTab || specialTab === "all") && (          <div style={{ display: "flex", gap: 8, marginBottom: 14, alignItems: "center" }}>
             <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.67rem", letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.45 }}>Show:</span>
-            {["All", "Dessert"].map(f => (
+            {["All", "Dessert", "Luncheonette"].map(f => (
               <button key={f} className="filter-btn"
                 onClick={() => { setFilter(f); setActiveRecipe(null); }}
                 style={{
@@ -1958,8 +2146,14 @@ export default function RecipeBook() {
                   fontWeight: filter === f ? 700 : 400,
                 }}>
                 {f === "All"
-                  ? `All (${specialTab === "all" ? allRecipes.length : decRecipes.length})`
-                  : `Desserts (${specialTab === "all" ? allRecipes.filter(r => r.type === "Dessert").length : decRecipes.filter(r => r.type === "Dessert").length})`}
+                  ? `All (${specialTab === "all" ? allRecipes.length + allPresidents.length : (() => {
+                      const presPre = activeDec === "1910s" ? (presidents["pre-1910s"] || []).length : 0;
+                      const presDecade = (presidents[activeDec] || []).length;
+                      return decRecipes.length + presPre + presDecade;
+                    })()})`
+                  : f === "Dessert"
+                  ? `Desserts (${specialTab === "all" ? allRecipes.filter(r => r.type === "Dessert").length : decRecipes.filter(r => r.type === "Dessert").length})`
+                  : `Luncheonette (${specialTab === "all" ? allRecipes.filter(r => r.type === "Luncheonette").length : decRecipes.filter(r => r.type === "Luncheonette").length})`}
               </button>
             ))}
           </div>
@@ -2043,7 +2237,7 @@ export default function RecipeBook() {
                 </div>
 
                 {isOpen && (
-                  <div className="detail-panel" style={{
+                  <div className="detail-panel" onClick={() => setActiveRecipe(null)} style={{
                     background: "rgba(255,255,255,0.96)",
                     borderRadius: "0 0 8px 8px",
                     padding: "20px 20px 24px",
@@ -2051,10 +2245,11 @@ export default function RecipeBook() {
                     borderLeft: `4px solid ${cardDec.color}`,
                     borderRight: "1px solid rgba(0,0,0,0.06)",
                     borderBottom: "1px solid rgba(0,0,0,0.06)",
+                    cursor: "pointer",
                   }}>
                     {/* Share button */}
                     <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
-                      <button onClick={() => handleShare({ ...r, decade: r.decade || activeDec })}
+                      <button onClick={(e) => { e.stopPropagation(); handleShare({ ...r, decade: r.decade || activeDec }); }}
                         style={{ cursor: "pointer", border: `1px solid ${cardDec.color}50`, background: "transparent", color: cardDec.color, fontFamily: "'Lato', sans-serif", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 13px", borderRadius: 14, fontWeight: 700, transition: "all 0.15s" }}>
                         📤 Share
                       </button>
@@ -2127,7 +2322,11 @@ export default function RecipeBook() {
             ...(presidents[activeDec] || []).map(p => ({ ...p, decade: activeDec, isPresident: true }))
           ];
 
-          const filteredRecipes = filter === "Dessert" ? decRecipes.filter(r => r.type === "Dessert") : decRecipes;
+          const filteredRecipes = filter === "Dessert"
+            ? decRecipes.filter(r => r.type === "Dessert")
+            : filter === "Luncheonette"
+            ? decRecipes.filter(r => r.type === "Luncheonette")
+            : decRecipes;
 
           return (
             <div>
