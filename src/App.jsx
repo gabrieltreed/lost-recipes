@@ -2236,7 +2236,7 @@ export default function RecipeBook() {
                   color: (!specialTab && activeDec === d.id) ? activePalette.header : "rgba(242,232,213,0.55)",
                   borderColor: (!specialTab && activeDec === d.id) ? activePalette.accent : "rgba(255,255,255,0.18)",
                 }}>
-                {d.label}
+                {d.label.slice(0, -1)}<span style={{ textTransform: "none" }}>s</span>
               </button>
             ))}
             <button className="decade-btn"
