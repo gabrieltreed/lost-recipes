@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const decades = [
-  { id: "1910s", label: "1910s", color: "#8B4513", bg: "#FDF5E6", accent: "#D2691E" },
-  { id: "1920s", label: "1920s", color: "#2F4F4F", bg: "#F5F5DC", accent: "#8FBC8F" },
-  { id: "1930s", label: "1930s", color: "#4A4A8A", bg: "#F0EFF5", accent: "#9090C8" },
-  { id: "1940s", label: "1940s", color: "#5C3317", bg: "#FFF8F0", accent: "#A0522D" },
-  { id: "1950s", label: "1950s", color: "#8B0000", bg: "#FFF5F5", accent: "#DC143C" },
-  { id: "1960s", label: "1960s", color: "#556B2F", bg: "#F5FFF0", accent: "#6B8E23" },
-  { id: "1970s", label: "1970s", color: "#8B6914", bg: "#FFFBF0", accent: "#DAA520" },
+  { id: "1910s", label: "1910s", header: "#2A3D1C", accent: "#C8A96E", secondary: "#8B3A1A", paper: "#F2E8D5", silhouette: "M10,40 Q15,20 25,15 Q35,10 40,15 Q50,20 50,35 Q50,50 40,55 Q30,60 20,55 Q10,50 10,40Z M30,15 L30,5 M20,20 L15,10 M40,20 L45,10" },
+  { id: "1920s", label: "1920s", header: "#1C2D3F", accent: "#B8A86A", secondary: "#4A7A6A", paper: "#EDE4D0", silhouette: "M5,45 L5,20 Q5,10 15,10 L35,10 Q45,10 45,20 L45,45 Q45,50 40,50 L10,50 Q5,50 5,45Z M15,10 L15,5 M25,10 L25,3 M35,10 L35,5" },
+  { id: "1930s", label: "1930s", header: "#4A1C0E", accent: "#C4A44A", secondary: "#2A4A1C", paper: "#F0E6D2", silhouette: "M5,50 L5,25 Q20,5 35,25 L35,50Z M15,25 Q20,15 25,25 M8,38 L32,38" },
+  { id: "1940s", label: "1940s", header: "#2A3818", accent: "#C8A96E", secondary: "#6A3A1C", paper: "#EDE4D0", silhouette: "M10,50 L10,20 Q10,8 22,8 Q34,8 34,20 L34,50 M5,20 L40,20 M5,35 L40,35" },
+  { id: "1950s", label: "1950s", header: "#1A3040", accent: "#C4A44A", secondary: "#8A4A2A", paper: "#F2E8D5", silhouette: "M5,50 Q5,30 15,25 Q25,20 35,25 Q45,30 45,50 M15,25 Q20,10 30,10 Q38,10 38,20" },
+  { id: "1960s", label: "1960s", header: "#2A1C3A", accent: "#B8A86A", secondary: "#1A4A2A", paper: "#EDE4D0", silhouette: "M10,50 L10,30 Q10,15 25,12 Q40,15 40,30 L40,50 M18,12 Q25,5 32,12 M25,12 L25,5" },
+  { id: "1970s", label: "1970s", header: "#3A2010", accent: "#C8A96E", secondary: "#2A3A1C", paper: "#F0E6D2", silhouette: "M5,45 Q5,20 15,15 Q25,10 35,15 Q45,20 45,45 L45,50 L5,50Z M15,15 L12,5 M25,10 L25,2 M35,15 L38,5" },
 ];
 
 const recipes = {
@@ -2011,11 +2011,11 @@ export default function RecipeBook() {
   };
 
   const specialColors = {
-    all:        { color: "#2A4A6A", bg: "#F0F4FA", accent: "#5A8AB0" },
-    presidents: { color: "#8B0000", bg: "#FFF5F0", accent: "#CC4444" },
-    favorites:  { color: "#9B2335", bg: "#FFF5F7", accent: "#E8647A" },
-    gross:      { color: "#3A6A2A", bg: "#F3FAF0", accent: "#7DB86A" },
-    made:       { color: "#4A3A7A", bg: "#F4F1FF", accent: "#9B8AC4" },
+    all:        { header: "#2A3A2A", accent: "#C8A96E", secondary: "#4A6A4A", paper: "#F2E8D5" },
+    presidents: { header: "#6A1A0A", accent: "#C8A96E", secondary: "#2A3A1C", paper: "#F2E8D5" },
+    favorites:  { header: "#6A1A2A", accent: "#C8A96E", secondary: "#3A1C1C", paper: "#F2E8D5" },
+    gross:      { header: "#2A3A1C", accent: "#C8A96E", secondary: "#3A2A1C", paper: "#F2E8D5" },
+    made:       { header: "#1C2A3A", accent: "#C8A96E", secondary: "#2A1C3A", paper: "#F2E8D5" },
   };
 
   const activePalette = specialTab ? specialColors[specialTab] : dec;
@@ -2027,296 +2027,574 @@ export default function RecipeBook() {
     presidents: { icon: "🇺🇸", text: "No presidents here", sub: "Something went wrong loading the presidential entries." },
   };
 
+  const typeStyles = {
+    "Main":         { color: "#6A2A0A", border: "rgba(106,42,10,0.3)" },
+    "Dessert":      { color: "#8B0A2A", border: "rgba(139,10,42,0.3)" },
+    "Luncheonette": { color: "#0A3A5A", border: "rgba(10,58,90,0.3)" },
+    "Side":         { color: "#2A4A0A", border: "rgba(42,74,10,0.3)" },
+    "Salad":        { color: "#0A4A2A", border: "rgba(10,74,42,0.3)" },
+    "Side/Salad":   { color: "#0A4A2A", border: "rgba(10,74,42,0.3)" },
+  };
+
   return (
-    <div style={{ fontFamily: "'Georgia', serif", minHeight: "100vh", background: activePalette.bg, transition: "background 0.4s" }}>
+    <div style={{ fontFamily: "'Georgia', serif", minHeight: "100vh", background: activePalette.paper || "#F2E8D5" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
         * { box-sizing: border-box; }
         body { margin: 0; }
-        .decade-btn { cursor: pointer; border: none; font-family: 'Playfair Display', serif; font-size: 0.82rem; padding: 5px 12px; border-radius: 20px; transition: all 0.2s; letter-spacing: 0.05em; }
-        .decade-btn:hover { transform: translateY(-1px); }
-        .special-btn { cursor: pointer; border: none; font-family: 'Lato', sans-serif; font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; transition: all 0.2s; letter-spacing: 0.03em; font-weight: 600; }
-        .special-btn:hover { transform: translateY(-1px); }
-        .recipe-card { cursor: pointer; border-radius: 8px; padding: 13px 15px; transition: all 0.2s; border-left: 4px solid transparent; }
-        .recipe-card:hover { transform: translateX(3px); }
-        .detail-panel { animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-        .filter-btn { cursor: pointer; border: none; font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 11px; border-radius: 12px; transition: all 0.15s; }
-        .icon-btn { cursor: pointer; border: none; background: none; padding: 3px 5px; border-radius: 5px; transition: transform 0.15s; font-size: 1rem; line-height: 1; }
-        .icon-btn:hover { transform: scale(1.3); }
-        .search-input { width: 100%; border: none; outline: none; font-family: 'Lato', sans-serif; font-size: 0.87rem; padding: 9px 14px 9px 36px; border-radius: 20px; background: rgba(255,255,255,0.88); color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-        .search-input::placeholder { color: #bbb; }
-        .decade-badge { display: inline-block; font-family: 'Lato', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 6px; border-radius: 8px; font-weight: 700; margin-bottom: 3px; }
-        .copied-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: #222; color: #fff; padding: 9px 22px; border-radius: 22px; font-family: 'Lato', sans-serif; font-size: 0.82rem; z-index: 9999; animation: toastIn 0.2s ease; pointer-events: none; white-space: nowrap; }
-        @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(8px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
-        ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 3px; }
+
+        .decade-btn {
+          cursor: pointer;
+          font-family: 'Oswald', sans-serif;
+          font-weight: 600;
+          font-size: 0.68rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 7px 12px;
+          border: 1.5px solid;
+          border-radius: 0;
+          transition: all 0.15s;
+          white-space: nowrap;
+        }
+
+        .special-btn {
+          cursor: pointer;
+          font-family: 'Oswald', sans-serif;
+          font-weight: 600;
+          font-size: 0.65rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 6px 11px;
+          border: 1.5px solid;
+          border-radius: 0;
+          transition: all 0.15s;
+        }
+
+        .filter-btn {
+          cursor: pointer;
+          font-family: 'Oswald', sans-serif;
+          font-size: 0.6rem;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 5px 10px;
+          border: 1.5px solid;
+          border-radius: 0;
+          transition: all 0.15s;
+        }
+
+        .recipe-card {
+          cursor: pointer;
+          margin-bottom: 10px;
+          border: 1.5px solid;
+          transition: transform 0.1s;
+          position: relative;
+          overflow: hidden;
+        }
+        .recipe-card:active { transform: scale(0.995); }
+
+        .icon-btn {
+          cursor: pointer;
+          border: none;
+          background: none;
+          padding: 2px 4px;
+          transition: transform 0.15s;
+          font-size: 0.95rem;
+          line-height: 1;
+        }
+        .icon-btn:hover { transform: scale(1.25); }
+
+        .search-input {
+          width: 100%;
+          border: 1.5px solid rgba(255,255,255,0.2);
+          outline: none;
+          font-family: 'Lato', sans-serif;
+          font-size: 0.85rem;
+          padding: 9px 14px 9px 36px;
+          border-radius: 0;
+          background: rgba(255,255,255,0.12);
+          color: #F2E8D5;
+        }
+        .search-input::placeholder { color: rgba(242,232,213,0.4); }
+
+        .copied-toast {
+          position: fixed;
+          bottom: 28px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #2A1C0A;
+          color: #C8A96E;
+          padding: 9px 22px;
+          border: 1px solid rgba(200,169,110,0.4);
+          font-family: 'Oswald', sans-serif;
+          font-size: 0.78rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          z-index: 9999;
+          pointer-events: none;
+        }
+        .detail-panel { animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       `}</style>
 
-      {/* Header */}
-      <div style={{ background: activePalette.color, color: "#FFF8F0", padding: "20px 20px 14px", position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 12px rgba(0,0,0,0.22)", transition: "background 0.4s" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ fontSize: "0.62rem", letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.65, fontFamily: "'Lato', sans-serif", marginBottom: 3 }}>Forgotten American Kitchen</div>
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(1.3rem, 4vw, 2rem)", fontWeight: 700, margin: "0 0 12px", letterSpacing: "-0.01em" }}>
-            A Century of Lost Recipes
-          </h1>
+      {/* ═══ HEADER ═══ */}
+      <div style={{
+        background: activePalette.header,
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+        boxShadow: "0 3px 16px rgba(0,0,0,0.35)",
+      }}>
+        {/* Top accent stripe */}
+        <div style={{ height: 6, background: activePalette.accent, opacity: 0.9 }} />
+        <div style={{ height: 2, background: activePalette.secondary, opacity: 0.6 }} />
 
-          {/* Row 1: Decade tabs + All */}
-          <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
+        <div style={{ padding: "18px 18px 0", position: "relative", overflow: "hidden" }}>
+
+          {/* Subtle background silhouette */}
+          {dec && !specialTab && (
+            <svg style={{
+              position: "absolute",
+              right: 16,
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 80,
+              height: 80,
+              opacity: 0.06,
+              pointerEvents: "none",
+            }} viewBox="0 0 50 55">
+              <path d={dec.silhouette} fill={activePalette.accent} />
+            </svg>
+          )}
+
+          {/* Eyebrow */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            marginBottom: 8,
+          }}>
+            <div style={{ height: 1, width: 20, background: activePalette.accent, opacity: 0.45 }} />
+            <div style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: "0.54rem",
+              fontWeight: 500,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              color: activePalette.accent,
+              opacity: 0.65,
+            }}>
+              Forgotten American Kitchen
+            </div>
+            <div style={{ height: 1, flex: 1, background: activePalette.accent, opacity: 0.25 }} />
+          </div>
+
+          {/* Title */}
+          <div style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontSize: "0.65rem",
+            fontWeight: 500,
+            letterSpacing: "0.35em",
+            textTransform: "uppercase",
+            color: activePalette.accent,
+            opacity: 0.55,
+            marginBottom: 3,
+          }}>
+            A Century of
+          </div>
+          <div style={{
+            fontFamily: "'Rye', serif",
+            fontSize: "2.3rem",
+            color: "#F2E8D5",
+            lineHeight: 1,
+            marginBottom: 10,
+            textShadow: "2px 3px 0 rgba(0,0,0,0.3)",
+          }}>
+            Lost Recipes
+          </div>
+
+          {/* Ornament */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            marginBottom: 14,
+          }}>
+            <div style={{ height: 2, width: 28, background: activePalette.accent, opacity: 0.6 }} />
+            <div style={{ height: 6, width: 6, background: activePalette.accent, opacity: 0.7, transform: "rotate(45deg)" }} />
+            <div style={{ height: 2, width: 10, background: activePalette.secondary, opacity: 0.5 }} />
+            <div style={{ height: 1, flex: 1, background: "rgba(255,255,255,0.1)" }} />
+          </div>
+
+          {/* Decade tabs */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 6 }}>
             {decades.map(d => (
               <button key={d.id} className="decade-btn"
-                onClick={() => { setActiveDec(d.id); setActiveRecipe(null); setSpecialTab(null); }}
+                onClick={() => { setActiveDec(d.id); setSpecialTab(null); setActiveRecipe(null); setFilter("All"); }}
                 style={{
-                  background: !specialTab && activeDec === d.id ? "#FFF8F0" : "rgba(255,248,240,0.18)",
-                  color: !specialTab && activeDec === d.id ? activePalette.color : "#FFF8F0",
-                  fontWeight: !specialTab && activeDec === d.id ? 700 : 400,
-                  boxShadow: !specialTab && activeDec === d.id ? "0 2px 8px rgba(0,0,0,0.2)" : "none"
+                  background: (!specialTab && activeDec === d.id) ? activePalette.accent : "transparent",
+                  color: (!specialTab && activeDec === d.id) ? activePalette.header : "rgba(242,232,213,0.55)",
+                  borderColor: (!specialTab && activeDec === d.id) ? activePalette.accent : "rgba(255,255,255,0.18)",
                 }}>
                 {d.label}
               </button>
             ))}
             <button className="decade-btn"
-              onClick={() => { setSpecialTab(specialTab === "all" ? null : "all"); setActiveRecipe(null); }}
+              onClick={() => { setSpecialTab("all"); setActiveRecipe(null); setFilter("All"); }}
               style={{
-                background: specialTab === "all" ? "#FFF8F0" : "rgba(255,248,240,0.18)",
-                color: specialTab === "all" ? "#2A4A6A" : "#FFF8F0",
-                fontWeight: specialTab === "all" ? 700 : 400,
-                boxShadow: specialTab === "all" ? "0 2px 8px rgba(0,0,0,0.2)" : "none"
+                background: specialTab === "all" ? activePalette.accent : "transparent",
+                color: specialTab === "all" ? activePalette.header : "rgba(242,232,213,0.55)",
+                borderColor: specialTab === "all" ? activePalette.accent : "rgba(255,255,255,0.18)",
               }}>
               All
             </button>
             <button className="decade-btn"
-              onClick={() => { setSpecialTab(specialTab === "presidents" ? null : "presidents"); setActiveRecipe(null); }}
+              onClick={() => { setSpecialTab("presidents"); setActiveRecipe(null); setFilter("All"); }}
               style={{
-                background: specialTab === "presidents" ? "#FFF8F0" : "rgba(255,248,240,0.18)",
-                color: specialTab === "presidents" ? "#8B0000" : "#FFF8F0",
-                fontWeight: specialTab === "presidents" ? 700 : 400,
-                boxShadow: specialTab === "presidents" ? "0 2px 8px rgba(0,0,0,0.2)" : "none"
+                background: specialTab === "presidents" ? activePalette.accent : "transparent",
+                color: specialTab === "presidents" ? activePalette.header : "rgba(242,232,213,0.55)",
+                borderColor: specialTab === "presidents" ? activePalette.accent : "rgba(255,255,255,0.18)",
               }}>
               🇺🇸 Presidents
             </button>
           </div>
 
-          {/* Row 2: Special tabs */}
-          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          {/* Special tabs */}
+          <div style={{ display: "flex", gap: 5, paddingBottom: 14 }}>
             {[
-              { id: "favorites", label: `❤️ Favorites${favorites.size > 0 ? " (" + favorites.size + ")" : ""}`, ac: "#FFE0E8", at: "#9B2335" },
-              { id: "gross",     label: `🤢 Gross${gross.size > 0 ? " (" + gross.size + ")" : ""}`,             ac: "#DCF5D6", at: "#3A6A2A" },
-              { id: "made",      label: `👨‍🍳 Made This${made.size > 0 ? " (" + made.size + ")" : ""}`,           ac: "#E8E2FF", at: "#4A3A7A" },
-            ].map(t => (
-              <button key={t.id} className="special-btn"
-                onClick={() => { setSpecialTab(specialTab === t.id ? null : t.id); setActiveRecipe(null); }}
+              ["favorites", `❤️ Favorites${favorites.size > 0 ? ` (${favorites.size})` : ""}`],
+              ["gross",     `🤢 Gross${gross.size > 0 ? ` (${gross.size})` : ""}`],
+              ["made",      `👨‍🍳 Made This${made.size > 0 ? ` (${made.size})` : ""}`],
+            ].map(([key, label]) => (
+              <button key={key} className="special-btn"
+                onClick={() => { setSpecialTab(specialTab === key ? null : key); setActiveRecipe(null); }}
                 style={{
-                  background: specialTab === t.id ? t.ac : "rgba(255,248,240,0.15)",
-                  color: specialTab === t.id ? t.at : "#FFF8F0",
-                  boxShadow: specialTab === t.id ? "0 2px 8px rgba(0,0,0,0.12)" : "none",
+                  background: specialTab === key ? activePalette.accent : "transparent",
+                  color: specialTab === key ? activePalette.header : "rgba(242,232,213,0.45)",
+                  borderColor: specialTab === key ? activePalette.accent : "rgba(255,255,255,0.12)",
                 }}>
-                {t.label}
+                {label}
               </button>
             ))}
           </div>
         </div>
+
+        <div style={{ height: 2, background: activePalette.secondary, opacity: 0.5 }} />
+        <div style={{ height: 5, background: activePalette.accent, opacity: 0.75 }} />
       </div>
 
-      {/* Main */}
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "18px 14px" }}>
+      {/* ═══ CONTENT ═══ */}
+      <div style={{ padding: "14px 14px 40px", background: activePalette.paper || "#F2E8D5" }}>
 
         {/* Search */}
         <div style={{ position: "relative", marginBottom: 14 }}>
-          <span style={{ position: "absolute", left: 13, top: "50%", transform: "translateY(-50%)", fontSize: "0.85rem", opacity: 0.4, pointerEvents: "none" }}>🔍</span>
-          <input className="search-input"
-            placeholder="Search recipes, presidents, dishes, history..."
+          <span style={{
+            position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)",
+            color: (activePalette.header), opacity: 0.35, fontSize: "0.85rem", pointerEvents: "none",
+          }}>🔍</span>
+          <input
+            className="search-input"
+            placeholder="Search recipes, presidents, history..."
             value={search}
             onChange={e => { setSearch(e.target.value); setActiveRecipe(null); }}
+            style={{
+              background: "rgba(255,255,255,0.75)",
+              color: "#2A1C0A",
+              border: `1.5px solid rgba(${parseInt(activePalette.header.slice(1,3),16)},${parseInt(activePalette.header.slice(3,5),16)},${parseInt(activePalette.header.slice(5,7),16)},0.2)`,
+            }}
           />
           {search && (
-            <button onClick={() => setSearch("")}
-              style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", border: "none", background: "none", cursor: "pointer", fontSize: "0.85rem", opacity: 0.45, padding: "2px 4px" }}>✕</button>
+            <button onClick={() => setSearch("")} style={{
+              position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)",
+              background: "none", border: "none", cursor: "pointer", color: "#aaa", fontSize: "1rem",
+            }}>×</button>
           )}
         </div>
 
-        {/* Filter pills — decade view and all-tab only */}
-        {(!specialTab || specialTab === "all") && (          <div style={{ display: "flex", gap: 8, marginBottom: 14, alignItems: "center" }}>
-            <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.67rem", letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.45 }}>Show:</span>
-            {["All", "Dessert", "Luncheonette"].map(f => (
-              <button key={f} className="filter-btn"
-                onClick={() => { setFilter(f); setActiveRecipe(null); }}
-                style={{
-                  background: filter === f ? activePalette.color : "rgba(0,0,0,0.07)",
-                  color: filter === f ? "#fff" : activePalette.color,
-                  fontWeight: filter === f ? 700 : 400,
-                }}>
-                {f === "All"
-                  ? `All (${specialTab === "all" ? allRecipes.length + allPresidents.length : (() => {
-                      const presPre = activeDec === "1910s" ? (presidents["pre-1910s"] || []).length : 0;
-                      const presDecade = (presidents[activeDec] || []).length;
-                      return decRecipes.length + presPre + presDecade;
-                    })()})`
-                  : f === "Dessert"
-                  ? `Desserts (${specialTab === "all" ? allRecipes.filter(r => r.type === "Dessert").length : decRecipes.filter(r => r.type === "Dessert").length})`
-                  : `Luncheonette (${specialTab === "all" ? allRecipes.filter(r => r.type === "Luncheonette").length : decRecipes.filter(r => r.type === "Luncheonette").length})`}
-              </button>
-            ))}
+        {/* Filter pills */}
+        {!specialTab && (
+          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 12 }}>
+            <span style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: "0.57rem",
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "#999",
+            }}>Show:</span>
+            {["All", "Dessert", "Luncheonette"].map(f => {
+              const count = f === "All"
+                ? (specialTab === "all" ? allRecipes.length + allPresidents.length : (() => {
+                    const presPre = activeDec === "1910s" ? (presidents["pre-1910s"] || []).length : 0;
+                    const presDecade = (presidents[activeDec] || []).length;
+                    return decRecipes.length + presPre + presDecade;
+                  })())
+                : f === "Dessert"
+                ? (specialTab === "all" ? allRecipes.filter(r => r.type === "Dessert").length : decRecipes.filter(r => r.type === "Dessert").length)
+                : (specialTab === "all" ? allRecipes.filter(r => r.type === "Luncheonette").length : decRecipes.filter(r => r.type === "Luncheonette").length);
+              const label = f === "All" ? `All (${count})` : f === "Dessert" ? `Desserts (${count})` : `Luncheonette (${count})`;
+              const isActive = filter === f;
+              return (
+                <button key={f} className="filter-btn"
+                  onClick={() => { setFilter(f); setActiveRecipe(null); }}
+                  style={{
+                    background: isActive ? activePalette.header : "transparent",
+                    color: isActive ? "#F2E8D5" : "#888",
+                    borderColor: isActive ? activePalette.header : "#ccc",
+                  }}>
+                  {label}
+                </button>
+              );
+            })}
           </div>
         )}
 
-        {/* Empty state */}
-        {specialTab && specialTab !== "all" && displayList.length === 0 && !search && (
-          <div style={{ textAlign: "center", padding: "60px 20px", opacity: 0.45 }}>
-            <div style={{ fontSize: "2.8rem", marginBottom: 12 }}>{emptyMessages[specialTab].icon}</div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", marginBottom: 8 }}>{emptyMessages[specialTab].text}</div>
-            <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.84rem" }}>{emptyMessages[specialTab].sub}</div>
-          </div>
-        )}
+        {/* Recipe count */}
+        <div style={{
+          fontFamily: "'Oswald', sans-serif",
+          fontSize: "0.58rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "#aaa",
+          marginBottom: 10,
+        }}>
+          {displayList.length} {displayList.length === 1 ? "recipe" : "recipes"}
+          {search ? ` matching "${search}"` : ""}
+        </div>
 
-        {/* No search results */}
-        {search && displayList.length === 0 && (
-          <div style={{ textAlign: "center", padding: "60px 20px", opacity: 0.45 }}>
-            <div style={{ fontSize: "2rem", marginBottom: 10 }}>🔍</div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem" }}>No results for "{search}"</div>
-          </div>
-        )}
-
-        {/* Shared card renderer */}
+        {/* ─── renderCard ─── */}
         {(() => {
           const renderCard = (r, i, cardDec) => {
-            const isOpen = activeRecipe?.name === r.name;
-            const isFav = favorites.has(r.name);
-            const isGros = gross.has(r.name);
-            const isMade = made.has(r.name);
-            const isPresCard = !!r.isPresident;
+            const isOpen = activeRecipe === (r.name + i);
+            const tStyle = typeStyles[r.type] || typeStyles["Main"];
+            const isPresident = r.isPresident;
+            const headerColor = cardDec ? cardDec.header : activePalette.header;
+            const accentColor = cardDec ? cardDec.accent : activePalette.accent;
+            const borderColor = `rgba(${parseInt(headerColor.slice(1,3),16)},${parseInt(headerColor.slice(3,5),16)},${parseInt(headerColor.slice(5,7),16)},0.18)`;
 
             return (
-              <div key={r.name + i} style={{ marginBottom: 7 }}>
-                <div className="recipe-card"
-                  onClick={() => setActiveRecipe(isOpen ? null : r)}
-                  style={{
-                    background: isOpen ? cardDec.color : "rgba(255,255,255,0.78)",
-                    color: isOpen ? "#fff" : "#222",
-                    borderLeftColor: r.type === "Dessert" ? cardDec.accent : cardDec.color,
-                    boxShadow: isOpen ? "0 4px 12px rgba(0,0,0,0.15)" : "0 1px 4px rgba(0,0,0,0.08)",
-                    borderRadius: isOpen ? "8px 8px 0 0" : "8px",
-                    marginBottom: 0,
-                  }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      {/* Decade badge in special tabs */}
-                      {specialTab && (
-                        <span className="decade-badge"
-                          style={{ background: isOpen ? "rgba(255,255,255,0.22)" : cardDec.color + "18", color: isOpen ? "#fff" : cardDec.color }}>
+              <div key={r.name + i} className="recipe-card"
+                style={{ borderColor, background: "#FDFAF4" }}
+                onClick={() => setActiveRecipe(isOpen ? null : (r.name + i))}>
+
+                {/* Top band */}
+                <div style={{ height: 4, background: headerColor, opacity: 0.85 }} />
+
+                <div style={{ padding: "12px 13px 12px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                    <div style={{ flex: 1 }}>
+                      {/* Decade badge for special tabs */}
+                      {(specialTab || search) && r.decade && (
+                        <div style={{
+                          fontFamily: "'Oswald', sans-serif",
+                          fontSize: "0.52rem",
+                          fontWeight: 600,
+                          letterSpacing: "0.15em",
+                          textTransform: "uppercase",
+                          color: accentColor,
+                          marginBottom: 3,
+                          opacity: 0.7,
+                        }}>
                           {r.decade === "pre-1910s" ? "Pre-1910s" : r.decade}
+                        </div>
+                      )}
+                      {/* Type badge */}
+                      {!isPresident && r.type && (
+                        <span style={{
+                          fontFamily: "'Oswald', sans-serif",
+                          fontSize: "0.5rem",
+                          fontWeight: 600,
+                          letterSpacing: "0.15em",
+                          textTransform: "uppercase",
+                          color: tStyle.color,
+                          border: `1px solid ${tStyle.border}`,
+                          padding: "2px 6px",
+                          display: "inline-block",
+                          marginBottom: 5,
+                        }}>
+                          {r.type}
                         </span>
                       )}
-                      {/* President name label above dish name */}
-                      {isPresCard && (
-                        <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", opacity: isOpen ? 0.85 : 0.55, marginBottom: 1 }}>
-                          🇺🇸 #{r.number} {r.presidentName} · {r.years}
-                        </div>
-                      )}
-                      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.02rem", fontWeight: 700, marginBottom: 2 }}>
-                        {isPresCard ? r.dishName : r.name}
+                      {/* Name */}
+                      <div style={{
+                        fontFamily: isPresident ? "'Oswald', sans-serif" : "'Playfair Display', serif",
+                        fontSize: isPresident ? "0.75rem" : "1.15rem",
+                        fontWeight: isPresident ? 600 : 700,
+                        color: headerColor,
+                        lineHeight: 1.2,
+                        letterSpacing: isPresident ? "0.08em" : "0",
+                        textTransform: isPresident ? "uppercase" : "none",
+                      }}>
+                        {isPresident ? (r.presidentName || r.name) : r.name}
                       </div>
-                      {!isOpen && (
-                        <div style={{ fontSize: "0.8rem", opacity: 0.62, fontFamily: "'Lato', sans-serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                          {r.description.slice(0, 82)}…
+                      {isPresident && r.dishName && (
+                        <div style={{
+                          fontFamily: "'Playfair Display', serif",
+                          fontSize: "1rem",
+                          fontWeight: 700,
+                          color: headerColor,
+                          lineHeight: 1.2,
+                          marginTop: 2,
+                        }}>
+                          {r.dishName}
                         </div>
                       )}
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 2, marginLeft: 8, flexShrink: 0 }}>
-                      <button className="icon-btn" title="Favorite"
+
+                    {/* Icons */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, paddingTop: 2, flexShrink: 0 }}>
+                      <button className="icon-btn"
                         onClick={e => { e.stopPropagation(); toggleFavorite(r.name); }}
-                        style={{ opacity: isFav ? 1 : 0.3, filter: isFav ? "none" : "grayscale(1)" }}>❤️</button>
-                      <button className="icon-btn" title="Gross"
+                        style={{ color: favorites.has(r.name) ? "#C8364A" : "rgba(0,0,0,0.18)" }}>
+                        {favorites.has(r.name) ? "❤️" : "🤍"}
+                      </button>
+                      <button className="icon-btn"
                         onClick={e => { e.stopPropagation(); toggleGross(r.name); }}
-                        style={{ opacity: isGros ? 1 : 0.3, filter: isGros ? "none" : "grayscale(1)" }}>🤢</button>
-                      <button className="icon-btn" title="I Made This"
+                        style={{ opacity: gross.has(r.name) ? 1 : 0.25 }}>
+                        🤢
+                      </button>
+                      <button className="icon-btn"
                         onClick={e => { e.stopPropagation(); toggleMade(r.name); }}
-                        style={{ opacity: isMade ? 1 : 0.3, filter: isMade ? "none" : "grayscale(1)" }}>👨‍🍳</button>
-                      <span style={{ fontSize: "0.95rem", opacity: 0.55, transition: "transform 0.25s", display: "inline-block", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", marginLeft: 5 }}>▾</span>
+                        style={{ opacity: made.has(r.name) ? 1 : 0.25 }}>
+                        👨‍🍳
+                      </button>
+                      <span style={{
+                        fontSize: "0.55rem",
+                        color: "#aaa",
+                        display: "inline-block",
+                        transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        transition: "transform 0.2s",
+                        paddingLeft: 2,
+                      }}>▼</span>
                     </div>
                   </div>
+
+                  {/* Description preview */}
+                  {!isOpen && (
+                    <div style={{
+                      fontFamily: "'Lato', sans-serif",
+                      fontSize: "0.8rem",
+                      color: "#666",
+                      lineHeight: 1.5,
+                      marginTop: 6,
+                      fontStyle: "italic",
+                      overflow: "hidden",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                    }}>
+                      {r.description}
+                    </div>
+                  )}
                 </div>
 
+                {/* Expanded */}
                 {isOpen && (
-                  <div className="detail-panel" onClick={() => setActiveRecipe(null)} style={{
-                    background: "rgba(255,255,255,0.96)",
-                    borderRadius: "0 0 8px 8px",
-                    padding: "20px 20px 24px",
-                    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
-                    borderLeft: `4px solid ${cardDec.color}`,
-                    borderRight: "1px solid rgba(0,0,0,0.06)",
-                    borderBottom: "1px solid rgba(0,0,0,0.06)",
-                    cursor: "pointer",
-                  }}>
-                    {/* Share button */}
-                    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
-                      <button onClick={(e) => { e.stopPropagation(); handleShare({ ...r, decade: r.decade || activeDec }); }}
-                        style={{ cursor: "pointer", border: `1px solid ${cardDec.color}50`, background: "transparent", color: cardDec.color, fontFamily: "'Lato', sans-serif", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 13px", borderRadius: 14, fontWeight: 700, transition: "all 0.15s" }}>
-                        📤 Share
-                      </button>
+                  <div className="detail-panel" style={{ padding: "0 13px 14px", background: "#FDFAF4" }}>
+                    {/* Diamond divider */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 12 }}>
+                      <div style={{ height: 1, flex: 1, background: headerColor, opacity: 0.12 }} />
+                      <div style={{ height: 5, width: 5, background: accentColor, transform: "rotate(45deg)", opacity: 0.6 }} />
+                      <div style={{ height: 1, flex: 1, background: headerColor, opacity: 0.12 }} />
                     </div>
 
-                    {/* Info block */}
-                    <div style={{ marginBottom: 18, padding: "13px 15px", background: cardDec.bg, borderRadius: 6, borderLeft: `3px solid ${cardDec.accent}` }}>
-                      {r.region && (
-                        <div style={{ marginBottom: 8 }}>
-                          <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: cardDec.color, opacity: 0.8 }}>📍 Region</span>
-                          <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", marginTop: 2 }}>{r.region}</div>
-                        </div>
-                      )}
-                      {r.notable && (
-                        <div style={{ marginBottom: r.history ? 8 : 0 }}>
-                          <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: cardDec.color, opacity: 0.8 }}>⭐ Notable</span>
-                          <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", fontStyle: "italic", marginTop: 2 }}>{r.notable}</div>
-                        </div>
-                      )}
-                      {r.history && (
-                        <div>
-                          <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: cardDec.color, opacity: 0.8 }}>📖 History</span>
-                          <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.84rem", lineHeight: 1.7, color: "#333", marginTop: 4 }}>{r.history}</div>
-                        </div>
-                      )}
-                    </div>
+                    <p style={{
+                      fontFamily: "'Lato', sans-serif",
+                      fontSize: "0.84rem",
+                      color: "#444",
+                      lineHeight: 1.65,
+                      fontStyle: "italic",
+                      marginBottom: 12,
+                    }}>{r.description}</p>
 
-                    <p style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.88rem", lineHeight: 1.65, color: "#555", fontStyle: "italic", marginTop: 0, marginBottom: 18, borderLeft: `3px solid ${cardDec.accent}`, paddingLeft: 12 }}>
-                      {r.description}
-                    </p>
-
-                    {/* Ingredients and Method — shown for all cards that have them */}
-                    {r.ingredients && r.ingredients.length > 0 && (
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 26px" }}>
-                        <div>
-                          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.92rem", color: cardDec.color, marginTop: 0, marginBottom: 9 }}>Ingredients</h3>
-                          <ul style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.84rem", lineHeight: 1.85, color: "#333" }}>
-                            {r.ingredients.map((ing, j) => <li key={j}>{ing}</li>)}
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.92rem", color: cardDec.color, marginTop: 0, marginBottom: 9 }}>Method</h3>
-                          <ol style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.84rem", lineHeight: 1.85, color: "#333" }}>
-                            {r.instructions.map((step, j) => <li key={j} style={{ marginBottom: 4 }}>{step}</li>)}
-                          </ol>
-                        </div>
+                    {r.region && (
+                      <div style={{ marginBottom: 10 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 3 }}>Region</div>
+                        <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#666", lineHeight: 1.5 }}>{r.region}</div>
                       </div>
                     )}
+
+                    {r.notable && (
+                      <div style={{ borderLeft: `3px solid ${accentColor}`, paddingLeft: 10, marginBottom: 12, opacity: 0.9 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 3 }}>Notable</div>
+                        <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#555", lineHeight: 1.5 }}>{r.notable}</div>
+                      </div>
+                    )}
+
+                    {r.history && (
+                      <div style={{ marginBottom: 12 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 3 }}>History</div>
+                        <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#555", lineHeight: 1.6 }}>{r.history}</div>
+                      </div>
+                    )}
+
+                    {r.ingredients && r.ingredients.length > 0 && (
+                      <div style={{ marginBottom: 12 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Ingredients</div>
+                        <ul style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8 }}>
+                          {r.ingredients.map((ing, j) => <li key={j}>{ing}</li>)}
+                        </ul>
+                      </div>
+                    )}
+
+                    {r.instructions && r.instructions.length > 0 && (
+                      <div style={{ marginBottom: 12 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Method</div>
+                        <ol style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8 }}>
+                          {r.instructions.map((step, j) => <li key={j} style={{ marginBottom: 3 }}>{step}</li>)}
+                        </ol>
+                      </div>
+                    )}
+
+                    {/* Share button */}
+                    <button
+                      onClick={e => { e.stopPropagation(); handleShare(r); }}
+                      style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        fontSize: "0.6rem",
+                        fontWeight: 600,
+                        letterSpacing: "0.15em",
+                        textTransform: "uppercase",
+                        padding: "7px 14px",
+                        border: `1.5px solid ${accentColor}`,
+                        background: "transparent",
+                        color: accentColor,
+                        cursor: "pointer",
+                        marginTop: 4,
+                      }}>
+                      📤 Share Recipe
+                    </button>
                   </div>
                 )}
               </div>
             );
           };
 
-          // In special tabs or search, render the flat displayList
+          // Empty state
+          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && displayList.length === 0 && !search) {
+            const msg = emptyMessages[specialTab];
+            return (
+              <div style={{ textAlign: "center", padding: "50px 20px" }}>
+                <div style={{ fontSize: "2.5rem", marginBottom: 12 }}>{msg?.icon}</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", color: "#777", marginBottom: 6 }}>{msg?.text}</div>
+                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#aaa" }}>{msg?.sub}</div>
+              </div>
+            );
+          }
+
+          // Special tabs / search — flat list
           if (specialTab || search) {
             return (
               <div>
                 {displayList.map((r, i) => {
-                  const cardDec = (decades.find(d => d.id === r.decade) || dec);
+                  const cardDec = decades.find(d => d.id === r.decade) || dec;
                   return renderCard(r, i, cardDec);
                 })}
               </div>
             );
           }
 
-          // In decade view: recipes first, then president divider + cards
+          // Decade view
           const decPres = [
             ...(presidents["pre-1910s"] && activeDec === "1910s" ? presidents["pre-1910s"].map(p => ({ ...p, decade: "pre-1910s", isPresident: true })) : []),
             ...(presidents[activeDec] || []).map(p => ({ ...p, decade: activeDec, isPresident: true }))
@@ -2332,17 +2610,18 @@ export default function RecipeBook() {
             <div>
               {filteredRecipes.map((r, i) => renderCard(r, i, dec))}
 
-              {decPres.length > 0 && (
+              {decPres.length > 0 && filter === "All" && (
                 <>
-                  {/* Divider */}
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "24px 0 16px" }}>
-                    <div style={{ flex: 1, height: 1, background: dec.color + "30" }} />
-                  <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: dec.color, opacity: 0.6 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "22px 0 14px" }}>
+                    <div style={{ flex: 1, height: 1, background: activePalette.header, opacity: 0.15 }} />
+                    <div style={{ height: 5, width: 5, background: activePalette.accent, transform: "rotate(45deg)", opacity: 0.6 }} />
+                    <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: activePalette.header, opacity: 0.5 }}>
                       🇺🇸 {activeDec === "1910s" ? "Presidents of the Era" : `Presidents of the ${activeDec}`}
                     </span>
-                    <div style={{ flex: 1, height: 1, background: dec.color + "30" }} />
+                    <div style={{ height: 5, width: 5, background: activePalette.accent, transform: "rotate(45deg)", opacity: 0.6 }} />
+                    <div style={{ flex: 1, height: 1, background: activePalette.header, opacity: 0.15 }} />
                   </div>
-                  {decPres.map((p, i) => renderCard(p, i, dec))}
+                  {decPres.map((p, i) => renderCard(p, i + 1000, dec))}
                 </>
               )}
             </div>
@@ -2350,11 +2629,19 @@ export default function RecipeBook() {
         })()}
       </div>
 
-      <div style={{ textAlign: "center", padding: "28px 20px", fontFamily: "'Lato', sans-serif", fontSize: "0.72rem", opacity: 0.32, letterSpacing: "0.1em" }}>
-        105 RECIPES · 39 PRESIDENTS · 7 DECADES · 1910–1979
+      {/* ═══ FOOTER ═══ */}
+      <div style={{ background: activePalette.header, padding: "14px 20px", textAlign: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8, opacity: 0.35 }}>
+          <div style={{ height: 1, width: 30, background: activePalette.accent }} />
+          <div style={{ height: 5, width: 5, background: activePalette.accent, transform: "rotate(45deg)" }} />
+          <div style={{ height: 1, width: 30, background: activePalette.accent }} />
+        </div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(242,232,213,0.25)" }}>
+          {allRecipes.length} Recipes · {allPresidents.length} Presidents · 7 Decades · 1910–1979
+        </div>
       </div>
 
-      {copied && <div className="copied-toast">📋 Recipe copied to clipboard!</div>}
+      {copied && <div className="copied-toast">✦ Copied to clipboard</div>}
     </div>
   );
 }
