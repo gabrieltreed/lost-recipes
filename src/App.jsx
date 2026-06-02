@@ -1889,6 +1889,261 @@ function saveSet(key, set) {
   try { localStorage.setItem(key, JSON.stringify([...set])); } catch {}
 }
 
+// ─── INGREDIENT PARSER ───────────────────────────────────────────────────────
+// Converts "2 cups flour" → { qty: 2, unit: "cup", item: "flour", raw: "2 cups flour" }
+
+const UNITS = {
+  // volume
+  "cup": "cup", "cups": "cup",
+  "tbsp": "tbsp", "tablespoon": "tbsp", "tablespoons": "tbsp",
+  "tsp": "tsp", "teaspoon": "tsp", "teaspoons": "tsp",
+  "oz": "oz", "ounce": "oz", "ounces": "oz",
+  "fl oz": "oz", "fl. oz": "oz",
+  "pint": "pint", "pints": "pint",
+  "quart": "quart", "quarts": "quart",
+  "liter": "liter", "liters": "liter", "l": "liter",
+  "ml": "ml",
+  // weight
+  "lb": "lb", "lbs": "lb", "pound": "lb", "pounds": "lb",
+  "g": "g", "gram": "g", "grams": "g",
+  "kg": "kg",
+  // misc
+  "can": "can", "cans": "can",
+  "jar": "jar", "jars": "jar",
+  "slice": "slice", "slices": "slice",
+  "clove": "clove", "cloves": "clove",
+  "sprig": "sprig", "sprigs": "sprig",
+  "stick": "stick", "sticks": "stick",
+  "bunch": "bunch", "bunches": "bunch",
+  "dash": "dash", "dashes": "dash",
+  "pinch": "pinch", "pinches": "pinch",
+  "strip": "strip", "strips": "strip",
+  "piece": "piece", "pieces": "piece",
+  "head": "head", "heads": "head",
+  "stalk": "stalk", "stalks": "stalk",
+};
+
+const FRACTIONS = {
+  "½": 0.5, "¼": 0.25, "¾": 0.75,
+  "⅓": 0.333, "⅔": 0.667,
+  "⅛": 0.125, "⅜": 0.375, "⅝": 0.625, "⅞": 0.875,
+};
+
+function parseQty(str) {
+  // Handle unicode fractions
+  let val = 0;
+  let s = str.trim();
+  for (const [frac, num] of Object.entries(FRACTIONS)) {
+    if (s.includes(frac)) {
+      val += num;
+      s = s.replace(frac, "").trim();
+    }
+  }
+  // Handle "1/2" style
+  const fracMatch = s.match(/^(\d+)\/(\d+)$/);
+  if (fracMatch) return val + parseInt(fracMatch[1]) / parseInt(fracMatch[2]);
+  // Handle whole number
+  const num = parseFloat(s);
+  if (!isNaN(num)) val += num;
+  return val || null;
+}
+
+function parseIngredient(raw) {
+  // Strip parenthetical notes like "(about 2 cups)" or "(optional)"
+  const cleaned = raw.replace(/\(.*?\)/g, "").trim();
+
+  // Try to match: [qty] [unit] [item]
+  // e.g. "2 cups all-purpose flour", "1½ tsp salt", "3 large eggs"
+  const pattern = /^([\d½¼¾⅓⅔⅛⅜⅝⅞\/\s\.]+?)\s+([a-zA-Z]+\.?)\s+(.+)$/;
+  const match = cleaned.match(pattern);
+
+  if (match) {
+    const qtyStr = match[1].trim();
+    const unitStr = match[2].toLowerCase().replace(/\.$/, "");
+    const item = match[3].trim().toLowerCase();
+    const unit = UNITS[unitStr];
+    const qty = parseQty(qtyStr);
+
+    if (qty !== null && unit) {
+      return { qty, unit, item, raw };
+    }
+    // No known unit — maybe "2 large eggs", "3 garlic cloves"
+    if (qty !== null) {
+      return { qty, unit: null, item: (unitStr + " " + item).trim(), raw };
+    }
+  }
+
+  // Try simpler: just a number at start
+  const simpleMatch = cleaned.match(/^([\d½¼¾⅓⅔⅛⅜⅝⅞\/\s\.]+?)\s+(.+)$/);
+  if (simpleMatch) {
+    const qty = parseQty(simpleMatch[1].trim());
+    if (qty !== null) {
+      return { qty, unit: null, item: simpleMatch[2].trim().toLowerCase(), raw };
+    }
+  }
+
+  // Can't parse — return as-is
+  return { qty: null, unit: null, item: cleaned.toLowerCase(), raw };
+}
+
+function formatQty(qty) {
+  if (qty === Math.floor(qty)) return String(qty);
+  const frac = qty - Math.floor(qty);
+  const whole = Math.floor(qty);
+  const fracStr =
+    Math.abs(frac - 0.5) < 0.01 ? "½" :
+    Math.abs(frac - 0.25) < 0.01 ? "¼" :
+    Math.abs(frac - 0.75) < 0.01 ? "¾" :
+    Math.abs(frac - 0.333) < 0.01 ? "⅓" :
+    Math.abs(frac - 0.667) < 0.01 ? "⅔" :
+    Math.abs(frac - 0.125) < 0.01 ? "⅛" :
+    qty.toFixed(2);
+  return whole > 0 ? `${whole}${fracStr}` : fracStr;
+}
+
+function pluralUnit(unit, qty) {
+  if (qty <= 1) return unit;
+  const plurals = {
+    "cup": "cups", "tbsp": "tbsp", "tsp": "tsp", "oz": "oz",
+    "lb": "lbs", "can": "cans", "jar": "jars", "slice": "slices",
+    "clove": "cloves", "sprig": "sprigs", "stick": "sticks",
+    "bunch": "bunches", "dash": "dashes", "pinch": "pinches",
+    "strip": "strips", "piece": "pieces", "head": "heads",
+    "stalk": "stalks", "pint": "pints", "quart": "quarts",
+    "gram": "grams", "liter": "liters",
+  };
+  return plurals[unit] || unit;
+}
+
+// Convert all volume to tbsp for combining, then back to best display unit
+const TO_TBSP = {
+  "cup": 16, "tbsp": 1, "tsp": 0.333,
+  "oz": 2, "pint": 32, "quart": 64, "liter": 67.6, "ml": 0.0676,
+};
+const VOLUME_UNITS = new Set(Object.keys(TO_TBSP));
+
+function toTbsp(qty, unit) {
+  return qty * (TO_TBSP[unit] || 1);
+}
+
+function roundToFriendly(qty) {
+  // Round to nearest ¼ or ⅛ for cups, nearest ½ for tbsp
+  const fractions = [0, 0.125, 0.25, 0.333, 0.375, 0.5, 0.625, 0.667, 0.75, 0.875, 1];
+  const whole = Math.floor(qty);
+  const frac = qty - whole;
+  let closest = fractions.reduce((a, b) => Math.abs(b - frac) < Math.abs(a - frac) ? b : a);
+  if (closest === 1) return whole + 1;
+  return whole + closest;
+}
+
+function fromTbsp(tbsp) {
+  // Use cups if 8 tbsp (½ cup) or more
+  if (tbsp >= 8) {
+    const cups = roundToFriendly(tbsp / 16);
+    return { qty: cups, unit: "cup" };
+  }
+  // Use tsp if less than 1 tbsp
+  if (tbsp < 1) {
+    const tsp = roundToFriendly(tbsp / 0.333);
+    return { qty: tsp, unit: "tsp" };
+  }
+  // Otherwise tbsp, rounded to nearest ½
+  const rounded = Math.round(tbsp * 2) / 2;
+  return { qty: rounded, unit: "tbsp" };
+}
+
+function buildShoppingList(recipeNames, allItems) {
+  // allItems = all recipes + presidents flattened
+  const selected = allItems.filter(r => recipeNames.has(r.name) && r.ingredients);
+  
+  // Collect all ingredients
+  const parsed = [];
+  for (const recipe of selected) {
+    for (const ing of (recipe.ingredients || [])) {
+      parsed.push({ ...parseIngredient(ing), recipeName: recipe.name });
+    }
+  }
+
+  // Group by normalized item name
+  const groups = {};
+  for (const p of parsed) {
+    const normalized = p.item
+      .replace(/^(fresh|dried|frozen|canned|cooked|raw|large|small|medium|whole|ground|minced|chopped|diced|sliced|grated|shredded|softened|melted|cold|hot|warm|room temperature|uncooked|boneless|skinless|lean|extra|very)\s+/gi, "")
+      .replace(/,.*$/, "")
+      .trim();
+
+    // Normalize volume units — store everything as tbsp internally
+    let storeUnit = p.unit;
+    let storeQty = p.qty;
+    const isVolume = VOLUME_UNITS.has(p.unit);
+    if (isVolume && p.qty !== null) {
+      storeQty = toTbsp(p.qty, p.unit);
+      storeUnit = "_tbsp"; // internal key
+    }
+
+    const key = (storeUnit || "nounit") + "||" + normalized;
+
+    if (!groups[key]) {
+      groups[key] = { tbspTotal: 0, qty: 0, unit: storeUnit, item: normalized, raws: [], canCombine: true, isVolume };
+    }
+
+    if (storeQty !== null) {
+      if (isVolume) {
+        groups[key].tbspTotal += storeQty;
+      } else {
+        groups[key].qty += storeQty;
+      }
+    } else {
+      groups[key].canCombine = false;
+      groups[key].raws.push(p.raw);
+    }
+  }
+
+  // Build display list
+  const result = [];
+  for (const [key, g] of Object.entries(groups)) {
+    if (g.canCombine) {
+      let qtyStr, unitStr;
+      if (g.isVolume && g.tbspTotal > 0) {
+        // Convert back from tbsp to best display unit
+        const { qty, unit } = fromTbsp(g.tbspTotal);
+        qtyStr = formatQty(qty);
+        unitStr = ` ${pluralUnit(unit, qty)}`;
+      } else if (g.qty > 0) {
+        qtyStr = formatQty(g.qty);
+        unitStr = g.unit && g.unit !== "_tbsp" ? ` ${pluralUnit(g.unit, g.qty)}` : "";
+      } else {
+        continue;
+      }
+      result.push({
+        display: `${qtyStr}${unitStr} ${g.item}`,
+        item: g.item,
+        qty: g.isVolume ? g.tbspTotal : g.qty,
+        unit: g.unit,
+        checked: false,
+      });
+    } else {
+      const seen = new Set();
+      for (const raw of g.raws) {
+        const clean = raw.replace(/\(.*?\)/g, "").trim().toLowerCase();
+        if (!seen.has(clean)) {
+          seen.add(clean);
+          result.push({ display: raw, item: g.item, qty: null, unit: null, checked: false });
+        }
+      }
+    }
+  }
+
+  // Sort: items with quantities first, then alphabetically
+  result.sort((a, b) => {
+    if (a.qty !== null && b.qty === null) return -1;
+    if (a.qty === null && b.qty !== null) return 1;
+    return a.item.localeCompare(b.item);
+  });
+
+  return result;
+}
+
 export default function RecipeBook() {
   const [activeDec, setActiveDec] = useState("1910s");
   const [activeRecipe, setActiveRecipe] = useState(null);
@@ -1897,12 +2152,20 @@ export default function RecipeBook() {
   const [favorites, setFavorites] = useState(() => loadSet("rcb_favorites"));
   const [gross, setGross] = useState(() => loadSet("rcb_gross"));
   const [made, setMade] = useState(() => loadSet("rcb_made"));
+  const [cart, setCart] = useState(() => loadSet("rcb_cart"));
+  const [checkedItems, setCheckedItems] = useState(() => {
+    try { return new Set(JSON.parse(localStorage.getItem("rcb_checked") || "[]")); } catch { return new Set(); }
+  });
   const [search, setSearch] = useState("");
   const [copied, setCopied] = useState(false);
 
   useEffect(() => { saveSet("rcb_favorites", favorites); }, [favorites]);
   useEffect(() => { saveSet("rcb_gross", gross); }, [gross]);
   useEffect(() => { saveSet("rcb_made", made); }, [made]);
+  useEffect(() => { saveSet("rcb_cart", cart); }, [cart]);
+  useEffect(() => {
+    try { localStorage.setItem("rcb_checked", JSON.stringify([...checkedItems])); } catch {}
+  }, [checkedItems]);
 
   const dec = decades.find(d => d.id === activeDec);
   const allRecipes = Object.entries(recipes).flatMap(([decade, list]) =>
@@ -1940,6 +2203,11 @@ export default function RecipeBook() {
       const mRecs = allRecipes.filter(r => made.has(r.name));
       const mPres = allPresidents.filter(p => made.has(p.name));
       list = [...mRecs, ...mPres];
+    }
+    else if (specialTab === "cart") {
+      const cRecs = allRecipes.filter(r => cart.has(r.name));
+      const cPres = allPresidents.filter(p => cart.has(p.name));
+      list = [...cRecs, ...cPres];
     }
     else list = filter === "Dessert"
       ? decRecipes.filter(r => r.type === "Dessert")
@@ -1984,6 +2252,24 @@ export default function RecipeBook() {
     setMade(prev => { const next = new Set(prev); if (next.has(name)) next.delete(name); else next.add(name); return next; });
   };
 
+  const toggleCart = (name) => {
+    setCart(prev => {
+      const next = new Set(prev);
+      if (next.has(name)) next.delete(name);
+      else next.add(name);
+      return next;
+    });
+  };
+
+  const toggleCheckedItem = (display) => {
+    setCheckedItems(prev => {
+      const next = new Set(prev);
+      if (next.has(display)) next.delete(display);
+      else next.add(display);
+      return next;
+    });
+  };
+
   const handleShare = (r) => {
     const decade = r.decade || activeDec;
     const text = [
@@ -2016,6 +2302,7 @@ export default function RecipeBook() {
     favorites:  { header: "#6A1A2A", accent: "#C8A96E", secondary: "#3A1C1C", paper: "#F2E8D5" },
     gross:      { header: "#2A3A1C", accent: "#C8A96E", secondary: "#3A2A1C", paper: "#F2E8D5" },
     made:       { header: "#1C2A3A", accent: "#C8A96E", secondary: "#2A1C3A", paper: "#F2E8D5" },
+    cart:       { header: "#1A2A1A", accent: "#C8A96E", secondary: "#2A4A2A", paper: "#F2E8D5" },
   };
 
   const activePalette = specialTab ? specialColors[specialTab] : dec;
@@ -2025,6 +2312,7 @@ export default function RecipeBook() {
     gross:      { icon: "🤢", text: "Nothing gross yet", sub: "Tap 🤢 on any recipe you would never eat." },
     made:       { icon: "👨‍🍳", text: "Nothing cooked yet", sub: "Tap the chef hat on any recipe you have made." },
     presidents: { icon: "🇺🇸", text: "No presidents here", sub: "Something went wrong loading the presidential entries." },
+    cart:       { icon: "🛒", text: "No recipes in your list", sub: "Tap 🛒 on any recipe to add its ingredients here." },
   };
 
   const typeStyles = {
@@ -2265,6 +2553,7 @@ export default function RecipeBook() {
               ["favorites", `❤️ Favorites${favorites.size > 0 ? ` (${favorites.size})` : ""}`],
               ["gross",     `🤢 Gross${gross.size > 0 ? ` (${gross.size})` : ""}`],
               ["made",      `👨‍🍳 Made This${made.size > 0 ? ` (${made.size})` : ""}`],
+              ["cart",      `🛒 List${cart.size > 0 ? ` (${cart.size})` : ""}`],
             ].map(([key, label]) => (
               <button key={key} className="special-btn"
                 onClick={() => { setSpecialTab(specialTab === key ? null : key); setActiveRecipe(null); }}
@@ -2458,6 +2747,12 @@ export default function RecipeBook() {
                         style={{ opacity: made.has(r.name) ? 1 : 0.25 }}>
                         👨‍🍳
                       </button>
+                      <button className="icon-btn"
+                        onClick={e => { e.stopPropagation(); toggleCart(r.name); }}
+                        style={{ opacity: cart.has(r.name) ? 1 : 0.25 }}
+                        title="Add to shopping list">
+                        🛒
+                      </button>
                       <span style={{
                         fontSize: "0.55rem",
                         color: "#aaa",
@@ -2570,8 +2865,181 @@ export default function RecipeBook() {
             );
           };
 
+          // Shopping list view
+          if (specialTab === "cart") {
+            if (cart.size === 0) {
+              return (
+                <div style={{ textAlign: "center", padding: "50px 20px" }}>
+                  <div style={{ fontSize: "2.5rem", marginBottom: 12 }}>🛒</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", color: "#777", marginBottom: 6 }}>No recipes in your list</div>
+                  <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#aaa" }}>Tap 🛒 on any recipe to add its ingredients here.</div>
+                </div>
+              );
+            }
+
+            const allItems = [...allRecipes, ...allPresidents];
+            const shoppingList = buildShoppingList(cart, allItems);
+            const cartRecipes = allItems.filter(r => cart.has(r.name));
+
+            return (
+              <div>
+                {/* Recipes in list */}
+                <div style={{ marginBottom: 16 }}>
+                  <div style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "0.58rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#aaa",
+                    marginBottom: 8,
+                  }}>
+                    {cart.size} {cart.size === 1 ? "Recipe" : "Recipes"} Selected
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>
+                    {cartRecipes.map(r => (
+                      <div key={r.name} style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 5,
+                        background: activePalette.header,
+                        color: activePalette.accent,
+                        fontFamily: "'Oswald', sans-serif",
+                        fontSize: "0.65rem",
+                        fontWeight: 600,
+                        letterSpacing: "0.08em",
+                        padding: "5px 10px",
+                        border: `1px solid ${activePalette.accent}`,
+                        opacity: 0.85,
+                      }}>
+                        {r.name}
+                        <span
+                          onClick={() => toggleCart(r.name)}
+                          style={{ cursor: "pointer", opacity: 0.6, fontSize: "0.9rem", lineHeight: 1 }}>
+                          ×
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Diamond divider */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 14 }}>
+                    <div style={{ height: 1, flex: 1, background: activePalette.header, opacity: 0.15 }} />
+                    <div style={{ height: 5, width: 5, background: activePalette.accent, transform: "rotate(45deg)", opacity: 0.5 }} />
+                    <div style={{ height: 1, flex: 1, background: activePalette.header, opacity: 0.15 }} />
+                  </div>
+                </div>
+
+                {/* Shopping list items */}
+                <div style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: "0.58rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#aaa",
+                  marginBottom: 10,
+                }}>
+                  {shoppingList.length} Ingredients
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 20 }}>
+                  {shoppingList.map((item, i) => {
+                    const isChecked = checkedItems.has(item.display);
+                    return (
+                      <div
+                        key={i}
+                        onClick={() => toggleCheckedItem(item.display)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 12,
+                          padding: "10px 12px",
+                          background: isChecked ? "rgba(0,0,0,0.03)" : "#FDFAF4",
+                          border: "1px solid",
+                          borderColor: isChecked ? "rgba(0,0,0,0.06)" : `rgba(${parseInt(activePalette.header.slice(1,3),16)},${parseInt(activePalette.header.slice(3,5),16)},${parseInt(activePalette.header.slice(5,7),16)},0.15)`,
+                          cursor: "pointer",
+                          transition: "all 0.15s",
+                        }}>
+                        {/* Checkbox */}
+                        <div style={{
+                          width: 18,
+                          height: 18,
+                          border: `2px solid`,
+                          borderColor: isChecked ? activePalette.header : "rgba(0,0,0,0.2)",
+                          background: isChecked ? activePalette.header : "transparent",
+                          flexShrink: 0,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}>
+                          {isChecked && (
+                            <span style={{ color: activePalette.accent, fontSize: "0.7rem", lineHeight: 1, fontWeight: 700 }}>✓</span>
+                          )}
+                        </div>
+                        {/* Item text */}
+                        <span style={{
+                          fontFamily: "'Lato', sans-serif",
+                          fontSize: "0.9rem",
+                          color: isChecked ? "#bbb" : "#333",
+                          textDecoration: isChecked ? "line-through" : "none",
+                          flex: 1,
+                          textTransform: "capitalize",
+                          transition: "all 0.15s",
+                        }}>
+                          {item.display}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Clear checked button */}
+                {checkedItems.size > 0 && (
+                  <button
+                    onClick={() => setCheckedItems(new Set())}
+                    style={{
+                      fontFamily: "'Oswald', sans-serif",
+                      fontSize: "0.6rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      padding: "7px 14px",
+                      border: `1.5px solid rgba(0,0,0,0.2)`,
+                      background: "transparent",
+                      color: "#888",
+                      cursor: "pointer",
+                      marginBottom: 10,
+                    }}>
+                    ✓ Clear Checked Items
+                  </button>
+                )}
+
+                {/* Clear all button */}
+                <button
+                  onClick={() => { setCart(new Set()); setCheckedItems(new Set()); }}
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "0.6rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    padding: "7px 14px",
+                    border: `1.5px solid ${activePalette.header}`,
+                    background: "transparent",
+                    color: activePalette.header,
+                    cursor: "pointer",
+                    marginLeft: 8,
+                    opacity: 0.6,
+                  }}>
+                  🗑 Clear All
+                </button>
+              </div>
+            );
+          }
+
           // Empty state
-          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && displayList.length === 0 && !search) {
+          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && specialTab !== "cart" && displayList.length === 0 && !search) {
             const msg = emptyMessages[specialTab];
             return (
               <div style={{ textAlign: "center", padding: "50px 20px" }}>
