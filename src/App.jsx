@@ -2015,7 +2015,31 @@ function pluralUnit(unit, qty) {
   return plurals[unit] || unit;
 }
 
-// Convert all volume to tbsp for combining, then back to best display unit
+// Items that should NEVER be treated as volume even if oz is used
+const NON_VOLUME_ITEMS = new Set([
+  "liverwurst", "braunschweiger", "bacon", "ham", "turkey", "chicken", "beef",
+  "pork", "lamb", "veal", "sausage", "salami", "pepperoni", "bologna",
+  "cheese", "cream cheese", "cottage cheese", "butter", "lard", "shortening",
+  "sardine", "sardines", "tuna", "salmon", "shrimp", "crab", "lobster", "oyster", "oysters",
+  "chocolate", "nuts", "walnuts", "pecans", "almonds", "raisins", "dates",
+  "bread", "breadcrumbs", "crackers", "flour", "cornmeal", "oats",
+  "mushroom", "mushrooms", "onion", "onions", "tomato", "tomatoes",
+  "apple", "apples", "celery", "carrot", "carrots", "potato", "potatoes",
+]);
+
+function isVolumeIngredient(item, unit) {
+  if (!VOLUME_UNITS.has(unit)) return false;
+  // oz can mean weight (meat, cheese) or volume (liquids) — check item
+  if (unit === "oz") {
+    const lower = item.toLowerCase();
+    for (const nonVol of NON_VOLUME_ITEMS) {
+      if (lower.includes(nonVol)) return false;
+    }
+  }
+  // cups/tbsp/tsp are almost always volume
+  return true;
+}
+
 const TO_TBSP = {
   "cup": 16, "tbsp": 1, "tsp": 0.333,
   "oz": 2, "pint": 32, "quart": 64, "liter": 67.6, "ml": 0.0676,
@@ -2075,7 +2099,7 @@ function buildShoppingList(recipeNames, allItems) {
     // Normalize volume units — store everything as tbsp internally
     let storeUnit = p.unit;
     let storeQty = p.qty;
-    const isVolume = VOLUME_UNITS.has(p.unit);
+    const isVolume = isVolumeIngredient(normalized, p.unit);
     if (isVolume && p.qty !== null) {
       storeQty = toTbsp(p.qty, p.unit);
       storeUnit = "_tbsp"; // internal key
@@ -3105,7 +3129,7 @@ export default function RecipeBook() {
           <div style={{ height: 1, width: 30, background: activePalette.accent }} />
         </div>
         <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(242,232,213,0.25)" }}>
-          {allRecipes.length} Recipes · {allPresidents.length} Presidents · 7 Decades · 1910–1979
+          {allRecipes.length} Recipes · {new Set(allPresidents.map(p => p.presidentName)).size} Presidents · 7 Decades · 1910–1979
         </div>
       </div>
 
