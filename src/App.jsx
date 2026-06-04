@@ -18,6 +18,7 @@ const recipes = {
       notable: "Theodore Roosevelt served potted game birds at the White House and was known to favor wild-caught fowl at the table.",
       history: "Potted pigeon was a direct inheritance from Victorian British cooking, where pigeons were among the most affordable meats available. In early 1900s America, squab and pigeon remained standard fare in both rural households and urban working-class kitchens. The dish predates the passenger pigeon extinction in 1914, and its disappearance from American tables tracks closely with the shift away from game birds as everyday protein. By the 1920s, chicken had become cheap enough to replace it entirely.",
       type: "Main",
+      difficulty: 3,
       description: "Pigeons braised low and slow in a deep earthenware pot with lard, herbs, and root vegetables until tender and falling off the bone.",
       ingredients: ["4 young pigeons, cleaned", "2 tbsp lard", "2 carrots, diced", "1 parsnip, diced", "1 onion, quartered", "1 sprig thyme", "1 bay leaf", "Salt and pepper", "1 cup water or light stock"],
       instructions: ["Season pigeons inside and out with salt and pepper.", "Melt lard in a heavy pot over medium heat and brown pigeons on all sides.", "Add vegetables, herbs, and water. Cover tightly.", "Cook over very low heat for 2½ hours until meat is extremely tender.", "Serve directly from the pot with crusty bread."]
@@ -28,6 +29,7 @@ const recipes = {
       notable: "New Orleans lore holds that the oyster loaf — locally called a peacemaker or La Médiatrice — was brought home by husbands as a peace offering after a late night out.",
       history: "The oyster loaf has deep roots in New Orleans Creole cooking, where oysters were so abundant in the early twentieth century they were considered a poor man's food. A creamy baked version traveled up the Atlantic Coast where Chesapeake and New England harvests made it a fashionable luncheon centerpiece. Both versions were largely displaced by the modern oyster po'boy and by declining oyster populations throughout the century.",
       type: "Luncheonette",
+      difficulty: 3,
       description: "A hollowed-out loaf of bread filled with creamed oysters — a fashionable luncheon dish of the era, served hot from the oven.",
       ingredients: ["1 round loaf of white bread", "2 dozen fresh oysters, shucked", "2 tbsp butter", "1 tbsp flour", "1 cup cream", "1 tsp Worcestershire sauce", "Salt, cayenne pepper"],
       instructions: ["Cut top from bread loaf and hollow out interior, reserving crumbs.", "Brush inside with melted butter and toast in oven at 350°F until golden.", "Make a cream sauce: melt butter, whisk in flour, add cream, stir until thick.", "Add oysters to sauce with Worcestershire, season with salt and cayenne.", "Fill bread shell with oyster cream mixture, replace lid, and bake 15 minutes."]
@@ -38,6 +40,7 @@ const recipes = {
       notable: "Abraham Lincoln's favorite meal reportedly included boiled tongue, and it remained a centerpiece dish in upper-middle-class homes through the early 20th century.",
       history: "Boiled tongue was one of the most widely eaten Sunday dinner dishes in America from the colonial era through the 1940s. The sweet raisin sauce accompaniment came from German and Eastern European Jewish cooking traditions. Tongue remained common in Jewish delicatessens well into the 1960s, and its decline in mainstream homes tracks closely with postwar affluence making it seem less prestigious than whole beef roasts.",
       type: "Main",
+      difficulty: 4,
       description: "Beef tongue simmered for hours until silky, then sliced and served with a sweet-tart raisin sauce — a Sunday centerpiece dish.",
       ingredients: ["1 beef tongue (3-4 lbs)", "1 onion, halved", "2 bay leaves", "Peppercorns", "1 cup raisins", "1 cup brown sugar", "½ cup cider vinegar", "1 tsp mustard powder", "1 tbsp butter"],
       instructions: ["Simmer tongue in water with onion, bay leaves, and peppercorns for 3-4 hours.", "Remove and peel skin while still warm.", "For sauce: combine raisins, sugar, vinegar, and mustard in a saucepan. Simmer 15 min.", "Finish sauce with butter.", "Slice tongue thinly and serve topped with warm raisin sauce."]
@@ -48,6 +51,7 @@ const recipes = {
       notable: "The chafing dish was the centerpiece of Edwardian chafing dish parties, popularized by Fannie Farmer's 1898 book Chafing Dish Possibilities.",
       history: "Welsh Rarebit arrived in America from Britain in the 18th century, but the Edwardian craze for chafing dish cookery turned it into a social ritual. The chafing dish, an alcohol-fueled table cooking apparatus, allowed hosts to prepare food dramatically in front of guests, and Welsh Rarebit was its signature dish. By the 1910s, chafing dish supper parties were so fashionable that department stores sold elaborate sets. The dish faded as electric appliances replaced chafing dishes and formal at-home entertaining declined after World War I.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "A Welsh Rarebit variation served in a chafing dish at the table — melted cheese sauce with ale, ladled over toast, a staple of Edwardian suppers.",
       ingredients: ["1 lb sharp cheddar, grated", "½ cup dark ale or stout", "1 tsp dry mustard", "1 tsp Worcestershire sauce", "Pinch cayenne", "2 egg yolks", "Toast points for serving"],
       instructions: ["In the top pan of a chafing dish or double boiler, warm ale gently.", "Add cheese in handfuls, stirring constantly until melted.", "Stir in mustard, Worcestershire, and cayenne.", "Beat egg yolks and stir in slowly — do not boil.", "Serve immediately over toast points at the table."]
@@ -58,6 +62,7 @@ const recipes = {
       notable: "U.S. Army mess halls served this so routinely during both World Wars that soldiers gave it the unprintable nickname SOS — a name that stuck for generations.",
       history: "Dried beef on toast predates the Civil War, when preserved beef was one of the few proteins that could survive without refrigeration. Creaming it with a white sauce was a standard technique for making it palatable and stretching it further. The Army adopted it for logistical reasons, and it was served in such quantities and of such variable quality that it acquired its famous nickname. Postwar, its association with institutional food gave it a stigma from which it never recovered.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Thin-sliced salt-dried beef folded into a thick cream sauce and served over toast — a working-class staple that predates its Army reputation.",
       ingredients: ["4 oz dried beef, thinly sliced", "2 tbsp butter", "2 tbsp flour", "2 cups whole milk", "Black pepper"],
       instructions: ["Rinse dried beef in warm water to reduce saltiness; pat dry.", "Tear into bite-size pieces.", "Melt butter, whisk in flour, cook 1 minute.", "Add milk gradually, whisking until thick and smooth.", "Fold in beef, season generously with black pepper.", "Serve over thick-cut white toast."]
@@ -68,6 +73,7 @@ const recipes = {
       notable: "Created at Delmonico's around 1876 for sea captain Ben Wenberg — originally called Lobster Wenberg until Wenberg had a falling out with the restaurant and the name was reversed to Newberg.",
       history: "Lobster Newberg is one of the most famous dishes in American culinary history, born at Delmonico's — the country's first true fine dining restaurant. A sea captain taught the chef his formula for cooking lobster in a rich cream and sherry reduction, and the dish became the most requested item on the menu almost overnight. By the 1910s it had spread to hotel dining rooms across the country. Its decline came partly from rising lobster prices and partly from a shift away from cream-enriched Edwardian sauces.",
       type: "Main",
+      difficulty: 4,
       description: "A grand dining room dish: lobster in a sherry and cream sauce enriched with egg yolks, served in a chafing dish or over toast points.",
       ingredients: ["2 lbs cooked lobster meat, cut in chunks", "4 tbsp butter", "½ cup dry sherry", "2 cups heavy cream", "4 egg yolks", "Pinch nutmeg", "Pinch cayenne", "Salt"],
       instructions: ["Melt butter in a large skillet. Add lobster and cook 2 minutes.", "Pour in sherry and let it reduce by half.", "Add cream and bring to a simmer.", "Beat yolks and temper with a ladle of hot cream. Pour back into pan.", "Stir gently over low heat until sauce thickens. Do not boil.", "Season with nutmeg, cayenne, and salt. Serve immediately."]
@@ -78,6 +84,7 @@ const recipes = {
       notable: "Aspic molds were featured at White House state dinners of the early 20th century, and Fannie Farmer devoted an entire chapter to them in her landmark 1896 cookbook.",
       history: "The introduction of powdered gelatin in the 1890s democratized the aspic form, and suddenly home cooks could produce the glistening molded centerpieces previously seen only in professional kitchens. Chicken aspic was a cold luncheon fixture for decades. Its death came swiftly in the postwar era, when gelatin became associated with cheaper sweet molds rather than serious cooking.",
       type: "Main",
+      difficulty: 4,
       description: "Cooked chicken suspended in a glistening savory gelatin, unmolded at the table — a showpiece of Edwardian cold luncheons.",
       ingredients: ["2 cups cooked chicken, diced", "3 cups strong chicken stock", "2 envelopes unflavored gelatin", "1 stalk celery, minced", "2 tbsp parsley, chopped", "Salt and white pepper"],
       instructions: ["Dissolve gelatin in ¼ cup cold stock. Heat remaining stock and stir in gelatin.", "Add chicken, celery, and parsley. Season to taste.", "Pour into a ring mold or loaf pan. Chill until firm, at least 4 hours.", "Unmold onto a platter lined with lettuce leaves.", "Serve with mayonnaise or a sharp vinaigrette."]
@@ -88,6 +95,7 @@ const recipes = {
       notable: "Ulysses S. Grant was said to be particularly fond of pickled pigs' feet, reportedly enjoying them as a late-night snack in the White House.",
       history: "Pickled pigs' feet are among the oldest preserved foods in American culture, brought by German, British, and West African foodways that all independently valued the pig's extremities. In the South, they were closely tied to African American cooking traditions where whole-hog butchery ensured nothing was wasted. Jars sat on the counters of general stores and taverns well into the mid-twentieth century before being displaced by processed snack foods.",
       type: "Side",
+      difficulty: 3,
       description: "Boiled pigs' feet preserved in a spiced vinegar brine — a common cold shelf staple eaten as a snack or alongside beans.",
       ingredients: ["4 pigs' feet, split", "1 onion, sliced", "2 cups cider vinegar", "1 cup water", "1 tbsp pickling spice", "2 tsp salt", "1 tsp red pepper flakes"],
       instructions: ["Simmer pigs' feet in salted water with onion for 3-4 hours until very tender.", "Pack into clean jars.", "Combine vinegar, water, pickling spice, salt, and pepper flakes; boil 5 min.", "Pour hot brine over pigs' feet. Seal and refrigerate.", "Best after 3 days. Eat cold."]
@@ -98,6 +106,7 @@ const recipes = {
       notable: "Mary Randolph included a version in The Virginia Housewife (1824), one of the first truly American cookbooks, cementing its place in Southern culinary tradition.",
       history: "Corn oysters appear in American cookbooks as early as the 1820s. The name was a form of flattery — comparing a humble corn fritter to the prized oyster — and a reflection of their visual similarity when fried. They were summer food, made when corn was freshest. The dish faded as the specific oyster fritter form was gradually forgotten in favor of more generic cornbread preparations.",
       type: "Side",
+      difficulty: 2,
       description: "Fried corn fritters so named because their shape and richness were thought to mimic oysters — a thrifty and beloved side dish.",
       ingredients: ["2 cups fresh corn kernels (or canned)", "2 eggs, beaten", "½ cup flour", "½ tsp salt", "¼ tsp black pepper", "Lard or bacon fat for frying"],
       instructions: ["Mix corn, eggs, flour, salt, and pepper into a thick batter.", "Heat ¼ inch of lard in a cast iron skillet over medium heat.", "Drop batter by large spoonfuls. Flatten slightly.", "Fry 3-4 minutes per side until deep golden brown.", "Drain and serve hot."]
@@ -108,6 +117,7 @@ const recipes = {
       notable: "Recipes for scalloped tomatoes appear in virtually every American cookbook published between 1880 and 1940, including multiple editions of the Boston Cooking School Cookbook.",
       history: "Scalloped tomatoes were a year-round staple once canned tomatoes became widely available after the 1880s. The dish required almost no skill, used cheap pantry ingredients, and was found on hotel menus, in school lunch programs, and at every church supper. Its disappearance is a genuine culinary mystery — the dish is objectively delicious and requires almost no effort.",
       type: "Side",
+      difficulty: 1,
       description: "Canned or fresh tomatoes baked with buttered breadcrumbs in layers — simple, savory, and ubiquitous on the 1910s table.",
       ingredients: ["2 lbs ripe tomatoes, sliced (or 1 large can)", "2 cups day-old bread cubes", "3 tbsp butter, melted", "1 small onion, minced", "1 tsp sugar", "Salt and pepper"],
       instructions: ["Preheat oven to 375°F. Butter a baking dish.", "Toss bread cubes with melted butter.", "Layer tomatoes and bread in dish, seasoning each layer with salt, pepper, sugar, and onion.", "End with a bread layer.", "Bake 35-40 minutes until top is golden and tomatoes are bubbling."]
@@ -118,6 +128,7 @@ const recipes = {
       notable: "Boston's historic Durgin-Park restaurant, open from 1827 to 2019, served baked bean soup continuously for nearly two centuries.",
       history: "In New England, baked beans were traditionally prepared on Saturday — Puritan custom forbade cooking on the Sabbath — and stretched into soup on Monday. This thrifty cycle was so ingrained that Boston became nicknamed Beantown. Senate Bean Soup, still served in the U.S. Capitol daily since 1903, is a close cousin.",
       type: "Soup",
+      difficulty: 2,
       description: "Leftover baked beans thinned with stock and seasoned — a Monday staple when Sunday's beans needed using up.",
       ingredients: ["2 cups leftover baked beans", "4 cups ham or pork stock", "1 onion, minced", "1 stalk celery, minced", "1 tsp mustard", "Salt and pepper", "Croutons to serve"],
       instructions: ["Sauté onion and celery in a little fat until soft.", "Add beans and stock. Simmer 20 minutes.", "Puree half the soup for a thicker texture, leaving some beans whole.", "Stir in mustard. Season to taste.", "Serve with croutons floating on top."]
@@ -128,6 +139,7 @@ const recipes = {
       notable: "Fannie Farmer's Boston Cooking School Cookbook (1896) featured multiple veal loaf variations; it was considered a more refined alternative to beef-based meat loaf.",
       history: "Veal loaf occupied a higher social register than beef meat loaf — veal was considered more delicate and fashionable. The trick of hiding whole hard-boiled eggs inside was both practical and theatrical: the cross-section of egg and meat made a striking presentation. As veal became expensive and fell out of fashion due to animal welfare concerns in the 1970s and 80s, this dish vanished almost entirely.",
       type: "Main",
+      difficulty: 2,
       description: "Ground veal formed into a loaf with whole hard-boiled eggs hidden inside — sliced to reveal a decorative cross-section, perfect for cold suppers.",
       ingredients: ["2 lbs ground veal", "½ lb ground pork", "4 hard-boiled eggs, peeled", "1 cup breadcrumbs", "2 raw eggs", "1 onion, minced", "1 tsp sage", "Salt and pepper"],
       instructions: ["Mix ground meats, raw eggs, breadcrumbs, onion, sage, salt, and pepper.", "Pat half the mixture into a loaf pan.", "Lay hard-boiled eggs end-to-end down the center.", "Cover with remaining meat mixture. Press firmly.", "Bake at 350°F for 1¼ hours. Cool before slicing."]
@@ -138,6 +150,7 @@ const recipes = {
       notable: "The ribbon sandwich was a fixture at suffragette fundraising teas in the 1910s, where elaborate presentation was considered essential to signal respectability.",
       history: "The ribbon sandwich was pure Edwardian ingenuity — alternating layers of white and whole wheat bread with contrasting fillings, pressed and sliced crosswise, producing a geometric striped effect that looked far more elaborate than the effort involved. They were the centerpiece of the American ladies' lunch circuit: bridge clubs, garden parties, church socials, and hospital auxiliaries. As formal daytime entertaining faded, the ribbon sandwich became a casualty of changing social structure.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Stacked layers of white and brown bread with fillings of cream cheese and olive, pimento, or deviled ham — sliced to show colorful stripes, a ladies' tea classic.",
       ingredients: ["8 slices white bread", "8 slices whole wheat bread", "8 oz cream cheese, softened", "¼ cup stuffed olives, minced", "¼ cup pimentos, minced", "Soft butter"],
       instructions: ["Mix cream cheese with olives; set aside.", "Mix softened butter with pimentos; set aside.", "Alternate 3 slices (white, wheat, white) with different fillings between each layer.", "Wrap tightly in wax paper and refrigerate 1 hour.", "Trim crusts. Slice crosswise to reveal ribbon pattern."]
@@ -148,6 +161,7 @@ const recipes = {
       notable: "Prune whip was a staple dessert in the White House kitchen during the Wilson administration, and appeared on the menus of the first-class dining room of the RMS Titanic in April 1912.",
       history: "Prune whip was among the most widely published dessert recipes in America from the 1880s through the 1940s. Prunes appeared in scientific diet plans and hospital menus as a digestive aid, and folding them into beaten egg whites produced a light, elegant dessert. Its demise came on two fronts: prunes acquired an unfortunate association with the elderly, and the labor-intensive egg-white beating became unappealing once richer, easier desserts became available.",
       type: "Dessert",
+      difficulty: 2,
       description: "Stewed prunes folded into stiff egg whites and chilled — elegant yet humble, this appeared on fashionable and everyday tables alike.",
       ingredients: ["1 cup dried prunes", "¼ cup sugar", "1 tbsp lemon juice", "3 egg whites", "Pinch salt", "Whipped cream for serving"],
       instructions: ["Simmer prunes in water until very soft. Drain and puree.", "Stir sugar and lemon juice into warm puree.", "Beat egg whites with salt to stiff peaks.", "Fold prune puree gently into whites.", "Spoon into glasses and chill 1 hour.", "Serve topped with whipped cream."]
@@ -158,6 +172,7 @@ const recipes = {
       notable: "The American Antiquarian Society has documented recipes for this pie going back to the 1780s, making it one of the oldest distinctly American pie traditions.",
       history: "Boiled cider pie is among the oldest surviving New England desserts, born from the simple logic of apple-growing country: when you have more cider than you can drink, you boil it down to a thick syrup and use it to sweeten everything. Before cane sugar was widely affordable, this was how farm families sweetened their pies. The dish never traveled far beyond Vermont and New Hampshire, and even there it became increasingly rare after World War II.",
       type: "Dessert",
+      difficulty: 3,
       description: "A New England farmhouse pie made with reduced apple cider as a sweetener — intensely apple-flavored, barely sweet, profoundly old-fashioned.",
       ingredients: ["1 cup boiled cider (reduced from 4 cups fresh cider)", "3 eggs, beaten", "1 cup sugar", "2 tbsp butter, melted", "1 tsp cinnamon", "¼ tsp allspice", "1 unbaked 9-inch pie shell"],
       instructions: ["Preheat oven to 400°F.", "Boil 4 cups apple cider in a saucepan until reduced to 1 cup.", "Whisk together eggs, sugar, butter, spices, and boiled cider.", "Pour into unbaked pie shell.", "Bake 10 min at 400°F, then reduce to 325°F and bake 30-35 min until set.", "Cool completely before slicing."]
@@ -168,6 +183,7 @@ const recipes = {
       notable: "Pimento cheese is called 'the caviar of the South' — it is served at the Masters Tournament in Augusta every year, where it costs $1.50 and has not changed since 1949.",
       history: "Pimento cream cheese began appearing in American cookbooks and advertisements around 1908, when cream cheese manufacturers began promoting it as a spread. The combination of cream cheese and canned pimentos was a product of the new processed food industry. In the South, it evolved into something far more personal — every family had their own recipe, often passed down for generations without being written down. The Masters Tournament's pimento cheese sandwich has been priced at $1.50 since 1949, making it one of the most underpriced foods in American sports.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The Southern lunch counter classic — cream cheese, pimentos, sharp cheddar, and a touch of heat, spread generously on white bread.",
       ingredients: ["8 oz cream cheese, softened", "1 cup sharp cheddar, finely grated", "1 jar (4 oz) diced pimentos, drained", "2 tbsp mayonnaise", "½ tsp onion powder", "¼ tsp cayenne pepper", "Salt and black pepper", "White sandwich bread"],
       instructions: ["Beat cream cheese until smooth.", "Mix in cheddar, pimentos, and mayonnaise.", "Season with onion powder, cayenne, salt, and pepper.", "Refrigerate at least 1 hour — it firms up and the flavors meld.", "Spread generously on plain white bread.", "Trim crusts for a proper luncheonette presentation.", "Serve with a pickle spear and potato chips alongside."]
@@ -178,6 +194,7 @@ const recipes = {
       notable: "Andy Warhol's 1962 Campbell's Soup Cans was inspired by the fact that he ate tomato soup for lunch every day for twenty years. The painting turned the most ordinary American lunch into high art.",
       history: "Campbell's condensed tomato soup, introduced in 1897, became the best-selling canned product in American history within a decade. The combination of tomato soup and crackers — usually oyster crackers or saltines — was the standard American lunch counter offering from the 1900s through the 1960s. It cost a dime at most counters. Its decline as a serious lunch item came with the rise of fast food and the sandwich culture of the 1970s, though it never fully disappeared.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The ten-cent American lunch — tomato soup made from condensed Campbell's, prepared with milk for richness, served with oyster crackers. Humble, perfect, and entirely of its era.",
       ingredients: ["1 can (10.75 oz) Campbell's condensed tomato soup", "1 can whole milk (same measure as soup)", "1 tbsp butter", "Pinch of sugar", "Salt and black pepper", "Oyster crackers or saltines to serve"],
       instructions: ["Empty condensed soup into a saucepan.", "Fill the empty can with whole milk. Add to pot.", "Heat over medium, stirring constantly — do not boil.", "Add butter, pinch of sugar, salt, and pepper.", "Serve in a wide, shallow bowl.", "Float oyster crackers on top.", "This is exactly how it was made at every lunch counter in America for sixty years."]
@@ -188,6 +205,7 @@ const recipes = {
       notable: "The Lunken Airport counter menu listed 'American Cream Cheese' as a standalone sandwich at 15 cents — the cucumber variation was the more refined luncheon version of the same idea, served at hotel tea rooms and women's club luncheons across the country.",
       history: "Cucumber and cream cheese on white bread was the quintessential ladies' luncheon sandwich of the early 20th century. It came directly from the British tradition of afternoon tea, where delicate crustless finger sandwiches with mild, cooling fillings were considered appropriately refined. In America, it became the standard offering at bridge parties, garden parties, and women's club luncheons from the 1910s through the 1950s. The sandwich's association with a particular kind of formal feminine socializing — which faded dramatically after World War II — is exactly why it disappeared. The socializing changed; the sandwich went with it.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "Thin-sliced cucumber on cream cheese, on crustless white bread — the ladies' luncheon sandwich that defined a specific era of American social life.",
       ingredients: ["1 English cucumber, very thinly sliced", "8 oz cream cheese, softened", "2 tbsp fresh dill or chives, minced", "1 tsp lemon juice", "Salt and white pepper", "Thin white sandwich bread, crusts removed"],
       instructions: ["Salt cucumber slices lightly and let sit 10 minutes to draw out moisture.", "Pat completely dry with paper towels — wet cucumber ruins the bread.", "Beat cream cheese with herbs, lemon juice, salt, and white pepper until smooth.", "Spread cream cheese generously on one side of each bread slice.", "Lay cucumber slices in a single, slightly overlapping layer.", "Top with second slice. Press gently.", "Trim all four crusts with a sharp knife.", "Cut into rectangles or triangles — never squares.", "Arrange on a plate with the cut sides showing.", "Serve immediately — these do not keep."]
@@ -202,6 +220,17 @@ const recipes = {
       ingredients: ["8 oz cream cheese, softened", "½ cup pimento-stuffed green olives, finely chopped", "2 tbsp olive brine", "1 tsp onion, very finely grated", "Black pepper", "White sandwich bread or crackers"],
       instructions: ["Beat cream cheese until smooth.", "Fold in chopped olives, olive brine, and grated onion.", "Season with black pepper — the olives provide all the salt needed.", "Refrigerate 1 hour — the flavors meld and the spread firms up.", "Spread on thin white bread for sandwiches, or serve with crackers.", "For sandwiches: trim crusts and cut into fingers.", "For a cocktail party presentation: spread on rounds of white bread.", "This keeps refrigerated for 3 days — it's better on day two."]
     },
+    {
+      name: "Wheatcakes",
+      region: "Nationwide; a working-class breakfast staple at diners and lunch counters from the 1890s through the 1940s, particularly in the industrial Northeast and Midwest",
+      notable: "Charlie Chaplin name-dropped wheatcakes as a personal favorite in a New York Times interview, noting he ordered them whenever he could find them. Every diner had them once — they were the pancake before the pancake took over.",
+      history: "Wheatcakes predate the modern pancake as America's standard breakfast griddle cake. Made with whole wheat flour rather than bleached white, and often enriched with molasses, they were denser, more filling, and more nutritious than the fluffy white pancakes that replaced them. They were the working man's breakfast — something that would sustain a laborer through a morning shift in a factory or on a construction site. The rise of refined white flour, commercial pancake mixes like Aunt Jemima, and the postwar preference for lighter, fluffier food drove wheatcakes off menus by the 1950s. They survive today mainly in farmhouse cooking and among people who specifically seek out whole grain alternatives.",
+      type: "Luncheonette",
+      difficulty: 1,
+      description: "The forgotten American griddle cake — made with whole wheat flour and a touch of molasses, denser and more sustaining than modern pancakes. The working man's breakfast before pancake mix arrived.",
+      ingredients: ["1 cup whole wheat flour", "½ cup all-purpose flour", "2 tsp baking powder", "½ tsp baking soda", "½ tsp salt", "1 tbsp molasses", "1 egg", "1¼ cups buttermilk", "2 tbsp melted butter", "Butter and maple syrup to serve"],
+      instructions: ["Whisk together both flours, baking powder, baking soda, and salt.", "In a separate bowl, beat egg, buttermilk, molasses, and melted butter.", "Fold wet ingredients into dry until just combined — lumps are fine.", "Heat a cast iron griddle or skillet over medium heat. Grease with butter.", "Pour batter in ¼-cup portions onto hot griddle.", "Cook until bubbles form and edges look set — about 3 minutes.", "Flip once. Cook another 2 minutes.", "Serve with plenty of butter and maple syrup.", "These are denser than modern pancakes — that is correct and intentional."]
+    },
   ],
 
   "1920s": [
@@ -211,6 +240,7 @@ const recipes = {
       notable: "Deviled kidneys were a standard dish at Delmonico's and the Waldorf-Astoria, remaining on the menu at New York's finest hotel dining rooms through the 1920s.",
       history: "Deviled kidneys came directly from English breakfast culture, where organ meats were considered appropriate and energizing morning fare. Deviling — coating food in mustard and cayenne before broiling — was a Victorian technique that made otherwise mild offal intensely flavorful. In America the dish was primarily eaten at upscale hotel breakfasts and men's club luncheons. The decline of formal breakfast culture and changing attitudes toward organ meats made it vanish in a single generation.",
       type: "Breakfast/Main",
+      difficulty: 3,
       description: "Lamb kidneys split, coated in mustard and cayenne, and quickly broiled — a popular breakfast and luncheon dish that vanished from American tables by mid-century.",
       ingredients: ["6 lamb kidneys", "2 tbsp Dijon mustard", "1 tsp cayenne pepper", "1 tbsp Worcestershire sauce", "2 tbsp butter, melted", "Salt", "Toast for serving"],
       instructions: ["Split kidneys lengthwise and remove the white core.", "Mix mustard, cayenne, Worcestershire, and butter into a paste.", "Coat kidneys thoroughly in the mixture.", "Broil on a hot rack 4-5 minutes per side.", "Season with salt. Serve immediately on buttered toast."]
@@ -221,6 +251,7 @@ const recipes = {
       notable: "Pressed chicken appears in nearly every church cookbook and community fundraising recipe collection published between 1890 and 1950.",
       history: "Pressed chicken was the dish you made for a crowd when serving hot food was impractical. The technique used the natural gelatin in chicken bones to set the mold without commercial gelatin. It traveled well, sliced neatly, and could feed twenty people from a single large chicken. Its decline mirrors the decline of the church potluck as a social institution and the rise of deli-counter alternatives.",
       type: "Main",
+      difficulty: 3,
       description: "Cooked chicken packed into a mold with its own jellied broth, then pressed overnight and sliced cold — standard at church suppers and club luncheons.",
       ingredients: ["1 whole chicken", "1 onion", "2 bay leaves", "Salt and pepper", "2 tsp gelatin per cup of broth", "Fresh parsley"],
       instructions: ["Simmer chicken with onion and bay leaves until very tender. Remove and cool.", "Pick all meat from bones. Strain and degrease broth.", "Dissolve gelatin in broth (2 tsp per cup).", "Layer chicken and parsley in a loaf pan; pour broth over to cover.", "Press with a weighted plate. Refrigerate overnight. Unmold and slice."]
@@ -231,6 +262,7 @@ const recipes = {
       notable: "President Franklin D. Roosevelt was a devoted fan of creamed finnan haddie, often requesting it at the White House for Sunday breakfasts.",
       history: "Finnan haddie — smoked haddock, named for the Scottish fishing village of Findon — arrived in America through the Scottish and Nova Scotian fishing communities of New England. By the early 20th century it was standard on Boston breakfast menus. The combination of smoke, salt, and cream made it intensely savory. Fannie Farmer featured it prominently in her Boston Cooking School Cookbook. Its disappearance is partly due to declining haddock populations in the North Atlantic, and partly due to the general American retreat from fish at breakfast.",
       type: "Main",
+      difficulty: 2,
       description: "Smoked haddock poached in milk and served in a rich cream sauce — a common breakfast and lunch dish that has nearly vanished from American menus.",
       ingredients: ["1½ lbs finnan haddie (smoked haddock)", "2 cups milk", "3 tbsp butter", "3 tbsp flour", "1 cup cream", "White pepper", "Toast or rice to serve"],
       instructions: ["Poach smoked haddock in milk over low heat for 15 minutes.", "Remove fish; reserve poaching milk.", "Make white sauce: melt butter, whisk in flour, add reserved milk and cream.", "Flake fish into sauce, removing any bones.", "Season with white pepper. Serve over toast or rice."]
@@ -241,6 +273,7 @@ const recipes = {
       notable: "The dish was modeled on Chicken à la King, attributed to several New York establishments including the Brighton Beach Hotel and Delmonico's in the 1890s.",
       history: "The à la King preparation — a cream sauce enriched with sherry, mushrooms, and pimentos — was one of the dominant flavor profiles of early twentieth-century American cooking. Home cooks applied the same sauce to whatever protein was on hand: tuna, shrimp, turkey, and hard-boiled eggs. The egg version was particularly common during Prohibition because it could be made cheaply from pantry staples. The entire à la King tradition faded in the 1960s as cream-heavy sauces fell from fashion.",
       type: "Main",
+      difficulty: 2,
       description: "The egg cousin of Chicken à la King — hard-boiled eggs in a cream and sherry sauce with pimentos and mushrooms, served over toast points or in pastry shells.",
       ingredients: ["6 hard-boiled eggs, sliced", "2 cups mushrooms, sliced", "¼ cup pimentos", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "¼ cup cream sherry", "Salt, white pepper"],
       instructions: ["Sauté mushrooms in butter until golden.", "Whisk in flour, then milk. Stir until smooth and thick.", "Add sherry and pimentos.", "Fold in sliced eggs gently.", "Season and serve in pastry shells or over toast points."]
@@ -251,6 +284,7 @@ const recipes = {
       notable: "Timbales appeared at Woodrow Wilson's White House luncheons and were a staple of formal hotel dining from the 1900s through the 1930s.",
       history: "A timbale is a French-derived technique: a savory mixture bound with egg and cream, baked in a mold, and unmolded for service. American home economists adopted the form in the early 1900s, seeing it as a way to produce elegant presentation from humble ingredients. During Prohibition, when hosts could not serve cocktails and needed food to carry the social weight of a party, elegant presentations like timbales became especially important.",
       type: "Main",
+      difficulty: 3,
       description: "Individual baked custards made with minced ham, served unmolded — an elegant Prohibition-era luncheon dish that required no alcohol to impress.",
       ingredients: ["2 cups ham, finely minced", "3 eggs", "1½ cups milk", "2 tbsp butter, melted", "1 tsp dry mustard", "Salt, white pepper", "Cream sauce to serve"],
       instructions: ["Preheat oven to 325°F. Butter 6 ramekins.", "Beat eggs, milk, butter, and mustard together.", "Fold in minced ham. Season.", "Fill ramekins ¾ full.", "Set in a water bath and bake 35-40 minutes until set.", "Run a knife around edges, unmold, and serve with cream sauce."]
@@ -261,6 +295,7 @@ const recipes = {
       notable: "Li Hung Chang, a Chinese diplomat who visited New York in 1896, was falsely credited with inventing chop suey — a myth the American press happily perpetuated for decades.",
       history: "American chop suey has almost nothing to do with any dish from China. Food historians believe it evolved in Chinese immigrant railroad and mining camps in the American West. The dish exploded in popularity after Li Hung Chang's 1896 American visit. By the 1920s, chop suey restaurants had opened in virtually every American city, often the first exotic restaurant in many small towns. The American version was so thoroughly transformed that Chinese-Americans often referred to it dismissively as American food.",
       type: "Main",
+      difficulty: 2,
       description: "The wildly popular Americanized Chinese dish of the era — not authentic Chinese cuisine, but a beloved stir of celery, bean sprouts, and meat in thick brown gravy over rice.",
       ingredients: ["1 lb pork or chicken, cut in strips", "3 cups bean sprouts", "4 stalks celery, sliced", "1 large onion, sliced", "1 cup mushrooms", "2 tbsp soy sauce", "1 tbsp cornstarch", "1 cup chicken broth"],
       instructions: ["Stir-fry meat over high heat until browned. Remove.", "Stir-fry onion and celery 3 minutes.", "Add bean sprouts and mushrooms, cook 2 more minutes.", "Return meat. Add broth and soy sauce.", "Mix cornstarch with 2 tbsp cold water; stir into pan to thicken.", "Serve over steamed white rice."]
@@ -271,6 +306,7 @@ const recipes = {
       notable: "Tomato aspic was a signature item at Junior League luncheons across the South from the 1920s through the 1960s, and remains one of the few aspic preparations still made in some Southern households today.",
       history: "Tomato aspic was the most successful of all the savory gelatin dishes because it tasted genuinely delicious — the combination of tangy tomato, Worcestershire, and Tabasco in a cold, clean gel was refreshing rather than unsettling. In the South, where cold luncheons were summer staples, it became an institution. Its decline in the North was swift after the 1960s, but in certain Southern cities it lingered on restaurant menus well into the 1980s.",
       type: "Side/Salad",
+      difficulty: 3,
       description: "Spiced tomato juice set in gelatin, molded in a ring, and filled with cream cheese or shrimp salad — the height of Jazz Age entertaining.",
       ingredients: ["3 cups tomato juice", "2 envelopes unflavored gelatin", "1 tsp sugar", "1 tsp Worcestershire sauce", "Dash Tabasco", "1 tsp onion juice", "Cream cheese or shrimp salad to fill"],
       instructions: ["Soften gelatin in ½ cup cold tomato juice.", "Heat remaining juice; stir in softened gelatin until dissolved.", "Add sugar, Worcestershire, Tabasco, and onion juice.", "Pour into a ring mold. Chill until firm, at least 3 hours.", "Unmold on a platter. Fill center with cream cheese or shrimp salad.", "Serve on lettuce leaves."]
@@ -281,6 +317,7 @@ const recipes = {
       notable: "Thomas Jefferson grew over thirty varieties of peas at Monticello and considered fresh peas a delicacy — a preference that influenced American cooking for over a century.",
       history: "Creamed peas and new potatoes was the quintessential American spring dish — a celebration of the first produce of the season after a long winter. It appeared in every American cookbook from the mid-1800s through the 1940s. Frozen peas and year-round potato availability eventually robbed the dish of its seasonal magic, and without that context it became just another undramatic vegetable side.",
       type: "Side",
+      difficulty: 1,
       description: "Tiny new potatoes and fresh peas in a delicate cream sauce — a spring dish that appears in nearly every American cookbook of the 1920s.",
       ingredients: ["1 lb small new potatoes, halved", "2 cups fresh or frozen peas", "3 tbsp butter", "2 tbsp flour", "1½ cups milk", "Salt, white pepper", "Fresh mint (optional)"],
       instructions: ["Boil potatoes until just tender, about 12 minutes. Cook peas separately.", "Melt butter, whisk in flour, add milk. Cook until thick.", "Add drained potatoes and peas to sauce.", "Season with salt and white pepper.", "Add fresh mint if desired. Serve immediately."]
@@ -291,6 +328,7 @@ const recipes = {
       notable: "Mrs. Charles Cooke of New Castle, Pennsylvania submitted the original recipe to a Knox Gelatin contest in 1904. Knox later claimed it as their own and promoted it aggressively for decades.",
       history: "Perfection Salad is arguably the most famous gelatin salad in American history. Knox Gelatin's promotional campaigns in the early 1900s encouraged American housewives to see gelatin molds as a mark of modern, scientific cooking. Millions of Knox advertising pamphlets distributed the recipe, and it appeared on American tables for sixty years before finally becoming the poster child for everything that went wrong with mid-century American food.",
       type: "Side/Salad",
+      difficulty: 2,
       description: "Shredded cabbage, celery, and pimentos suspended in lemony gelatin — one of the most famous American gelatin salads, a fixture at church suppers for decades.",
       ingredients: ["1 envelope unflavored gelatin", "½ cup cold water", "½ cup boiling water", "¼ cup sugar", "¼ cup cider vinegar", "2 tbsp lemon juice", "1 tsp salt", "1 cup shredded cabbage", "½ cup celery, minced", "¼ cup pimentos"],
       instructions: ["Soften gelatin in cold water, then dissolve in boiling water.", "Stir in sugar, vinegar, lemon juice, and salt.", "Chill until syrupy, about 1 hour.", "Fold in cabbage, celery, and pimentos.", "Pour into a mold or square pan. Chill until firm.", "Slice or unmold and serve on lettuce."]
@@ -301,6 +339,7 @@ const recipes = {
       notable: "Mark Twain wrote admiringly of eating frogs' legs in the 1870s, and they remained a fixture at Chicago's finest restaurants — including the Palmer House — through the 1930s.",
       history: "Frogs' legs were a mainstream American food in ways that seem remarkable today. Midwest rivers and wetlands were full of large bullfrogs, and gigging for frogs on summer evenings was a standard rural pastime. French-trained chefs popularized the Provençale preparation in American hotel and restaurant kitchens. Wetland drainage throughout the Midwest dramatically reduced frog populations in the mid-20th century, and changing tastes completed the dish's disappearance.",
       type: "Main",
+      difficulty: 3,
       description: "Frogs' legs sautéed in garlic butter and parsley were far more common in American restaurants and home kitchens in the 1920s than today.",
       ingredients: ["12 pairs frogs' legs", "Flour for dredging", "4 tbsp butter", "3 cloves garlic, minced", "¼ cup fresh parsley, chopped", "Juice of 1 lemon", "Salt and pepper"],
       instructions: ["Pat frogs' legs dry. Season with salt and pepper. Dredge in flour.", "Melt butter over medium-high heat until foamy.", "Sauté legs 4-5 minutes per side until golden.", "Add garlic in the last minute of cooking.", "Remove to a plate, squeeze lemon into the pan, add parsley.", "Pour pan sauce over legs."]
@@ -311,6 +350,7 @@ const recipes = {
       notable: "Beaten biscuits were the biscuit of choice at Virginia plantation houses and reportedly served at presidential inaugurations of Virginia-born presidents through the early 1900s.",
       history: "Beaten biscuits predate chemical leaveners in America — before baking powder, biscuit dough required physical beating to incorporate air and tenderize the gluten. Proper beaten biscuits required 300 to 500 strokes with a mallet. In the antebellum South, this work was performed by enslaved people; their labor made beaten biscuits a symbol of upper-class Southern hospitality. After emancipation, beaten biscuit machines were invented, but the dish gradually retreated as baking powder biscuits replaced the laborious tradition.",
       type: "Side",
+      difficulty: 4,
       description: "A Southern tradition: biscuit dough beaten 300 times with a rolling pin or mallet until silky and smooth — produces a hard, crackery biscuit for country ham.",
       ingredients: ["2 cups flour", "½ tsp salt", "½ tsp sugar", "4 tbsp cold lard", "½ cup ice water (approximately)"],
       instructions: ["Mix flour, salt, and sugar. Cut in lard until crumbly.", "Add water gradually until dough comes together.", "Beat dough with a rolling pin or mallet for 20-30 minutes, folding often.", "Roll ¼ inch thick. Cut with a small cutter.", "Prick tops with a fork.", "Bake at 400°F for 20-25 minutes until pale and dry."]
@@ -321,6 +361,7 @@ const recipes = {
       notable: "Thomas Jefferson encountered Floating Island in France and brought the recipe back to America, serving it at Monticello. It was a staple of fine American dining for over a century.",
       history: "Floating Island — Île Flottante in French — was one of the first French desserts to be adopted wholesale by American cooking. Jefferson's enthusiasm for French food after his ambassadorship helped introduce it to American fine dining, and by the late 1800s it appeared in virtually every American cookbook. Its disappearance is genuinely puzzling, as it requires fewer ingredients than most modern desserts and tastes extraordinary.",
       type: "Dessert",
+      difficulty: 3,
       description: "Poached meringue islands floating on a sea of vanilla custard — elegant, ethereal, and almost never made today despite its simple genius.",
       ingredients: ["4 eggs, separated", "1 cup sugar, divided", "2 cups whole milk", "1 tsp vanilla extract", "Pinch salt", "Caramel sauce to drizzle"],
       instructions: ["Make crème anglaise: whisk yolks with ½ cup sugar. Scald milk, temper into yolks, cook gently until coats spoon. Add vanilla. Chill.", "Beat whites with pinch of salt to stiff peaks. Beat in remaining ½ cup sugar.", "Poach large spoonfuls of meringue in barely simmering water, 2 min per side.", "Drain meringues and float atop cold custard.", "Drizzle with caramel just before serving."]
@@ -331,6 +372,7 @@ const recipes = {
       notable: "The boiled icing sponge cake was the standard birthday and wedding cake in American homes through the 1940s. The shift to butter-cream frosted layer cakes in the 1950s effectively displaced it from celebration baking entirely.",
       history: "Boiled icing — a glossy white meringue made by pouring hot sugar syrup into beaten egg whites — was the prestige frosting of American baking from the 19th century through the 1940s. It produced a brilliantly white, billowy coating that looked magnificent. When commercial butter-cream recipes became widespread in the 1950s — simpler, more forgiving, and more stable — the boiled icing tradition collapsed within a generation.",
       type: "Dessert",
+      difficulty: 4,
       description: "A featherlight sponge finished with a billowy seven-minute boiled white icing — once the standard American celebration cake, now largely replaced by buttercream.",
       ingredients: ["1 cup cake flour", "1 cup sugar, divided", "6 eggs, separated", "1 tbsp lemon juice", "1 tsp vanilla", "Pinch salt", "ICING: 2 cups sugar", "⅔ cup water", "3 egg whites", "1 tsp vanilla"],
       instructions: ["Beat yolks with ½ cup sugar until pale. Beat whites with salt to soft peaks, add remaining sugar.", "Fold yolk mixture into whites. Fold in flour, lemon, and vanilla.", "Bake in an ungreased tube pan at 325°F for 55 min. Invert to cool.", "ICING: Boil sugar and water to soft-ball stage (240°F). Beat whites to stiff peaks; pour hot syrup in steady stream while beating.", "Continue beating until thick and glossy. Frost cooled cake."]
@@ -341,6 +383,7 @@ const recipes = {
       notable: "Chicken croquettes were the signature luncheon dish at the Plaza Hotel in New York during the 1920s, served with cream sauce and buttered peas.",
       history: "The chicken croquette was the peak of American culinary ambition in the years before Julia Child and the French cooking revolution. Making proper croquettes required real skill: a stiff béchamel base, careful shaping, an even double-breading, and precise frying technique. Hotel dining rooms employed cooks specifically for croquette work. The dish faded as American tastes moved from French-technique cooking toward simpler preparations.",
       type: "Luncheonette",
+      difficulty: 3,
       description: "Minced cooked chicken bound in a thick cream sauce, shaped into cylinders, breaded, and deep-fried — the peak of 1920s restaurant and home cooking.",
       ingredients: ["2 cups cooked chicken, finely minced", "3 tbsp butter", "3 tbsp flour", "¾ cup chicken broth", "¼ cup cream", "Salt, pepper, nutmeg", "1 egg, beaten", "Breadcrumbs", "Oil for frying"],
       instructions: ["Make thick sauce: melt butter, whisk in flour, add broth and cream. Cook until very thick.", "Fold in chicken. Season with salt, pepper, nutmeg.", "Spread in a pan and refrigerate until firm, at least 1 hour.", "Shape into cylinders or cones. Dip in egg, roll in breadcrumbs.", "Fry in 375°F oil until deep golden, about 3-4 minutes.", "Drain and serve with cream sauce."]
@@ -351,6 +394,7 @@ const recipes = {
       notable: "Created by Oscar Tschirky, the legendary maître d' of the Waldorf Hotel, for a charity ball in 1893. The original recipe contained no walnuts — those were added later. Cole Porter reportedly ate it regularly.",
       history: "The Waldorf Salad is one of the most copied and corrupted recipes in American culinary history. Oscar Tschirky's original was strikingly simple: diced apple, celery, and mayonnaise, nothing else — a deliberate statement of American elegance. Over the following decades, walnuts, grapes, raisins, and countless other additions crept in, diluting the original's austere perfection. The dish's overexposure eventually made it seem passé.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "The original: apple, celery, and walnut in mayonnaise — no grapes, no extra additions. Simple, crisp, and exactly as Oscar Tschirky made it at the Waldorf Hotel.",
       ingredients: ["3 tart apples, cored and diced", "3 stalks celery, thinly sliced", "½ cup walnut halves", "½ cup mayonnaise", "1 tbsp lemon juice", "Salt", "Lettuce cups for serving"],
       instructions: ["Toss diced apple with lemon juice immediately to prevent browning.", "Combine apple, celery, and walnuts.", "Fold in mayonnaise. Season lightly with salt.", "Serve in crisp lettuce cups.", "Prepare no more than 1 hour before serving."]
@@ -361,6 +405,7 @@ const recipes = {
       notable: "Liverwurst sandwiches were a standard item on the Lunken Airport menu in Cincinnati — the Lunken Special, Pilot's Delight, and Cockpit Special all appeared on the same counter menu that featured liverwurst as a standalone 15-cent option.",
       history: "Liverwurst — from the German Leberwurst, liver sausage — arrived in America with the great German immigration of the mid-19th century. By the early 20th century it had crossed over into mainstream American deli culture and was one of the most widely eaten sandwich fillings in the country. Its decline began in the 1960s as organ meats fell from fashion in American cooking, and accelerated through the 1970s and 80s as health concerns about liver consumption grew. It survives in German-American delicatessens but has largely vanished from mainstream lunch counters.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The German-American deli classic — liverwurst spread on rye with mustard, sliced onion, and a dill pickle. One of the great forgotten American sandwiches.",
       ingredients: ["4 oz liverwurst (Braunschweiger)", "2 slices rye bread", "1 tbsp spicy brown or German mustard", "2-3 thin slices raw white onion", "2-3 slices dill pickle", "Optional: 1 leaf iceberg lettuce"],
       instructions: ["Spread one slice of rye bread with mustard.", "Spread liverwurst generously on the other slice.", "Layer with thin raw onion slices and pickle.", "Press together.", "Slice diagonally.", "Serve with a full dill pickle spear on the side.", "This sandwich requires rye bread — white bread is wrong."]
@@ -371,6 +416,7 @@ const recipes = {
       notable: "The egg salad sandwich is among the most classically American sandwiches — it appears on the menu from the Lunken Airport counter (10 cents) to the White House staff cafeteria. Simple, cheap, and endlessly satisfying.",
       history: "Egg salad as a sandwich filling emerged in the early 20th century as mayonnaise became commercially available and affordable. The Duke's, Hellmann's, and Kraft mayonnaise companies all promoted egg salad in their advertising from the 1920s onward. The combination of hard-boiled eggs, mayonnaise, and mustard became a standard lunch counter offering across America. At the Lunken Airport counter in Cincinnati, it was listed at 10 cents — one of the cheapest items on the menu. It has never fully gone away but has been largely displaced by more substantial sandwiches in lunch culture.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The lunch counter egg salad sandwich as it was made at every American diner and café from the 1920s onward — simple, creamy, and best on white bread with iceberg lettuce.",
       ingredients: ["6 hard-boiled eggs, peeled", "3 tbsp mayonnaise", "1 tsp yellow mustard", "1 stalk celery, finely diced", "Salt and white pepper", "Paprika for garnish", "White sandwich bread", "Iceberg lettuce"],
       instructions: ["Chop hard-boiled eggs — some people prefer to mash, but chopped gives better texture.", "Mix with mayonnaise, mustard, and celery.", "Season generously with salt and white pepper.", "Refrigerate 30 minutes.", "Pile on white bread with iceberg lettuce.", "Sprinkle with paprika.", "Trim crusts for a proper lunch counter presentation.", "Serve immediately — egg salad waits for no one."]
@@ -381,6 +427,7 @@ const recipes = {
       notable: "The tomato stuffed with chicken salad appears on the Lunken Airport cold plate menu alongside celery hearts and a sliced egg — a presentation style that was universal at American lunch counters. The entire plate cost 35 cents.",
       history: "The stuffed tomato as a presentation vessel for cold salads was enormously fashionable in American restaurant culture from the 1910s through the 1950s. It appeared in virtually every home economics cookbook, every hotel menu, and every luncheon guide of the era. The combination of a hollowed-out tomato filled with chicken salad, served on a cold plate with celery hearts and a sliced egg, was considered the ideal ladies' luncheon. Its decline was swift — by the 1970s it had essentially vanished from American menus, a casualty of the sandwich and the fast food revolution.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "The vanished American cold plate — a beefsteak tomato hollowed out and filled with creamy chicken salad, served on a bed of iceberg lettuce with celery hearts alongside.",
       ingredients: ["4 large ripe beefsteak tomatoes", "2 cups cooked chicken, finely diced", "½ cup mayonnaise", "2 stalks celery, finely diced", "1 tbsp fresh lemon juice", "Salt and white pepper", "Iceberg lettuce for serving", "Celery hearts and sliced hard-boiled egg to garnish"],
       instructions: ["Slice the top off each tomato. Hollow out carefully with a spoon, reserving the inside.", "Salt the inside of each tomato and turn upside down on a plate to drain for 15 minutes.", "Mix chicken with mayonnaise, celery, and lemon juice. Season with salt and white pepper.", "Fill each tomato generously with chicken salad.", "Arrange on a bed of iceberg lettuce.", "Place celery hearts alongside.", "Garnish with sliced hard-boiled egg.", "This is how it looked on every cold plate in America from 1930 to 1965."]
@@ -391,20 +438,43 @@ const recipes = {
       notable: "The Brown Hotel drew over 1,200 guests every night in the 1920s for its dinner dance. When the band took a break around midnight and the dancers got hungry, Chef Schmidt needed something more impressive than ham and eggs. The Hot Brown was his answer — and it has been the signature dish of Louisville ever since.",
       history: "Chef Fred K. Schmidt created the Hot Brown in 1926 at the Brown Hotel in Louisville, Kentucky, to feed late-night dancers who wanted something more glamorous than the standard ham and eggs supper. The open-faced sandwich — turkey on thick toast, blanketed in a rich Mornay sauce, finished under the broiler with bacon and tomato — was an immediate sensation. When the Brown Hotel closed in 1972, the recipe scattered across Louisville restaurants and was nearly lost before the hotel reopened in 1984 and Chef Joe Castro reconstructed the original. It has since become the official signature dish of Louisville and a Kentucky Derby tradition.",
       type: "Luncheonette",
+      difficulty: 3,
       description: "Louisville's famous open-faced sandwich — roasted turkey on thick toast, smothered in rich Mornay sauce and broiled until bubbling, finished with crispy bacon and tomato. Invented at the Brown Hotel in 1926 for midnight-hungry dancers.",
       ingredients: ["4 oz sliced roasted turkey breast", "2 slices thick white bread or Texas toast, toasted and crusts trimmed", "2 strips crispy bacon", "2 roma tomato halves", "MORNAY SAUCE: 2 tbsp butter", "2 tbsp flour", "1 cup whole milk", "¼ cup heavy cream", "¼ cup Pecorino Romano, grated", "Salt and white pepper", "Pinch nutmeg", "Paprika and fresh parsley to garnish"],
       instructions: ["Make Mornay sauce: melt butter, whisk in flour, cook 1 minute.", "Add milk and cream gradually, whisking until smooth and thick.", "Remove from heat. Stir in half the cheese. Season with salt, pepper, and nutmeg.", "Place toast in a heatproof dish. Layer turkey generously over toast.", "Pour Mornay sauce over everything to cover completely.", "Add tomato halves alongside.", "Sprinkle with remaining cheese.", "Broil 4-5 minutes until sauce is bubbling and lightly browned.", "Cross two strips of bacon over the top.", "Dust with paprika and parsley.", "Serve immediately in the dish — this is not a portable sandwich."]
     },
+    {
+      name: "Chopped Chicken Liver",
+      region: "New York City and the urban Northeast; a cornerstone of Jewish delicatessen culture from the 1880s through the 1960s, served at lunch counters and delis throughout the garment district and Lower East Side",
+      notable: "Chopped chicken liver was so fundamental to New York deli culture that it appeared on virtually every Jewish deli menu in the country. The Catskills resort hotels — known as the Borscht Belt — served it as a standard appetizer at every meal through the 1950s and 60s.",
+      history: "Chopped chicken liver arrived in America with the great wave of Eastern European Jewish immigration between 1880 and 1920. In the Jewish dietary tradition, chicken schmaltz — rendered chicken fat — was used for cooking in the same way butter was used in non-kosher kitchens, and chicken livers were a byproduct of the chicken processing that went into every Jewish kitchen. Chopped with hard-boiled eggs, onion, and schmaltz, it became the signature appetizer of the American Jewish deli. Its decline tracks exactly with the decline of the traditional delicatessen — from thousands of Jewish delis in New York in 1950 to fewer than a dozen authentic examples today.",
+      type: "Luncheonette",
+      description: "The great Jewish deli appetizer — chicken livers chopped with hard-boiled eggs, onion, and schmaltz until rich and spreadable. Served on rye crackers or dark bread, it was on every deli counter in America for seventy years.",
+      ingredients: ["1 lb chicken livers", "3 tbsp chicken schmaltz or butter", "2 medium onions, finely diced", "3 hard-boiled eggs", "Salt and black pepper", "Rye crackers or dark rye bread to serve", "Optional: additional schmaltz for richness"],
+      instructions: ["Heat 2 tbsp schmaltz in a skillet over medium heat.", "Cook onions slowly until deeply golden and caramelized — 25-30 minutes. Do not rush this.", "Add chicken livers to the pan. Cook 4-5 minutes per side until just cooked through — no pink, but not gray throughout.", "Remove from heat. Cool slightly.", "Roughly chop livers, onions, and hard-boiled eggs together on a cutting board.", "For a finer texture: pulse briefly in a food processor — but stop before it becomes a paste.", "Season generously with salt and pepper.", "Stir in remaining schmaltz for richness.", "Refrigerate at least 1 hour before serving.", "Serve on rye crackers or dark bread.", "This is better the next day."]
+    },
   ],
 
   "1930s": [
+    {
+      name: "Devildine Sandwich",
+      region: "Nationwide; documented in American luncheonette cookbooks of the 1920s and 1930s as a Depression-era budget sandwich that stretched expensive protein with canned goods",
+      notable: "The Devildine Sandwich appeared in a 1929 cookbook as a way to make sardines — already one of the cheapest proteins available — go further by combining them with deviled ham and hard-boiled egg. The name appears to be a portmanteau of 'deviled' and 'sardine.'",
+      history: "The Devildine Sandwich is one of the more unusual Depression-era lunch counter creations — sardines thinned with lemon juice, combined with canned deviled ham, a chopped hard-boiled egg, a chopped olive, and mayonnaise, spread on buttered white bread with a lettuce leaf. It sounds like a refrigerator-clearing exercise, but the combination of briny sardine, spiced ham, rich egg, and salty olive actually produces something surprisingly complex. It appeared in printed form as early as 1929 and was still being made at budget lunch counters through the 1940s. The rise of tuna fish as the dominant canned seafood in the 1950s made it obsolete.",
+      type: "Luncheonette",
+      difficulty: 2,
+      description: "The forgotten Depression-era compound sandwich — sardines, deviled ham, hard-boiled egg, and chopped olive combined into a spread and served on white bread with lettuce. Stranger than it sounds, better than it should be.",
+      ingredients: ["1 can sardines in oil, drained", "1 small can deviled ham (2.5 oz)", "1 hard-boiled egg, finely chopped", "1 tbsp fresh lemon juice", "1 green olive, finely chopped", "1 tbsp mayonnaise", "White sandwich bread, buttered", "1 leaf iceberg lettuce"],
+      instructions: ["Drain sardines thoroughly and remove any bones.", "Mash sardines with a fork until smooth.", "Add lemon juice and mix until thinned to a spreadable consistency.", "Fold in deviled ham, chopped egg, olive, and mayonnaise.", "Mix until well combined.", "Taste and adjust seasoning — it may need more lemon.", "Butter two slices of white bread.", "Lay a lettuce leaf on one slice.", "Spread the devildine generously over the lettuce.", "Top with second slice.", "Cut diagonally.", "This tastes more interesting than it looks."]
+    },
     {
       name: "Depression Soup (Mulligan Stew)",
       region: "Nationwide, but particularly associated with hobo camps along railroad lines throughout the Midwest and West",
       notable: "Woody Guthrie wrote about eating Mulligan Stew in hobo camps during his Depression-era travels, and the dish became embedded in American folk culture as a symbol of communal survival.",
       history: "Mulligan Stew takes its name from a common Irish surname — a reflection of the disproportionate number of Irish-American hobos and itinerant workers who popularized it. The dish had no fixed recipe, only a method: pool whatever food was available, add water, and simmer. In hobo camps along the railroads, it was a cooperative meal — each person contributed what they had scavenged or stolen. Soup kitchens during the Depression served industrialized versions of the same concept, stretching meat scraps and root vegetables as far as they would go.",
       type: "Soup",
-      description: "The hobo's meal — whatever scraps and root vegetables were available, simmered together in an old pot. No fixed recipe; this is a documented version from a 1930s soup kitchen.",
+      difficulty: 1,
+      description: "The hobo meal — whatever scraps and root vegetables were available, simmered together in an old pot. No fixed recipe; this is a documented version from a 1930s soup kitchen.",
       ingredients: ["1 lb cheap beef stew meat or soup bones", "4 potatoes, cubed", "3 carrots, sliced", "1 turnip, cubed", "1 large onion, chopped", "1 can tomatoes", "Salt, pepper", "Water to cover"],
       instructions: ["Brown meat in a heavy pot if fat is available; otherwise just add it raw.", "Add all vegetables, tomatoes, and enough water to cover.", "Simmer 2-3 hours over low heat until everything is tender.", "Season with salt and pepper.", "Serve with crackers or hard bread."]
     },
@@ -414,6 +484,7 @@ const recipes = {
       notable: "James Beard wrote nostalgically about eating codfish cakes every Saturday morning as a child in Portland, Oregon.",
       history: "Salt cod — dried and preserved without refrigeration — fed the Atlantic world for centuries. In New England, Saturday codfish cakes were part of the same ritual cycle as Saturday baked beans: the cakes serving as the Saturday morning meal before the beans came out for supper. During the Depression era, salt cod was one of the cheapest proteins available, and codfish cakes stretched it even further with mashed potato. The end of the salt cod trade as a major industry gradually erased the dish from American kitchens.",
       type: "Main",
+      difficulty: 2,
       description: "Salt cod reconstituted and mixed with mashed potato, formed into patties and pan-fried — a thrifty Depression-era meal that once appeared weekly in most households.",
       ingredients: ["1 lb salt cod", "2 cups mashed potatoes", "1 egg, beaten", "1 onion, grated", "Black pepper", "Butter or lard for frying"],
       instructions: ["Soak salt cod in cold water for 24 hours, changing water several times.", "Boil until tender, about 15 minutes. Drain and flake finely.", "Mix with mashed potatoes, egg, and onion. Season with pepper.", "Form into patties about ¾ inch thick.", "Fry in butter or lard over medium heat, 4 minutes per side until golden."]
@@ -424,6 +495,7 @@ const recipes = {
       notable: "Bread pudding with whiskey sauce is the signature dessert of Commander's Palace in New Orleans, where it has been on the menu since the restaurant's founding and was championed by chef Paul Prudhomme.",
       history: "Bread pudding is one of the oldest thrift dishes in Western cooking — a way to rescue stale bread from waste by soaking it in a milk-and-egg custard. The American South adopted the whiskey sauce as the transforming element: a rich, boozy butter sauce that turned a humble leftover dish into something genuinely luxurious. In New Orleans, where French Creole cooking valued this kind of resourceful elegance, bread pudding became a restaurant staple that survives there long after it has disappeared from homes elsewhere.",
       type: "Dessert",
+      difficulty: 2,
       description: "Day-old bread soaked in a custard and baked — a thrifty dessert elevated by a warm bourbon sauce that became a Southern classic.",
       ingredients: ["6 cups day-old white bread, cubed", "3 cups milk", "3 eggs", "1 cup sugar", "1 tsp vanilla", "1 tsp cinnamon", "½ cup raisins", "3 tbsp butter, melted", "SAUCE: 1 cup powdered sugar", "1 egg", "½ cup butter", "3 tbsp bourbon"],
       instructions: ["Soak bread in milk 10 minutes. Beat in eggs, sugar, vanilla, cinnamon, raisins, and butter.", "Pour into a buttered 9x13 pan.", "Bake at 325°F for 45-55 minutes until set and golden.", "SAUCE: Melt butter; beat in powdered sugar and egg over gentle heat. Add bourbon. Pour warm over individual servings."]
@@ -434,6 +506,7 @@ const recipes = {
       notable: "General Dwight Eisenhower reportedly complained about the quality of Army chipped beef during World War II, though it remained a standard military breakfast through the Korean War.",
       history: "Creamed chipped beef traces to the New England practice of drying and salting thin slices of beef for preservation. It became a Depression staple because dried beef was inexpensive, a little went a long way in a cream sauce, and it required no refrigeration. The Army adopted it for logistical reasons, and served it in such quantities and of such variable quality that it acquired its famous unprintable nickname. Postwar, its association with institutional food gave it a stigma from which it never recovered.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Thin, dry-cured beef shredded into a thick milk gravy — nicknamed 'SOS' by soldiers, this was a Depression and wartime staple served over toast.",
       ingredients: ["4 oz chipped (dried) beef", "3 tbsp butter", "3 tbsp flour", "2 cups whole milk", "Black pepper", "White toast for serving"],
       instructions: ["Rinse chipped beef in warm water. Tear into small pieces.", "Melt butter in skillet. Whisk in flour; cook 1 min.", "Add milk gradually, whisking until smooth and thick.", "Fold in beef. Season generously with black pepper.", "Serve over hot toast. Salt cautiously — beef is already salty."]
@@ -444,6 +517,7 @@ const recipes = {
       notable: "Bean and bacon soup has been served continuously in the U.S. Senate restaurant since 1903, the result of a standing order from Senator Fred Dubois of Idaho who insisted it appear on the menu every single day.",
       history: "Bean soup with pork is as old as European settlement in America. Dried beans were one of the most reliable food crops, and salt pork or bacon provided fat and protein without refrigeration. During the Depression, a ham hock and a pound of dried beans could feed a family of six for days. Its slow simmering on the back of the stove was itself a Depression-era virtue — it required attention but no skill, and improved the longer it cooked.",
       type: "Soup",
+      difficulty: 1,
       description: "Navy beans simmered with a ham hock or bacon ends until creamy — a Depression-era pot that simmered on the back of the stove all day.",
       ingredients: ["1 lb navy beans, soaked overnight", "1 meaty ham hock or ½ lb bacon ends", "1 large onion, chopped", "3 stalks celery, chopped", "2 cloves garlic", "Salt, black pepper", "Bay leaf"],
       instructions: ["Drain soaked beans. Place in a large pot with ham hock.", "Add onion, celery, garlic, and bay leaf. Cover with water by 2 inches.", "Simmer 2-3 hours until beans are completely soft.", "Remove ham hock; shred meat and return to pot.", "Mash some beans for thickness. Season with salt and pepper."]
@@ -454,6 +528,7 @@ const recipes = {
       notable: "Nabisco first printed the Mock Apple Pie recipe on Ritz Cracker boxes in 1934 and continued doing so for decades. It appeared on the box as recently as the 1990s.",
       history: "Mock Apple Pie was a Depression-era act of culinary alchemy: using cream of tartar, sugar, lemon, and Ritz Crackers to simulate apple pie filling without a single apple. The chemistry works because cream of tartar produces an acidic tartness similar to apple, the crackers soften to an apple-like texture in the sweetened liquid, and cinnamon and lemon complete the illusion. Nabisco promoted it aggressively, but it spread because apples were expensive and crackers were not. Generations of people who grew up eating it reportedly preferred it to real apple pie.",
       type: "Dessert",
+      difficulty: 2,
       description: "A pie made entirely without apples — crackers, sugar, and cream of tartar create a filling that tastes remarkably like apple. Printed on Ritz boxes during the Depression.",
       ingredients: ["Pastry for a double-crust 9-inch pie", "36 Ritz crackers, coarsely broken", "1¾ cups water", "2 cups sugar", "2 tsp cream of tartar", "2 tbsp lemon juice", "Grated zest of 1 lemon", "2 tbsp butter", "½ tsp cinnamon"],
       instructions: ["Roll out pastry and line pie plate. Fill with cracker pieces.", "Boil water, sugar, and cream of tartar for 15 minutes. Add lemon juice and zest.", "Pour syrup over crackers. Dot with butter, sprinkle with cinnamon.", "Cover with top crust, seal, and vent.", "Bake at 425°F for 30-35 minutes until golden."]
@@ -464,6 +539,7 @@ const recipes = {
       notable: "Stuffed peppers appear in settlement house cookbooks of the 1910s and 20s as a recommended dish for immigrant families — an efficient way to feed many from little.",
       history: "Stuffed pepper recipes appear in American cookbooks from the 1880s onward, influenced by Turkish and Eastern Mediterranean traditions where stuffed vegetables were standard fare. During the Depression the dish flourished as a budget stretcher: a single pound of ground beef, extended with rice and tomatoes, could fill six substantial pepper shells. The visual appeal made it seem more festive than the budget it required. Its slow postwar decline is puzzling — the dish is filling, inexpensive, and genuinely delicious.",
       type: "Main",
+      difficulty: 2,
       description: "Green peppers hollowed out and filled with a mixture of ground beef, rice, and tomato sauce — a Depression-era budget stretcher that could feed a family of six on very little.",
       ingredients: ["6 large green bell peppers", "1 lb ground beef", "1 cup cooked rice", "1 small onion, minced", "1 can (15 oz) tomato sauce", "Salt and pepper", "1 tsp Worcestershire sauce"],
       instructions: ["Cut tops off peppers; remove seeds and membranes. Parboil 5 minutes.", "Brown beef with onion. Drain fat.", "Mix with rice, half the tomato sauce, Worcestershire, salt, and pepper.", "Fill peppers with mixture. Stand upright in a baking dish.", "Pour remaining tomato sauce around peppers.", "Bake at 350°F for 45 minutes."]
@@ -474,6 +550,7 @@ const recipes = {
       notable: "The oyster-wrapped-in-bacon version appears in 1930s cocktail party guides as one of the quintessential sophisticated nibbles of the era.",
       history: "The term pigs in blankets has referred to at least three completely different dishes at different points in American culinary history. In the early 1900s it meant cabbage rolls stuffed with pork. By the 1930s it specifically meant oysters wrapped in bacon — the oyster being the pig and the bacon the blanket. The current meaning — cocktail frankfurters in crescent roll dough — appeared in the 1950s and gradually displaced all earlier uses of the name. The oyster version is genuinely excellent and deserves revival.",
       type: "Appetizer",
+      difficulty: 2,
       description: "In the 1930s this meant oysters wrapped in bacon and broiled — not the modern cocktail franks. A fashionable cocktail party nibble.",
       ingredients: ["18 fresh oysters, shucked", "9 strips thin-cut bacon, halved", "Salt, pepper, cayenne", "Toothpicks", "Lemon wedges"],
       instructions: ["Season oysters with salt, pepper, and a pinch of cayenne.", "Wrap each oyster in a half-strip of bacon.", "Secure with a toothpick.", "Broil on a rack 3-4 minutes until bacon is crispy and oysters are just curled.", "Serve immediately with lemon wedges."]
@@ -484,6 +561,7 @@ const recipes = {
       notable: "Scalloped potatoes with ham is one of the dishes most consistently cited in oral histories of Depression-era cooking as the meal families returned to again and again when money was short.",
       history: "Scalloped potatoes in various forms have been in American cookbooks since the 1820s, but the ham version became particularly important during the Depression when a small amount of leftover ham could be distributed across an entire casserole to feed a family. Potatoes were cheap and storable, ham scraps were available, and cream sauce could be made from milk when cream was scarce. The dish survives today but has retreated into holiday and church supper territory.",
       type: "Main",
+      difficulty: 1,
       description: "Thinly sliced potatoes layered with ham and onion in a cream sauce — the ultimate Depression casserole, stretching a small amount of ham into a full meal.",
       ingredients: ["2 lbs potatoes, thinly sliced", "1 cup cooked ham, diced", "1 onion, thinly sliced", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "Salt, pepper"],
       instructions: ["Preheat oven to 350°F. Butter a 2-quart baking dish.", "Make cream sauce: melt butter, whisk in flour, add milk, stir until thick.", "Layer potatoes, ham, and onion in dish, seasoning each layer.", "Pour cream sauce over top.", "Cover and bake 45 minutes. Uncover and bake 20 more minutes until top is golden."]
@@ -494,6 +572,7 @@ const recipes = {
       notable: "Cookbook author Edna Lewis described oxtail stew as a centerpiece dish at Virginia community gatherings throughout the Depression era. The cut has recently seen a dramatic restaurant revival.",
       history: "Oxtail has one of the strangest trajectories in American food history: cheap Depression food, then forgotten, then rediscovered and made expensive by restaurant chefs. During the Depression, oxtail was among the cheapest items at the butcher. But oxtail is rich in collagen, producing a deeply flavored, silky broth after hours of braising. African American cooking traditions preserved the dish through the lean years when mainstream cooking abandoned it. It has since become a fashionable and expensive restaurant item.",
       type: "Soup/Stew",
+      difficulty: 3,
       description: "Oxtail was the cheapest cut available during the Depression — simmered for hours into a rich, gelatinous broth that was far more nourishing than its humble origins suggested.",
       ingredients: ["3 lbs oxtail, cut in sections", "2 onions, chopped", "3 carrots, chopped", "3 stalks celery", "1 can tomatoes", "2 cloves garlic", "Thyme, bay leaves", "Salt and pepper", "Flour for dredging"],
       instructions: ["Dredge oxtail in flour; brown well in fat in a heavy pot.", "Remove oxtail; sauté onions, carrots, and celery.", "Return oxtail; add tomatoes, garlic, herbs, and enough water to cover.", "Simmer very gently for 3-4 hours until meat falls from bones.", "Season, skim fat. Serve with mashed potatoes."]
@@ -504,6 +583,7 @@ const recipes = {
       notable: "Mark Twain wrote a famous essay called Corn-Pone Opinions in which he used corn pone as a symbol of authentic American thinking formed from direct experience rather than fashion.",
       history: "Corn pone is the oldest and most austere form of American cornbread — no eggs, no milk, no baking powder. Ground cornmeal, salt, fat, and enough boiling water to hold it together, shaped by hand. It was the food of people who had nothing extra: enslaved people in the antebellum South, sharecroppers and tenant farmers through the Depression, subsistence farmers throughout Appalachia. The difference between corn pone and cornbread is economic as much as culinary — pone was what you made when you had only corn; cornbread was what you made when you had eggs and buttermilk too.",
       type: "Side",
+      difficulty: 2,
       description: "Simple cornmeal dough shaped by hand and baked or fried without buttermilk or eggs — true corn pone is purely cornmeal, salt, fat, and water, as eaten by sharecroppers.",
       ingredients: ["2 cups white cornmeal", "1 tsp salt", "1 tbsp lard or bacon drippings", "¾ cup boiling water (approximately)"],
       instructions: ["Mix cornmeal and salt. Rub in lard until crumbly.", "Add boiling water gradually, just enough to make a stiff dough.", "Shape into oval patties by hand.", "Place on a greased baking sheet or in a hot cast iron skillet.", "Bake at 450°F for 20-25 minutes until edges are crisp, or pan-fry in hot fat."]
@@ -514,6 +594,7 @@ const recipes = {
       notable: "The USDA and wartime nutrition advocates actively championed liver during the Depression as a superfood — inexpensive, dense in iron and vitamins, and universally available.",
       history: "During the Depression and through World War II, liver was actively promoted by nutritionists as a superfood: inexpensive, dense in iron and vitamins, and universally available. The dish required some skill to make well — liver toughens instantly if overcooked. After the war, as beef became affordable and American tastes shifted toward the unchallenging, liver's assertive flavor became a liability rather than an asset. By the 1980s it had retreated almost entirely to diners and the homes of people who grew up eating it.",
       type: "Main",
+      difficulty: 2,
       description: "Beef liver sliced thin, dredged in flour, and pan-fried with caramelized onions — affordable, iron-rich, and a near-nightly Depression-era staple that has since fallen out of fashion.",
       ingredients: ["1½ lbs beef liver, thinly sliced", "2 large onions, thinly sliced", "Flour for dredging", "4 tbsp butter, divided", "Salt and pepper"],
       instructions: ["Soak liver in milk 30 minutes; drain and pat dry.", "Cook onions in 2 tbsp butter over low heat until very soft and golden, about 25 min.", "Remove onions. Dredge liver in seasoned flour.", "Cook liver in remaining butter over medium-high heat, 2-3 min per side.", "Return onions to pan. Serve immediately — liver toughens quickly."]
@@ -524,6 +605,7 @@ const recipes = {
       notable: "The current steakhouse version of creamed spinach — puréed smooth in heavy cream — is a mid-century restaurant adaptation. The original home version used roughly chopped spinach in a simple white sauce, which is considerably lighter and more interesting.",
       history: "Creamed spinach in American home cooking bore little resemblance to the dense, puréed steakhouse preparation that now owns the name. The original version was simply wilted, chopped spinach folded into a light white sauce, often topped with a sliced hard-boiled egg. The dish was transformed by the steakhouse industry into something much heavier, and the original lighter version — along with its distinctive hard-boiled egg garnish — was forgotten entirely.",
       type: "Side",
+      difficulty: 1,
       description: "Whole-leaf spinach chopped and folded into a thick white sauce with hard-boiled egg on top — this is not the puréed steakhouse version, but the home original.",
       ingredients: ["2 lbs fresh spinach", "3 tbsp butter", "2 tbsp flour", "1 cup milk", "¼ cup cream", "1 hard-boiled egg, sliced", "Nutmeg, salt, pepper"],
       instructions: ["Wilt spinach in boiling salted water, 2 minutes. Drain, squeeze dry, chop roughly.", "Make white sauce: melt butter, whisk in flour, add milk and cream. Cook until thick.", "Fold in chopped spinach. Season with nutmeg, salt, and pepper.", "Transfer to a warm dish.", "Top with sliced hard-boiled egg. Serve immediately."]
@@ -534,6 +616,7 @@ const recipes = {
       notable: "Campbell's condensed tomato soup, introduced in 1897, was directly modeled on homemade tomato bisque and eventually displaced it entirely in most American homes.",
       history: "Homemade tomato bisque was a Sunday staple in American households from the mid-1800s through the 1930s. The recipe was simple: cook tomatoes with onion, push through a sieve, thicken with a flour roux, enrich with cream, and sweeten slightly. The result was silky, deeply flavored, and nothing like the commercial product that eventually replaced it. By the 1950s, tomato soup in most homes meant a can of Campbell's diluted with water or milk, and the scratch bisque was simply forgotten.",
       type: "Soup",
+      difficulty: 2,
       description: "A smooth, creamy tomato soup made from scratch — thicker and richer than canned soup, sweetened with a pinch of sugar, this was Sunday lunch in millions of homes.",
       ingredients: ["2 lbs ripe tomatoes (or 1 large can)", "1 onion, chopped", "2 tbsp butter", "2 tbsp flour", "1 cup chicken broth", "1 cup heavy cream", "1 tsp sugar", "Salt, pepper, fresh basil"],
       instructions: ["Cook tomatoes and onion in butter 15 min until soft.", "Push through a sieve or blend smooth.", "Return to pot. Whisk in flour dissolved in broth.", "Bring to a simmer, stirring. Add cream and sugar.", "Simmer 10 minutes. Season with salt, pepper, and basil."]
@@ -544,6 +627,7 @@ const recipes = {
       notable: "Hard gingersnaps were the standard American cookie through the 19th and early 20th centuries — the soft gingersnap now standard in American supermarkets is a mid-century invention that appropriated the name.",
       history: "The original American gingersnap was bone-hard, intensely spiced, deeply dark from molasses, and genuinely snapped when broken — they were meant for dunking in coffee or cider, and kept for weeks without going stale. Pennsylvania Dutch bakers were particularly associated with them. The shift to soft cookies as the American preference — driven by commercial bakers who found soft cookies sold better — gradually redefined the word, and the hard original retreated to a niche. Many people today have never tasted an actual gingersnap.",
       type: "Dessert",
+      difficulty: 2,
       description: "True gingersnaps were hard and genuinely snappy — these were not soft cookies. Molasses-dark, intensely spiced, and meant to be dunked.",
       ingredients: ["2 cups flour", "1 tsp baking soda", "2 tsp ginger", "1 tsp cinnamon", "½ tsp cloves", "½ cup lard or shortening", "1 cup sugar", "¼ cup molasses", "1 egg"],
       instructions: ["Cream lard and sugar. Beat in molasses and egg.", "Sift together flour, soda, and spices. Stir into wet mixture.", "Refrigerate dough 1 hour.", "Roll very thin (⅛ inch). Cut into rounds.", "Bake at 375°F for 10-12 minutes until dark and crisp.", "They harden as they cool — don't overbake."]
@@ -554,6 +638,7 @@ const recipes = {
       notable: "The BLT is consistently ranked as the second most popular sandwich in America after the club sandwich. Its appearance on American menus is first documented in the 1930s, though the combination of bacon, lettuce, and tomato is older.",
       history: "The BLT as a named sandwich emerged in American lunch counter culture in the 1930s, though the combination of bacon with lettuce and tomato had appeared on club sandwiches and in home cooking for decades before that. The acronym BLT was in common use by the 1940s. The sandwich's success depended on three things: sliced white bread (Wonder Bread, introduced in 1921), commercially sliced bacon (widespread by the 1930s), and the year-round availability of hothouse tomatoes. The BLT represents the moment American deli food became standardized, reproducible, and available from coast to coast.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The American lunch counter classic — crisp bacon, iceberg lettuce, ripe tomato, and mayonnaise on toasted white bread. Simple, perfect, and impossible to improve.",
       ingredients: ["6 strips thick-cut bacon", "2 slices white sandwich bread, toasted", "2 tbsp mayonnaise", "2-3 leaves iceberg lettuce", "3-4 slices ripe tomato", "Salt and black pepper"],
       instructions: ["Cook bacon in a skillet over medium heat until crisp but not brittle.", "Drain on paper towels.", "Toast bread to golden brown.", "Spread both slices generously with mayonnaise.", "Layer tomato on one slice. Season with salt and black pepper.", "Add crisp bacon.", "Top with iceberg lettuce — it should hang over the edges slightly.", "Close and cut diagonally.", "Serve immediately — a BLT waits for no one."]
@@ -564,6 +649,7 @@ const recipes = {
       notable: "The Lunken Airport menu listed 'Double Rich Chocolate Malted Milk' at 20 cents — twice the price of a plain malt — suggesting it was a premium item worth the extra dime. Every American airport, diner, and drugstore soda fountain served them.",
       history: "Malted milk powder was invented by William Horlick in Racine, Wisconsin in 1887 as a health food for infants and invalids. James and Alice Bradley began selling it as a soda fountain drink in Chicago in the 1920s, and it spread nationwide. The malt shop became the central social institution of American adolescent life from the 1930s through the early 1960s — where teenagers met, dated, and spent their dimes. The rise of fast food chains in the late 1960s killed the independent soda fountain, and the malted milk became a nostalgic relic rather than a daily ritual.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The American malt shop classic — ice cream, whole milk, and malted milk powder blended thick and served in the metal cup it was mixed in. The 1940s version was better than anything you can get today.",
       ingredients: ["2 scoops vanilla or chocolate ice cream", "¾ cup whole milk (cold)", "3 tbsp malted milk powder (Carnation or Ovaltine)", "Optional: 2 tbsp chocolate syrup for a chocolate malt"],
       instructions: ["Chill a metal mixing cup in the freezer for 10 minutes.", "Add ice cream, cold milk, and malted milk powder.", "Optional: add chocolate syrup.", "Mix with a milkshake machine or hand blender until smooth but still thick.", "Pour into a tall glass, leaving some in the metal mixing cup.", "Traditionally served with both the glass and the remaining malt in the mixing cup.", "Serve with a wide straw.", "The malt should be thick enough that the straw stands upright."]
@@ -597,6 +683,7 @@ const recipes = {
       notable: "By 1943, Americans were growing over 20 million Victory Gardens producing roughly 40% of the nation's vegetables. Eleanor Roosevelt planted one on the White House lawn despite resistance from the USDA.",
       history: "Victory Gardens were a deliberate government program to reduce civilian pressure on the commercial food supply during World War II, freeing canned and commercial vegetables for military use. The USDA promoted gardening with extraordinary propaganda intensity — posters, radio programs, and school curricula all carried the message. The resulting surplus of fresh vegetables led to a wave of home canning and to soups like this one, which made a virtue of variety. It was patriotic cooking: use what you grew, waste nothing.",
       type: "Soup",
+      difficulty: 1,
       description: "Made entirely from backyard garden produce — during wartime rationing, every household was encouraged to grow their own, and this soup used it all.",
       ingredients: ["2 cups green beans, chopped", "2 cups tomatoes, diced", "2 cups corn kernels", "2 carrots, sliced", "1 cup lima beans", "1 onion, chopped", "2 cups cabbage, shredded", "4 cups vegetable broth", "Salt, pepper, herbs"],
       instructions: ["Combine all vegetables in a large pot with broth.", "Add salt, pepper, and whatever fresh herbs are available.", "Bring to a boil and simmer 30-40 minutes until all vegetables are tender.", "Adjust seasoning. The soup thickens as corn breaks down.", "Serve with crackers or cornbread. This soup improves the next day."]
@@ -607,6 +694,7 @@ const recipes = {
       notable: "Hormel introduced Spam in 1937, but World War II made it globally ubiquitous — the U.S. military shipped over 150 million pounds to Allied troops worldwide. Nikita Khrushchev credited Spam with keeping the Soviet Army fed.",
       history: "Spam arrived just before the war but became defined by it. When meat rationing limited fresh protein, canned Spam offered something that required no refrigeration, no butchering, and no waste. Spam fritters were a British innovation that spread through the Allied world. In Hawaii, Spam's wartime arrival created a cultural attachment that has never faded — Hawaii remains the highest per-capita Spam consuming state in the U.S. In continental America, however, Spam's association with wartime scarcity gave it a stigma that postwar prosperity made permanent.",
       type: "Main",
+      difficulty: 1,
       description: "Sliced Spam dipped in a simple batter and pan-fried — Spam became ubiquitous during wartime rationing, and these fritters made it into a proper meal.",
       ingredients: ["1 can Spam, cut into ½-inch slices", "1 cup flour", "1 tsp baking powder", "¾ cup milk", "1 egg", "Salt, pepper", "Oil or lard for frying"],
       instructions: ["Mix flour, baking powder, salt, and pepper.", "Beat in milk and egg to form a smooth batter.", "Dip Spam slices in batter to coat.", "Fry in ½ inch of hot fat over medium heat, 3 minutes per side until golden.", "Drain and serve with mustard or chutney."]
@@ -617,6 +705,7 @@ const recipes = {
       notable: "Wartime home economics pamphlets published by the USDA featured dozens of mock recipes — Mock Duck, Mock Chicken, Mock Apple Pie — as ways to maintain the appearance of normal eating under restricted conditions.",
       history: "The mock recipe was a distinctly wartime genre — a way to simulate an unavailable or expensive ingredient using something cheaper and accessible. Mock crab salad worked because canned tuna, shredded finely and dressed with the same flavors, produced something convincingly similar in texture and taste. The psychological importance of the mock recipe was as significant as its practical value: it allowed families to maintain a sense of normal eating even when normal ingredients were not available.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Flaked canned tuna dressed to resemble crab salad — a wartime ingenuity dish when real crab was expensive or unavailable.",
       ingredients: ["2 cans tuna, drained and flaked", "1 cup celery, minced", "1 tbsp onion, grated", "½ cup mayonnaise", "1 tsp lemon juice", "1 tsp dry mustard", "Salt, white pepper", "Lettuce for serving"],
       instructions: ["Flake tuna very finely to mimic crab texture.", "Mix with celery and onion.", "Combine mayonnaise, lemon juice, and mustard.", "Fold dressing into tuna mixture. Season.", "Serve chilled on lettuce or stuffed into tomatoes."]
@@ -627,6 +716,7 @@ const recipes = {
       notable: "This dish was a standard in U.S. military mess halls and in school cafeterias throughout the 1940s and 50s, reaching its institutional peak as a fixture of public school lunch programs.",
       history: "Frankfurters and baked beans combined the two most economical protein sources available during wartime rationing into a single casserole that required no fresh meat, no refrigeration of the main ingredients, and minimal preparation. The dish became a diner and cafeteria institution in the postwar era, appearing on school lunch menus across the country before being crowded out by pizza and hamburgers in the 1970s.",
       type: "Main",
+      difficulty: 1,
       description: "Canned baked beans baked with sliced frankfurters and brown sugar — an inexpensive wartime protein stretch that became a diner staple.",
       ingredients: ["2 cans (28 oz) baked beans", "6 frankfurters, sliced into rounds", "1 onion, chopped", "¼ cup ketchup", "2 tbsp brown sugar", "1 tbsp prepared mustard", "4 strips bacon"],
       instructions: ["Preheat oven to 350°F.", "Mix beans, frankfurters, onion, ketchup, sugar, and mustard in a baking dish.", "Lay bacon strips on top.", "Bake uncovered 45-55 minutes until bubbly and bacon is crisp."]
@@ -637,6 +727,7 @@ const recipes = {
       notable: "The British Ministry of Food's wartime mascot Doctor Carrot actively promoted carrot cake recipes. The modern cream cheese-frosted version that Americans now know developed in the 1960s and 70s as a health food adaptation.",
       history: "Carrot cake's journey to American classic status passed through wartime necessity. When sugar was rationed in both Britain and America, governments actively promoted carrots as a natural sweetener. After the war, health food movements of the 1960s and 70s rediscovered carrot cake as a nutritious dessert, added cream cheese frosting and walnuts, and turned a wartime compromise into a modern classic. Most people eating carrot cake today have no idea they're eating a descendant of rationing.",
       type: "Dessert",
+      difficulty: 2,
       description: "During sugar and butter rationing, carrots provided natural sweetness. This was a genuine innovation born of necessity that eventually became a beloved classic.",
       ingredients: ["1½ cups flour", "1 tsp baking soda", "1 tsp cinnamon", "½ tsp salt", "¾ cup sugar (rationed amount)", "2 eggs", "½ cup vegetable oil", "2 cups grated carrots", "½ cup raisins (optional)"],
       instructions: ["Preheat oven to 350°F. Grease a 9-inch pan.", "Sift flour, soda, cinnamon, and salt.", "Beat sugar, eggs, and oil together.", "Fold in dry ingredients, then carrots and raisins.", "Pour into pan. Bake 35-40 minutes until a toothpick comes out clean.", "Cool before frosting — or serve plain as was common during rationing."]
@@ -647,6 +738,7 @@ const recipes = {
       notable: "Canned salmon was explicitly promoted by the U.S. government as an unrationed protein alternative during World War II, and recipes for creamed salmon appeared in nearly every wartime government cooking pamphlet.",
       history: "Canned salmon occupied a specific wartime role: unlike beef, pork, and butter, it was not formally rationed, making it a reliable fallback protein throughout the war years. The Pacific salmon canning industry had been established since the 1860s, and pink salmon in particular was cheap and widely distributed. Creamed salmon on toast followed the same formula as creamed chipped beef — a white sauce stretching a small amount of protein over a filling starch base. Its postwar disappearance from fashionable cooking was swift once fresh proteins became available again.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Canned salmon folded into a cream sauce and served over toast — canned salmon was not rationed in the U.S. and became a wartime pantry staple.",
       ingredients: ["2 cans (14.75 oz) pink salmon", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "1 tsp lemon juice", "Salt, white pepper", "Toast for serving"],
       instructions: ["Drain salmon; remove bones and skin. Flake coarsely.", "Make cream sauce: melt butter, whisk in flour, add milk. Stir until thick.", "Fold in salmon. Add lemon juice. Season.", "Serve hot over toast. Garnish with a sprinkle of paprika."]
@@ -657,6 +749,7 @@ const recipes = {
       notable: "Browned butter noodles were a staple of Hungarian and Czech immigrant cooking across the industrial Midwest, carried from Central European traditions where browning butter was a standard technique for building flavor economically.",
       history: "Browned butter noodles came directly from Central European and German immigrant cooking traditions. In countries where butter was expensive, browning it to a nutty, caramelized state — a process that intensifies its flavor dramatically — was a way to make a small amount taste like more. The addition of toasted breadcrumbs added texture and further extended the dish. In the working-class immigrant neighborhoods of Chicago, Cleveland, and Pittsburgh, this was a common weeknight side. It faded as immigrants' descendants assimilated and Central European cooking retreated in favor of mainstream American dishes.",
       type: "Side",
+      difficulty: 1,
       description: "Egg noodles tossed in deeply browned butter and breadcrumbs — a simple, thrifty side dish that stretched butter's flavor through technique rather than quantity.",
       ingredients: ["12 oz wide egg noodles", "4 tbsp butter", "¼ cup fine dry breadcrumbs", "Salt and pepper", "Fresh parsley, chopped"],
       instructions: ["Cook noodles in salted water until tender. Drain.", "Melt butter in a wide skillet over medium heat. Continue cooking until butter turns golden brown and smells nutty.", "Add breadcrumbs and stir until toasted.", "Toss in noodles. Season with salt and pepper.", "Finish with parsley."]
@@ -667,6 +760,7 @@ const recipes = {
       notable: "The USDA's wartime Food Fights for Freedom campaign specifically promoted cabbage recipes as a patriotic and nutritious wartime vegetable, publishing multiple variations of scalloped and creamed cabbage.",
       history: "Escalloped cabbage was a wartime staple born of necessity. Cabbage was cheap, grew well in Victory Gardens, kept without refrigeration, and required no rationing coupons. Cabbage had an image problem even then, considered peasant food in most cultures, and the cream sauce and breadcrumb treatment was an attempt to elevate it. After the war, as aspirational cooking moved toward French techniques and fresh meats, escalloped cabbage retreated entirely.",
       type: "Side",
+      difficulty: 2,
       description: "Cabbage layered with cream sauce and breadcrumbs and baked — a cheap wartime vegetable dressed up into something worth putting on the table.",
       ingredients: ["1 medium head cabbage, cut in wedges", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "½ tsp dry mustard", "Salt, pepper", "1 cup breadcrumbs, buttered"],
       instructions: ["Parboil cabbage wedges 5 minutes. Drain well.", "Make mustard cream sauce: melt butter, whisk in flour and mustard, add milk.", "Layer cabbage and sauce in a buttered baking dish.", "Top with buttered breadcrumbs.", "Bake at 375°F for 25-30 minutes until golden and bubbling."]
@@ -677,6 +771,7 @@ const recipes = {
       notable: "Plain potato soup was specifically promoted in wartime cooking guides as an ideal unrationed meal — it required no rationing coupons of any kind and was filling enough to serve as a complete supper.",
       history: "Plain potato soup occupies the opposite end of the culinary spectrum from Vichyssoise. While Louis Diat's elegant cold cream preparation was served in fine hotel dining rooms, the plain potato soup was made in the kitchens of working people from the Irish immigration waves of the 1840s onward. During the war years it was particularly valuable as a filling, nourishing meal that used no rationed ingredients. The soup's simplicity was its virtue, though that same simplicity made it hard to defend once postwar prosperity offered more interesting options.",
       type: "Soup",
+      difficulty: 1,
       description: "Cubed potatoes simmered in water with onion, finished with milk and a lump of butter — a wartime soup of extraordinary simplicity that needed nothing more.",
       ingredients: ["4 large potatoes, diced", "1 large onion, diced", "3 cups water", "2 cups whole milk", "2 tbsp butter", "Salt and pepper", "Chives or parsley to garnish"],
       instructions: ["Combine potatoes, onion, and water. Bring to a boil.", "Simmer 20 minutes until potatoes are very tender.", "Mash some potatoes in the pot for thickness.", "Stir in milk and butter. Heat through — do not boil.", "Season generously. Serve with chives."]
@@ -687,6 +782,7 @@ const recipes = {
       notable: "Porcupine meatballs appear in Betty Crocker's wartime recipe guides — a rare example of a dish genuinely invented to solve a rationing problem that also became genuinely beloved.",
       history: "Porcupine meatballs were a Depression and wartime solution to stretching a small amount of ground beef. By mixing raw rice directly into the meat and simmering the meatballs in liquid, the rice absorbed the cooking liquid as it expanded, cooking from within while creating the characteristic spiky surface. The technique was clever: the rice cooked inside the meat, absorbing all the tomato flavor, making the meatballs substantial enough to feed a family with far less beef than a traditional meatball would require. The dish was a fixture of mid-century American home cooking before vanishing from fashion in the 1970s.",
       type: "Main",
+      difficulty: 2,
       description: "Ground beef mixed with raw rice and simmered in tomato soup — the rice expands through the meatballs as they cook, creating spiky 'quills.' A genuine wartime budget classic.",
       ingredients: ["1 lb ground beef", "½ cup raw long-grain rice", "1 small onion, grated", "Salt, pepper", "1 can condensed tomato soup", "1 can water"],
       instructions: ["Mix beef, rice, onion, salt, and pepper. Form into golf ball-size balls.", "Blend tomato soup with one soup can of water in a wide pot.", "Bring sauce to a simmer; add meatballs in a single layer.", "Cover and cook over very low heat for 45-50 minutes until rice is fully cooked.", "Serve over mashed potatoes."]
@@ -697,6 +793,7 @@ const recipes = {
       notable: "Stuffed dates were a fixture of wartime holiday entertaining precisely because they required no rationing coupons — dates, cream cheese, and nuts were all unrationed, making them one of the few genuinely festive party foods available.",
       history: "Stuffed dates existed in American entertaining before the war, but they came into their own during rationing precisely because they circumvented the shortage. When butter, sugar, and meat were rationed, a plate of stuffed dates offered sweetness and luxury without requiring a single coupon. California had been producing Medjool dates commercially since the 1920s, and they were reasonably priced and shelf-stable. They were a wartime party food that signaled you could still manage a gracious table despite everything.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Pitted dates filled with cream cheese or a walnut half and rolled in sugar — a simple party nibble from the wartime era when elaborate entertaining wasn't possible.",
       ingredients: ["24 large Medjool dates", "8 oz cream cheese, softened", "24 walnut halves (optional)", "Powdered sugar for rolling"],
       instructions: ["Slit dates lengthwise and remove pits.", "Fill each date with a small spoonful of cream cheese or tuck in a walnut half.", "Pinch closed.", "Roll lightly in powdered sugar.", "Arrange on a platter. Refrigerate until serving."]
@@ -707,6 +804,7 @@ const recipes = {
       notable: "Watercress sandwiches were a staple at the wartime tea parties organized by British War Relief societies across American East Coast cities, where British-influenced entertaining traditions were consciously maintained.",
       history: "Watercress sandwiches came directly from English afternoon tea culture, where the contrast of peppery watercress against cold butter and white bread was considered one of the great simple pleasures of the table. During the war, with elaborate entertaining impossible, the simple watercress sandwich offered genuine elegance on minimal resources — watercress grew wild in streams, required no rationing, and cost almost nothing. The precise, crusts-trimmed presentation made them seem more formal than their ingredients warranted.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "Fresh watercress on thin buttered white bread — a delicate British-influenced sandwich that appeared at wartime teas and club lunches across America.",
       ingredients: ["1 bunch fresh watercress, thick stems removed", "Thin-sliced white bread", "Softened unsalted butter", "Salt", "White pepper"],
       instructions: ["Butter bread generously, going all the way to the edges.", "Lay a single layer of watercress on half the slices.", "Season lightly with salt and white pepper.", "Top with remaining slices, press gently.", "Trim all crusts with a sharp knife.", "Cut into fingers or triangles. Serve within 30 minutes."]
@@ -717,6 +815,7 @@ const recipes = {
       notable: "Baked custard was specifically recommended in wartime government cooking guides as an excellent use of eggs, which were not rationed, and as a vehicle for the dried or evaporated milk that replaced fresh during shortages.",
       history: "Baked custard is one of the oldest American desserts, carried from English and French cooking traditions in the colonial era. Its wartime relevance was specific: eggs were not rationed, and milk could be replaced with evaporated milk without catastrophic effect. This made custard one of the few desserts that remained accessible throughout the war years. Its simplicity made it a teaching dessert in domestic science classes for a century, and it appeared in nursing home and hospital menus as a gentle, digestible sweet. These institutional associations eventually contributed to its decline as a home dessert choice.",
       type: "Dessert",
+      difficulty: 2,
       description: "A simple custard of eggs, milk, and sugar baked in individual cups — when you couldn't get fancy dessert ingredients, a plain custard was what appeared on the table.",
       ingredients: ["3 cups whole milk", "4 eggs", "⅓ cup sugar", "1 tsp vanilla extract", "Pinch of salt", "Nutmeg for topping"],
       instructions: ["Preheat oven to 325°F.", "Scald milk. Beat eggs with sugar, vanilla, and salt.", "Slowly whisk hot milk into egg mixture.", "Strain through a sieve into custard cups.", "Grate a little nutmeg on top of each.", "Set cups in a water bath. Bake 40-50 minutes until just set.", "Serve warm or chilled."]
@@ -727,6 +826,7 @@ const recipes = {
       notable: "La Choy began selling canned chow mein ingredients in 1922 and launched an enormous advertising campaign in the 1940s. The company's slogan was La Choy makes Chinese food swing American.",
       history: "La Choy's canned chow mein introduced the concept of Chinese cooking to millions of Americans who had never been to a Chinese restaurant, while producing something entirely divorced from actual Chinese cuisine. The 1940s version used La Choy's canned bean sprouts and water chestnuts in a thick brown sauce poured over crispy fried noodles. Real chow mein, a Cantonese noodle dish, bears no resemblance. But the La Choy product was convenient, affordable, and required no exotic ingredients, making it one of the most successful prepared foods of the wartime era.",
       type: "Main",
+      difficulty: 1,
       description: "Cooked celery and onion in a cornstarch-thickened sauce over crispy chow mein noodles from a can — nothing like Chinese food, but wildly popular in the 1940s.",
       ingredients: ["1 lb pork or chicken, sliced thin", "3 cups celery, sliced diagonally", "1 large onion, sliced", "1 cup bean sprouts", "2 cups chicken broth", "2 tbsp soy sauce", "2 tbsp cornstarch", "Canned chow mein noodles for serving"],
       instructions: ["Stir-fry meat until cooked through. Remove.", "Cook celery and onion in same pan until slightly tender.", "Add bean sprouts and return meat.", "Mix broth, soy sauce, and cornstarch. Pour over.", "Stir and cook until sauce thickens and glosses.", "Serve over (not mixed with) crispy chow mein noodles."]
@@ -737,6 +837,7 @@ const recipes = {
       notable: "The War Cake recipe was distributed by the U.S. government through the Office of Price Administration. The recipe dates back to World War I as well — it was rediscovered and reprinted for World War II.",
       history: "War Cake is one of history's most honest recipe names: it exists because of war. The recipe was first circulated during World War I when butter, eggs, and milk were scarce, and reprinted and distributed again during World War II when the same ingredients were rationed. The chemistry relies on the moisture and pectin in raisins, the fat from lard or shortening, and intense spices to compensate for the absent enriching ingredients. The result is genuinely good — denser and more complex than a conventional spice cake. It has been rediscovered repeatedly by vegan cooks who appreciate that it produces a moist cake without any animal products.",
       type: "Dessert",
+      difficulty: 2,
       description: "A moist spice cake made without eggs, milk, or butter — all of which were rationed. Raisins and spices carry it, and it was astonishingly good for what it had to work with.",
       ingredients: ["2 cups flour", "1 tsp baking soda", "1 tsp cinnamon", "½ tsp cloves", "½ tsp nutmeg", "1 cup brown sugar", "1½ cups water", "1 cup raisins", "⅓ cup lard or vegetable shortening", "1 tsp salt"],
       instructions: ["Boil together water, sugar, raisins, lard, spices, and salt for 3 minutes.", "Cool completely.", "Sift flour and baking soda. Stir into cooled raisin mixture.", "Pour into a greased 9-inch pan.", "Bake at 325°F for 45-55 minutes until a toothpick comes out clean.", "Serve plain or with a dusting of powdered sugar."]
@@ -747,6 +848,7 @@ const recipes = {
       notable: "The Lunken Airport counter menu featured several aviation-themed sandwiches — the Lunken Special, the Pilot's Delight, the Cockpit Special, and the Hi-Flyer — each a variation on the club sandwich format. Lunken Airport, opened in 1925, was Cincinnati's main commercial airport until 1947.",
       history: "Lunken Municipal Airport in Cincinnati was the primary commercial airport for the region from its opening in 1925 through the late 1940s. The airport lunch counter served travelers, pilots, and ground crews with a menu that mixed standard American diner fare with aviation-themed specialty sandwiches. The Pilot's Delight — sliced chicken, bacon, lettuce, and tomato on toasted bread — was a variation on the club sandwich made fashionable for the airport setting. The menu has survived in the Lunken Airport archives and represents one of the most complete records of mid-century American airport food culture.",
       type: "Luncheonette",
+      difficulty: 2,
       description: "From the Lunken Airport lunch counter menu: sliced chicken, crisp bacon, lettuce, and tomato on toasted bread — the aviation-era club sandwich at 45 cents.",
       ingredients: ["3 slices white sandwich bread, toasted", "3 oz sliced cooked chicken breast", "3 strips crisp bacon", "2 leaves iceberg lettuce", "3 slices ripe tomato", "2 tbsp mayonnaise", "Salt and black pepper", "Toothpick with olive or pickle flag"],
       instructions: ["Toast all three slices of bread.", "Spread mayonnaise on all three slices.", "First layer: place chicken and half the lettuce on bottom toast slice.", "Place middle toast slice on top.", "Second layer: bacon, tomato, remaining lettuce.", "Season tomato with salt and pepper.", "Top with third slice.", "Cut diagonally into 4 triangles.", "Secure each triangle with a toothpick.", "Serve with potato chips and a dill pickle.", "This is exactly how it was served at the Lunken Airport counter."]
@@ -757,6 +859,7 @@ const recipes = {
       notable: "At its peak in the 1920s-40s, Postum outsold coffee in some American markets. The Lunken Airport menu listed it at 5 cents alongside coffee, hot tea, and iced tea. It was discontinued by Kraft Foods in 2007, then relaunched by a small company in 2013.",
       history: "Charles William Post created Postum in 1895 in Battle Creek, Michigan as a health alternative to coffee. Post was a patient at John Harvey Kellogg's sanitarium, where coffee was forbidden, and he created a roasted grain beverage as a substitute. Post's marketing genius — he ran aggressive anti-coffee campaigns calling coffee 'brain poison' and 'nerve-jangling' — made Postum enormously successful. During World War II, coffee rationing made Postum genuinely necessary rather than optional, and its sales peaked. After the war, coffee's return to abundance ended Postum's moment, and it gradually declined until Kraft discontinued it in 2007.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The grain-based coffee substitute that millions of Americans drank for breakfast — roasted wheat bran and molasses brewed like coffee. Nutty, slightly sweet, and completely caffeine-free.",
       ingredients: ["2 tsp Postum powder (or roasted chicory/grain powder as substitute)", "8 oz boiling water", "Whole milk or cream to taste", "Sugar to taste"],
       instructions: ["Bring water to a full boil.", "Add Postum powder and stir vigorously.", "Pour into a cup.", "Add milk or cream and sugar to taste.", "Postum is stronger and slightly sweeter than coffee — use less powder for a lighter cup.", "Serve in a heavy ceramic diner mug.", "This was the 5-cent morning drink for millions of Americans who couldn't afford or chose not to drink coffee."]
@@ -771,6 +874,16 @@ const recipes = {
       ingredients: ["2 slices thick white bread", "2 oz sliced ham", "2 oz sliced turkey", "2 slices Swiss cheese", "EGG BATTER: 1 egg", "¼ cup milk", "Pinch salt", "Butter for frying", "Powdered sugar to finish", "Raspberry jam to serve"],
       instructions: ["Layer ham, turkey, and both slices of cheese between the bread.", "Beat egg with milk and salt in a shallow dish.", "Melt butter generously in a skillet over medium heat.", "Dip sandwich in egg batter, coating both sides thoroughly.", "Cook 3-4 minutes per side until deep golden brown and cheese is melted.", "Remove to a plate.", "Dust generously with powdered sugar immediately.", "Serve with raspberry jam alongside for dipping.", "The powdered sugar is not optional — it's the point."]
     },
+    {
+      name: "Deviled Ham Spread Sandwich",
+      region: "Nationwide; deviled ham was one of the most widely sold canned products in America from the 1890s through the 1970s, appearing on lunch counter menus and in home kitchens from coast to coast",
+      notable: "Underwood Deviled Ham, introduced in 1868, is the oldest trademarked canned food product still sold in America. The red devil logo on the can has been there since 1870 and is the oldest food trademark in continuous use in the United States.",
+      history: "Deviled ham — ground ham seasoned with mustard, cayenne, and spices — was one of William Underwood's original canned products, introduced in 1868. The word 'deviled' referred to the spiced, piquant preparation, a term borrowed from British cooking. By the early 20th century deviled ham spread was standard at bridge club meetings, church potlucks, and lunch counters everywhere. It was considered a sophisticated shortcut — a canned product that tasted homemade. Its decline began in the 1970s as processed foods fell from fashion and the association with convenience cooking became a liability rather than a selling point. The can is still on grocery shelves but the culture that made it fashionable is entirely gone.",
+      type: "Luncheonette",
+      description: "The spiced ground ham spread that was on every lunch counter and bridge table in America — served on white bread with mustard and pickles, or on crackers as an appetizer.",
+      ingredients: ["1 can (4.25 oz) Underwood Deviled Ham", "2 tbsp cream cheese, softened", "1 tsp Dijon mustard", "1 tsp prepared horseradish", "Dash of Worcestershire sauce", "White sandwich bread or crackers", "Bread and butter pickles to serve"],
+      instructions: ["Combine deviled ham, cream cheese, mustard, horseradish, and Worcestershire in a bowl.", "Mix until smooth and well combined.", "Taste — adjust seasoning with more mustard or horseradish if desired.", "For sandwiches: spread generously on white bread with bread and butter pickles.", "For a proper 1940s presentation: spread on crackers and arrange on a plate.", "For a cocktail party: pipe onto small rounds of white bread using a pastry bag.", "Refrigerate any leftovers — it keeps well for 3 days.", "Note: you can make this from scratch with ground cooked ham, but the canned version is historically accurate and genuinely good."]
+    },
   ],
 
   "1950s": [
@@ -780,6 +893,7 @@ const recipes = {
       notable: "Olive loaf — along with its sister products pimento loaf and pickle loaf — was marketed specifically to middle- and working-class families as an affordable, festive-looking deli option. The bright green olive dots made it visually distinctive on the deli slicer.",
       history: "Olive loaf is a processed meat product made from ground pork studded with pimento-stuffed green olives, encased and sliced like bologna. It was introduced in the mid-20th century as part of the American deli's golden age, when supermarket deli counters expanded enormously and packaged luncheon meats reached every household. Oscar Mayer and other major producers sold millions of pounds of olive loaf through the 1950s, 60s, and 70s. Its decline began in the 1980s and 90s as health concerns about processed meats reshaped American eating habits, and the category of novelty luncheon meats — pickle loaf, pimento loaf, olive loaf — all but vanished from mainstream delis.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "Sliced olive loaf — pork studded with pimento-stuffed green olives — on soft white bread with yellow mustard. A deli counter staple from the 1940s through the 1970s that has almost completely vanished.",
       ingredients: ["4-6 thin slices olive loaf (available at some deli counters; if unavailable, bologna with sliced olives approximates it)", "2 slices soft white sandwich bread", "1 tbsp yellow mustard", "Optional: 1 leaf iceberg lettuce"],
       instructions: ["Spread yellow mustard on one slice of white bread.", "Layer olive loaf slices generously.", "Add lettuce if using.", "Top with second slice of bread.", "Cut diagonally.", "This sandwich requires soft white bread and yellow mustard only — anything else is wrong.", "Serve with potato chips and a dill pickle.", "Note: if you can find actual olive loaf at a deli counter, buy more than you need."]
@@ -790,6 +904,7 @@ const recipes = {
       notable: "Campbell's Soup estimates that tuna noodle casserole made with their cream of mushroom soup was prepared in roughly 90% of American homes at some point during the 1950s and 60s.",
       history: "Tuna noodle casserole was the signature dish of postwar American food culture — the casserole era. The postwar economy produced two trends that combined to make casseroles ubiquitous: affordable processed ingredients and suburban social life that required dishes that could be assembled ahead and baked while guests arrived. Campbell's Soup actively promoted casserole recipes as a way to sell condensed cream of mushroom soup, and the resulting cookbook culture made the casserole central to American entertaining. Tuna noodle was the archetype: cheap, filling, portable, and entirely made from pantry staples.",
       type: "Main",
+      difficulty: 1,
       description: "The queen of the 1950s casserole era: canned tuna, egg noodles, and cream of mushroom soup, topped with crushed potato chips. Every American family had a version.",
       ingredients: ["2 cans (5 oz) tuna, drained", "3 cups cooked egg noodles", "1 can condensed cream of mushroom soup", "½ cup milk", "1 cup frozen peas", "½ cup cheddar, shredded", "1 cup potato chips, crushed"],
       instructions: ["Preheat oven to 375°F.", "Mix soup and milk until smooth. Combine with tuna, noodles, peas, and half the cheese.", "Pour into a greased 2-quart baking dish.", "Top with remaining cheese and crushed potato chips.", "Bake 25-30 minutes until bubbling and golden on top."]
@@ -800,6 +915,7 @@ const recipes = {
       notable: "James Beard featured Beef Stroganoff prominently in his 1950s cooking guides as the ultimate sophisticated dinner party main course — the dish that separated serious home cooks from casual ones.",
       history: "Beef Stroganoff has a complicated American journey. The original Russian dish — named for the Stroganov family of Ural industrialists — arrived in American restaurants via Russian émigrés in Paris and New York in the 1930s. American cookbook writers in the postwar era adapted it for the suburban kitchen, and it became the signature aspirational dinner party dish of the 1950s: it required technique, used expensive ingredients, and looked elegant on the plate. The dish's fall from grace in the 1970s and 80s was partly a backlash against cream-heavy dishes and partly the rise of lighter preparations.",
       type: "Main",
+      difficulty: 3,
       description: "Thin-sliced beef in a tangy mushroom and sour cream sauce over egg noodles — the 1950s dinner party crown jewel, now rarely seen in its original form.",
       ingredients: ["1½ lbs beef tenderloin or sirloin, sliced thin", "1 lb mushrooms, sliced", "1 large onion, thinly sliced", "3 tbsp butter", "1 cup beef broth", "1 cup sour cream", "1 tbsp flour", "Salt, pepper", "Egg noodles for serving"],
       instructions: ["Season beef strips with salt and pepper. Sear in batches in hot butter. Remove.", "Sauté onion and mushrooms until golden.", "Add broth; stir in flour mixed with a little cold water. Simmer 5 minutes.", "Remove from heat. Stir in sour cream — do not boil after this point.", "Return beef to pan. Heat gently. Serve immediately over egg noodles."]
@@ -810,6 +926,7 @@ const recipes = {
       notable: "Dole's canned pineapple advertising campaigns, running from the 1920s through the 1950s, were among the most successful in American food history. The company essentially invented the American relationship with pineapple through promotional recipes.",
       history: "Pineapple upside-down cake was a product of the American canning industry's marketing genius. Dole's introduction of sliced pineapple rings in cans in 1925 gave home cooks a perfectly formed, symmetrically beautiful ingredient that seemed designed for this exact cake. The company distributed the recipe on can labels and in magazine advertisements, and by the 1950s the cake was deeply embedded in American baking culture. It was an early example of an industrial product becoming so associated with a recipe that the two seemed inseparable.",
       type: "Dessert",
+      difficulty: 2,
       description: "Canned pineapple rings and maraschino cherries arranged in caramelized brown sugar, topped with yellow cake batter and flipped — the showstopper dessert of the 1950s.",
       ingredients: ["4 tbsp butter", "¾ cup brown sugar", "1 can (20 oz) pineapple rings, drained", "Maraschino cherries", "1½ cups flour", "1 cup sugar", "2 tsp baking powder", "½ cup butter, softened", "2 eggs", "½ cup pineapple juice", "1 tsp vanilla"],
       instructions: ["Melt 4 tbsp butter in a 10-inch cast iron skillet. Stir in brown sugar.", "Arrange pineapple rings in sugar. Place a cherry in each ring's center.", "Make cake batter: cream butter and sugar; beat in eggs, vanilla. Mix in flour and baking powder alternately with pineapple juice.", "Carefully pour batter over fruit.", "Bake at 350°F for 40-45 minutes. Let rest 5 minutes, then invert onto a plate."]
@@ -820,6 +937,7 @@ const recipes = {
       notable: "Created by Dorcas Reilly at the Campbell's Soup test kitchen in 1955. The original recipe card is now on permanent display at the National Inventors Hall of Fame in Akron, Ohio.",
       history: "Green Bean Casserole is arguably the most successful corporate recipe in American culinary history. Dorcas Reilly created it in 1955 specifically to promote Campbell's condensed cream of mushroom soup — the recipe was printed on the can's label and distributed in millions of copies. It spread through the church supper, potluck, and holiday dinner circuits with extraordinary speed. By the 1960s it was appearing on Thanksgiving tables across the country, a position it has never surrendered.",
       type: "Side",
+      difficulty: 1,
       description: "The original 1955 Dorcas Reilly recipe for Campbell's: canned green beans, cream of mushroom soup, and French's fried onions on top — simple perfection.",
       ingredients: ["2 cans (14.5 oz) green beans, drained", "1 can condensed cream of mushroom soup", "¾ cup milk", "1 tsp soy sauce", "Black pepper", "1⅓ cups French fried onions, divided"],
       instructions: ["Preheat oven to 350°F.", "Mix soup, milk, and soy sauce until smooth.", "Stir in beans, pepper, and ⅔ cup fried onions.", "Spread in a 1½ quart baking dish.", "Bake 25 minutes until bubbling.", "Top with remaining onions. Bake 5 more minutes."]
@@ -830,6 +948,7 @@ const recipes = {
       notable: "The name ambrosia — food of the Greek gods — was applied to this dish in the 19th century when fresh coconut and oranges were expensive and exotic. By the 1950s, canned versions made it accessible to everyone.",
       history: "Ambrosia has a longer American history than most people realize. The original version in Southern cookbooks from the 1860s was a sophisticated dessert of fresh oranges, fresh coconut, and sugar — genuinely exotic and expensive ingredients that justified the divine name. The 1950s version replaced fresh ingredients with canned fruit and miniature marshmallows — a mid-century democratization of the concept. Jet-Puffed marshmallows were introduced in 1955 and immediately began appearing in recipes of this type. The resulting dish was sweeter, simpler, and more colorful than the original, and it became a potluck and holiday staple that persists in the South.",
       type: "Side/Dessert",
+      difficulty: 1,
       description: "Canned mandarin oranges, pineapple tidbits, miniature marshmallows, and shredded coconut folded into whipped cream — a pink cloud of mid-century joy.",
       ingredients: ["1 can mandarin oranges, drained", "1 can pineapple tidbits, drained", "1 cup mini marshmallows", "1 cup sweetened shredded coconut", "1 cup maraschino cherries, halved", "1 cup sour cream or whipped cream"],
       instructions: ["Combine all fruits and marshmallows.", "Fold in coconut.", "Stir in sour cream or fold in whipped cream.", "Refrigerate at least 2 hours — overnight is better.", "Serve cold, directly from the bowl."]
@@ -840,6 +959,7 @@ const recipes = {
       notable: "Chicken Divan was the signature dish of the Divan Parisien restaurant, which occupied the Chatham Hotel on Vanderbilt Avenue in Manhattan from the 1930s. It was considered one of the most elegant luncheon dishes in New York.",
       history: "Chicken Divan has a documented restaurant origin — it was created at the Divan Parisien restaurant in New York. The dish moved from restaurant to home kitchen through the 1950s magazine recipe circuit, which regularly translated fashionable restaurant dishes into home-accessible versions. The original used a proper Mornay sauce and dry sherry; home versions often simplified these to canned soup and whatever cheese was available. The dish represented a kind of aspirational cooking — making something that tasted like a restaurant meal at home — that was central to 1950s food culture.",
       type: "Main",
+      difficulty: 2,
       description: "Broccoli and chicken breast layered under a Mornay-style sauce, baked until golden — the original Divan Parisien dish from New York, popularized in home kitchens in the 1950s.",
       ingredients: ["2 lbs broccoli florets, steamed", "4 cooked chicken breasts, sliced", "3 tbsp butter", "3 tbsp flour", "1½ cups chicken broth", "½ cup cream", "½ cup grated Parmesan", "2 tbsp dry sherry", "Salt, pepper"],
       instructions: ["Arrange broccoli in a buttered baking dish. Layer chicken on top.", "Make sauce: melt butter, whisk in flour, add broth and cream. Stir until thick.", "Add sherry and half the Parmesan. Season.", "Pour sauce over chicken and broccoli.", "Sprinkle remaining Parmesan on top.", "Bake at 400°F for 20-25 minutes until bubbling and lightly browned."]
@@ -850,6 +970,7 @@ const recipes = {
       notable: "In the South, bringing a plate of deviled eggs to a gathering remains a social expectation in many communities to this day. Craig Claiborne of the New York Times wrote affectionately about deviled eggs as quintessential American food.",
       history: "Deviled eggs occupy a peculiar place in American food history — they are one of the few genuinely old dishes that have maintained continuous popularity from the 19th century to the present, while simultaneously being mocked and celebrated as quintessentially retro. The deviled designation, meaning seasoned with mustard and hot spices, dates to the 1800s. The postwar era was their golden age: cheap eggs, the rise of the buffet and potluck as social forms, and the availability of mayonnaise made them the universal party food. They are included here because while they persist in homes, they have largely vanished from restaurant menus.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Hard-boiled egg halves filled with a mustardy yolk mixture and dusted with paprika — a 1950s party essential that was on every buffet table in America.",
       ingredients: ["12 large eggs, hard-boiled and peeled", "4 tbsp mayonnaise", "2 tsp yellow mustard", "1 tsp white vinegar", "Salt, white pepper", "Sweet paprika for garnish"],
       instructions: ["Slice eggs in half lengthwise. Pop yolks into a bowl.", "Mash yolks with mayonnaise, mustard, vinegar, salt, and pepper until smooth.", "Fill a piping bag or spoon filling into egg white halves.", "Dust generously with paprika.", "Refrigerate until serving."]
@@ -860,6 +981,7 @@ const recipes = {
       notable: "Hellmann's Mayonnaise, introduced in 1913, was the product that made cold mayonnaise-dressed salads possible at scale. The company's promotional recipes shaped American summer food culture for decades.",
       history: "Macaroni salad was a product of two innovations: the widespread availability of commercial elbow macaroni and the rise of commercial mayonnaise. Before shelf-stable mayonnaise, cold pasta salads were not practical. The 1950s backyard barbecue culture made macaroni salad essential: it traveled to picnics without refrigeration problems, fed large groups economically, and could be made a day ahead. The sweet-tangy dressing that characterizes American macaroni salad has no European precedent — it is entirely a New World creation.",
       type: "Side",
+      difficulty: 1,
       description: "Elbow macaroni in a sweet-tangy mayonnaise dressing with celery, pimento, and hard-boiled egg — the original cookout side dish, not the deli version.",
       ingredients: ["3 cups elbow macaroni, cooked", "3 hard-boiled eggs, chopped", "1 cup celery, diced", "¼ cup pimentos, chopped", "¾ cup mayonnaise", "2 tbsp sweet pickle relish", "1 tbsp cider vinegar", "1 tsp sugar", "Salt, pepper"],
       instructions: ["Cook macaroni al dente; drain and cool.", "Mix mayonnaise, relish, vinegar, and sugar.", "Combine pasta with eggs, celery, and pimentos.", "Fold in dressing. Season to taste.", "Refrigerate at least 2 hours before serving."]
@@ -870,6 +992,7 @@ const recipes = {
       notable: "Jell-O was at the absolute peak of its cultural moment in the 1950s — General Foods' promotional cookbooks, featuring molded salads and desserts, were among the most widely distributed cookbooks in American history.",
       history: "The Jell-O mold craze of the 1950s remains one of the stranger chapters in American culinary history. General Foods promoted Jell-O with remarkable marketing intensity, producing promotional cookbooks that portrayed molded gelatin salads as the height of modern, scientific cooking. The lime Jell-O and cream cheese combination was one of the most popular: the cream cheese enriched the gelatin into a semi-solid mousse, and the green color was considered festive. That it sometimes incorporated mayonnaise tells you something about the decade's uneasy relationship with the concept of savory.",
       type: "Dessert",
+      difficulty: 2,
       description: "Lime Jell-O blended with cream cheese and sometimes mayonnaise — yes, mayonnaise — served as a salad or dessert. This was considered elegant.",
       ingredients: ["1 package (3 oz) lime Jell-O", "1 cup boiling water", "8 oz cream cheese, softened", "½ cup mayonnaise", "1 cup crushed pineapple, drained", "1 cup whipped cream or Cool Whip"],
       instructions: ["Dissolve Jell-O in boiling water. Cool to room temperature.", "Beat cream cheese smooth; blend in mayonnaise.", "Whisk Jell-O into cream cheese mixture until smooth.", "Fold in pineapple and whipped cream.", "Pour into a mold or 8x8 pan.", "Refrigerate until firm, at least 3 hours. Unmold or slice."]
@@ -880,6 +1003,7 @@ const recipes = {
       notable: "The song Sukiyaki (Ue o Muite Arukō) by Kyu Sakamoto became the first Japanese song to reach number one on the American pop charts in 1963, and the American title helped cement sukiyaki's cultural presence.",
       history: "Sukiyaki arrived in American consciousness through the postwar occupation of Japan, Japanese-American communities in West Coast cities, and a general mid-1950s fascination with Asian culture. Home entertaining with an electric skillet at the table — cooking sukiyaki communally — became fashionable in suburban America as an exotic dinner party format. The association with the Kyu Sakamoto hit only deepened its cultural presence through the early 1960s, before both the song and the dish were gradually eclipsed by other enthusiasms.",
       type: "Main",
+      difficulty: 2,
       description: "In the 1950s, Japanese food entered American consciousness and sukiyaki became a popular at-home dinner party dish — thinly sliced beef with vegetables in a sweet soy broth.",
       ingredients: ["1½ lbs beef sirloin, sliced paper-thin", "1 block tofu, cubed", "2 cups napa cabbage, chopped", "6 green onions, cut in 2-inch pieces", "1 cup mushrooms, sliced", "½ cup soy sauce", "¼ cup mirin or sweet sherry", "¼ cup sugar", "½ cup beef broth"],
       instructions: ["Mix soy sauce, mirin, sugar, and broth into sukiyaki sauce.", "In a wide pan or electric skillet at the table, melt a little beef fat or oil.", "Cook beef slices briefly, pushing to one side.", "Add vegetables and tofu in separate groups.", "Pour sauce over everything.", "Cook gently, basting as you go. Serve over rice with a dipping egg yolk if desired."]
@@ -890,6 +1014,7 @@ const recipes = {
       notable: "Pimento cheese has been called the pâté of the South. Craig Claiborne of the New York Times credited it as his favorite food, and it remains central to Southern food culture from football tailgates to debutante balls.",
       history: "Pimento cheese itself dates to the early 1900s, when cream cheese was a New York specialty and Spanish pimentos began being imported in significant quantities. The combination spread south, where it transformed into something far more distinctive — sharper cheddar, more mayonnaise, more spice. By the 1950s, serving stuffed celery as part of a relish tray was a social norm at cocktail parties from coast to coast. The relish tray as an appetizer form has largely disappeared from American entertaining, and stuffed celery with it, though pimento cheese itself remains very much alive in Southern cooking.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Celery stalks filled with tangy pimento cheese — a ubiquitous 1950s cocktail party nibble that appeared on every relish tray.",
       ingredients: ["1 bunch celery, washed and cut into 3-inch pieces", "8 oz sharp cheddar, finely grated", "4 oz cream cheese, softened", "¼ cup mayonnaise", "¼ cup pimentos, minced", "Pinch cayenne", "Salt, pepper"],
       instructions: ["Beat cream cheese and mayonnaise until smooth.", "Fold in cheddar, pimentos, and cayenne. Season.", "Fill each celery stalk generously with pimento cheese using a spoon or piping bag.", "Arrange on a platter. Refrigerate until firm.", "Serve as part of a relish tray."]
@@ -900,6 +1025,7 @@ const recipes = {
       notable: "Swiss steak has no connection to Switzerland. The swiss refers to the textile process of swissing, which involved mechanically compressing fabric to change its texture — the same idea applied to tough meat.",
       history: "Swiss steak was a brilliant solution to the problem of cheap, tough beef cuts. Round steak and bottom round were naturally too tough to cook quickly, but pounding them with a mallet and braising them long and slow in tomatoes produced something genuinely tender and flavorful. The name puzzled generations of American cooks — swiss refers not to Switzerland but to the textile process applied to make the meat tender. Swiss steak was a standard Sunday dinner in working-class American homes through the 1960s, eventually displaced by the availability of more tender cuts and the rise of the slow cooker.",
       type: "Main",
+      difficulty: 2,
       description: "Tough round steak tenderized by pounding and braised in tomatoes until fork-tender — a thrifty main course that transformed a cheap cut into Sunday dinner.",
       ingredients: ["2 lbs round steak, cut 1 inch thick", "Flour, salt, pepper for dredging", "3 tbsp oil", "1 large onion, sliced", "1 can (14 oz) diced tomatoes", "1 cup beef broth", "1 green pepper, sliced"],
       instructions: ["Pound steak with a meat mallet. Cut into serving pieces. Dredge in seasoned flour.", "Brown well in oil on both sides. Remove.", "Sauté onion and green pepper.", "Return beef; add tomatoes and broth. Cover tightly.", "Braise at 325°F for 1½-2 hours until very tender.", "Serve with mashed potatoes."]
@@ -910,6 +1036,7 @@ const recipes = {
       notable: "The recipe for banana pudding was first printed on Nabisco Nilla Wafer boxes in 1945 and has been associated with the brand ever since. The Southern meringue-topped version predates the Nilla Wafer association and is considered the authentic form.",
       history: "Banana pudding arrived in American cooking relatively late — bananas were exotic and expensive until the United Fruit Company's aggressive Caribbean operations in the early 1900s made them cheap and ubiquitous. The Nabisco Nilla Wafer association cemented the specific form of the dish from 1945 onward. The Southern tradition of topping it with meringue and briefly broiling it — making it a proper baked dessert — is the older and more labor-intensive form. The Cool Whip substitution, which now dominates most recipes, dates to the 1970s and represents a significant downgrade in both texture and flavor.",
       type: "Dessert",
+      difficulty: 2,
       description: "Layers of vanilla wafers, sliced bananas, and homemade vanilla custard, topped with meringue — this is the cooked original, before the Cool Whip era.",
       ingredients: ["¾ cup sugar", "⅓ cup flour", "Pinch salt", "3 cups whole milk", "3 egg yolks", "2 tbsp butter", "2 tsp vanilla", "3 ripe bananas, sliced", "1 box vanilla wafers", "MERINGUE: 3 egg whites", "6 tbsp sugar"],
       instructions: ["Whisk sugar, flour, salt, and milk in a saucepan. Cook over medium heat, stirring, until thick.", "Temper in egg yolks; return to heat and cook 2 more minutes. Remove from heat; stir in butter and vanilla.", "Layer wafers, banana slices, and custard in a deep baking dish. Repeat layers.", "Beat whites to stiff peaks; beat in sugar. Spread over pudding, sealing edges.", "Bake at 350°F for 12-15 minutes until meringue is golden."]
@@ -920,6 +1047,7 @@ const recipes = {
       notable: "Tomato aspic with shrimp was featured on the menus of the best Southern hotel dining rooms through the 1970s, and Craig Claiborne of the New York Times discussed it as a defining dish of Southern fine dining.",
       history: "Shrimp suspended in tomato aspic represents the peak of mid-century American gelatin ambition. The technique required real skill: the aspic had to be chilled to exactly the right consistency before the shrimp were added so they suspended evenly rather than sinking or floating. The unmolding at the table was a social event in itself. In the South, where shrimp were abundant on the Gulf and Atlantic Coasts, this combination made particular sense. The dish persisted in Southern restaurants and women's club luncheons long after it disappeared from Northern tables.",
       type: "Salad",
+      difficulty: 3,
       description: "Shrimp suspended in spiced tomato gelatin and unmolded at the table — a 1950s dinner party showpiece that seems baffling today.",
       ingredients: ["3 cups tomato juice", "2 envelopes gelatin", "1 tbsp lemon juice", "1 tsp Worcestershire", "Dash Tabasco", "1 tsp sugar", "1 lb cooked shrimp, peeled", "½ cup celery, minced"],
       instructions: ["Soften gelatin in ¼ cup cold tomato juice.", "Heat remaining juice; stir in softened gelatin until dissolved.", "Add lemon juice, Worcestershire, Tabasco, and sugar.", "Chill until syrupy. Fold in shrimp and celery.", "Pour into a large ring mold. Chill until firm.", "Unmold on a platter. Serve with mayonnaise."]
@@ -930,6 +1058,7 @@ const recipes = {
       notable: "Scalloped corn appears in virtually every Midwestern community cookbook published between 1940 and 1980, making it one of the most widely documented regional casseroles in American culinary history.",
       history: "Scalloped corn occupies an interesting middle ground between a casserole and a corn pudding. The two-corn combination — creamed corn for moisture and flavor, whole kernel for texture — bound with egg and milk into a custard and topped with crackers for crunch, was a distinctly American formula with no European precedent. It was practical Midwestern cooking: corn was the most abundant crop, canned corn was one of the cheapest pantry staples, and the dish required no special skill. Its disappearance from mainstream cooking is more a matter of fashion than flavor — it is genuinely delicious.",
       type: "Side",
+      difficulty: 1,
       description: "Canned creamed corn and whole kernel corn baked in a custardy egg mixture with crackers on top — a mid-century casserole side that has all but disappeared.",
       ingredients: ["1 can (15 oz) creamed corn", "1 can (15 oz) whole kernel corn, drained", "2 eggs, beaten", "½ cup milk", "1 small onion, grated", "1 cup crushed crackers", "2 tbsp butter", "Salt and pepper"],
       instructions: ["Preheat oven to 350°F. Butter a 1½-quart baking dish.", "Mix both corns, eggs, milk, and onion. Season.", "Stir in half the crackers.", "Pour into baking dish.", "Toss remaining crackers with melted butter. Spread on top.", "Bake 40-45 minutes until set and golden."]
@@ -940,6 +1069,7 @@ const recipes = {
       notable: "The grilled cheese and tomato soup combination was so culturally embedded that it appeared in virtually every American school cafeteria from the 1950s onward. Campbell's promoted the pairing aggressively in their advertising, and it became one of the most universally shared American food memories.",
       history: "Grilled cheese sandwiches became widespread after Kraft introduced processed American cheese slices in the 1950s — the perfectly melting, consistent cheese made the sandwich reproducible at scale. Campbell's tomato soup and the grilled cheese sandwich were promoted together in advertising campaigns that cemented their pairing in the American consciousness. The combination became the standard Friday lunch in Catholic school cafeterias (no meat), the sick-day meal, and the after-school snack of an entire generation.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "The quintessential American lunch pairing — a perfectly golden grilled cheese sandwich alongside a bowl of hot tomato soup. Simple enough to make in ten minutes, impossible to improve.",
       ingredients: ["2 slices white sandwich bread", "2 tbsp butter, softened", "2 slices American cheese (Kraft Singles for authenticity)", "1 can Campbell's condensed tomato soup", "1 can whole milk"],
       instructions: ["Butter the outside faces of both bread slices generously.", "Place cheese between slices, buttered sides out.", "Heat a cast iron skillet or griddle over medium-low heat.", "Cook sandwich 3-4 minutes until deep golden. Flip. Cook another 2-3 minutes.", "For soup: combine condensed tomato soup with one can of whole milk.", "Heat over medium, stirring. Do not boil.", "Cut sandwich diagonally.", "Serve immediately with the soup alongside for dipping.", "The soup is for dipping. This is non-negotiable."]
@@ -950,6 +1080,7 @@ const recipes = {
       notable: "The Lunken Airport cold plate menu included 'Celery Hearts, Sliced Egg' as a standalone 35-cent plate — a reminder that a single stalk of properly trimmed celery heart was once considered a legitimate meal component.",
       history: "Before the vegetable crudité platter became fashionable in the 1970s, celery hearts were a standalone table item at American restaurants. They were placed on the table before the meal at better establishments, served as part of cold plates at lunch counters, and offered as a relish alongside heavier dishes. The celery heart — the pale, tender inner stalks — was considered a delicacy compared to the tougher outer stalks. Paired with olives (pimento-stuffed green olives were standard), it was a light starter or accompaniment. The practice of serving celery as a serious food item rather than a garnish has almost entirely disappeared.",
       type: "Luncheonette",
+      difficulty: 1,
       description: "Crisp pale celery hearts, trimmed and chilled, served alongside green olives stuffed with pimento — the forgotten American table relish that appeared at every proper lunch counter.",
       ingredients: ["1 head celery, pale inner hearts only", "Ice water", "1 jar pimento-stuffed green olives", "Optional: radishes, carrot sticks"],
       instructions: ["Trim outer celery stalks. Reserve only the pale, tender inner heart.", "Cut celery hearts into 4-inch lengths.", "Soak in ice water for 30 minutes — this crisps and curls them slightly.", "Drain and pat dry.", "Arrange on a small plate alongside drained olives.", "Serve chilled as a table relish or cold plate accompaniment.", "This is the entire recipe. Celery and olives were once enough."]
@@ -963,6 +1094,7 @@ const recipes = {
       notable: "The New York World's Fair of 1964-65 featured a Swiss Pavilion where beef fondue was served to thousands of American visitors daily, launching the fondue craze that would dominate dinner party culture for the next decade.",
       history: "Beef fondue Bourguignonne — despite the name, it has no connection to Burgundy; it was named by a Swiss restaurateur who wanted it to sound French — arrived in American consciousness almost entirely through the 1964 World's Fair. By 1966, every wedding registry in America included a fondue set, and the format became the defining dinner party activity of the decade. The social theater of the fondue set was as important as the food itself. The 1970s cheese fondue craze eventually replaced it, and the beef version retreated to retro novelty status.",
       type: "Main",
+      difficulty: 2,
       description: "Cubed beef tenderloin cooked at the table in hot oil — the 1960s dinner party ritual that required the right fondue set and a crowd willing to wait.",
       ingredients: ["2 lbs beef tenderloin, cubed 1-inch", "Vegetable oil for frying", "Béarnaise sauce", "Horseradish cream", "Mustard", "Soy-ginger dipping sauce"],
       instructions: ["Cut beef into uniform 1-inch cubes. Pat very dry.", "Fill fondue pot ⅔ with oil. Heat to 375°F on the stove.", "Transfer carefully to the fondue stand with the burner.", "Guests spear beef with long fondue forks and cook in hot oil 30-60 seconds.", "Serve with an array of dipping sauces.", "Important: use fondue forks only for cooking; switch to regular forks for eating."]
@@ -973,6 +1105,7 @@ const recipes = {
       notable: "Chicken Kiev was the signature dish at the Russian Tea Room in New York City, which served it from its 1926 opening through its various iterations. The dish became synonymous with the restaurant's combination of theatrical Soviet glamour and American luxury.",
       history: "Chicken Kiev's American career is a story of Cold War glamour. The dish — a Ukrainian preparation that Russian restaurants claimed as their own — became the go-to luxury item at upscale American restaurants during the Cold War, when anything Soviet-adjacent carried an exotic charge. The technical challenge of the dish — the butter must be sealed inside without leaking during frying — gave it a prestige that simpler dishes lacked, and the theatrical butter-spurting at the table was a feature, not a bug. Airlines served it as a first-class meal through the 1970s and 80s.",
       type: "Main",
+      difficulty: 4,
       description: "Chicken breast wrapped around a cylinder of herbed butter, breaded, and deep-fried so that the butter spurts out when cut — the restaurant showpiece of the 1960s.",
       ingredients: ["4 boneless chicken breasts, pounded thin", "8 tbsp cold unsalted butter", "2 tbsp fresh parsley, minced", "2 cloves garlic, minced", "Salt, pepper", "Flour, beaten egg, breadcrumbs for breading", "Oil for deep frying"],
       instructions: ["Mix butter with parsley and garlic. Season. Roll into a log in plastic wrap. Freeze until very firm.", "Season chicken. Place a cold butter cylinder at the edge of each breast.", "Roll tightly, tucking in sides. Secure with toothpicks if needed.", "Dredge in flour, dip in egg, coat in breadcrumbs.", "Fry in 350°F oil 15-18 minutes until deep golden and cooked through.", "Rest 3 minutes before serving — beware the butter spurt."]
@@ -983,6 +1116,7 @@ const recipes = {
       notable: "The Grasshopper cocktail — crème de menthe, crème de cacao, and cream — was invented by Philip Guichet at Tujague's Restaurant in New Orleans. The pie adaptation made the cocktail into a dessert.",
       history: "Grasshopper Pie is one of the most distinctive products of the cocktail culture of 1960s entertaining. The fashion for serving alcohol-spiked desserts at dinner parties was a reflection of the decade's sophistication-signaling food culture. The vivid green color, produced by crème de menthe, made the pie visually arresting — it was the kind of dessert that drew comments from guests. The Oreo crust added a chocolate bitterness that balanced the sweet liqueur filling. The pie's decline came as dessert fashions moved toward chocolate-forward and then toward less sweet preparations.",
       type: "Dessert",
+      difficulty: 3,
       description: "A no-bake Oreo crust filled with a mousse of crème de menthe and crème de cacao — aggressively green, aggressively minty, and absolutely of its era.",
       ingredients: ["24 Oreo cookies, crushed", "5 tbsp butter, melted", "24 large marshmallows", "½ cup whole milk", "¼ cup crème de menthe", "¼ cup white crème de cacao", "2 cups heavy cream, whipped", "Green food coloring (optional)"],
       instructions: ["Mix cookie crumbs and melted butter. Press into a 9-inch pie plate. Chill.", "Melt marshmallows with milk in a double boiler. Cool to room temp.", "Stir in crème de menthe and crème de cacao.", "Fold in whipped cream.", "Pour into crust. Freeze until firm, at least 4 hours.", "Garnish with chocolate shavings. Slice frozen."]
@@ -993,6 +1127,7 @@ const recipes = {
       notable: "Lobster Thermidor was named for the play Thermidor by Victorien Sardou, which opened the night the dish was created at Chez Marie. Napoleon's revolutionary calendar name for late July named both the play and the dish.",
       history: "Lobster Thermidor has one of the most documented origin stories in culinary history — created on January 24, 1894, at a Paris restaurant to celebrate the opening of Sardou's play. The dish traveled to American fine dining rooms in the early 1900s and remained the benchmark of extravagance through the 1960s, when ordering it signaled you were celebrating something or that money was no object. Julia Child helped introduce the home version to American cooks. Its decline is partly economic — good lobster is expensive — and partly fashion, as the elaborate filled-and-broiled-shell presentation came to seem overwrought.",
       type: "Main",
+      difficulty: 5,
       description: "Lobster meat in a brandy and Dijon cream sauce, stuffed back into the shell and broiled — the apex of 1960s fine dining, now rarely ordered.",
       ingredients: ["2 lobsters (1½ lbs each), split", "3 tbsp butter", "2 tbsp brandy", "1 tbsp dry mustard", "1 cup heavy cream", "2 egg yolks", "¼ cup grated Gruyère", "Salt, cayenne"],
       instructions: ["Broil split lobsters 8-10 minutes. Remove meat; keep shells.", "Sauté lobster chunks in butter 2 minutes. Flambe with brandy.", "Add cream and mustard; simmer to reduce by a third.", "Temper egg yolks into sauce; stir until slightly thick.", "Season with salt and cayenne. Fill shells with mixture.", "Top with Gruyère. Broil until golden. Serve immediately."]
@@ -1003,6 +1138,7 @@ const recipes = {
       notable: "Julia Child introduced quiche Lorraine to American television audiences in the early 1960s and is largely credited with making it a household concept. The 1982 book Real Men Don't Eat Quiche inadvertently cemented its cultural status.",
       history: "Quiche Lorraine arrived in America at exactly the right cultural moment. Julia Child's The French Chef debuted on PBS in 1963, and her warm, accessible approach to French cooking made dishes like quiche seem achievable rather than intimidating. The original Lorraine — from northeastern France, where it is a centuries-old dish — contained nothing but bacon and custard in a butter pastry; cheese was not traditional. American versions quickly added Gruyère and then everything else imaginable.",
       type: "Main",
+      difficulty: 3,
       description: "The original French quiche arrived in American kitchens in the 1960s — bacon and custard in a butter pastry shell, nothing else. It was exotic and sophisticated.",
       ingredients: ["1 fully baked 9-inch pastry shell", "6 strips bacon, cooked and crumbled", "4 eggs", "1½ cups heavy cream", "½ cup whole milk", "Salt, white pepper", "Pinch nutmeg"],
       instructions: ["Preheat oven to 325°F.", "Scatter bacon in the baked pastry shell.", "Whisk eggs, cream, milk, salt, pepper, and nutmeg until smooth.", "Strain custard through a fine sieve.", "Pour over bacon.", "Bake 35-40 minutes until just set — it should wobble slightly in the center.", "Rest 15 minutes before slicing."]
@@ -1013,6 +1149,7 @@ const recipes = {
       notable: "Food critics routinely used the shrimp cocktail as a benchmark — a restaurant that kept its shrimp properly cold and its cocktail sauce properly sharp was assumed to care about its food.",
       history: "The shrimp cocktail as a formal appetizer is an American invention of the early 20th century, evolving from the oyster cocktail of the 1890s. What made it ubiquitous after World War II was the development of commercial shrimp freezing technology, which made large, uniform shrimp available year-round at consistent prices. The specific presentation — shrimp hung over the rim of a glass, cocktail sauce in the center — became standardized in the 1950s and remained essentially unchanged for thirty years. Its decline as a restaurant staple came with the rise of more elaborate appetizer cultures in the 1990s, though it has never fully disappeared.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Chilled jumbo shrimp hung over the rim of a glass with cocktail sauce — the 1960s restaurant's obligatory opener, now a relic of the continental dining room.",
       ingredients: ["24 jumbo shrimp, peeled with tails on", "½ cup ketchup", "2 tbsp fresh horseradish", "1 tbsp lemon juice", "Dash Worcestershire", "Dash Tabasco", "Salt", "Lemon wedges"],
       instructions: ["Poach shrimp in seasoned water (bay leaf, peppercorns, lemon) until just pink, 2-3 minutes.", "Transfer immediately to ice water to stop cooking.", "Mix ketchup, horseradish, lemon juice, Worcestershire, and Tabasco. Season.", "Hang shrimp around the rim of a cocktail glass filled with ice.", "Serve sauce in the center glass. Garnish with lemon."]
@@ -1023,6 +1160,7 @@ const recipes = {
       notable: "A popular legend holds that the Waldorf Astoria charged a guest $100 for the recipe and she published it in revenge. The story is almost certainly false, but it circulated so widely that it became permanently attached to the recipe.",
       history: "Red velvet cake's American career has two distinct chapters. The original version, associated with the Waldorf Astoria and Adams Extract Company (which promoted their red food coloring), was a restaurant and bakery specialty in the Northeast. The cake migrated to the South through marketing campaigns, where it became embedded in the baking tradition. The contemporary cream cheese frosting is a 1970s addition; the original boiled flour icing (called ermine or roux frosting) is far silkier and less sweet, and remains the traditional Southern form.",
       type: "Dessert",
+      difficulty: 3,
       description: "The original red velvet cake — deep mahogany from cocoa and a chemical reaction with buttermilk, frosted with old-fashioned boiled flour icing (not cream cheese).",
       ingredients: ["2½ cups cake flour", "1 tsp baking soda", "2 tbsp unsweetened cocoa powder", "1 tsp salt", "½ cup butter, softened", "1½ cups sugar", "2 eggs", "1 cup buttermilk", "1 tbsp red food coloring", "1 tsp vanilla", "1 tbsp cider vinegar", "ICING: 1 cup milk", "5 tbsp flour", "1 cup butter", "1 cup sugar", "1 tsp vanilla"],
       instructions: ["Cream butter and sugar. Beat in eggs, food coloring, vanilla.", "Alternate adding flour-soda-salt mixture with buttermilk. Stir in vinegar last.", "Bake in 2 round pans at 350°F for 25-30 minutes.", "ICING: Cook milk and flour together until thick paste. Cool. Beat butter and sugar until fluffy; beat in cooled paste and vanilla until light and silky.", "Fill and frost cooled layers."]
@@ -1033,6 +1171,7 @@ const recipes = {
       notable: "Julia Child opened Mastering the Art of French Cooking with Boeuf Bourguignon, and the dish became the most famous recipe in the book. The film Julie and Julia (2009) revived it for a new generation.",
       history: "Boeuf Bourguignon's American story is almost entirely the story of Julia Child. The dish existed in French home cooking for centuries, but Child's careful, step-by-step adaptation made it accessible and desirable in the United States. The 1961 publication of Mastering the Art of French Cooking transformed American cooking culture, and Boeuf Bourguignon was its anchor recipe — a three-hour project that taught every fundamental technique in French braising. Making it became a rite of passage for serious home cooks in the 1960s and 70s.",
       type: "Main",
+      difficulty: 4,
       description: "After Julia Child's 1961 Mastering the Art of French Cooking, this became America's aspirational dinner party dish — beef braised in Burgundy wine with mushrooms and pearl onions.",
       ingredients: ["3 lbs beef chuck, cubed", "1 bottle Burgundy wine", "4 strips thick-cut bacon", "1 lb pearl onions, peeled", "1 lb button mushrooms", "3 cloves garlic", "1 tbsp tomato paste", "Bouquet garni", "3 tbsp flour", "Salt, pepper"],
       instructions: ["Marinate beef in wine overnight.", "Brown bacon in a Dutch oven; remove. Brown beef in batches in bacon fat.", "Cook onions and garlic briefly. Stir in flour and tomato paste.", "Return beef and bacon. Add wine from marinade and bouquet garni. Add water to cover.", "Braise at 325°F for 2½-3 hours.", "In last 30 minutes, sauté mushrooms separately in butter and add to pot.", "Adjust sauce consistency and season."]
@@ -1043,6 +1182,7 @@ const recipes = {
       notable: "Louis Diat invented Vichyssoise in 1917, modeled on a hot leek and potato soup his mother made, chilled and enriched with cream. He named it after Vichy, France — which later created an unfortunate association with the wartime Vichy regime.",
       history: "Vichyssoise is one of the few famous dishes with a fully documented American creation story. Louis Diat, the French-born chef of the Ritz-Carlton in New York, created it in the summer of 1917 during a heat wave. The dish traveled to American home kitchens through food magazines in the 1950s and reached its social peak in the 1960s, when serving cold soup at a dinner party was considered the height of sophistication.",
       type: "Soup",
+      difficulty: 3,
       description: "Cold cream of potato and leek soup — an American invention by Louis Diat at the Ritz-Carlton (though inspired by French cooking), it became a 1960s sophistication signal.",
       ingredients: ["4 large leeks, white parts only, sliced", "4 large potatoes, peeled and cubed", "4 tbsp butter", "4 cups chicken broth", "1 cup heavy cream", "Salt, white pepper", "Chives for garnish"],
       instructions: ["Sauté leeks in butter over low heat until very soft, about 15 minutes — do not brown.", "Add potatoes and broth. Simmer 25 minutes until potatoes are tender.", "Puree until completely smooth. Push through a fine sieve.", "Stir in cream. Season with salt and white pepper.", "Chill thoroughly for at least 4 hours.", "Serve cold in chilled bowls. Garnish with snipped chives."]
@@ -1053,6 +1193,7 @@ const recipes = {
       notable: "The Duke of Wellington himself may or may not have eaten this dish — food historians have found no Victorian documentation of it. Despite the contested origin, Beef Wellington became Gordon Ramsay's signature dish.",
       history: "Beef Wellington arrived in American consciousness in the 1960s as the ultimate dinner party showpiece. The combination of expensive tenderloin, labor-intensive duxelles, and the technical challenge of wrapping it all in puff pastry was precisely the kind of culinary performance that serious 1960s home cooks aspired to. James Beard featured it in his cookbooks; women's magazines published detailed step-by-step guides. The dish required planning, skill, and nerve. For a generation of Americans who saw cooking as a form of self-expression, this was the ultimate test.",
       type: "Main",
+      difficulty: 5,
       description: "A whole beef tenderloin coated in duxelles and pâté, wrapped in puff pastry and baked — the ambitious home cook's 1960s showstopper.",
       ingredients: ["2 lb beef tenderloin, trimmed", "1 lb mushrooms, finely minced", "4 oz pâté or liverwurst", "1 lb frozen puff pastry, thawed", "2 tbsp butter", "1 tbsp shallot, minced", "Salt and pepper", "1 egg, beaten"],
       instructions: ["Sear seasoned tenderloin on all sides in hot oil until deep brown. Cool.", "Cook mushrooms with shallot in butter until all moisture evaporates (duxelles). Cool.", "Spread pâté over tenderloin. Pack duxelles around it.", "Roll out pastry; wrap tenderloin tightly. Seal seams with egg wash.", "Brush exterior with egg wash. Score lightly.", "Bake at 425°F for 25-30 minutes until pastry is golden and beef reads 125°F for medium-rare.", "Rest 10 minutes before slicing."]
@@ -1063,6 +1204,7 @@ const recipes = {
       notable: "The rainbow Jell-O mold appeared on the cover of General Foods' Jell-O promotional cookbook in 1963, which was distributed to millions of American households and is still found in used bookstores.",
       history: "The layered Jell-O mold was the most technically demanding entry in the mid-century gelatin repertoire, requiring multiple chilling cycles and precise timing to prevent layers from bleeding into each other. The effort was rewarded with a dessert that was genuinely visually spectacular when sliced — the stacked bands of translucent color were unlike anything else on the American dessert table. Its decline came with the broader rejection of gelatin cooking in the 1970s and 80s.",
       type: "Dessert",
+      difficulty: 3,
       description: "Layers of different colored Jell-O set in a clear mold — when sliced, it shows rainbow striations. A genuine 1960s centerpiece dessert.",
       ingredients: ["4 packages (3 oz) Jell-O in 4 different colors", "4 cups boiling water (1 cup per package)", "4 cups cold water, divided", "2 cups sour cream, divided"],
       instructions: ["Dissolve first Jell-O package in 1 cup boiling water. Add ¾ cup cold water. Pour ¾ cup plain into a pan. Chill until firm.", "Mix remaining ¾ cup of that Jell-O with ½ cup sour cream. Pour over firm layer. Chill.", "Repeat process with each subsequent color.", "Continue building layers, alternating clear and creamy.", "After all 8 layers are set, unmold and slice to reveal the ribbons."]
@@ -1073,6 +1215,7 @@ const recipes = {
       notable: "Trader Vic Bergeron invented Rumaki for his tiki restaurant chain in the 1950s. Despite containing no ingredient from Hawaii or Polynesia, it became the canonical tiki food, appearing at every Trader Vic's from Oakland to London.",
       history: "Rumaki is a pure invention of the American tiki culture — it has no authentic Polynesian or Pacific origin, despite appearing on every tiki menu in the country. Trader Vic created it as a cocktail nibble that would seem exotic enough to fit the tiki bar aesthetic: the soy-ginger marinade nodded toward Asia, the water chestnut provided an unfamiliar crunchy element, and the bacon-wrapped chicken liver was a fashionable technique in its own right. When tiki culture faded in the 1970s, Rumaki went with it, making it one of the most culturally specific dishes in this entire collection.",
       type: "Appetizer",
+      difficulty: 2,
       description: "Chicken livers and water chestnuts wrapped in bacon, marinated in soy and ginger, and broiled — the exotic Pacific Rim appetizer of every 1960s cocktail party.",
       ingredients: ["½ lb chicken livers, halved", "1 can water chestnuts, drained", "8 strips thin-cut bacon, halved", "¼ cup soy sauce", "2 tbsp brown sugar", "1 tsp fresh ginger, grated", "Toothpicks"],
       instructions: ["Marinate chicken livers in soy sauce, brown sugar, and ginger for 30 minutes.", "Place a water chestnut on each piece of liver.", "Wrap with a half-strip of bacon. Secure with a toothpick.", "Broil 4-5 minutes per side until bacon is crisp and liver is just cooked.", "Serve immediately."]
@@ -1083,6 +1226,7 @@ const recipes = {
       notable: "Breakstone's Cream Cheese published clam dip recipes in mass-circulation women's magazines beginning in the early 1950s, and the dish quickly became synonymous with the American cocktail party.",
       history: "Clam dip was a product of the mid-century American cocktail party culture and the promotional recipe marketing that drove it. Cream cheese companies, canned clam producers, and potato chip manufacturers all had incentives to promote the combination, and their advertising budgets made it ubiquitous in women's magazines by the mid-1950s. The cocktail party as a social form declined significantly in the 1970s and 80s as entertaining styles changed, and clam dip declined with it.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Canned clams mixed into cream cheese with a touch of Worcestershire and lemon — served with potato chips. The aperitivo staple of every 1960s living room.",
       ingredients: ["2 cans (6.5 oz) minced clams, drained (reserve 2 tbsp juice)", "8 oz cream cheese, softened", "1 tbsp Worcestershire sauce", "1 tsp lemon juice", "1 clove garlic, minced", "Salt, pepper", "Potato chips for serving"],
       instructions: ["Beat cream cheese until very smooth.", "Stir in drained clams, Worcestershire, lemon juice, garlic, and reserved clam juice.", "Season with salt and pepper.", "Refrigerate at least 1 hour for flavors to meld.", "Serve in a bowl surrounded by potato chips."]
@@ -1093,6 +1237,7 @@ const recipes = {
       notable: "Craig Claiborne championed gazpacho in the New York Times in the early 1960s, introducing it to American readers and effectively launching its fashionable American career.",
       history: "Gazpacho is ancient — the basic formula of bread, vinegar, olive oil, and vegetables pounded together predates the tomato in Spain by centuries. The tomato version arrived in Andalusia from the Americas by the 17th century. American exposure came partly through Spanish immigration to New York and partly through the growing interest in international cooking that followed World War II. Craig Claiborne's 1962 New York Times piece is considered the moment of its American debut. Its adoption was swift — a no-cook cold soup was exactly what 1960s entertaining needed.",
       type: "Soup",
+      difficulty: 1,
       description: "Cold blended Spanish tomato soup became chic in American kitchens in the 1960s — a no-cook summer soup that felt like global sophistication.",
       ingredients: ["2 lbs ripe tomatoes, roughly chopped", "1 cucumber, peeled and seeded", "1 red bell pepper, chopped", "2 cloves garlic", "3 tbsp red wine vinegar", "¼ cup olive oil", "Salt, pepper", "Diced vegetables for garnish"],
       instructions: ["Combine all vegetables in a blender with vinegar and oil.", "Blend until smooth. Season generously.", "Push through a sieve for a smoother texture if desired.", "Chill at least 2 hours, preferably overnight.", "Serve in chilled bowls with a drizzle of olive oil and diced cucumber, tomato, and pepper garnish."]
@@ -1103,6 +1248,7 @@ const recipes = {
       notable: "Monroe Boston Strause, who called himself The Pie King, invented the chiffon pie technique in the 1920s and published Pie Marches On in 1939. He is one of the largely forgotten innovators of American baking.",
       history: "Chiffon pie was a genuine American invention — Monroe Boston Strause of Los Angeles developed the technique of setting a light, whipped filling with gelatin and folding it into beaten egg whites in the 1920s, producing a pie filling lighter than cream pie but more stable than a mousse. The graham cracker crust, which became the standard vehicle for chiffon pies, was also an American innovation. The dish was at its peak in the 1950s and 60s when lighter desserts were in vogue, then crowded out by refrigerator cheesecakes and other cold no-bake pies.",
       type: "Dessert",
+      difficulty: 3,
       description: "A cloudlike lemon mousse set in gelatin and folded into beaten egg whites, in a graham cracker crust — the lighter alternative to heavy cream pies, very 1960s.",
       ingredients: ["1 tbsp gelatin", "¼ cup cold water", "4 eggs, separated", "1 cup sugar, divided", "½ cup fresh lemon juice", "1 tbsp lemon zest", "Pinch salt", "1 prebaked 9-inch graham cracker crust"],
       instructions: ["Soften gelatin in cold water.", "Beat yolks with ½ cup sugar, lemon juice, and zest in a double boiler until thick. Stir in softened gelatin.", "Cool mixture until it mounds softly.", "Beat egg whites with salt to soft peaks; beat in remaining ½ cup sugar to stiff peaks.", "Fold whites into lemon mixture.", "Pile into crust. Chill 3-4 hours.", "Serve with barely sweetened whipped cream."]
@@ -1116,6 +1262,7 @@ const recipes = {
       notable: "The Swiss Cheese Union essentially invented the concept of fondue as Switzerland's national dish through an aggressive postwar marketing campaign. Before the 1950s, fondue was a regional Alpine peasant dish.",
       history: "Cheese fondue's American story is partly a triumph of marketing. The Swiss Cheese Union ran one of the most successful national food promotion campaigns in history, shipping fondue sets and cheese to every Winter Olympics and distributing recipes to American food writers. In America, fondue sets became standard wedding gifts in the late 1960s, and the communal dining format appealed to the era's social openness. The tradition that anyone who dropped their bread into the pot had to buy the next round added a game element that made it popular party entertainment.",
       type: "Main",
+      difficulty: 2,
       description: "Swiss Gruyère and Emmental melted with white wine and kirsch in a communal pot, eaten with bread cubes — the 1970s dinner party ritual that united couples.",
       ingredients: ["1 lb Gruyère, grated", "½ lb Emmental, grated", "1½ cups dry white wine", "1 clove garlic, halved", "2 tbsp kirsch", "1 tbsp cornstarch", "Pinch nutmeg", "Crusty bread, cubed"],
       instructions: ["Rub fondue pot with cut garlic. Pour in wine and bring to a gentle simmer.", "Toss cheeses with cornstarch.", "Add cheese to wine in handfuls, stirring in a figure-8 motion until melted.", "Stir in kirsch and nutmeg.", "Transfer to burner at the table.", "Guests spear bread cubes and swirl in the cheese. Anyone who drops their bread buys the next round."]
@@ -1126,6 +1273,7 @@ const recipes = {
       notable: "The 1982 book Real Men Don't Eat Quiche by Bruce Feirstein was a satirical critique of 1970s yuppie culture that specifically targeted the quiche as a symbol of soft, urban affectation. It sold over 1.6 million copies.",
       history: "After Julia Child introduced quiche to American television in the early 1960s, it took about a decade for it to penetrate home cooking culture thoroughly. By the mid-1970s it was everywhere: in women's magazines, in cooking classes, at potlucks, and at brunch. The original simplicity of the Lorraine gave way to the American impulse to improve through addition. Spinach quiche, mushroom quiche, crab quiche — every possible filling was tried and published. Bruce Feirstein's 1982 satire captured the moment when quiche had become overexposed and associated with anxious middle-class sophistication-signaling.",
       type: "Main",
+      difficulty: 3,
       description: "After quiche hit the American mainstream, home cooks stuffed it with everything: spinach, mushroom, bacon, Swiss. Real men didn't eat it, apparently, but everyone else did.",
       ingredients: ["1 prebaked 9-inch pie shell", "6 strips bacon, cooked and crumbled", "1 cup fresh spinach, sautéed and squeezed dry", "1 cup mushrooms, sautéed", "1½ cups Swiss cheese, shredded", "3 eggs", "1½ cups half-and-half", "Salt, pepper, nutmeg"],
       instructions: ["Preheat oven to 325°F.", "Layer bacon, spinach, mushrooms, and cheese in pie shell.", "Whisk eggs and half-and-half. Season with salt, pepper, and nutmeg.", "Pour custard over fillings.", "Bake 40-45 minutes until just set.", "Rest 15 minutes before serving."]
@@ -1136,6 +1284,7 @@ const recipes = {
       notable: "Carob was promoted in natural food circles throughout the 1970s as a caffeine-free, lower-fat alternative to chocolate. Rodale Press and other natural living publishers championed it in dozens of cookbooks.",
       history: "Carob brownies represent the most earnest and ultimately futile culinary project of the 1970s: replacing chocolate with carob. Carob is genuinely nutritious and has a pleasant flavor, but it is not chocolate, and no amount of honey or whole wheat flour can make a carob brownie taste like a chocolate one. The decade's natural food movement produced a genuine legacy in other areas, but carob's moment passed when the food counterculture recognized that denial wasn't the same as health, and good chocolate came back.",
       type: "Dessert",
+      difficulty: 2,
       description: "The health food movement of the 1970s embraced carob as a 'natural' chocolate substitute. These brownies required honey, whole wheat flour, and ideally some self-delusion.",
       ingredients: ["½ cup carob powder", "½ cup whole wheat flour", "¼ cup butter or coconut oil", "½ cup honey", "2 eggs", "1 tsp vanilla", "Pinch salt", "½ cup walnuts, chopped"],
       instructions: ["Preheat oven to 350°F. Grease an 8-inch square pan.", "Melt butter and stir in honey. Cool slightly.", "Beat in eggs and vanilla.", "Stir in carob powder, flour, and salt until just combined.", "Fold in walnuts.", "Bake 25-30 minutes until just set.", "Cool before cutting — carob brownies firm as they cool."]
@@ -1146,6 +1295,7 @@ const recipes = {
       notable: "The origin of Crêpes Suzette is contested — Henri Charpentier claimed he accidentally created it for the Prince of Wales in 1895, though food historians dispute this. Regardless, the dish became one of the most famous tableside preparations in French restaurant history.",
       history: "Crêpes Suzette is ultimately a story about theater. The dish's central attraction was the flambé — the tableside ignition of warm brandy that produced a brief, dramatic flame. In French restaurants, this was performed by a skilled waiter with studied nonchalance; at home in the 1970s, it was performed by nervous hosts with variable results. The risks were manageable but real — eyebrows were lost, ceilings were singed. When tableside performance cooking fell from fashion in the 1980s, crêpes Suzette lost its essential context.",
       type: "Dessert",
+      difficulty: 4,
       description: "Thin crêpes flambéed at the table in a buttery orange sauce laced with Grand Marnier — dinner theater in your dining room, peak 1970s sophistication.",
       ingredients: ["CRÊPES: 1 cup flour", "2 eggs", "1½ cups milk", "1 tbsp butter, melted", "Pinch salt", "SAUCE: 4 tbsp butter", "4 tbsp sugar", "Juice of 2 oranges", "Zest of 1 orange", "¼ cup Grand Marnier or Cointreau", "2 tbsp brandy for flambé"],
       instructions: ["Make crêpe batter; rest 30 min. Cook thin crêpes; fold into quarters.", "Make sauce: melt butter and sugar in a wide pan until caramelized. Add orange juice and zest.", "Add Grand Marnier. Add folded crêpes and baste with sauce.", "Add brandy, tilt pan, and ignite with a long match.", "Let flames die naturally.", "Serve two crêpes per person, spooned with sauce."]
@@ -1156,6 +1306,7 @@ const recipes = {
       notable: "Zucchini bread became a cultural joke as well as a recipe in the 1970s — there were cartoons, magazine articles, and even a National Lampoon piece about the impossibility of getting rid of backyard zucchini.",
       history: "Zucchini bread is a 1970s creation driven by the decade's renewed interest in home gardening and by the universal experience of planting one zucchini plant and finding yourself buried in squash by August. The quick bread format was well suited to incorporating moisture-heavy grated zucchini. The spice profile made it sweet enough to serve as a snack or dessert despite being technically a vegetable bread. It was also genuinely good, which explains why it survived beyond the zucchini-surplus problem that created it.",
       type: "Side/Bread",
+      difficulty: 1,
       description: "The 1970s zucchini surplus problem solved: grated zucchini folded into a spiced quick bread. Every suburban garden produced more zucchini than could be eaten, and this was the answer.",
       ingredients: ["3 cups flour", "1 tsp salt", "1 tsp baking soda", "1 tsp baking powder", "3 tsp cinnamon", "3 eggs", "1 cup vegetable oil", "2¼ cups sugar", "3 tsp vanilla", "2 cups grated zucchini", "1 cup walnuts, chopped"],
       instructions: ["Preheat oven to 325°F. Grease two 9x5 loaf pans.", "Sift flour, salt, soda, baking powder, and cinnamon.", "Beat eggs, oil, sugar, and vanilla until light.", "Stir in flour mixture until just combined.", "Fold in zucchini and walnuts.", "Divide between pans. Bake 55-65 minutes until a toothpick comes out clean.", "Cool in pans 10 minutes before turning out."]
@@ -1166,6 +1317,7 @@ const recipes = {
       notable: "Stuffed mushrooms appear in more 1970s cooking magazines and community cookbooks than almost any other appetizer — they were the decade's equivalent of today's bruschetta, a catch-all entertaining dish that every host relied on.",
       history: "Stuffed mushrooms were a product of two 1970s trends: the expansion of mushroom availability in American supermarkets and the popularity of cream cheese as a cooking ingredient. Before the 1960s, large cultivated mushrooms were not consistently available in most American markets. By the 1970s they were standard, and their natural bowl shape made them ideal for stuffing. The sausage-and-cream-cheese filling was the most popular combination — rich, flavorful, and forgiving of inexact quantities. The dish could be assembled ahead and baked when guests arrived, which suited the era's more relaxed entertaining style.",
       type: "Appetizer",
+      difficulty: 2,
       description: "Large mushroom caps stuffed with a mixture of sausage, breadcrumbs, and cream cheese — a 1970s cocktail party stalwart that appeared at every gathering.",
       ingredients: ["24 large mushrooms, stems removed", "½ lb Italian sausage, removed from casing", "4 oz cream cheese, softened", "¼ cup breadcrumbs", "2 cloves garlic, minced", "2 tbsp parsley, chopped", "¼ cup Parmesan, grated", "Salt, pepper"],
       instructions: ["Preheat oven to 375°F.", "Brown sausage; drain fat. Mince mushroom stems and cook with sausage and garlic.", "Mix sausage mixture with cream cheese, breadcrumbs, and parsley. Season.", "Stuff mushroom caps generously. Top with Parmesan.", "Arrange in a baking dish.", "Bake 20-25 minutes until mushrooms are tender and tops are golden."]
@@ -1176,6 +1328,7 @@ const recipes = {
       notable: "Luisa Tetrazzini was so beloved in San Francisco that when she gave a free outdoor Christmas concert on Market Street in 1910, over 250,000 people attended. The dish named in her honor outlasted both her fame and the restaurant that created it.",
       history: "Chicken Tetrazzini was created in San Francisco's Palace Hotel around the time of Luisa Tetrazzini's triumphant appearances there in the early 1900s. The dish reached its peak popularity in the 1960s and 70s, when it became a church supper and potluck staple: it fed crowds economically, could be made ahead, and transported well. Its association with the casserole era gave it a slightly dated reputation in the 1980s from which it has never fully recovered.",
       type: "Main",
+      difficulty: 2,
       description: "Cooked spaghetti and chicken in a cream and sherry sauce, baked under a Parmesan crust — a casserole named after opera star Luisa Tetrazzini, enormously popular in the 1970s.",
       ingredients: ["12 oz thin spaghetti, cooked", "3 cups cooked chicken, cubed", "1 lb mushrooms, sliced", "4 tbsp butter", "4 tbsp flour", "2 cups chicken broth", "1 cup cream", "¼ cup dry sherry", "½ cup Parmesan, grated", "Salt, pepper"],
       instructions: ["Sauté mushrooms in butter until golden. Stir in flour.", "Add broth gradually, then cream and sherry. Simmer until thick.", "Toss sauce with cooked spaghetti and chicken.", "Transfer to a buttered 3-quart baking dish.", "Top with Parmesan.", "Bake at 375°F for 25-30 minutes until golden and bubbling."]
@@ -1186,6 +1339,7 @@ const recipes = {
       notable: "The Watergate Salad was named satirically — the joke being that the salad was full of nuts and covered up. The name stuck, and the recipe became one of the most recognizable of the 1970s potluck circuit.",
       history: "Watergate Salad is almost certainly the only dish in culinary history named after a political scandal, and the naming was an act of wit rather than documentation — the dish existed before the Watergate break-in under different names. The combination of instant pistachio pudding, undrained crushed pineapple, Cool Whip, marshmallows, and nuts produced a sweet, green, slightly surreal side dish served at potlucks and church socials across America. The name, once applied, spread through the same informal networks that distributed the recipe itself.",
       type: "Dessert/Side",
+      difficulty: 1,
       description: "Pistachio pudding mix, crushed pineapple, Cool Whip, marshmallows, and nuts — named after the scandal by a food columnist in 1975. It shouldn't work. It does.",
       ingredients: ["1 package (3.4 oz) instant pistachio pudding", "1 can (20 oz) crushed pineapple, undrained", "1 cup mini marshmallows", "½ cup chopped pecans or walnuts", "8 oz Cool Whip, thawed"],
       instructions: ["Mix dry pudding mix directly into undrained crushed pineapple.", "Stir until the pudding mix is dissolved and mixture thickens.", "Fold in marshmallows and nuts.", "Fold in Cool Whip until evenly blended.", "Refrigerate at least 1 hour before serving.", "Serve cold as a side salad or dessert."]
@@ -1196,6 +1350,7 @@ const recipes = {
       notable: "Queso flameado is a staple of Chihuahua and Sonora state cooking in Mexico, where it is made with Asadero or Chihuahua cheese. Its American popularization through Tex-Mex restaurants in the 1970s gave it a new audience without significantly altering the recipe.",
       history: "Queso flameado is one of the genuinely Mexican dishes that entered American dining through the Tex-Mex restaurant expansion of the 1970s and 80s. Unlike much Tex-Mex food, which was significantly altered in the translation, queso flameado remained relatively close to its northern Mexican origins: melted cheese with chorizo in a cast iron skillet, set alight with tequila or brandy. The dish arrived in American suburban restaurants just as the flambé tradition in fine dining was fading — it offered the drama of the open flame in a more casual, accessible format.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Whole-milk cheese melted with chorizo in a skillet, set briefly aflame with tequila — Tex-Mex began arriving in suburban America in the 1970s and this was its ambassador.",
       ingredients: ["1 lb Oaxacan or Chihuahua cheese (or whole-milk mozzarella), shredded", "½ lb Mexican chorizo, cooked and crumbled", "2 tbsp tequila", "Warm flour tortillas to serve"],
       instructions: ["Preheat oven to 450°F.", "Spread cheese in a cast iron skillet. Top with cooked chorizo.", "Bake 10-12 minutes until cheese is fully melted and bubbling.", "Remove from oven; drizzle tequila over top.", "Ignite carefully with a long match. Let flames die.", "Serve immediately in the skillet with warm tortillas."]
@@ -1206,6 +1361,7 @@ const recipes = {
       notable: "Craig Claiborne's 1977 New York Times article about pasta primavera at Le Cirque is credited with launching the dish into national consciousness. The piece was so widely read that Le Cirque was overwhelmed with requests for the recipe.",
       history: "Pasta primavera is a genuinely documented creation — Sirio Maccioni and his kitchen at Le Cirque developed it in the mid-1970s as a light pasta dish showcasing fresh spring vegetables. The original was almost ascetically simple: olive oil, garlic, Parmesan, and whatever spring vegetables were best that day. What happened next was classic American culinary drift: restaurant versions added cream, butter, and heavier sauces, and primavera became attached to any pasta with vegetables in a cream sauce. The original Le Cirque version was healthier and more elegant than what the name eventually came to mean.",
       type: "Main",
+      difficulty: 3,
       description: "The original 1970s pasta primavera from Le Cirque — not the cream-sauce version that was popularized, but a clean olive oil and Parmesan dish with fresh spring vegetables.",
       ingredients: ["1 lb spaghetti or thin pasta", "1 cup broccoli florets", "1 cup zucchini, sliced", "1 cup cherry tomatoes", "½ cup frozen peas", "4 cloves garlic, sliced", "¼ cup olive oil", "½ cup Parmesan, grated", "Salt, pepper", "Fresh basil"],
       instructions: ["Cook pasta in well-salted boiling water. Reserve 1 cup pasta water.", "Steam broccoli and zucchini briefly until just tender.", "Warm garlic in olive oil over medium heat until fragrant.", "Add tomatoes; cook 2 min. Add peas and blanched vegetables.", "Toss drained pasta with vegetables and garlic oil.", "Add pasta water as needed. Toss with Parmesan. Finish with fresh basil."]
@@ -1216,6 +1372,7 @@ const recipes = {
       notable: "The ham and cheese rollup predated the wrap sandwich craze of the 1990s by nearly two decades, though it was never acknowledged as its ancestor when wraps became fashionable in café culture.",
       history: "Ham and cheese rollups were a practical solution to the 1970s home entertainer's challenge: a party appetizer that could be assembled hours ahead and sliced at serving time without any last-minute fuss. The flour tortilla, which was becoming available in mainstream supermarkets for the first time in the early 1970s, proved an ideal vehicle. When the 1990s wrap sandwich craze arrived in cafés and delis, it was essentially rediscovering what 1970s home cooks had been doing for twenty years — but the connection was never made, and the humble rollup never got credit.",
       type: "Appetizer",
+      difficulty: 1,
       description: "Cream cheese-spread tortillas or thin bread, rolled around sliced ham and pickle — a 1970s cocktail party fixture that predates the wrap by a decade.",
       ingredients: ["4 large flour tortillas or thin slices sandwich bread", "8 oz cream cheese, softened", "1 tbsp ranch dressing mix", "8 oz deli ham, thinly sliced", "4 dill pickles or pickle spears"],
       instructions: ["Mix cream cheese with ranch seasoning until smooth.", "Spread generously over tortillas or bread slices.", "Layer ham evenly over cream cheese.", "Place a pickle at one end. Roll up tightly.", "Wrap in plastic wrap and refrigerate 1 hour.", "Slice into 1-inch rounds. Secure with toothpicks if needed."]
@@ -1226,6 +1383,7 @@ const recipes = {
       notable: "A 1939 Maine bill proposed making it illegal to add tomatoes to clam chowder — the ultimate expression of New England's passionate defense of the cream version against Manhattan's tomato-based alternative.",
       history: "New England clam chowder is among the oldest distinctly American dishes, with documented recipes from the 1750s. The chowder tradition originated with New England fishing communities who made the soup from local clams, potatoes, salt pork, and dairy. The home-cooked version differed from restaurant chowder in being thinner and more intensely clam-flavored; restaurants favored the thick, flour-heavy version that has become standard. The 1939 Maine anti-tomato legislation — largely a joke but carrying real cultural weight — captures how seriously New Englanders took their chowder orthodoxy.",
       type: "Soup",
+      difficulty: 3,
       description: "Thick, creamy, potato-and-clam chowder made from scratch at home — not the thick gluey restaurant version, but a genuine home-cooked pot that was an October staple.",
       ingredients: ["4 slices thick bacon, diced", "1 large onion, diced", "4 large potatoes, cubed", "3 cans (6.5 oz) chopped clams, juice reserved", "2 cups clam juice (bottled or reserved)", "2 cups heavy cream", "1 cup whole milk", "2 tbsp butter", "Salt, white pepper", "Oyster crackers to serve"],
       instructions: ["Render bacon in a large pot. Remove bacon; cook onion in fat until soft.", "Add potatoes and clam juice. Simmer until potatoes are just tender, about 15 min.", "Add clams and their liquid.", "Stir in cream and milk. Heat gently — do not boil.", "Finish with butter. Season generously.", "Serve with oyster crackers and reserved bacon crumbled on top."]
@@ -1236,6 +1394,7 @@ const recipes = {
       notable: "American-style spaghetti with meat sauce appears in more postwar family recipe boxes and community cookbooks than almost any other dish — it was the weeknight default for millions of families from the 1950s through the 1980s.",
       history: "American spaghetti with meat sauce bears no relationship to any specific Italian dish. It evolved from the Italian-American cooking of immigrant communities in the early 20th century — a practical adaptation using American ingredients — and then spread into the mainstream where it was further simplified. By the 1970s it had become a distinctly American dish: the sauce sweeter, the meat more prominent, the cheese more assertive, the cooking time shorter. The Italian cooking renaissance of the 1980s and 90s, which introduced Americans to actual Italian pasta traditions, eventually marginalized the American version without eliminating it.",
       type: "Main",
+      difficulty: 1,
       description: "Ground beef, onion, canned tomatoes, and Worcestershire poured over spaghetti with too much Parmesan — this was 'Italian' cooking in 1970s Middle America.",
       ingredients: ["1 lb spaghetti", "1 lb ground beef", "1 large onion, chopped", "2 cans (14 oz) crushed tomatoes", "1 tbsp Worcestershire sauce", "2 cloves garlic", "1 tsp sugar", "Italian seasoning", "Salt, pepper", "Parmesan to serve"],
       instructions: ["Brown beef with onion and garlic; drain fat.", "Add tomatoes, Worcestershire, sugar, and Italian seasoning. Simmer 30 minutes.", "Cook spaghetti. Drain.", "Plate pasta; ladle meat sauce over top.", "Pass Parmesan at the table.", "Note the conspicuous absence of any authentic Italian technique."]
@@ -1246,6 +1405,7 @@ const recipes = {
       notable: "The diner pie case, with its rotating display of whole pies, was one of the most distinctive features of mid-century American roadside culture. Edward Hopper's diner paintings capture the aesthetic context in which these pies existed.",
       history: "Coconut cream pie was a staple of the American diner pie case from the 1940s through the 1970s, when the diner as an institution was at its cultural peak. The pie case — a glass rotating display of whole pies at the counter — was one of the most distinctive features of diner culture, and coconut cream was always one of its centerpieces alongside banana cream and lemon meringue. The filling was a proper pastry cream, not a pudding mix preparation; the whipped cream topping was real cream. The decline of the independent diner in favor of fast food chains from the 1970s onward gradually reduced the pie case from a standard feature to a nostalgic specialty.",
       type: "Dessert",
+      difficulty: 3,
       description: "Thick coconut pastry cream in a baked shell, topped with a mountain of whipped cream and toasted coconut — the diner case standout before it faded.",
       ingredients: ["1 prebaked 9-inch pie shell", "2½ cups whole milk", "½ cup sugar", "⅓ cup cornstarch", "3 egg yolks", "2 tbsp butter", "1 tsp vanilla", "1½ cups sweetened shredded coconut", "2 cups whipped cream", "½ cup coconut, toasted"],
       instructions: ["Whisk sugar, cornstarch, and egg yolks. Heat milk to simmer; whisk into yolk mixture.", "Cook over medium heat, stirring constantly, until thick and boiling.", "Remove from heat; stir in butter, vanilla, and 1 cup coconut.", "Press plastic wrap directly on surface. Cool completely.", "Spread filling in pie shell.", "Top with whipped cream and toasted coconut.", "Refrigerate 3 hours before slicing."]
@@ -1256,6 +1416,7 @@ const recipes = {
       notable: "The California Avocado Commission ran extensive promotional campaigns in the 1970s to introduce Americans to avocados, distributing recipe booklets that included this onion soup mix version as an accessible entry point for consumers unfamiliar with the fruit.",
       history: "The American relationship with avocados before the 1970s was thin outside California and the Southwest. The California Avocado Commission's 1970s promotional campaign sought to change this, positioning the avocado as a versatile, modern ingredient. The onion soup mix version of avocado dip was a deliberate simplification for nervous home cooks — using a familiar processed ingredient to make an unfamiliar fruit approachable. Authentic guacamole, known only through Mexican and Tex-Mex restaurants, came later. This version preceded it and, for millions of American families, was the first avocado preparation they ever encountered.",
       type: "Appetizer",
+      difficulty: 1,
       description: "In the 1970s, avocados were new to many American kitchens — this version mashed them with sour cream, onion soup mix, and lemon juice. Decidedly not authentic, but beloved.",
       ingredients: ["3 ripe avocados", "½ cup sour cream", "1 packet (1 oz) onion soup mix", "2 tbsp lemon juice", "1 clove garlic, minced", "Salt, pepper", "Tortilla chips or crackers"],
       instructions: ["Halve avocados, remove pits.", "Mash flesh with a fork until mostly smooth.", "Stir in sour cream, onion soup mix, lemon juice, and garlic.", "Season with salt and pepper.", "Press plastic wrap directly on surface to prevent browning.", "Serve chilled with chips or crackers."]
@@ -2327,6 +2488,7 @@ export default function RecipeBook() {
     gross:      { header: "#2A3A1C", accent: "#C8A96E", secondary: "#3A2A1C", paper: "#F2E8D5" },
     made:       { header: "#1C2A3A", accent: "#C8A96E", secondary: "#2A1C3A", paper: "#F2E8D5" },
     cart:       { header: "#1A2A1A", accent: "#C8A96E", secondary: "#2A4A2A", paper: "#F2E8D5" },
+    about:      { header: "#2A1C0E", accent: "#C8A96E", secondary: "#4A3A1C", paper: "#F2E8D5" },
   };
 
   const activePalette = specialTab ? specialColors[specialTab] : dec;
@@ -2460,6 +2622,27 @@ export default function RecipeBook() {
         {/* Top accent stripe */}
         <div style={{ height: 6, background: activePalette.accent, opacity: 0.9 }} />
         <div style={{ height: 2, background: activePalette.secondary, opacity: 0.6 }} />
+
+        {/* Subtle About button — top right */}
+        <button
+          onClick={() => { setSpecialTab(specialTab === "about" ? null : "about"); setActiveRecipe(null); }}
+          style={{
+            position: "absolute",
+            top: 10,
+            right: 14,
+            zIndex: 10,
+            background: "transparent",
+            border: "none",
+            color: specialTab === "about" ? activePalette.accent : "rgba(242,232,213,0.22)",
+            fontFamily: "'Oswald', sans-serif",
+            fontSize: "0.65rem",
+            fontWeight: 500,
+            letterSpacing: "0.15em",
+            cursor: "pointer",
+            padding: "4px 6px",
+          }}>
+          ✦
+        </button>
 
         <div style={{ padding: "18px 18px 0", position: "relative", overflow: "hidden" }}>
 
@@ -2600,6 +2783,7 @@ export default function RecipeBook() {
       <div style={{ padding: "14px 14px 40px", background: activePalette.paper || "#F2E8D5" }}>
 
         {/* Search */}
+        {specialTab !== "about" && (
         <div style={{ position: "relative", marginBottom: 14 }}>
           <span style={{
             position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)",
@@ -2623,6 +2807,7 @@ export default function RecipeBook() {
             }}>×</button>
           )}
         </div>
+        )}
 
         {/* Filter pills */}
         {!specialTab && (
@@ -2663,17 +2848,19 @@ export default function RecipeBook() {
         )}
 
         {/* Recipe count */}
-        <div style={{
-          fontFamily: "'Oswald', sans-serif",
-          fontSize: "0.58rem",
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          color: "#aaa",
-          marginBottom: 10,
-        }}>
-          {displayList.length} {displayList.length === 1 ? "recipe" : "recipes"}
-          {search ? ` matching "${search}"` : ""}
-        </div>
+        {specialTab !== "about" && specialTab !== "cart" && (
+          <div style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontSize: "0.58rem",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "#aaa",
+            marginBottom: 10,
+          }}>
+            {displayList.length} {displayList.length === 1 ? "entry" : "entries"}
+            {search ? ` matching "${search}"` : ""}
+          </div>
+        )}
 
         {/* ─── renderCard ─── */}
         {(() => {
@@ -2724,10 +2911,24 @@ export default function RecipeBook() {
                           padding: "2px 6px",
                           display: "inline-block",
                           marginBottom: 5,
+                          marginRight: 6,
                         }}>
                           {r.type}
                         </span>
                       )}
+                      {!isPresident && r.difficulty && (
+                        <span style={{ display: "inline-flex", gap: 2, verticalAlign: "middle", marginBottom: 5 }}>
+                          {[1,2,3,4,5].map(n => (
+                            <span key={n} style={{
+                              width: 5, height: 5, borderRadius: "50%",
+                              display: "inline-block",
+                              background: n <= r.difficulty ? headerColor : "rgba(0,0,0,0.1)",
+                              opacity: n <= r.difficulty ? 0.5 + n * 0.1 : 1,
+                            }} />
+                          ))}
+                        </span>
+                      )}
+
                       {/* Name */}
                       <div style={{
                         fontFamily: isPresident ? "'Oswald', sans-serif" : "'Playfair Display', serif",
@@ -2888,6 +3089,112 @@ export default function RecipeBook() {
               </div>
             );
           };
+
+          // About page
+          if (specialTab === "about") {
+            return (
+              <div style={{ paddingBottom: 20 }}>
+                {/* Title block */}
+                <div style={{
+                  borderLeft: `4px solid ${activePalette.accent}`,
+                  paddingLeft: 14,
+                  marginBottom: 24,
+                }}>
+                  <div style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "0.58rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    color: "#aaa",
+                    marginBottom: 4,
+                  }}>About This Project</div>
+                  <div style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                    color: activePalette.header,
+                    lineHeight: 1.2,
+                  }}>A Century of Lost Recipes</div>
+                </div>
+
+                {/* Main text */}
+                {[
+                  {
+                    heading: "The Idea",
+                    body: "A Century of Lost Recipes is a collection of American dishes that have largely disappeared from home kitchens and restaurant menus over the past hundred years. Not bad recipes — forgotten ones. Dishes that were standard Sunday dinners, lunch counter staples, and presidential favorites that simply fell out of fashion as tastes, economics, and food culture changed.",
+                  },
+                  {
+                    heading: "The Lunken Airport Connection",
+                    body: "Several of the Luncheonette recipes in this collection were drawn directly from the surviving menu of the lunch counter at Lunken Municipal Airport in Cincinnati, Ohio — Cincinnati's original commercial airport, opened in 1925. The Lunken menu, circa 1945-1955, listed items like the Pilot's Delight, the Cockpit Special, liverwurst, postum, and tomato stuffed with chicken salad. It is one of the most complete surviving records of mid-century American lunch counter culture.",
+                  },
+                  {
+                    heading: "The Presidents",
+                    body: "Every president from George Washington through Jimmy Carter is represented with at least one signature dish. Some are genuinely surprising — Nixon ate cottage cheese with ketchup every morning. Eisenhower made his own vegetable soup from scratch. Washington's eggnog recipe called for quantities of spirits that would render most modern drinkers unconscious.",
+                  },
+                  {
+                    heading: "The Design",
+                    body: "The app uses a WPA poster aesthetic — the visual language of the Works Progress Administration's American art program of the 1930s and 40s. Bold typography, warm earth tones, and geometric ornaments reflect the era most of these recipes come from. The Rye typeface was chosen because it looks like it was painted on the window of an old luncheonette.",
+                  },
+                  {
+                    heading: "Difficulty Guide",
+                    body: "Each recipe shows a difficulty indicator — five dots, filled to reflect how demanding the recipe is. One dot means you can make it in ten minutes with no special skills. Five dots means it requires technique, time, and commitment. The beef tongue is a four.",
+                  },
+                ].map((section, i) => (
+                  <div key={i} style={{ marginBottom: 20 }}>
+                    <div style={{
+                      fontFamily: "'Oswald', sans-serif",
+                      fontSize: "0.6rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      color: activePalette.header,
+                      opacity: 0.6,
+                      marginBottom: 5,
+                    }}>{section.heading}</div>
+                    <div style={{
+                      fontFamily: "'Lato', sans-serif",
+                      fontSize: "0.88rem",
+                      color: "#444",
+                      lineHeight: 1.7,
+                    }}>{section.body}</div>
+                    {i < 4 && (
+                      <div style={{
+                        height: 1,
+                        background: activePalette.header,
+                        opacity: 0.08,
+                        marginTop: 16,
+                      }} />
+                    )}
+                  </div>
+                ))}
+
+                {/* Ornamental footer */}
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  marginTop: 24,
+                  opacity: 0.4,
+                }}>
+                  <div style={{ height: 1, flex: 1, background: activePalette.header }} />
+                  <div style={{ height: 5, width: 5, background: activePalette.accent, transform: "rotate(45deg)" }} />
+                  <div style={{ height: 1, flex: 1, background: activePalette.header }} />
+                </div>
+                <div style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: "0.58rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#bbb",
+                  textAlign: "center",
+                  marginTop: 12,
+                }}>
+                  {allRecipes.length} Recipes · {new Set(allPresidents.map(p => p.presidentName)).size} Presidents · 7 Decades
+                </div>
+              </div>
+            );
+          }
 
           // Shopping list view
           if (specialTab === "cart") {
@@ -3063,7 +3370,7 @@ export default function RecipeBook() {
           }
 
           // Empty state
-          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && specialTab !== "cart" && displayList.length === 0 && !search) {
+          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && specialTab !== "cart" && specialTab !== "about" && displayList.length === 0 && !search) {
             const msg = emptyMessages[specialTab];
             return (
               <div style={{ textAlign: "center", padding: "50px 20px" }}>
