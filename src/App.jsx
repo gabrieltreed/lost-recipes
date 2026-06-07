@@ -4153,7 +4153,15 @@ export default function RecipeBook() {
                       sections[sec].push(item);
                     });
 
-                    return Object.entries(sections).map(([sectionName, items]) => (
+                    return Object.entries(sections).map(([sectionName, items]) => {
+                      // Within each section: unchecked first, checked sink to bottom
+                      const sorted = [...items].sort((a, b) => {
+                        const aChecked = checkedItems.has(a.display) ? 1 : 0;
+                        const bChecked = checkedItems.has(b.display) ? 1 : 0;
+                        if (aChecked !== bChecked) return aChecked - bChecked;
+                        return a.item.localeCompare(b.item);
+                      });
+                      return (
                       <div key={sectionName} style={{ marginBottom: 16 }}>
                         {/* Section header */}
                         <div style={{
@@ -4172,7 +4180,7 @@ export default function RecipeBook() {
                         </div>
                         {/* Items in section */}
                         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                          {items.map((item, i) => {
+                          {sorted.map((item, i) => {
                             const isChecked = checkedItems.has(item.display);
                             return (
                               <div
@@ -4215,7 +4223,8 @@ export default function RecipeBook() {
                           })}
                         </div>
                       </div>
-                    ));
+                      );
+                    });
                   })()}
                 </div>
 
