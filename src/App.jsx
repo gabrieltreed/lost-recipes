@@ -3146,6 +3146,7 @@ export default function RecipeBook() {
   const [favorites, setFavorites] = useState(() => loadSet("rcb_favorites"));
   const [gross, setGross] = useState(() => loadSet("rcb_gross"));
   const [made, setMade] = useState(() => loadSet("rcb_made"));
+  const [making, setMaking] = useState(() => loadSet("rcb_making"));
   const [cart, setCart] = useState(() => loadSet("rcb_cart"));
   const [checkedItems, setCheckedItems] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("rcb_checked") || "[]")); } catch { return new Set(); }
@@ -3171,6 +3172,7 @@ export default function RecipeBook() {
   useEffect(() => { saveSet("rcb_favorites", favorites); }, [favorites]);
   useEffect(() => { saveSet("rcb_gross", gross); }, [gross]);
   useEffect(() => { saveSet("rcb_made", made); }, [made]);
+  useEffect(() => { saveSet("rcb_making", making); }, [making]);
   useEffect(() => { saveSet("rcb_cart", cart); }, [cart]);
   useEffect(() => {
     try { localStorage.setItem("rcb_checked", JSON.stringify([...checkedItems])); } catch {}
@@ -3216,6 +3218,11 @@ export default function RecipeBook() {
       const mPres = allPresidents.filter(p => made.has(p.name));
       list = [...mRecs, ...mPres];
     }
+    else if (specialTab === "making") {
+      const mkRecs = allRecipes.filter(r => making.has(r.name));
+      const mkPres = allPresidents.filter(p => making.has(p.name));
+      list = [...mkRecs, ...mkPres];
+    }
     else if (specialTab === "cart") {
       const cRecs = allRecipes.filter(r => cart.has(r.name));
       const cPres = allPresidents.filter(p => cart.has(p.name));
@@ -3260,6 +3267,10 @@ export default function RecipeBook() {
 
   const toggleMade = (name) => {
     setMade(prev => { const next = new Set(prev); if (next.has(name)) next.delete(name); else next.add(name); return next; });
+  };
+
+  const toggleMaking = (name) => {
+    setMaking(prev => { const next = new Set(prev); if (next.has(name)) next.delete(name); else next.add(name); return next; });
   };
 
   const toggleCart = (name) => {
@@ -3321,6 +3332,7 @@ export default function RecipeBook() {
   const emptyMessages = {
     favorites:  { icon: "❤️", text: "No favorites yet", sub: "Tap the heart on any recipe to save it here." },
     gross:      { icon: "🤢", text: "Nothing gross yet", sub: "Tap 🤢 on any recipe you would never eat." },
+    making:     { icon: "🍳", text: "Nothing on the stove yet", sub: "Tap 🍳 on any recipe you're currently making." },
     made:       { icon: "👨‍🍳", text: "Nothing cooked yet", sub: "Tap the chef hat on any recipe you have made." },
     presidents: { icon: "🇺🇸", text: "No presidents here", sub: "Something went wrong loading the presidential entries." },
     cart:       { icon: "🛒", text: "No recipes in your list", sub: "Tap 🛒 on any recipe to add its ingredients here." },
@@ -3565,6 +3577,7 @@ export default function RecipeBook() {
             {[
               ["favorites", `❤️ Favorites${favorites.size > 0 ? ` (${favorites.size})` : ""}`],
               ["gross",     `🤢 Gross${gross.size > 0 ? ` (${gross.size})` : ""}`],
+              ["making",    `🍳 Making${making.size > 0 ? ` (${making.size})` : ""}`],
               ["made",      `👨‍🍳 Made This${made.size > 0 ? ` (${made.size})` : ""}`],
               ["cart",      `🛒 List${cart.size > 0 ? ` (${cart.size})` : ""}`],
             ].map(([key, label]) => (
@@ -3831,6 +3844,12 @@ export default function RecipeBook() {
                         onClick={e => { e.stopPropagation(); toggleGross(r.name); }}
                         style={{ opacity: gross.has(r.name) ? 1 : 0.25 }}>
                         🤢
+                      </button>
+                      <button className="icon-btn"
+                        onClick={e => { e.stopPropagation(); toggleMaking(r.name); }}
+                        style={{ opacity: making.has(r.name) ? 1 : 0.25 }}
+                        title="Currently making">
+                        🍳
                       </button>
                       <button className="icon-btn"
                         onClick={e => { e.stopPropagation(); toggleMade(r.name); }}
@@ -4112,7 +4131,20 @@ export default function RecipeBook() {
                         border: `1px solid ${activePalette.accent}`,
                         opacity: 0.85,
                       }}>
-                        {r.name}
+                        <span
+                          onClick={() => {
+                            // Navigate to the recipe's decade and open it
+                            const decade = r.decade;
+                            if (decade) {
+                              setActiveDec(decade);
+                              setSpecialTab(null);
+                              setActiveRecipe(r.name + 0);
+                              window.scrollTo(0, 0);
+                            }
+                          }}
+                          style={{ cursor: "pointer" }}>
+                          {r.name}
+                        </span>
                         <span
                           onClick={() => toggleCart(r.name)}
                           style={{ cursor: "pointer", opacity: 0.6, fontSize: "0.9rem", lineHeight: 1 }}>
