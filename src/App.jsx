@@ -1283,6 +1283,34 @@ const recipes = {
       instructions: ["Beat cream cheese and mayonnaise until smooth.", "Fold in cheddar, pimentos, and cayenne. Season.", "Fill each celery stalk generously with pimento cheese using a spoon or piping bag.", "Arrange on a platter. Refrigerate until firm.", "Serve as part of a relish tray."]
     },
     {
+      name: "Hot Crab Dip",
+      region: "Baltimore, Maryland; developed in the Baltimore test kitchens of McCormick & Company",
+      notable: "The recipe appeared in 100 Best Recipes for 100 Years from McCormick (1988). The headnote describes it as 'a delicious new version of an old Maryland specialty' and specifies that it is 'best made with the backfin meat of the blue crab' — the quintessential Chesapeake Bay ingredient.",
+      history: "Hot Crab Dip is a 1950s creation from Baltimore's McCormick & Company test kitchens, designed to showcase the Chesapeake Bay's abundant blue crab in a format suited to the new cocktail party culture. The combination of crabmeat, sour cream, mayonnaise, dillweed, and Bon Appétit seasoning baked until bubbling became a staple of Maryland entertaining. It spread nationally through McCormick's promotional materials and appeared on cocktail party tables from Baltimore to Los Angeles. The use of shaved or slivered almonds on top — a 1950s and 60s garnishing convention — gives it a textural contrast that sets it apart from later crab dip variations.",
+      type: "Appetizer",
+      difficulty: 2,
+      servings: 8,
+      description: "Lump crabmeat baked in a sour cream and mayonnaise sauce seasoned with curry powder and dillweed, topped with slivered almonds — a 1950s Baltimore classic from the McCormick test kitchens.",
+      ingredients: [
+        "1 lb backfin or lump crabmeat",
+        "1 cup sour cream",
+        "1 cup mayonnaise",
+        "1 tsp instant minced onion",
+        "¼ tsp curry powder",
+        "½ tsp dillweed",
+        "½ tsp Bon Appétit seasoning (or seasoned salt)",
+        "½ cup shaved or slivered almonds"
+      ],
+      instructions: [
+        "Preheat oven to 350°F. Butter a 1-quart au gratin dish or shallow casserole and set aside.",
+        "Pick over crabmeat, discarding bits of shell and cartilage; place in medium bowl and set aside.",
+        "Blend sour cream, mayonnaise, onion, curry powder, dillweed, and Bon Appétit seasoning in a small bowl. Add to crab and mix well.",
+        "Transfer to au gratin dish and scatter almonds evenly on top.",
+        "Bake uncovered until bubbling — about 20 minutes.",
+        "Serve as a dip for melba toast, potato chips, or crackers."
+      ]
+    },
+    {
       name: "Swiss Steak",
       region: "Nationwide; swiss refers not to Switzerland but to the textile process of swissing — mechanically compressing fabric to change its texture — applied to beef",
       notable: "Swiss steak has no connection to Switzerland. The swiss refers to the textile process of swissing, which involved mechanically compressing fabric to change its texture — the same idea applied to tough meat.",
@@ -1357,6 +1385,33 @@ const recipes = {
   ],
 
   "1960s": [
+    {
+      name: "Garlicked Olives",
+      region: "Nationwide; a hostess shortcut of the 1950s, when specialty marinated olives were unavailable outside major cities",
+      notable: "Jean Anderson writes that in the 1950s, before a dozen varieties of brined, herbed, or spiced olives could be had at the nearest specialty food shop, hostesses would take the curse off the canned variety by marinating them with garlic, hot peppers, and herbs. She adds simply: 'I still think these are good.'",
+      history: "Garlicked olives represent one of the cleverest transformations in mid-century American entertaining — taking the most ordinary canned ingredient and, with a week's patience, turning it into something that tasted genuinely exotic. Before the specialty food explosion of the 1980s and 90s, a jar of marinated olives was a novelty that impressed guests. The technique — simmering the olive brine with garlic, dried chili peppers, and peppercorns, adding vinegar, and letting the whole thing steep for a week — was widely shared through community cookbooks and women's magazines. The result is dramatically better than either the plain canned olives or most modern marinated versions.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 16,
+      description: "Canned olives transformed by a week in a garlic, chili, and thyme marinade — the 1950s hostess trick for making ordinary olives taste extraordinary before specialty food shops existed.",
+      ingredients: [
+        "2 (8- to 9-ounce) jars or cans unpitted green or ripe olives with their liquid",
+        "4 large cloves garlic, peeled and slivered",
+        "6 small dried chili peppers (chili piquins or similar)",
+        "6 black peppercorns",
+        "¼ cup red wine vinegar",
+        "4 sprigs fresh thyme or oregano, washed well and patted dry"
+      ],
+      instructions: [
+        "Drain olive liquid into a small saucepan.",
+        "Add garlic, chilies, and peppercorns. Cover and simmer 5 minutes.",
+        "Add vinegar.",
+        "Place olives in a 1-pint preserving jar and tuck in thyme sprigs.",
+        "Pour in saucepan mixture.",
+        "Cover tight and marinate at least a week in the refrigerator before serving, inverting jar from time to time.",
+        "These improve the longer they sit — two weeks is better than one."
+      ]
+    },
     {
       name: "Beef Fondue (Bourguignonne)",
       region: "Nationwide; the fondue craze swept American entertaining in the mid-1960s following its introduction at the 1964 New York World's Fair",
@@ -1525,6 +1580,32 @@ const recipes = {
       instructions: ["Marinate chicken livers in soy sauce, brown sugar, and ginger for 30 minutes.", "Place a water chestnut on each piece of liver.", "Wrap with a half-strip of bacon. Secure with a toothpick.", "Broil 4-5 minutes per side until bacon is crisp and liver is just cooked.", "Serve immediately."]
     },
     {
+      name: "Impossible Green Chili-Cheese Pie",
+      region: "Nationwide; developed in the Betty Crocker test kitchens as a way to use Bisquick Original baking mix",
+      notable: "The 'Impossible Pie' format was one of Betty Crocker's most successful recipe concepts — Bisquick mixed with eggs and milk forms its own crust as it bakes, eliminating the need for pastry. The green chili version quickly became one of the company's most popular recipes and is used here courtesy of the Betty Crocker Kitchens.",
+      history: "The Impossible Pie was a Betty Crocker test kitchen invention that solved a genuine problem: how to make a quiche-like dish without making pastry. The answer was Bisquick — when mixed with eggs and milk and poured over a filling, it settles to the bottom during baking and forms a soft, barely-there crust. The green chili and sharp Cheddar version became the most popular of the Impossible Pie family, appearing on the Bisquick box and in Betty Crocker promotional materials throughout the 1970s and 80s. It spread through community cookbooks across the Southwest and Midwest and became a Sunset magazine staple. Cut into wedges and then bite-size pieces, it doubles as cocktail finger food.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 8,
+      description: "Green chilies and sharp Cheddar baked in a self-forming Bisquick crust — Betty Crocker's ingenious Impossible Pie that requires no pastry-making whatsoever.",
+      ingredients: [
+        "2 (4-ounce) cans chopped green chilies, well drained",
+        "4 cups coarsely shredded sharp Cheddar cheese (about 1 lb)",
+        "2 cups milk",
+        "4 eggs",
+        "1 cup biscuit mix (Bisquick)"
+      ],
+      instructions: [
+        "Preheat oven to 425°F. Grease a 10½-inch pie plate.",
+        "Sprinkle chilies and cheese evenly over bottom of prepared pie plate and set aside.",
+        "Blend milk, eggs, and biscuit mix in electric blender at high speed until smooth — about 15 seconds. Or beat in large electric mixer bowl at high speed 1 minute.",
+        "Pour into pie plate.",
+        "Bake uncovered until a knife inserted in center comes out clean — 25 to 30 minutes.",
+        "Cool on wire rack 10 minutes, cut into wedges, and serve.",
+        "Note: if you divide the wedges into bite-size pieces, these make excellent cocktail finger food."
+      ]
+    },
+    {
       name: "Clam Dip",
       region: "Nationwide; Breakstone's cream cheese company is widely credited with popularizing clam dip through promotional recipes in the 1950s",
       notable: "Breakstone's Cream Cheese published clam dip recipes in mass-circulation women's magazines beginning in the early 1950s, and the dish quickly became synonymous with the American cocktail party.",
@@ -1535,6 +1616,57 @@ const recipes = {
       description: "Canned clams mixed into cream cheese with a touch of Worcestershire and lemon — served with potato chips. The aperitivo staple of every 1960s living room.",
       ingredients: ["2 cans (6.5 oz) minced clams, drained (reserve 2 tbsp juice)", "8 oz cream cheese, softened", "1 tbsp Worcestershire sauce", "1 tsp lemon juice", "1 clove garlic, minced", "Salt, pepper", "Potato chips for serving"],
       instructions: ["Beat cream cheese until very smooth.", "Stir in drained clams, Worcestershire, lemon juice, garlic, and reserved clam juice.", "Season with salt and pepper.", "Refrigerate at least 1 hour for flavors to meld.", "Serve in a bowl surrounded by potato chips."]
+    },
+    {
+      name: "Curry Dip",
+      region: "Raleigh, North Carolina; Jean Anderson's mother's recipe, a particular favorite of the Anderson family",
+      notable: "Jean Anderson writes that this is 'not only because it was my mother's invention but also because it's been a huge hit whenever she or I served it.' Like California Dip, it begins with an envelope of Lipton Recipe Secrets Onion Soup Mix — the base of half the party dips in 1960s America.",
+      history: "Curry dip belongs to the great tradition of American hostess shortcuts — taking a packet of onion soup mix and turning it into something that tastes far more sophisticated than its origins suggest. The combination of dry onion soup mix with cream cheese, curry powder, chutney, and sour cream produces something genuinely complex. It appeared at dinner parties and cocktail gatherings across the South and Midwest from the 1960s onward, served with the standard array of chips and raw vegetables. Its home origin — a personal recipe rather than a test kitchen creation — gives it a different character from the corporate dips that surrounded it.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 8,
+      description: "Cream cheese and sour cream seasoned with curry powder, onion soup mix, and chutney — a 1960s party dip that tastes more sophisticated than its pantry origins suggest.",
+      ingredients: [
+        "1 envelope dry onion soup mix",
+        "1 (8-ounce) package cream cheese, at room temperature",
+        "2 tbsp curry powder",
+        "¼ cup chopped chutney",
+        "1½ cups sour cream"
+      ],
+      instructions: [
+        "Using a fork, blend all ingredients well in a small bowl.",
+        "Cover and refrigerate several hours.",
+        "Before serving, let stand at room temperature 30 to 45 minutes.",
+        "If too thick, thin with a little milk.",
+        "Mound in small serving bowl and surround with potato or corn chips, crackers, cherry tomatoes, or bite-size chunks of carrot, celery, zucchini, broccoli, and cauliflower."
+      ]
+    },
+    {
+      name: "Clam Dip (Anderson Version)",
+      region: "Nationwide; traced by Jean Anderson to at least 1939, possibly to Woodrow Wilson's White House via a recipe on file card by Mrs. Woodrow Wilson",
+      notable: "Anderson traced the clam dip's origins back to 1939 and discovered that Woodrow Wilson's White House had a clam cream cheese recipe on file — written in Mrs. Wilson's hand — which would push the origins back to between 1915 and 1921. The original recipe reads simply: '1 Can Clams Small / 1 part Cream Cheese / drain off Juice / add onions grated / & Salt — pepper.'",
+      history: "The clam dip has one of the most tangled origin stories of any American party food. Jean Anderson traced it to at least 1939, when Irma S. Rombauer published a practically identical recipe titled 'Clam Canapé' in her little-known Streamlined Cooking. A file card recipe by Mrs. Woodrow Wilson may push the origins back to the 1915-1921 White House. The dip entered the American mainstream in the early 1950s when it was featured on TV's Kraft Music Hall. By the mid-1950s it was the standard American cocktail party dip — simple, cheap, and requiring no cooking whatsoever. This version, adapted from Anderson's mother's recipe, adds garlic and lemon juice and reserves some of the clam juice for adjusting consistency.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 6,
+      description: "The original American clam dip — cream cheese beaten with minced clams, lemon juice, Worcestershire, garlic, and reserved clam juice. Possibly served at Woodrow Wilson's White House.",
+      ingredients: [
+        "1 clove garlic, peeled and halved",
+        "1 (8-ounce) package cream cheese, at room temperature",
+        "2 tsp fresh lemon juice",
+        "1½ tsp Worcestershire sauce",
+        "½ tsp salt",
+        "Pinch black pepper",
+        "1 (7-ounce) can minced clams, drained, juice reserved"
+      ],
+      instructions: [
+        "Rub a small bowl well with the garlic halves; discard garlic.",
+        "Add cream cheese to bowl and cream until smooth.",
+        "Mix in lemon juice, Worcestershire sauce, salt, and pepper.",
+        "Stir in clams and, one by one, 4 tablespoons of the reserved clam juice.",
+        "For a looser dip, add a little more clam juice.",
+        "Mound in small serving bowl and surround with potato chips, crackers, or bite-size chunks of carrot, celery, zucchini, broccoli, and cauliflower."
+      ]
     },
     {
       name: "Gazpacho (Newly Fashionable)",
