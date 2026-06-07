@@ -2693,8 +2693,52 @@ function parseQty(str) {
 }
 
 function parseIngredient(raw) {
+  // Normalize common "X (N-ounce) package/can" patterns to plain "N oz item"
+  // e.g. "1 (8-ounce) package cream cheese" → "8 oz cream cheese"
+  // e.g. "½ package cream cheese" (assume 8 oz standard package) → "4 oz cream cheese"
+  let normalized_raw = raw;
+
+  // Pattern: "N (Xoz/X-ounce) package/can ITEM" → "N*X oz ITEM"
+  const packageWithSize = normalized_raw.match(/^([\d½¼¾⅓⅔⅛⅜⅝⅞\/\s\.]+)\s*\((\d+(?:\.\d+)?)\s*(?:-\s*)?(?:ounce|oz)\)\s*(?:package|can|jar)s?\s+(.+)/i);
+  if (packageWithSize) {
+    const count = packageWithSize[1].trim();
+    const sizeOz = parseFloat(packageWithSize[2]);
+    const item = packageWithSize[3].trim();
+    // Parse the count
+    const countVal = (() => {
+      const FRACS = {"½":0.5,"¼":0.25,"¾":0.75,"⅓":0.333,"⅔":0.667,"⅛":0.125,"⅜":0.375,"⅝":0.625,"⅞":0.875};
+      let v = 0, s = count;
+      for (const [f, n] of Object.entries(FRACS)) { if (s.includes(f)) { v += n; s = s.replace(f, ""); } }
+      const n = parseFloat(s);
+      if (!isNaN(n)) v += n;
+      return v || 1;
+    })();
+    normalized_raw = `${countVal * sizeOz} oz ${item}`;
+  }
+
+  // Pattern: "N package/can ITEM" with no size — use standard sizes
+  const STANDARD_PACKAGE_OZ = {
+    "cream cheese": 8, "gelatin": 3, "jell-o": 3,
+    "onion soup mix": 1, "dry onion soup mix": 1,
+    "yeast": 0.25, "active dry yeast": 0.25,
+  };
+  const packageNoSize = normalized_raw.match(/^([\d½¼¾⅓⅔⅛⅜⅝⅞\/\s\.]+)\s*(?:package|envelope)s?\s+(.+)/i);
+  if (packageNoSize && !packageWithSize) {
+    const item = packageNoSize[2].trim().toLowerCase();
+    const stdOz = Object.entries(STANDARD_PACKAGE_OZ).find(([k]) => item.includes(k));
+    if (stdOz) {
+      const countStr = packageNoSize[1].trim();
+      const FRACS = {"½":0.5,"¼":0.25,"¾":0.75,"⅓":0.333,"⅔":0.667,"⅛":0.125,"⅜":0.375,"⅝":0.625,"⅞":0.875};
+      let countVal = 0, s = countStr;
+      for (const [f, n] of Object.entries(FRACS)) { if (s.includes(f)) { countVal += n; s = s.replace(f, ""); } }
+      const n = parseFloat(s);
+      if (!isNaN(n)) countVal += n;
+      if (!countVal) countVal = 1;
+      normalized_raw = `${countVal * stdOz[1]} oz ${packageNoSize[2].trim()}`;
+    }
+  }
   // Strip parenthetical notes like "(about 2 cups)" or "(optional)"
-  const cleaned = raw.replace(/\(.*?\)/g, "").trim();
+  const cleaned = normalized_raw.replace(/\(.*?\)/g, "").trim();
 
   // Try to match: [qty] [unit] [item]
   // e.g. "2 cups all-purpose flour", "1½ tsp salt", "3 large eggs"
@@ -2784,7 +2828,45 @@ const NON_VOLUME_ITEMS = new Set([
   "bread", "breadcrumbs", "crackers", "flour", "cornmeal", "oats",
   "mushroom", "mushrooms", "onion", "onions", "tomato", "tomatoes",
   "apple", "apples", "celery", "carrot", "carrots", "potato", "potatoes",
+  // Vegetables and solids that should never be measured in tbsp
+  "bell pepper", "green pepper", "red pepper", "pepper",
+  "zucchini", "broccoli", "cauliflower", "cabbage", "spinach", "lettuce",
+  "scallion", "scallions", "shallot", "shallots", "garlic",
+  "avocado", "cucumber", "artichoke", "artichokes",
+  "peas", "beans", "corn", "lima beans",
+  "leek", "leeks", "fennel", "parsnip", "turnip",
 ]);
+
+// Standard pantry items that ARE safe to combine even if multi-word
+const STANDARD_PANTRY = new Set([
+  "olive oil", "vegetable oil", "canola oil", "coconut oil",
+  "soy sauce", "fish sauce", "hot sauce", "worcestershire sauce",
+  "red wine vinegar", "white wine vinegar", "cider vinegar", "rice vinegar", "balsamic vinegar",
+  "chicken broth", "beef broth", "vegetable broth", "chicken stock", "beef stock",
+  "heavy cream", "sour cream", "cream cheese", "whole milk", "skim milk",
+  "brown sugar", "powdered sugar", "granulated sugar",
+  "baking soda", "baking powder",
+  "black pepper", "white pepper", "red pepper",
+  "dijon mustard", "dry mustard", "yellow mustard",
+  "tomato paste", "tomato sauce",
+  "lemon juice", "lime juice", "orange juice",
+  "maple syrup", "corn syrup",
+  "vanilla extract", "almond extract",
+]);
+
+// Detect specialty/named ingredients that should never be combined or unit-converted
+// Rule: contains a hyphen, OR is a multi-word name not in STANDARD_PANTRY
+function isSpecialtyIngredient(item) {
+  const lower = item.toLowerCase().trim();
+  // Contains a hyphen — e.g. "tarragon-chive vinegar", "bon appétit seasoning"
+  if (lower.includes("-")) return true;
+  // Check against standard pantry list
+  if (STANDARD_PANTRY.has(lower)) return false;
+  // Multi-word items not in standard pantry are treated as specialty
+  const words = lower.split(/\s+/).filter(w => w.length > 1);
+  if (words.length >= 3) return true;
+  return false;
+}
 
 function isVolumeIngredient(item, unit) {
   if (!VOLUME_UNITS.has(unit)) return false;
@@ -2884,6 +2966,15 @@ function buildShoppingList(recipeNames, allItems, servingsMap = {}) {
       .replace(/,.*$/, "")
       .trim();
 
+    // Specialty named ingredients (e.g. "Tarragon-Chive Vinegar") — list as-is, no combining
+    if (isSpecialtyIngredient(normalized)) {
+      const key = "specialty||" + p.raw;
+      if (!groups[key]) {
+        groups[key] = { tbspTotal: 0, qty: null, unit: null, item: normalized, raws: [p.raw], canCombine: false, isVolume: false };
+      }
+      continue;
+    }
+
     // Normalize volume units — store everything as tbsp internally
     let storeUnit = p.unit;
     let storeQty = p.qty;
@@ -2911,24 +3002,77 @@ function buildShoppingList(recipeNames, allItems, servingsMap = {}) {
     }
   }
 
+  // Items that should always be whole numbers (round up)
+  const WHOLE_NUMBER_ITEMS = new Set([
+    "clove", "cloves", "garlic", "egg", "eggs", "strip", "strips",
+    "slice", "slices", "sprig", "sprigs", "leaf", "leaves", "bay leaf",
+    "can", "cans", "jar", "jars", "package", "packages", "envelope", "envelopes",
+    "stick", "sticks", "bunch", "bunches",
+  ]);
+
+  // Standard package sizes — for displaying oz totals as packages at the store
+  // Format: "item keyword" → { oz: N, label: "package/stick/can" }
+  const PACKAGE_SIZES = {
+    "cream cheese":     { oz: 8,   label: "package" },
+    "butter":           { oz: 4,   label: "stick" },  // 1 stick = 4 oz = ½ cup
+    "cream of tartar":  { oz: 1.5, label: "jar" },
+    "sour cream":       { oz: 16,  label: "container" },
+    "heavy cream":      { oz: 8,   label: "carton" },
+    "half-and-half":    { oz: 8,   label: "carton" },
+    "gelatin":          { oz: 3,   label: "box" },
+    "chocolate chips":  { oz: 12,  label: "bag" },
+    "tomato paste":     { oz: 6,   label: "can" },
+    "coconut milk":     { oz: 13.5, label: "can" },
+  };
+
+  // Helper: given oz total and item name, return a friendly package display
+  function formatAsPackages(ozTotal, itemName) {
+    const lower = itemName.toLowerCase();
+    const match = Object.entries(PACKAGE_SIZES).find(([k]) => lower.includes(k));
+    if (!match) return null;
+    const { oz: pkgOz, label } = match[1];
+    const pkgCount = ozTotal / pkgOz;
+    // Round up to nearest practical fraction (whole, ½, ¼)
+    const practical = Math.ceil(pkgCount * 4) / 4;
+    const pkgStr = formatQty(practical);
+    const pkgLabel = practical <= 1 ? label : label + "s";
+    return `${pkgStr} ${pkgLabel} (${formatQty(roundToFriendly(ozTotal))} oz) ${itemName}`;
+  }
+
   // Build display list
   const result = [];
   for (const [key, g] of Object.entries(groups)) {
     if (g.canCombine) {
-      let qtyStr, unitStr;
+      let display;
       if (g.isVolume && g.tbspTotal > 0) {
         // Convert back from tbsp to best display unit
         const { qty, unit } = fromTbsp(g.tbspTotal);
-        qtyStr = formatQty(qty);
-        unitStr = ` ${pluralUnit(unit, qty)}`;
+        const qtyStr = formatQty(qty);
+        const unitStr = ` ${pluralUnit(unit, qty)}`;
+        display = `${qtyStr}${unitStr} ${g.item}`;
       } else if (g.qty > 0) {
-        qtyStr = formatQty(g.qty);
-        unitStr = g.unit && g.unit !== "_tbsp" ? ` ${pluralUnit(g.unit, g.qty)}` : "";
+        // Check if this is an oz item with a known package size
+        if (g.unit === "oz") {
+          const pkgDisplay = formatAsPackages(g.qty, g.item);
+          if (pkgDisplay) {
+            display = pkgDisplay;
+          } else {
+            display = `${formatQty(g.qty)} oz ${g.item}`;
+          }
+        } else {
+          // Round up whole-number items (cloves, eggs, cans etc.)
+          const isWhole = WHOLE_NUMBER_ITEMS.has(g.item.toLowerCase()) ||
+            (g.unit && WHOLE_NUMBER_ITEMS.has(g.unit.toLowerCase()));
+          const displayQty = isWhole ? Math.ceil(g.qty) : g.qty;
+          const qtyStr = formatQty(displayQty);
+          const unitStr = g.unit && g.unit !== "_tbsp" ? ` ${pluralUnit(g.unit, displayQty)}` : "";
+          display = `${qtyStr}${unitStr} ${g.item}`;
+        }
       } else {
         continue;
       }
       result.push({
-        display: `${qtyStr}${unitStr} ${g.item}`,
+        display,
         item: g.item,
         qty: g.isVolume ? g.tbspTotal : g.qty,
         unit: g.unit,
@@ -2947,9 +3091,45 @@ function buildShoppingList(recipeNames, allItems, servingsMap = {}) {
   }
 
   // Sort: items with quantities first, then alphabetically
+  // Assign store sections to each item
+  const STORE_SECTIONS = [
+    { name: "🥩 Meat & Seafood", keywords: ["beef", "pork", "chicken", "turkey", "lamb", "veal", "bacon", "ham", "sausage", "chorizo", "prosciutto", "pancetta", "crab", "shrimp", "lobster", "clam", "oyster", "salmon", "tuna", "sardine", "anchovy", "fish", "liverwurst", "braunschweiger"] },
+    { name: "🥛 Dairy & Eggs", keywords: ["milk", "cream", "butter", "egg", "eggs", "cheese", "cheddar", "parmesan", "gruyere", "swiss", "mozzarella", "brie", "ricotta", "sour cream", "yogurt", "cream cheese", "half-and-half", "whipping cream", "heavy cream", "buttermilk"] },
+    { name: "🥦 Produce", keywords: ["onion", "garlic", "celery", "carrot", "pepper", "tomato", "lettuce", "spinach", "kale", "mushroom", "zucchini", "broccoli", "cauliflower", "cabbage", "potato", "sweet potato", "lemon", "lime", "orange", "apple", "avocado", "cucumber", "scallion", "shallot", "leek", "fennel", "parsnip", "turnip", "mint", "parsley", "thyme", "rosemary", "basil", "dill", "chive", "cilantro", "ginger", "jalapeño", "chili", "arugula", "watercress", "radish", "beet", "asparagus", "corn", "peas"] },
+    { name: "🥫 Canned & Jarred", keywords: ["canned", "can of", "tomato paste", "tomato sauce", "crushed tomato", "diced tomato", "coconut milk", "chicken broth", "beef broth", "clam juice", "anchovy paste", "olive", "caper", "pickle", "pimento", "artichoke", "water chestnut", "chestnut", "bean sprout", "bamboo", "chipotle"] },
+    { name: "🌾 Dry Goods & Pasta", keywords: ["flour", "cornmeal", "oat", "rice", "pasta", "spaghetti", "noodle", "macaroni", "breadcrumb", "cracker", "bisquick", "baking mix", "cornstarch", "tapioca", "barley", "lentil", "dried bean", "navy bean", "black-eyed", "split pea"] },
+    { name: "🧂 Spices & Pantry", keywords: ["salt", "pepper", "paprika", "cumin", "coriander", "turmeric", "curry", "cayenne", "chili powder", "allspice", "cinnamon", "nutmeg", "clove", "ginger powder", "oregano", "thyme dried", "bay leaf", "mustard powder", "celery salt", "onion powder", "garlic powder", "dillweed", "tarragon", "marjoram", "sage", "caraway", "cardamom", "saffron", "vanilla", "baking soda", "baking powder", "cream of tartar", "yeast", "gelatin"] },
+    { name: "🫙 Condiments & Sauces", keywords: ["mayonnaise", "ketchup", "mustard", "worcestershire", "soy sauce", "hot sauce", "tabasco", "vinegar", "olive oil", "vegetable oil", "canola oil", "sesame oil", "fish sauce", "oyster sauce", "hoisin", "sriracha", "relish", "chutney", "horseradish"] },
+    { name: "🍬 Baking & Sweets", keywords: ["sugar", "brown sugar", "powdered sugar", "honey", "maple syrup", "molasses", "corn syrup", "chocolate", "cocoa", "candy", "jam", "jelly", "marmalade", "raisin", "currant", "date", "dried fruit", "coconut", "almond extract", "food coloring", "marshmallow"] },
+    { name: "🥫 Canned Soup & Mixes", keywords: ["soup mix", "onion soup", "cream of mushroom", "cream of chicken", "condensed soup", "bouillon", "gravy mix", "lipton", "knorr"] },
+    { name: "🧀 Deli", keywords: ["salami", "pepperoni", "bologna", "olive loaf", "spam", "deviled ham", "liverwurst", "pate", "lox"] },
+    { name: "🍷 Wine, Beer & Spirits", keywords: ["wine", "beer", "ale", "stout", "bourbon", "brandy", "rum", "gin", "vodka", "whiskey", "scotch", "sherry", "vermouth", "champagne", "prosecco", "port", "madeira", "marsala", "kirsch", "cointreau", "triple sec", "kahlua", "liqueur"] },
+    { name: "🍞 Bread & Bakery", keywords: ["bread", "white bread", "rye bread", "sourdough", "baguette", "roll", "bun", "toast", "english muffin", "pita", "tortilla", "crouton"] },
+  ];
+
+  const OTHER_SECTION = "🛒 Other";
+
+  function getSection(item) {
+    const lower = item.toLowerCase();
+    for (const section of STORE_SECTIONS) {
+      if (section.keywords.some(kw => lower.includes(kw))) {
+        return section.name;
+      }
+    }
+    return OTHER_SECTION;
+  }
+
+  // Add section to each result item
+  result.forEach(item => {
+    item.section = getSection(item.item || item.display);
+  });
+
   result.sort((a, b) => {
-    if (a.qty !== null && b.qty === null) return -1;
-    if (a.qty === null && b.qty !== null) return 1;
+    // Sort by section first, then alphabetically within section
+    const sectionOrder = [...STORE_SECTIONS.map(s => s.name), OTHER_SECTION];
+    const sA = sectionOrder.indexOf(a.section);
+    const sB = sectionOrder.indexOf(b.section);
+    if (sA !== sB) return sA - sB;
     return a.item.localeCompare(b.item);
   });
 
@@ -3963,55 +4143,80 @@ export default function RecipeBook() {
                   {shoppingList.length} Ingredients
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 20 }}>
-                  {shoppingList.map((item, i) => {
-                    const isChecked = checkedItems.has(item.display);
-                    return (
-                      <div
-                        key={i}
-                        onClick={() => toggleCheckedItem(item.display)}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 12,
-                          padding: "10px 12px",
-                          background: isChecked ? "rgba(0,0,0,0.03)" : "#FDFAF4",
-                          border: "1px solid",
-                          borderColor: isChecked ? "rgba(0,0,0,0.06)" : `rgba(${parseInt(activePalette.header.slice(1,3),16)},${parseInt(activePalette.header.slice(3,5),16)},${parseInt(activePalette.header.slice(5,7),16)},0.15)`,
-                          cursor: "pointer",
-                          transition: "all 0.15s",
-                        }}>
-                        {/* Checkbox */}
+                <div style={{ marginBottom: 20 }}>
+                  {(() => {
+                    // Group by section
+                    const sections = {};
+                    shoppingList.forEach(item => {
+                      const sec = item.section || "🛒 Other";
+                      if (!sections[sec]) sections[sec] = [];
+                      sections[sec].push(item);
+                    });
+
+                    return Object.entries(sections).map(([sectionName, items]) => (
+                      <div key={sectionName} style={{ marginBottom: 16 }}>
+                        {/* Section header */}
                         <div style={{
-                          width: 18,
-                          height: 18,
-                          border: `2px solid`,
-                          borderColor: isChecked ? activePalette.header : "rgba(0,0,0,0.2)",
-                          background: isChecked ? activePalette.header : "transparent",
-                          flexShrink: 0,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+                          fontFamily: "'Oswald', sans-serif",
+                          fontSize: "0.62rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.15em",
+                          textTransform: "uppercase",
+                          color: activePalette.header,
+                          opacity: 0.6,
+                          paddingBottom: 6,
+                          marginBottom: 4,
+                          borderBottom: `1px solid ${activePalette.header}18`,
                         }}>
-                          {isChecked && (
-                            <span style={{ color: activePalette.accent, fontSize: "0.7rem", lineHeight: 1, fontWeight: 700 }}>✓</span>
-                          )}
+                          {sectionName}
                         </div>
-                        {/* Item text */}
-                        <span style={{
-                          fontFamily: "'Lato', sans-serif",
-                          fontSize: "0.9rem",
-                          color: isChecked ? "#bbb" : "#333",
-                          textDecoration: isChecked ? "line-through" : "none",
-                          flex: 1,
-                          textTransform: "capitalize",
-                          transition: "all 0.15s",
-                        }}>
-                          {item.display}
-                        </span>
+                        {/* Items in section */}
+                        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                          {items.map((item, i) => {
+                            const isChecked = checkedItems.has(item.display);
+                            return (
+                              <div
+                                key={i}
+                                onClick={() => toggleCheckedItem(item.display)}
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: 12,
+                                  padding: "10px 12px",
+                                  background: isChecked ? "rgba(0,0,0,0.03)" : "#FDFAF4",
+                                  border: "1px solid",
+                                  borderColor: isChecked ? "rgba(0,0,0,0.06)" : `rgba(${parseInt(activePalette.header.slice(1,3),16)},${parseInt(activePalette.header.slice(3,5),16)},${parseInt(activePalette.header.slice(5,7),16)},0.15)`,
+                                  cursor: "pointer",
+                                  transition: "all 0.15s",
+                                }}>
+                                <div style={{
+                                  width: 18, height: 18,
+                                  border: `2px solid`,
+                                  borderColor: isChecked ? activePalette.header : "rgba(0,0,0,0.2)",
+                                  background: isChecked ? activePalette.header : "transparent",
+                                  flexShrink: 0,
+                                  display: "flex", alignItems: "center", justifyContent: "center",
+                                }}>
+                                  {isChecked && <span style={{ color: activePalette.accent, fontSize: "0.7rem", lineHeight: 1, fontWeight: 700 }}>✓</span>}
+                                </div>
+                                <span style={{
+                                  fontFamily: "'Lato', sans-serif",
+                                  fontSize: "0.9rem",
+                                  color: isChecked ? "#bbb" : "#333",
+                                  textDecoration: isChecked ? "line-through" : "none",
+                                  flex: 1,
+                                  textTransform: "capitalize",
+                                  transition: "all 0.15s",
+                                }}>
+                                  {item.display}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    );
-                  })}
+                    ));
+                  })()}
                 </div>
 
                 {/* Clear checked button */}
