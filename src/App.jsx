@@ -57,6 +57,36 @@ const recipes = {
       ]
     },
     {
+      name: "Clams Casino",
+      region: "Narragansett, Rhode Island; created at the Casino at Narragansett Pier in 1917",
+      notable: "Mrs. Paran Stevens asked Maître d'Hôtel Julius Keller to create a special dish for her party. When she asked what to call it, Keller replied: 'I shall call it Clams Casino in honor of this restaurant.' The name stuck and the dish spread to every American seafood restaurant.",
+      history: "Clams Casino was born in 1917 at the Casino at Narragansett Pier, one of the great seaside resort establishments of the Gilded Age. The combination of clams on the half shell baked with bacon, butter, green pepper, and lemon juice became one of the defining American appetizers of the twentieth century. It spread from Rhode Island down the Eastern Seaboard and eventually nationwide, appearing on the menus of seafood restaurants from Boston to New Orleans. Its decline came with the retreat of the baked shellfish appetizer from restaurant menus in the 1980s and 90s.",
+      type: "Appetizer",
+      difficulty: 3,
+      servings: 4,
+      description: "Cherrystone clams on the half shell baked with bacon, butter, anchovy, green pepper, shallots, and pimento — the Rhode Island resort classic that spread to every American seafood restaurant.",
+      ingredients: [
+        "4 (9-inch) pie pans filled with rock salt",
+        "2 dozen raw cherrystone clams on the half shell",
+        "¼ cup (½ stick) butter, at room temperature",
+        "1 tsp anchovy paste",
+        "1 tbsp fresh lemon juice",
+        "¼ cup minced green bell pepper",
+        "2 tbsp minced shallots",
+        "2 tbsp minced pimento",
+        "6 slices bacon, each cut crosswise into 4 equal pieces, partially cooked and drained"
+      ],
+      instructions: [
+        "Dampen rock salt with water, set pans in oven, and preheat to 450°F.",
+        "Bed six clams in salt in each pan.",
+        "Quickly blend butter, anchovy paste, and lemon juice until smooth and slip ½ teaspoon under each clam.",
+        "Mix green pepper, shallots, and pimento and sprinkle evenly over clams.",
+        "Top each clam with a piece of bacon.",
+        "Bake uncovered until bacon is crisp and nicely browned — 6 to 7 minutes.",
+        "Serve at once."
+      ]
+    },
+    {
       name: "Oyster Loaf",
       region: "New Orleans, Baltimore, and the Atlantic and Gulf Coasts",
       notable: "New Orleans lore holds that the oyster loaf — locally called a peacemaker or La Médiatrice — was brought home by husbands as a peace offering after a late night out.",
@@ -133,7 +163,7 @@ const recipes = {
       region: "The American South and Midwest; German immigrant communities",
       notable: "Ulysses S. Grant was said to be particularly fond of pickled pigs' feet, reportedly enjoying them as a late-night snack in the White House.",
       history: "Pickled pigs' feet are among the oldest preserved foods in American culture, brought by German, British, and West African foodways that all independently valued the pig's extremities. In the South, they were closely tied to African American cooking traditions where whole-hog butchery ensured nothing was wasted. Jars sat on the counters of general stores and taverns well into the mid-twentieth century before being displaced by processed snack foods.",
-      type: "Side",
+      type: "Appetizer",
       difficulty: 3,
       servings: 4,
       description: "Boiled pigs' feet preserved in a spiced vinegar brine — a common cold shelf staple eaten as a snack or alongside beans.",
@@ -364,7 +394,7 @@ const recipes = {
       region: "Nationwide; particularly fashionable in the South, where aspic traditions ran deep",
       notable: "Tomato aspic was a signature item at Junior League luncheons across the South from the 1920s through the 1960s, and remains one of the few aspic preparations still made in some Southern households today.",
       history: "Tomato aspic was the most successful of all the savory gelatin dishes because it tasted genuinely delicious — the combination of tangy tomato, Worcestershire, and Tabasco in a cold, clean gel was refreshing rather than unsettling. In the South, where cold luncheons were summer staples, it became an institution. Its decline in the North was swift after the 1960s, but in certain Southern cities it lingered on restaurant menus well into the 1980s.",
-      type: "Side/Salad",
+      type: "Side",
       difficulty: 3,
       servings: 8,
       description: "Spiced tomato juice set in gelatin, molded in a ring, and filled with cream cheese or shrimp salad — the height of Jazz Age entertaining.",
@@ -388,7 +418,7 @@ const recipes = {
       region: "Nationwide; won third prize in a Knox Gelatin recipe contest in 1905 and was distributed nationally through Knox advertising",
       notable: "Mrs. Charles Cooke of New Castle, Pennsylvania submitted the original recipe to a Knox Gelatin contest in 1904. Knox later claimed it as their own and promoted it aggressively for decades.",
       history: "Perfection Salad is arguably the most famous gelatin salad in American history. Knox Gelatin's promotional campaigns in the early 1900s encouraged American housewives to see gelatin molds as a mark of modern, scientific cooking. Millions of Knox advertising pamphlets distributed the recipe, and it appeared on American tables for sixty years before finally becoming the poster child for everything that went wrong with mid-century American food.",
-      type: "Side/Salad",
+      type: "Side",
       difficulty: 2,
       servings: 8,
       description: "Shredded cabbage, celery, and pimentos suspended in lemony gelatin — one of the most famous American gelatin salads, a fixture at church suppers for decades.",
@@ -456,6 +486,38 @@ const recipes = {
       instructions: ["Make thick sauce: melt butter, whisk in flour, add broth and cream. Cook until very thick.", "Fold in chicken. Season with salt, pepper, nutmeg.", "Spread in a pan and refrigerate until firm, at least 1 hour.", "Shape into cylinders or cones. Dip in egg, roll in breadcrumbs.", "Fry in 375°F oil until deep golden, about 3-4 minutes.", "Drain and serve with cream sauce."]
     },
     {
+      name: "Crabmeat Remick",
+      region: "New York City; created at the Plaza Hotel in 1920",
+      notable: "In 1940, on the fiftieth anniversary of the Plaza's opening, New York Times food reporter June Owen profiled the hotel and included the recipe. It was created by Chef Albert Leopold Lattard to honor William H. Remick, then president of the New York Stock Exchange. The recipe was later liberally adapted in The New York Times Cook Book (1961) by Craig Claiborne.",
+      history: "Crabmeat Remick was created in 1920 at the Plaza Hotel in New York City, one of the grandest hotels in America. The dish — crabmeat baked in individual shells under a mayonnaise and chili sauce mixture seasoned with tarragon vinegar, dry mustard, paprika, celery salt, and red pepper sauce — was a staple of the Plaza's formal dining room for decades. It represents the peak of the Edwardian American appetizer tradition: rich, elegant, served in individual portions, and requiring genuine kitchen skill. Its decline came with the broader retreat of formal hotel dining.",
+      type: "Appetizer",
+      difficulty: 3,
+      servings: 6,
+      description: "Lump crabmeat baked in scallop shells under a tangy mayonnaise and chili sauce glaze, broiled until bubbling — the Plaza Hotel's enduring contribution to American appetizer culture.",
+      ingredients: [
+        "6 slices bacon",
+        "1 lb lump or backfin crabmeat, bits of shell and cartilage removed",
+        "1⅔ cups mayonnaise",
+        "½ cup chili sauce or ketchup",
+        "2 tsp tarragon vinegar",
+        "1 tsp dry mustard",
+        "¾ tsp paprika",
+        "½ tsp celery salt",
+        "¼ tsp hot red pepper sauce",
+        "Pinch dried leaf tarragon, crumbled"
+      ],
+      instructions: [
+        "Preheat oven to 375°F. Butter 6 crab or scallop shells or shallow individual ramekins and set aside.",
+        "Fry bacon in medium heavy skillet over moderate heat until crisp and brown — 3 to 5 minutes. Drain on paper towels, crumble, and set aside.",
+        "Divide crab evenly among shells, set on large baking sheet, and top with crumbled bacon, dividing evenly.",
+        "Bake uncovered just until warmed through — about 10 minutes.",
+        "Meanwhile, whisk together mayonnaise, chili sauce, vinegar, dry mustard, paprika, celery salt, red pepper sauce, and tarragon.",
+        "Remove crab from oven and preheat broiler. Quickly cover crab with mayonnaise mixture.",
+        "Broil 5 to 6 inches from heat just until bubbly and tipped with brown — 2 to 3 minutes.",
+        "Serve immediately."
+      ]
+    },
+    {
       name: "Waldorf Salad (Classic)",
       region: "New York City; created at the Waldorf Hotel on Fifth Avenue in 1893",
       notable: "Created by Oscar Tschirky, the legendary maître d' of the Waldorf Hotel, for a charity ball in 1893. The original recipe contained no walnuts — those were added later. Cole Porter reportedly ate it regularly.",
@@ -520,7 +582,7 @@ const recipes = {
       region: "New York City and the urban Northeast; a cornerstone of Jewish delicatessen culture from the 1880s through the 1960s, served at lunch counters and delis throughout the garment district and Lower East Side",
       notable: "Chopped chicken liver was so fundamental to New York deli culture that it appeared on virtually every Jewish deli menu in the country. The Catskills resort hotels — known as the Borscht Belt — served it as a standard appetizer at every meal through the 1950s and 60s.",
       history: "Chopped chicken liver arrived in America with the great wave of Eastern European Jewish immigration between 1880 and 1920. In the Jewish dietary tradition, chicken schmaltz — rendered chicken fat — was used for cooking in the same way butter was used in non-kosher kitchens, and chicken livers were a byproduct of the chicken processing that went into every Jewish kitchen. Chopped with hard-boiled eggs, onion, and schmaltz, it became the signature appetizer of the American Jewish deli. Its decline tracks exactly with the decline of the traditional delicatessen — from thousands of Jewish delis in New York in 1950 to fewer than a dozen authentic examples today.",
-      type: "Luncheonette",
+      type: "Appetizer",
       servings: 8,
       description: "The great Jewish deli appetizer — chicken livers chopped with hard-boiled eggs, onion, and schmaltz until rich and spreadable. Served on rye crackers or dark bread, it was on every deli counter in America for seventy years.",
       ingredients: ["1 lb chicken livers", "3 tbsp chicken schmaltz or butter", "2 medium onions, finely diced", "3 hard-boiled eggs", "Salt and black pepper", "Rye crackers or dark rye bread to serve", "Optional: additional schmaltz for richness"],
@@ -643,7 +705,7 @@ const recipes = {
       region: "Nationwide; one of the most universal American casserole dishes, with no specific regional home",
       notable: "Scalloped potatoes with ham is one of the dishes most consistently cited in oral histories of Depression-era cooking as the meal families returned to again and again when money was short.",
       history: "Scalloped potatoes in various forms have been in American cookbooks since the 1820s, but the ham version became particularly important during the Depression when a small amount of leftover ham could be distributed across an entire casserole to feed a family. Potatoes were cheap and storable, ham scraps were available, and cream sauce could be made from milk when cream was scarce. The dish survives today but has retreated into holiday and church supper territory.",
-      type: "Main",
+      type: "Side",
       difficulty: 1,
       servings: 6,
       description: "Thinly sliced potatoes layered with ham and onion in a cream sauce — the ultimate Depression casserole, stretching a small amount of ham into a full meal.",
@@ -800,6 +862,44 @@ const recipes = {
       description: "Sliced Spam dipped in a simple batter and pan-fried — Spam became ubiquitous during wartime rationing, and these fritters made it into a proper meal.",
       ingredients: ["1 can Spam, cut into ½-inch slices", "1 cup flour", "1 tsp baking powder", "¾ cup milk", "1 egg", "Salt, pepper", "Oil or lard for frying"],
       instructions: ["Mix flour, baking powder, salt, and pepper.", "Beat in milk and egg to form a smooth batter.", "Dip Spam slices in batter to coat.", "Fry in ½ inch of hot fat over medium heat, 3 minutes per side until golden.", "Drain and serve with mustard or chutney."]
+    },
+    {
+      name: "Oysters Bienville",
+      region: "New Orleans, Louisiana; created at Antoine's Restaurant around 1940",
+      notable: "The dish was named for Jean Baptiste LeMoyne, Sieur de Bienville, who in 1718 — with the help of eighty French exiles — cleared some wilderness near the mouth of the Mississippi River and established La Nouvelle Orléans. Antoine's has served the dish continuously since its creation.",
+      history: "Oysters Bienville was created around 1940 by Roy Alciatore and his chef Pete Michel at Antoine's Restaurant in New Orleans — the oldest restaurant in continuous family operation in America, founded in 1840. Unlike Oysters Rockefeller, which Antoine's guards as a complete secret, the Bienville recipe has been published and is documented in the Antoine's Restaurant Since 1840 Cookbook. The dish's combination of a rich béchamel-based sauce with green pepper, scallions, wine, and pimento baked over oysters on the half shell represents the pinnacle of New Orleans Creole appetizer cooking.",
+      type: "Appetizer",
+      difficulty: 4,
+      servings: 6,
+      description: "Raw oysters on the half shell blanketed in a rich béchamel sauce with green pepper, scallions, white wine, and pimento, then baked until bubbling — Antoine's Restaurant's great contribution to the New Orleans oyster canon.",
+      ingredients: [
+        "BÉCHAMEL SAUCE: 3 tbsp butter",
+        "BÉCHAMEL SAUCE: 3 tbsp flour",
+        "BÉCHAMEL SAUCE: 2 cups warm scalded milk",
+        "BÉCHAMEL SAUCE: ½ tsp salt (or to taste)",
+        "BÉCHAMEL SAUCE: ⅛ tsp white pepper (or to taste)",
+        "BIENVILLE SAUCE: ¼ cup (½ stick) butter",
+        "BIENVILLE SAUCE: 1½ cups minced green bell pepper (about 2 medium)",
+        "BIENVILLE SAUCE: 1 cup minced scallions (10 to 12 large scallions)",
+        "BIENVILLE SAUCE: 2 cloves garlic, peeled and minced",
+        "BIENVILLE SAUCE: ½ cup dry white wine",
+        "BIENVILLE SAUCE: ½ cup chopped pimento",
+        "BIENVILLE SAUCE: ⅔ cup shredded American cheese",
+        "BIENVILLE SAUCE: ½ cup fine soft bread crumbs",
+        "BIENVILLE SAUCE: ½ tsp salt (or to taste)",
+        "BIENVILLE SAUCE: ⅛ tsp white pepper (or to taste)",
+        "3 dozen raw oysters on the half shell",
+        "6 (9-inch) pie pans filled with rock salt"
+      ],
+      instructions: [
+        "BÉCHAMEL: Melt butter in a small heavy saucepan over moderate heat. Blend in flour and cook, stirring, until foamy — 1 to 2 minutes.",
+        "Whisk in milk and cook, stirring constantly, until thickened and smooth — 3 to 5 minutes. Season with salt and pepper, cover, and keep warm.",
+        "BIENVILLE SAUCE: Melt butter in a large heavy saucepan over moderate heat. Add green pepper, scallions, and garlic and sauté until glassy — 2 to 3 minutes.",
+        "Add wine and bring to a boil. Add pimento, béchamel, cheese, bread crumbs, salt, and pepper to taste and simmer slowly, stirring often, until very thick — about 15 minutes.",
+        "OYSTERS: Preheat oven to 400°F. Bed 6 oysters in each pan of rock salt.",
+        "Cover each oyster with Bienville Sauce and bake uncovered until bubbly and tipped with brown — about 10 minutes.",
+        "Serve at once at the start of an elegant meal."
+      ]
     },
     {
       name: "Mock Crab Salad",
@@ -1033,6 +1133,36 @@ const recipes = {
       instructions: ["Preheat oven to 375°F.", "Mix soup and milk until smooth. Combine with tuna, noodles, peas, and half the cheese.", "Pour into a greased 2-quart baking dish.", "Top with remaining cheese and crushed potato chips.", "Bake 25-30 minutes until bubbling and golden on top."]
     },
     {
+      name: "Sweet 'n' Sour Meatballs",
+      region: "Nationwide; became a chafing dish party staple in the late 1950s",
+      notable: "This recipe was sent to Jean Anderson by Marilyn Brown, manager of the Consumer Test Kitchens at H.J. Heinz in Pittsburgh. It was often — but not always — served from chafing dishes with plenty of toothpicks and napkins placed nearby.",
+      history: "Sweet and sour meatballs became one of the defining appetizers of late 1950s American entertaining. The combination of ground beef meatballs simmered in chili sauce and grape or red currant jelly was a product of postwar American ingenuity — taking readily available pantry ingredients and producing something that felt festive and slightly exotic. The chafing dish presentation was essential to the social theater of the era. The dish spread through women's magazines and community cookbooks throughout the 1960s and remains a potluck staple in many parts of America.",
+      type: "Appetizer",
+      difficulty: 2,
+      servings: 10,
+      description: "Bite-size beef meatballs simmered in a glossy chili sauce and grape jelly glaze — the chafing dish party staple of the late 1950s and 60s, served with toothpicks.",
+      ingredients: [
+        "1 lb lean ground beef",
+        "1 cup soft white bread crumbs",
+        "1 egg, slightly beaten",
+        "2 tbsp milk",
+        "2 tbsp minced yellow onion",
+        "1 clove garlic, peeled and minced",
+        "½ tsp salt",
+        "⅛ tsp black pepper",
+        "1 tbsp vegetable oil",
+        "⅔ cup chili sauce or ketchup",
+        "⅔ cup grape or red currant jelly"
+      ],
+      instructions: [
+        "Mix beef, bread crumbs, egg, milk, onion, garlic, salt, and pepper and shape into 40 bite-size balls.",
+        "Heat oil in a large, heavy nonstick skillet over moderately high heat, add meatballs, and brown lightly on all sides — 2 to 3 minutes.",
+        "Reduce heat to low, cover, and cook 5 minutes; drain off excess drippings.",
+        "Mix chili sauce and jelly, pour over meatballs, and heat, stirring occasionally, until sauce thickens and meatballs are nicely glazed — 10 to 12 minutes.",
+        "Serve hot with toothpicks."
+      ]
+    },
+    {
       name: "Beef Stroganoff (Sour Cream Version)",
       region: "Nationwide in America; brought via Russian émigré cooking through Paris and then to New York in the 1930s and 40s before becoming a suburban dinner party staple",
       notable: "James Beard featured Beef Stroganoff prominently in his 1950s cooking guides as the ultimate sophisticated dinner party main course — the dish that separated serious home cooks from casual ones.",
@@ -1238,6 +1368,29 @@ const recipes = {
       description: "Cubed beef tenderloin cooked at the table in hot oil — the 1960s dinner party ritual that required the right fondue set and a crowd willing to wait.",
       ingredients: ["2 lbs beef tenderloin, cubed 1-inch", "Vegetable oil for frying", "Béarnaise sauce", "Horseradish cream", "Mustard", "Soy-ginger dipping sauce"],
       instructions: ["Cut beef into uniform 1-inch cubes. Pat very dry.", "Fill fondue pot ⅔ with oil. Heat to 375°F on the stove.", "Transfer carefully to the fondue stand with the burner.", "Guests spear beef with long fondue forks and cook in hot oil 30-60 seconds.", "Serve with an array of dipping sauces.", "Important: use fondue forks only for cooking; switch to regular forks for eating."]
+    },
+    {
+      name: "Sausage-Cheese Cocktail Balls",
+      region: "Nationwide; a 1960s party staple spread through women's magazines and Pillsbury recipe promotions",
+      notable: "These contain only three ingredients — Bisquick, pork sausage, and sharp Cheddar cheese. In the 1960s no party would have been complete without them. The variation uses pancake mix as the foundation, halves the amount of sausage, and rounds out the flavor with dry onion soup mix and cayenne.",
+      history: "Sausage-Cheese Cocktail Balls were the quintessential 1960s American party food — three ingredients, no skill required, made by the hundreds in advance and served warm. The Bisquick version spread through Pillsbury and General Mills promotional recipes and appeared in virtually every community cookbook published in the 1960s and 70s. They were the food that greeted guests at every cocktail party, holiday gathering, and church social for a generation. Their simplicity and crowd-pleasing quality have kept them alive in the South and Midwest long after they disappeared from fashionable entertaining.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 30,
+      description: "Three ingredients — bulk sausage, sharp Cheddar, and Bisquick — rolled into balls and baked until golden. In the 1960s no party was complete without them.",
+      ingredients: [
+        "1 lb bulk pork sausage",
+        "½ lb sharp Cheddar cheese, finely grated",
+        "3 cups all-purpose baking mix (Bisquick)"
+      ],
+      instructions: [
+        "Preheat oven to 375°F. Lightly coat two baking sheets with cooking spray.",
+        "Combine all ingredients in a large bowl and mix thoroughly with your hands until a smooth dough forms.",
+        "Pinch off bits of dough and roll into 1-inch balls.",
+        "Place on greased baking sheets, spacing 1½ inches apart, and sprinkle with paprika.",
+        "Bake 10 to 15 minutes, turning the balls over at halftime, until deep golden brown.",
+        "Remove from baking sheets and serve warm."
+      ]
     },
     {
       name: "Chicken Kiev",
@@ -1463,7 +1616,7 @@ const recipes = {
       region: "Nationwide; the Victory Garden revival of the early 1970s, prompted by inflation concerns and back-to-land movements, produced exactly the same zucchini surplus problem that has always plagued home gardens",
       notable: "Zucchini bread became a cultural joke as well as a recipe in the 1970s — there were cartoons, magazine articles, and even a National Lampoon piece about the impossibility of getting rid of backyard zucchini.",
       history: "Zucchini bread is a 1970s creation driven by the decade's renewed interest in home gardening and by the universal experience of planting one zucchini plant and finding yourself buried in squash by August. The quick bread format was well suited to incorporating moisture-heavy grated zucchini. The spice profile made it sweet enough to serve as a snack or dessert despite being technically a vegetable bread. It was also genuinely good, which explains why it survived beyond the zucchini-surplus problem that created it.",
-      type: "Side/Bread",
+      type: "Side",
       difficulty: 1,
       servings: 16,
       description: "The 1970s zucchini surplus problem solved: grated zucchini folded into a spiced quick bread. Every suburban garden produced more zucchini than could be eaten, and this was the answer.",
@@ -1481,6 +1634,35 @@ const recipes = {
       description: "Large mushroom caps stuffed with a mixture of sausage, breadcrumbs, and cream cheese — a 1970s cocktail party stalwart that appeared at every gathering.",
       ingredients: ["24 large mushrooms, stems removed", "½ lb Italian sausage, removed from casing", "4 oz cream cheese, softened", "¼ cup breadcrumbs", "2 cloves garlic, minced", "2 tbsp parsley, chopped", "¼ cup Parmesan, grated", "Salt, pepper"],
       instructions: ["Preheat oven to 375°F.", "Brown sausage; drain fat. Mince mushroom stems and cook with sausage and garlic.", "Mix sausage mixture with cream cheese, breadcrumbs, and parsley. Season.", "Stuff mushroom caps generously. Top with Parmesan.", "Arrange in a baking dish.", "Bake 20-25 minutes until mushrooms are tender and tops are golden."]
+    },
+    {
+      name: "Marinated Mushrooms",
+      region: "Nationwide; this particular recipe was developed by the Consumer Test Kitchens at H.J. Heinz in Pittsburgh",
+      notable: "Marinated mushrooms remained popular right through the last half of the twentieth century, appearing on cocktail party platters, antipasto plates, and salad bars from the 1960s onward. The H.J. Heinz Consumer Test Kitchens recipe became one of the most widely circulated versions.",
+      history: "Marinated mushrooms emerged as a cocktail party staple in the 1960s and 70s as fresh mushrooms became consistently available in American supermarkets. The technique — simmering whole button mushrooms briefly in an herb and vinegar marinade, then chilling them — produced something that could be made days ahead, traveled well, and required no last-minute attention. They appeared on every antipasto platter and cocktail table of the era alongside olives, celery, and deviled eggs. Their decline as a fashionable party food came with the rise of more elaborate passed appetizers in the 1980s and 90s.",
+      type: "Appetizer",
+      difficulty: 1,
+      servings: 12,
+      description: "Whole button mushrooms simmered in an herb and tarragon-chive vinegar marinade, then chilled and served with toothpicks — the make-ahead cocktail party staple of the 1960s and 70s.",
+      ingredients: [
+        "¾ cup vegetable oil or fruity olive oil",
+        "½ cup Tarragon-Chive Vinegar (or white wine vinegar with 1 tsp dried tarragon)",
+        "1½ tsp salt",
+        "1 tsp sugar",
+        "½ tsp dried leaf basil, crumbled",
+        "¼ tsp ground thyme",
+        "6 peppercorns",
+        "1 clove garlic, peeled and split",
+        "1 whole bay leaf",
+        "1½ lbs fresh small mushrooms of uniform size, stemmed and rinsed"
+      ],
+      instructions: [
+        "Mix oil, vinegar, salt, sugar, basil, thyme, peppercorns, garlic, and bay leaf in a large saucepan.",
+        "Set over moderate heat, cover, and simmer 10 minutes.",
+        "Add mushrooms and simmer uncovered 3 minutes.",
+        "Pour all into a heat-proof ceramic bowl, cover, and chill several hours or overnight, stirring occasionally.",
+        "Drain mushrooms, discard bay leaf, and serve with toothpicks as a cocktail appetizer."
+      ]
     },
     {
       name: "Chicken Tetrazzini",
@@ -1908,7 +2090,7 @@ const presidents = {
       number: 19, years: "1877–1881",
       presidentName: "Rutherford B. Hayes",
       dishName: "Cornmeal Battercakes with Maple Syrup",
-      type: "Breakfast",
+      type: "Side",
       servings: 4,
       difficulty: 1,
       description: "Hayes was a breakfast president — cornmeal battercakes with maple syrup were his daily ritual. Thinner and crispier than modern pancakes, with a distinctly savory cornmeal base that contrasts beautifully with real maple syrup.",
@@ -2300,7 +2482,7 @@ const presidents = {
       number: 39, years: "1977–1981",
       presidentName: "Jimmy Carter",
       dishName: "Carter's Breakfast Grits",
-      type: "Breakfast",
+      type: "Side",
       servings: 2,
       difficulty: 1,
       description: "Grits — simply prepared, with butter, eaten at breakfast — were Carter's daily constant throughout the presidency. Not shrimp and grits, not cheese grits, just stone-ground grits with butter and salt, exactly as eaten in Plains, Georgia.",
@@ -2416,18 +2598,33 @@ function parseIngredient(raw) {
   return { qty: null, unit: null, item: cleaned.toLowerCase(), raw };
 }
 
-function formatQty(qty) {
-  if (qty === Math.floor(qty)) return String(qty);
-  const frac = qty - Math.floor(qty);
+function roundToFriendly(qty) {
+  // Round to nearest ¼ or ⅛ for cups, nearest ½ for tbsp
+  const fractions = [0, 0.125, 0.25, 0.333, 0.375, 0.5, 0.625, 0.667, 0.75, 0.875, 1];
   const whole = Math.floor(qty);
+  const frac = qty - whole;
+  let closest = fractions.reduce((a, b) => Math.abs(b - frac) < Math.abs(a - frac) ? b : a);
+  if (closest === 1) return whole + 1;
+  return whole + closest;
+}
+
+function formatQty(qty) {
+  // Snap to nearest friendly fraction before displaying
+  const snapped = roundToFriendly(qty);
+  if (snapped === Math.floor(snapped)) return String(snapped);
+  const frac = snapped - Math.floor(snapped);
+  const whole = Math.floor(snapped);
   const fracStr =
-    Math.abs(frac - 0.5) < 0.01 ? "½" :
-    Math.abs(frac - 0.25) < 0.01 ? "¼" :
-    Math.abs(frac - 0.75) < 0.01 ? "¾" :
+    Math.abs(frac - 0.5)   < 0.01 ? "½" :
+    Math.abs(frac - 0.25)  < 0.01 ? "¼" :
+    Math.abs(frac - 0.75)  < 0.01 ? "¾" :
     Math.abs(frac - 0.333) < 0.01 ? "⅓" :
     Math.abs(frac - 0.667) < 0.01 ? "⅔" :
     Math.abs(frac - 0.125) < 0.01 ? "⅛" :
-    qty.toFixed(2);
+    Math.abs(frac - 0.375) < 0.01 ? "⅜" :
+    Math.abs(frac - 0.625) < 0.01 ? "⅝" :
+    Math.abs(frac - 0.875) < 0.01 ? "⅞" :
+    snapped.toFixed(2);
   return whole > 0 ? `${whole}${fracStr}` : fracStr;
 }
 
@@ -2480,16 +2677,6 @@ function toTbsp(qty, unit) {
   return qty * (TO_TBSP[unit] || 1);
 }
 
-function roundToFriendly(qty) {
-  // Round to nearest ¼ or ⅛ for cups, nearest ½ for tbsp
-  const fractions = [0, 0.125, 0.25, 0.333, 0.375, 0.5, 0.625, 0.667, 0.75, 0.875, 1];
-  const whole = Math.floor(qty);
-  const frac = qty - whole;
-  let closest = fractions.reduce((a, b) => Math.abs(b - frac) < Math.abs(a - frac) ? b : a);
-  if (closest === 1) return whole + 1;
-  return whole + closest;
-}
-
 function fromTbsp(tbsp) {
   // Use cups if 8 tbsp (½ cup) or more
   if (tbsp >= 8) {
@@ -2509,14 +2696,19 @@ function fromTbsp(tbsp) {
 // Scale a raw ingredient string by a multiplier
 function scaleIngredient(raw, multiplier) {
   if (multiplier === 1) return raw;
-  const parsed = parseIngredient(raw);
+  // Strip any "LABEL: " prefix (e.g. "LOUIS DRESSING: 1½ cups mayonnaise")
+  // so the parser can find the quantity. Restore it after scaling.
+  const labelMatch = raw.match(/^([A-Z][A-Z\s]+):\s+/);
+  const label = labelMatch ? labelMatch[1] + ": " : "";
+  const rawForParsing = labelMatch ? raw.slice(labelMatch[0].length) : raw;
+  const parsed = parseIngredient(rawForParsing);
   if (parsed.qty === null) return raw; // no quantity to scale — return as-is
   const newQty = parsed.qty * multiplier;
   const formatted = formatQty(newQty);
   const unitStr = parsed.unit ? ` ${pluralUnit(parsed.unit, newQty)}` : "";
   // Reconstruct: replace the original qty+unit prefix with the new one
   // Find where the item description starts in the raw string
-  const cleaned = raw.replace(/\(.*?\)/g, "").trim();
+  const cleaned = rawForParsing.replace(/\(.*?\)/g, "").trim();
   // Try to find item portion after qty and unit
   const qtyPattern = /^[\d½¼¾⅓⅔⅛⅜⅝⅞\/\s\.]+/;
   const afterQty = cleaned.replace(qtyPattern, "").trim();
@@ -2531,9 +2723,9 @@ function scaleIngredient(raw, multiplier) {
     }
   }
   // Preserve any parenthetical notes from the original
-  const parenMatch = raw.match(/\(.*?\)/g);
+  const parenMatch = rawForParsing.match(/\(.*?\)/g);
   const parenStr = parenMatch ? " " + parenMatch.join(" ") : "";
-  return `${formatted}${unitStr} ${remainder}${parenStr}`.trim();
+  return `${label}${formatted}${unitStr} ${remainder}${parenStr}`.trim();
 }
 
 function buildShoppingList(recipeNames, allItems, servingsMap = {}) {
@@ -2632,6 +2824,8 @@ function buildShoppingList(recipeNames, allItems, servingsMap = {}) {
   return result;
 }
 
+
+
 export default function RecipeBook() {
   const [activeDec, setActiveDec] = useState("1910s");
   const [activeRecipe, setActiveRecipe] = useState(null);
@@ -2670,6 +2864,8 @@ export default function RecipeBook() {
     try { localStorage.setItem("rcb_checked", JSON.stringify([...checkedItems])); } catch {}
   }, [checkedItems]);
 
+
+
   const dec = decades.find(d => d.id === activeDec);
   const allRecipes = Object.entries(recipes).flatMap(([decade, list]) =>
     list.map(r => ({ ...r, decade }))
@@ -2684,12 +2880,13 @@ export default function RecipeBook() {
   const getDisplayList = () => {
     let list;
     if (specialTab === "all") {
-      const recs = filter === "Dessert"
-        ? allRecipes.filter(r => r.type === "Dessert")
-        : filter === "Luncheonette"
-        ? allRecipes.filter(r => r.type === "Luncheonette")
+      const recs = filter === "All" || !filter
+        ? allRecipes
+        : allRecipes.filter(r => r.type === filter || (filter === "Dessert" && r.type === "Dessert") || (filter === "Side" && r.type === "Side"));
+      const filteredRecs = filter && filter !== "All"
+        ? allRecipes.filter(r => r.type === filter)
         : allRecipes;
-      list = filter === "Dessert" || filter === "Luncheonette" ? recs : [...recs, ...allPresidents];
+      list = (!filter || filter === "All") ? [...allRecipes, ...allPresidents] : filteredRecs;
     }
     else if (specialTab === "presidents") list = allPresidents;
     else if (specialTab === "favorites") {
@@ -2712,10 +2909,8 @@ export default function RecipeBook() {
       const cPres = allPresidents.filter(p => cart.has(p.name));
       list = [...cRecs, ...cPres];
     }
-    else list = filter === "Dessert"
-      ? decRecipes.filter(r => r.type === "Dessert")
-      : filter === "Luncheonette"
-      ? decRecipes.filter(r => r.type === "Luncheonette")
+    else list = filter && filter !== "All"
+      ? decRecipes.filter(r => r.type === filter)
       : decRecipes;
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -2824,8 +3019,10 @@ export default function RecipeBook() {
     "Dessert":      { color: "#8B0A2A", border: "rgba(139,10,42,0.3)" },
     "Luncheonette": { color: "#0A3A5A", border: "rgba(10,58,90,0.3)" },
     "Side":         { color: "#2A4A0A", border: "rgba(42,74,10,0.3)" },
-    "Salad":        { color: "#0A4A2A", border: "rgba(10,74,42,0.3)" },
-    "Side/Salad":   { color: "#0A4A2A", border: "rgba(10,74,42,0.3)" },
+    "Soup":         { color: "#5A3A0A", border: "rgba(90,58,10,0.3)" },
+    "Appetizer":    { color: "#5A2A6A", border: "rgba(90,42,106,0.3)" },
+    "Breakfast":    { color: "#0A4A4A", border: "rgba(10,74,74,0.3)" },
+    "Drink":        { color: "#0A3A2A", border: "rgba(10,58,42,0.3)" },
   };
 
   return (
@@ -2873,6 +3070,8 @@ export default function RecipeBook() {
           border: 1.5px solid;
           border-radius: 0;
           transition: all 0.15s;
+          flex-shrink: 0;
+          white-space: nowrap;
         }
 
         .recipe-card {
@@ -3105,8 +3304,8 @@ export default function RecipeBook() {
         )}
 
         {/* Filter pills */}
-        {!specialTab && (
-          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 12 }}>
+        {(!specialTab || specialTab === "all" || specialTab === "presidents") && (
+          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 12, overflowX: "auto", WebkitOverflowScrolling: "touch", scrollbarWidth: "none", msOverflowStyle: "none", paddingBottom: 2 }}>
             <span style={{
               fontFamily: "'Oswald', sans-serif",
               fontSize: "0.57rem",
@@ -3114,18 +3313,17 @@ export default function RecipeBook() {
               letterSpacing: "0.15em",
               textTransform: "uppercase",
               color: "#999",
+              flexShrink: 0,
             }}>Show:</span>
-            {["All", "Dessert", "Luncheonette"].map(f => {
+            {["All", "Appetizer", "Dessert", "Luncheonette", "Side"].map(f => {
               const count = f === "All"
                 ? (specialTab === "all" ? allRecipes.length + allPresidents.length : (() => {
                     const presPre = activeDec === "1910s" ? (presidents["pre-1910s"] || []).length : 0;
                     const presDecade = (presidents[activeDec] || []).length;
                     return decRecipes.length + presPre + presDecade;
                   })())
-                : f === "Dessert"
-                ? (specialTab === "all" ? allRecipes.filter(r => r.type === "Dessert").length : decRecipes.filter(r => r.type === "Dessert").length)
-                : (specialTab === "all" ? allRecipes.filter(r => r.type === "Luncheonette").length : decRecipes.filter(r => r.type === "Luncheonette").length);
-              const label = f === "All" ? `All (${count})` : f === "Dessert" ? `Desserts (${count})` : `Luncheonette (${count})`;
+                : (specialTab === "all" ? allRecipes.filter(r => r.type === f).length : decRecipes.filter(r => r.type === f).length);
+              const label = f === "All" ? `All (${count})` : f === "Appetizer" ? `Appetizers (${count})` : f === "Dessert" ? `Desserts (${count})` : f === "Side" ? `Sides (${count})` : `Luncheonette (${count})`;
               const isActive = filter === f;
               return (
                 <button key={f} className="filter-btn"
@@ -3758,10 +3956,8 @@ export default function RecipeBook() {
             ...(presidents[activeDec] || []).map(p => ({ ...p, decade: activeDec, isPresident: true }))
           ];
 
-          const filteredRecipes = filter === "Dessert"
-            ? decRecipes.filter(r => r.type === "Dessert")
-            : filter === "Luncheonette"
-            ? decRecipes.filter(r => r.type === "Luncheonette")
+          const filteredRecipes = filter && filter !== "All"
+            ? decRecipes.filter(r => r.type === filter)
             : decRecipes;
 
           return (
