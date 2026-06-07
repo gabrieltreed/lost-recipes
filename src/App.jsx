@@ -3153,6 +3153,7 @@ export default function RecipeBook() {
   });
   const [search, setSearch] = useState("");
   const [copied, setCopied] = useState(false);
+  const [pendingOpen, setPendingOpen] = useState(null); // { name, decade } — open after tab switch
   // servingsOverride: { "RecipeName": N } — stores user's desired serving count
   const [servingsOverride, setServingsOverride] = useState(() => {
     try { return JSON.parse(localStorage.getItem("rcb_servings") || "{}"); } catch { return {}; }
@@ -3177,6 +3178,22 @@ export default function RecipeBook() {
   useEffect(() => {
     try { localStorage.setItem("rcb_checked", JSON.stringify([...checkedItems])); } catch {}
   }, [checkedItems]);
+
+  // Open a recipe card after navigating to its decade from the cart
+  useEffect(() => {
+    if (!pendingOpen) return;
+    const { name, decade } = pendingOpen;
+    if (activeDec === decade && specialTab === null) {
+      const decList = recipes[decade] || [];
+      const idx = decList.findIndex(x => x.name === name);
+      setActiveRecipe(name + (idx >= 0 ? idx : 0));
+      setPendingOpen(null);
+      setTimeout(() => {
+        const el = document.querySelector(`[data-recipe-name="${CSS.escape(name)}"]`);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
+    }
+  }, [activeDec, specialTab, pendingOpen]);
 
 
 
@@ -3692,6 +3709,7 @@ export default function RecipeBook() {
 
             return (
               <div key={r.name + i} className="recipe-card"
+                data-recipe-name={r.name}
                 style={{ borderColor, background: "#FDFAF4" }}
                 onClick={() => setActiveRecipe(isOpen ? null : (r.name + i))}>
 
@@ -4133,12 +4151,12 @@ export default function RecipeBook() {
                       }}>
                         <span
                           onClick={() => {
-                            // Navigate to the recipe's decade and open it
                             const decade = r.decade;
                             if (decade) {
                               setActiveDec(decade);
                               setSpecialTab(null);
-                              setActiveRecipe(r.name + 0);
+                              setActiveRecipe(null);
+                              setPendingOpen({ name: r.name, decade });
                               window.scrollTo(0, 0);
                             }
                           }}
