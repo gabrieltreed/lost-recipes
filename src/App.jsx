@@ -3146,7 +3146,7 @@ export default function RecipeBook() {
   const [favorites, setFavorites] = useState(() => loadSet("rcb_favorites"));
   const [gross, setGross] = useState(() => loadSet("rcb_gross"));
   const [made, setMade] = useState(() => loadSet("rcb_made"));
-  const [making, setMaking] = useState(() => loadSet("rcb_making"));
+  const [making, setMaking] = useState(() => { try { return loadSet("rcb_making"); } catch { return new Set(); } });
   const [cart, setCart] = useState(() => loadSet("rcb_cart"));
   const [checkedItems, setCheckedItems] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("rcb_checked") || "[]")); } catch { return new Set(); }
@@ -3339,6 +3339,7 @@ export default function RecipeBook() {
     presidents: { header: "#6A1A0A", accent: "#C8A96E", secondary: "#2A3A1C", paper: "#F2E8D5" },
     favorites:  { header: "#6A1A2A", accent: "#C8A96E", secondary: "#3A1C1C", paper: "#F2E8D5" },
     gross:      { header: "#2A3A1C", accent: "#C8A96E", secondary: "#3A2A1C", paper: "#F2E8D5" },
+    making:     { header: "#3A2A0A", accent: "#C8A96E", secondary: "#2A3A1C", paper: "#F2E8D5" },
     made:       { header: "#1C2A3A", accent: "#C8A96E", secondary: "#2A1C3A", paper: "#F2E8D5" },
     cart:       { header: "#1A2A1A", accent: "#C8A96E", secondary: "#2A4A2A", paper: "#F2E8D5" },
     about:      { header: "#2A1C0E", accent: "#C8A96E", secondary: "#4A3A1C", paper: "#F2E8D5" },
@@ -3864,8 +3865,8 @@ export default function RecipeBook() {
                         🤢
                       </button>
                       <button className="icon-btn"
-                        onClick={e => { e.stopPropagation(); toggleMaking(r.name); }}
-                        style={{ opacity: making.has(r.name) ? 1 : 0.25 }}
+                        onClick={e => { e.stopPropagation(); if (toggleMaking) toggleMaking(r.name); }}
+                        style={{ opacity: making && making.has(r.name) ? 1 : 0.25 }}
                         title="Currently making">
                         🍳
                       </button>
