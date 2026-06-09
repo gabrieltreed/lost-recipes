@@ -4259,24 +4259,30 @@ export default function RecipeBook() {
                         <div style={{
                           position: "absolute",
                           bottom: 0, left: 0, right: 0,
-                          background: "linear-gradient(transparent, rgba(0,0,0,0.72))",
-                          padding: "18px 8px 7px",
+                          background: "linear-gradient(transparent, rgba(0,0,0,0.78))",
+                          padding: "28px 10px 9px",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "flex-end",
                         }}>
                           <div style={{
                             fontFamily: "'Playfair Display', serif",
-                            fontSize: "0.72rem",
+                            fontSize: "0.92rem",
                             fontWeight: 700,
                             color: "#F2E8D5",
-                            lineHeight: 1.2,
+                            lineHeight: 1.15,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
                           }}>{recipeName}</div>
                           {recipeObj?.decade && (
                             <div style={{
                               fontFamily: "'Oswald', sans-serif",
-                              fontSize: "0.48rem",
+                              fontSize: "0.52rem",
                               letterSpacing: "0.15em",
                               textTransform: "uppercase",
-                              color: "rgba(242,232,213,0.65)",
-                              marginTop: 2,
+                              color: "rgba(242,232,213,0.6)",
+                              marginTop: 3,
                             }}>{recipeObj.decade}</div>
                           )}
                         </div>
