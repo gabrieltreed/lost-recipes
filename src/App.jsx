@@ -4271,9 +4271,10 @@ export default function RecipeBook() {
                             fontWeight: 700,
                             color: "#F2E8D5",
                             lineHeight: 1.15,
-                            whiteSpace: "nowrap",
                             overflow: "hidden",
-                            textOverflow: "ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
                           }}>{recipeName}</div>
                           {recipeObj?.decade && (
                             <div style={{
