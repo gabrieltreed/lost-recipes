@@ -3142,7 +3142,7 @@ export default function RecipeBook() {
   const [activeDec, setActiveDec] = useState("1910s");
   const [activeRecipe, setActiveRecipe] = useState(null);
   const [filter, setFilter] = useState("All");
-  const [specialTab, setSpecialTab] = useState(null);
+  const [specialTab, setSpecialTab] = useState("all");
   const [favorites, setFavorites] = useState(() => loadSet("rcb_favorites"));
   const [gross, setGross] = useState(() => loadSet("rcb_gross"));
   const [made, setMade] = useState(() => loadSet("rcb_made"));
@@ -3151,6 +3151,10 @@ export default function RecipeBook() {
   const [checkedItems, setCheckedItems] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem("rcb_checked") || "[]")); } catch { return new Set(); }
   });
+  const [notes, setNotes] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("rcb_notes") || "{}"); } catch { return {}; }
+  });
+  const [editingNote, setEditingNote] = useState(null); // recipe name currently being edited
   const [search, setSearch] = useState("");
   const [copied, setCopied] = useState(false);
   const [pendingOpen, setPendingOpen] = useState(null); // { name, decade } — open after tab switch
@@ -3158,10 +3162,50 @@ export default function RecipeBook() {
   const [servingsOverride, setServingsOverride] = useState(() => {
     try { return JSON.parse(localStorage.getItem("rcb_servings") || "{}"); } catch { return {}; }
   });
+  // recipePhotos: { [recipeName]: { dataUrl: string, timestamp: number } }
+  const [recipePhotos, setRecipePhotos] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("rcb_photos") || "{}"); } catch { return {}; }
+  });
 
   useEffect(() => {
     try { localStorage.setItem("rcb_servings", JSON.stringify(servingsOverride)); } catch {}
   }, [servingsOverride]);
+
+  useEffect(() => {
+    try { localStorage.setItem("rcb_photos", JSON.stringify(recipePhotos)); } catch {}
+  }, [recipePhotos]);
+
+  const handlePhotoUpload = (recipeName, file) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const MAX = 800;
+        const scale = Math.min(1, MAX / Math.max(img.width, img.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL("image/jpeg", 0.82);
+        setRecipePhotos(prev => ({
+          ...prev,
+          [recipeName]: { dataUrl, timestamp: Date.now() }
+        }));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const removePhoto = (recipeName) => {
+    setRecipePhotos(prev => {
+      const next = { ...prev };
+      delete next[recipeName];
+      return next;
+    });
+  };
 
   const getServings = (r) => servingsOverride[r.name] ?? r.servings ?? 4;
 
@@ -3178,6 +3222,9 @@ export default function RecipeBook() {
   useEffect(() => {
     try { localStorage.setItem("rcb_checked", JSON.stringify([...checkedItems])); } catch {}
   }, [checkedItems]);
+  useEffect(() => {
+    try { localStorage.setItem("rcb_notes", JSON.stringify(notes)); } catch {}
+  }, [notes]);
 
   // Open a recipe card after navigating to its decade from the cart
   useEffect(() => {
@@ -3343,17 +3390,19 @@ export default function RecipeBook() {
     made:       { header: "#1C2A3A", accent: "#C8A96E", secondary: "#2A1C3A", paper: "#F2E8D5" },
     cart:       { header: "#1A2A1A", accent: "#C8A96E", secondary: "#2A4A2A", paper: "#F2E8D5" },
     about:      { header: "#2A1C0E", accent: "#C8A96E", secondary: "#4A3A1C", paper: "#F2E8D5" },
+    gallery:    { header: "#1C2A3A", accent: "#C8A96E", secondary: "#3A2A1C", paper: "#F2E8D5" },
   };
 
   const activePalette = specialTab ? specialColors[specialTab] : dec;
 
   const emptyMessages = {
-    favorites:  { icon: "❤️", text: "No favorites yet", sub: "Tap the heart on any recipe to save it here." },
+    favorites:  { icon: "❤️", text: "No keepers yet", sub: "Tap the heart on any recipe to save it here." },
     gross:      { icon: "🤢", text: "Nothing gross yet", sub: "Tap 🤢 on any recipe you would never eat." },
     making:     { icon: "🍳", text: "Nothing on the stove yet", sub: "Tap 🍳 on any recipe you're currently making." },
     made:       { icon: "👨‍🍳", text: "Nothing cooked yet", sub: "Tap the chef hat on any recipe you have made." },
     presidents: { icon: "🇺🇸", text: "No presidents here", sub: "Something went wrong loading the presidential entries." },
     cart:       { icon: "🛒", text: "No recipes in your list", sub: "Tap 🛒 on any recipe to add its ingredients here." },
+    gallery:    { icon: "📷", text: "No snaps yet", sub: "Open any recipe and tap 📷 to add a photo from your camera roll." },
   };
 
   const typeStyles = {
@@ -3593,11 +3642,12 @@ export default function RecipeBook() {
           {/* Special tabs */}
           <div style={{ display: "flex", gap: 5, paddingBottom: 14 }}>
             {[
-              ["favorites", `❤️ Favorites${favorites.size > 0 ? ` (${favorites.size})` : ""}`],
+              ["favorites", `❤️ Keepers${favorites.size > 0 ? ` (${favorites.size})` : ""}`],
               ["gross",     `🤢 Gross${gross.size > 0 ? ` (${gross.size})` : ""}`],
               ["making",    `🍳 Making${making.size > 0 ? ` (${making.size})` : ""}`],
-              ["made",      `👨‍🍳 Made This${made.size > 0 ? ` (${made.size})` : ""}`],
+              ["made",      `👨‍🍳 Made${made.size > 0 ? ` (${made.size})` : ""}`],
               ["cart",      `🛒 List${cart.size > 0 ? ` (${cart.size})` : ""}`],
+              ["gallery",   `📷 Snaps${Object.keys(recipePhotos).length > 0 ? ` (${Object.keys(recipePhotos).length})` : ""}`],
             ].map(([key, label]) => (
               <button key={key} className="special-btn"
                 onClick={() => { setSpecialTab(specialTab === key ? null : key); setActiveRecipe(null); }}
@@ -3620,7 +3670,7 @@ export default function RecipeBook() {
       <div style={{ padding: "14px 14px 40px", background: activePalette.paper || "#F2E8D5" }}>
 
         {/* Search */}
-        {specialTab !== "about" && (
+        {specialTab !== "about" && specialTab !== "gallery" && (
         <div style={{ position: "relative", marginBottom: 14 }}>
           <span style={{
             position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)",
@@ -3684,7 +3734,7 @@ export default function RecipeBook() {
         )}
 
         {/* Recipe count */}
-        {specialTab !== "about" && specialTab !== "cart" && (
+        {specialTab !== "about" && specialTab !== "cart" && specialTab !== "gallery" && (
           <div style={{
             fontFamily: "'Oswald', sans-serif",
             fontSize: "0.58rem",
@@ -3921,6 +3971,17 @@ export default function RecipeBook() {
                       <div style={{ height: 1, flex: 1, background: headerColor, opacity: 0.12 }} />
                     </div>
 
+                    {/* Recipe photo (if uploaded) */}
+                    {recipePhotos[r.name] && (
+                      <div style={{ marginBottom: 14, marginLeft: -13, marginRight: -13 }}>
+                        <img
+                          src={recipePhotos[r.name].dataUrl}
+                          alt={r.name}
+                          style={{ width: "100%", display: "block", maxHeight: 240, objectFit: "cover" }}
+                        />
+                      </div>
+                    )}
+
                     <p style={{
                       fontFamily: "'Lato', sans-serif",
                       fontSize: "0.84rem",
@@ -3984,7 +4045,79 @@ export default function RecipeBook() {
                       </div>
                     )}
 
-                    {/* Share button */}
+                    {/* Personal notes */}
+                    <div style={{ marginBottom: 14, borderTop: `1px solid ${headerColor}15`, paddingTop: 12 }}>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa" }}>
+                          My Notes
+                        </div>
+                        {editingNote !== r.name && (
+                          <button
+                            onClick={e => { e.stopPropagation(); setEditingNote(r.name); }}
+                            style={{ background: "none", border: "none", cursor: "pointer", fontSize: "0.7rem", color: accentColor, fontFamily: "'Oswald', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", opacity: 0.7, padding: "2px 0" }}>
+                            {notes[r.name] ? "✎ Edit" : "+ Add Note"}
+                          </button>
+                        )}
+                      </div>
+                      {editingNote === r.name ? (
+                        <div onClick={e => e.stopPropagation()}>
+                          <textarea
+                            autoFocus
+                            defaultValue={notes[r.name] || ""}
+                            onBlur={e => {
+                              const val = e.target.value.trim();
+                              setNotes(prev => {
+                                const next = { ...prev };
+                                if (val) next[r.name] = val;
+                                else delete next[r.name];
+                                return next;
+                              });
+                              setEditingNote(null);
+                            }}
+                            onKeyDown={e => {
+                              if (e.key === "Escape") setEditingNote(null);
+                            }}
+                            placeholder="e.g. serve warm, add more garlic, halve the recipe next time..."
+                            style={{
+                              width: "100%",
+                              minHeight: 72,
+                              fontFamily: "'Lato', sans-serif",
+                              fontSize: "0.82rem",
+                              color: "#444",
+                              border: `1px solid ${accentColor}55`,
+                              borderRadius: 2,
+                              padding: "8px 10px",
+                              background: "#FDFAF4",
+                              resize: "vertical",
+                              outline: "none",
+                              boxSizing: "border-box",
+                              lineHeight: 1.6,
+                            }}
+                          />
+                          <div style={{ fontSize: "0.65rem", color: "#aaa", fontFamily: "'Lato', sans-serif", marginTop: 4 }}>
+                            Tap outside to save · Esc to cancel
+                          </div>
+                        </div>
+                      ) : notes[r.name] ? (
+                        <div style={{
+                          fontFamily: "'Lato', sans-serif",
+                          fontSize: "0.82rem",
+                          color: "#555",
+                          lineHeight: 1.6,
+                          fontStyle: "italic",
+                          background: `${accentColor}0E`,
+                          border: `1px solid ${accentColor}25`,
+                          padding: "8px 10px",
+                          borderRadius: 2,
+                        }}>
+                          {notes[r.name]}
+                        </div>
+                      ) : (
+                        <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.78rem", color: "#ccc", fontStyle: "italic" }}>
+                          No notes yet
+                        </div>
+                      )}
+                    </div>
                     <button
                       onClick={e => { e.stopPropagation(); handleShare(r); }}
                       style={{
@@ -4002,11 +4135,158 @@ export default function RecipeBook() {
                       }}>
                       📤 Share Recipe
                     </button>
+
+                    {/* Photo upload */}
+                    <div
+                      onClick={e => e.stopPropagation()}
+                      style={{ marginTop: 10, borderTop: `1px solid ${headerColor}15`, paddingTop: 12 }}>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa" }}>
+                          My Photo
+                        </div>
+                        {recipePhotos[r.name] && (
+                          <button
+                            onClick={e => { e.stopPropagation(); removePhoto(r.name); }}
+                            style={{ background: "none", border: "none", cursor: "pointer", fontSize: "0.65rem", color: "#bbb", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", padding: "2px 0" }}>
+                            ✕ Remove
+                          </button>
+                        )}
+                      </div>
+                      {recipePhotos[r.name] ? (
+                        <div style={{ position: "relative" }}>
+                          <img
+                            src={recipePhotos[r.name].dataUrl}
+                            alt={r.name}
+                            style={{ width: "100%", display: "block", maxHeight: 260, objectFit: "cover", border: `1px solid ${headerColor}20` }}
+                          />
+                          <label style={{
+                            position: "absolute", bottom: 8, right: 8,
+                            background: "rgba(0,0,0,0.55)",
+                            color: "#F2E8D5",
+                            fontFamily: "'Oswald', sans-serif",
+                            fontSize: "0.58rem",
+                            letterSpacing: "0.12em",
+                            textTransform: "uppercase",
+                            padding: "5px 10px",
+                            cursor: "pointer",
+                          }}>
+                            📷 Replace
+                            <input type="file" accept="image/*" capture="environment"
+                              style={{ display: "none" }}
+                              onChange={e => handlePhotoUpload(r.name, e.target.files[0])} />
+                          </label>
+                        </div>
+                      ) : (
+                        <label style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: 8,
+                          padding: "16px 14px",
+                          border: `1.5px dashed ${accentColor}55`,
+                          background: `${accentColor}06`,
+                          cursor: "pointer",
+                        }}>
+                          <span style={{ fontSize: "1.3rem" }}>📷</span>
+                          <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: accentColor, opacity: 0.8 }}>
+                            Add a Photo
+                          </span>
+                          <input type="file" accept="image/*" capture="environment"
+                            style={{ display: "none" }}
+                            onChange={e => handlePhotoUpload(r.name, e.target.files[0])} />
+                        </label>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
             );
           };
+
+          // Gallery view
+          if (specialTab === "gallery") {
+            const photoEntries = Object.entries(recipePhotos)
+              .sort((a, b) => (b[1].timestamp || 0) - (a[1].timestamp || 0));
+
+            if (photoEntries.length === 0) {
+              return (
+                <div style={{ textAlign: "center", padding: "50px 20px" }}>
+                  <div style={{ fontSize: "2.5rem", marginBottom: 12 }}>📷</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", color: "#777", marginBottom: 6 }}>No photos yet</div>
+                  <div style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.8rem", color: "#aaa" }}>Open any recipe and tap 📷 to add a photo from your camera roll.</div>
+                </div>
+              );
+            }
+
+            return (
+              <div>
+                <div style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: "0.58rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#aaa",
+                  marginBottom: 12,
+                }}>
+                  {photoEntries.length} {photoEntries.length === 1 ? "photo" : "photos"} · tap to open recipe
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                  {photoEntries.map(([recipeName, photo]) => {
+                    // Find which recipe/decade this belongs to
+                    const recipeObj = allRecipes.find(r => r.name === recipeName)
+                      || allPresidents.find(p => p.name === recipeName);
+                    return (
+                      <div
+                        key={recipeName}
+                        onClick={() => {
+                          if (!recipeObj) return;
+                          const decade = recipeObj.decade;
+                          setSpecialTab(null);
+                          setSearch("");
+                          setFilter("All");
+                          setActiveDec(decade);
+                          const decList = recipes[decade] || [];
+                          const idx = decList.findIndex(x => x.name === recipeName);
+                          setPendingOpen({ name: recipeName, decade });
+                        }}
+                        style={{ cursor: "pointer", position: "relative", overflow: "hidden" }}>
+                        <img
+                          src={photo.dataUrl}
+                          alt={recipeName}
+                          style={{ width: "100%", aspectRatio: "1", objectFit: "cover", display: "block" }}
+                        />
+                        {/* Name overlay */}
+                        <div style={{
+                          position: "absolute",
+                          bottom: 0, left: 0, right: 0,
+                          background: "linear-gradient(transparent, rgba(0,0,0,0.72))",
+                          padding: "18px 8px 7px",
+                        }}>
+                          <div style={{
+                            fontFamily: "'Playfair Display', serif",
+                            fontSize: "0.72rem",
+                            fontWeight: 700,
+                            color: "#F2E8D5",
+                            lineHeight: 1.2,
+                          }}>{recipeName}</div>
+                          {recipeObj?.decade && (
+                            <div style={{
+                              fontFamily: "'Oswald', sans-serif",
+                              fontSize: "0.48rem",
+                              letterSpacing: "0.15em",
+                              textTransform: "uppercase",
+                              color: "rgba(242,232,213,0.65)",
+                              marginTop: 2,
+                            }}>{recipeObj.decade}</div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
 
           // About page
           if (specialTab === "about") {
@@ -4324,7 +4604,7 @@ export default function RecipeBook() {
           }
 
           // Empty state
-          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && specialTab !== "cart" && specialTab !== "about" && displayList.length === 0 && !search) {
+          if (specialTab && specialTab !== "all" && specialTab !== "presidents" && specialTab !== "cart" && specialTab !== "about" && specialTab !== "gallery" && displayList.length === 0 && !search) {
             const msg = emptyMessages[specialTab];
             return (
               <div style={{ textAlign: "center", padding: "50px 20px" }}>
@@ -4336,7 +4616,7 @@ export default function RecipeBook() {
           }
 
           // Special tabs / search — flat list
-          if (specialTab || search) {
+          if ((specialTab && specialTab !== "gallery") || search) {
             return (
               <div>
                 {displayList.map((r, i) => {
