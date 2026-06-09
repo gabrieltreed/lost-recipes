@@ -4171,7 +4171,7 @@ export default function RecipeBook() {
                             cursor: "pointer",
                           }}>
                             📷 Replace
-                            <input type="file" accept="image/*" capture="environment"
+                            <input type="file" accept="image/*"
                               style={{ display: "none" }}
                               onChange={e => handlePhotoUpload(r.name, e.target.files[0])} />
                           </label>
@@ -4191,7 +4191,7 @@ export default function RecipeBook() {
                           <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: accentColor, opacity: 0.8 }}>
                             Add a Photo
                           </span>
-                          <input type="file" accept="image/*" capture="environment"
+                          <input type="file" accept="image/*"
                             style={{ display: "none" }}
                             onChange={e => handlePhotoUpload(r.name, e.target.files[0])} />
                         </label>
