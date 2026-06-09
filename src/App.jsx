@@ -3166,6 +3166,18 @@ export default function RecipeBook() {
   const [recipePhotos, setRecipePhotos] = useState(() => {
     try { return JSON.parse(localStorage.getItem("rcb_photos") || "{}"); } catch { return {}; }
   });
+  // cookingProgress: { [recipeName]: { ingredients: number[], steps: number[] } }
+  const [cookingProgress, setCookingProgress] = useState(() => {
+    try {
+      const raw = JSON.parse(localStorage.getItem("rcb_cooking_progress") || "{}");
+      // Stored as arrays, convert back to Sets
+      const result = {};
+      for (const [name, val] of Object.entries(raw)) {
+        result[name] = { ingredients: new Set(val.ingredients || []), steps: new Set(val.steps || []) };
+      }
+      return result;
+    } catch { return {}; }
+  });
 
   useEffect(() => {
     try { localStorage.setItem("rcb_servings", JSON.stringify(servingsOverride)); } catch {}
@@ -3174,6 +3186,43 @@ export default function RecipeBook() {
   useEffect(() => {
     try { localStorage.setItem("rcb_photos", JSON.stringify(recipePhotos)); } catch {}
   }, [recipePhotos]);
+
+  useEffect(() => {
+    try {
+      // Serialize Sets to arrays for localStorage
+      const serialized = {};
+      for (const [name, val] of Object.entries(cookingProgress)) {
+        serialized[name] = { ingredients: [...val.ingredients], steps: [...val.steps] };
+      }
+      localStorage.setItem("rcb_cooking_progress", JSON.stringify(serialized));
+    } catch {}
+  }, [cookingProgress]);
+
+  const toggleCookingIngredient = (recipeName, idx) => {
+    setCookingProgress(prev => {
+      const cur = prev[recipeName] || { ingredients: new Set(), steps: new Set() };
+      const next = new Set(cur.ingredients);
+      if (next.has(idx)) next.delete(idx); else next.add(idx);
+      return { ...prev, [recipeName]: { ...cur, ingredients: next } };
+    });
+  };
+
+  const toggleCookingStep = (recipeName, idx) => {
+    setCookingProgress(prev => {
+      const cur = prev[recipeName] || { ingredients: new Set(), steps: new Set() };
+      const next = new Set(cur.steps);
+      if (next.has(idx)) next.delete(idx); else next.add(idx);
+      return { ...prev, [recipeName]: { ...cur, steps: next } };
+    });
+  };
+
+  const clearCookingProgress = (recipeName) => {
+    setCookingProgress(prev => {
+      const next = { ...prev };
+      delete next[recipeName];
+      return next;
+    });
+  };
 
   const handlePhotoUpload = (recipeName, file) => {
     if (!file) return;
@@ -3334,7 +3383,12 @@ export default function RecipeBook() {
   };
 
   const toggleMaking = (name) => {
-    setMaking(prev => { const next = new Set(prev); if (next.has(name)) next.delete(name); else next.add(name); return next; });
+    setMaking(prev => {
+      const next = new Set(prev);
+      if (next.has(name)) { next.delete(name); clearCookingProgress(name); }
+      else next.add(name);
+      return next;
+    });
   };
 
   const toggleCart = (name) => {
@@ -4014,23 +4068,56 @@ export default function RecipeBook() {
 
                     {r.ingredients && r.ingredients.length > 0 && (
                       <div style={{ marginBottom: 12 }}>
-                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>
-                          Ingredients
-                          {r.servings && getServings(r) !== r.servings && (
-                            <span style={{ marginLeft: 6, color: accentColor, opacity: 0.8 }}>
-                              (scaled for {getServings(r)})
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}>
+                          <span>
+                            Ingredients
+                            {r.servings && getServings(r) !== r.servings && (
+                              <span style={{ marginLeft: 6, color: accentColor, opacity: 0.8 }}>
+                                (scaled for {getServings(r)})
+                              </span>
+                            )}
+                          </span>
+                          {making.has(r.name) && specialTab === "making" && cookingProgress[r.name]?.ingredients?.size > 0 && (
+                            <span style={{ color: accentColor, opacity: 0.7, fontSize: "0.5rem" }}>
+                              {cookingProgress[r.name].ingredients.size}/{r.ingredients.length}
                             </span>
                           )}
                         </div>
-                        <ul style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8 }}>
+                        <ul style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8, listStyle: making.has(r.name) && specialTab === "making" ? "none" : "disc", paddingLeft: making.has(r.name) && specialTab === "making" ? 0 : 16 }}>
                           {r.ingredients.map((ing, j) => {
                             const defaultServings = r.servings ?? 4;
                             const desired = getServings(r);
                             const multiplier = desired / defaultServings;
-                            const display = (multiplier !== 1)
-                              ? scaleIngredient(ing, multiplier)
-                              : ing;
-                            return <li key={j}>{display}</li>;
+                            const display = (multiplier !== 1) ? scaleIngredient(ing, multiplier) : ing;
+                            const isMaking = making.has(r.name) && specialTab === "making";
+                            const isChecked = isMaking && (cookingProgress[r.name]?.ingredients?.has(j) || false);
+                            return (
+                              <li key={j}
+                                onClick={isMaking ? e => { e.stopPropagation(); toggleCookingIngredient(r.name, j); } : undefined}
+                                style={{
+                                  marginBottom: 2,
+                                  cursor: isMaking ? "pointer" : "default",
+                                  display: isMaking ? "flex" : "list-item",
+                                  alignItems: isMaking ? "flex-start" : undefined,
+                                  gap: isMaking ? 10 : undefined,
+                                  padding: isMaking ? "3px 0" : undefined,
+                                  opacity: isChecked ? 0.35 : 1,
+                                  transition: "opacity 0.15s",
+                                }}>
+                                {isMaking && (
+                                  <span style={{
+                                    width: 16, height: 16, minWidth: 16, marginTop: 2,
+                                    border: `1.5px solid ${isChecked ? accentColor : "rgba(0,0,0,0.2)"}`,
+                                    background: isChecked ? accentColor : "transparent",
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    flexShrink: 0,
+                                  }}>
+                                    {isChecked && <span style={{ color: "#fff", fontSize: "0.6rem", lineHeight: 1, fontWeight: 700 }}>✓</span>}
+                                  </span>
+                                )}
+                                <span style={{ textDecoration: isChecked ? "line-through" : "none" }}>{display}</span>
+                              </li>
+                            );
                           })}
                         </ul>
                       </div>
@@ -4038,9 +4125,48 @@ export default function RecipeBook() {
 
                     {r.instructions && r.instructions.length > 0 && (
                       <div style={{ marginBottom: 12 }}>
-                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Method</div>
-                        <ol style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8 }}>
-                          {r.instructions.map((step, j) => <li key={j} style={{ marginBottom: 3 }}>{step}</li>)}
+                        <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.52rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#aaa", marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}>
+                          <span>Method</span>
+                          {making.has(r.name) && specialTab === "making" && cookingProgress[r.name]?.steps?.size > 0 && (
+                            <span style={{ color: accentColor, opacity: 0.7, fontSize: "0.5rem" }}>
+                              {cookingProgress[r.name].steps.size}/{r.instructions.length}
+                            </span>
+                          )}
+                        </div>
+                        <ol style={{ margin: 0, padding: "0 0 0 16px", fontFamily: "'Lato', sans-serif", fontSize: "0.82rem", color: "#444", lineHeight: 1.8, listStyle: making.has(r.name) && specialTab === "making" ? "none" : "decimal", paddingLeft: making.has(r.name) && specialTab === "making" ? 0 : 16 }}>
+                          {r.instructions.map((step, j) => {
+                            const isMaking = making.has(r.name) && specialTab === "making";
+                            const isChecked = isMaking && (cookingProgress[r.name]?.steps?.has(j) || false);
+                            return (
+                              <li key={j}
+                                onClick={isMaking ? e => { e.stopPropagation(); toggleCookingStep(r.name, j); } : undefined}
+                                style={{
+                                  marginBottom: 4,
+                                  cursor: isMaking ? "pointer" : "default",
+                                  display: isMaking ? "flex" : "list-item",
+                                  alignItems: isMaking ? "flex-start" : undefined,
+                                  gap: isMaking ? 10 : undefined,
+                                  opacity: isChecked ? 0.35 : 1,
+                                  transition: "opacity 0.15s",
+                                }}>
+                                {isMaking && (
+                                  <span style={{
+                                    width: 16, height: 16, minWidth: 16, marginTop: 2,
+                                    border: `1.5px solid ${isChecked ? accentColor : "rgba(0,0,0,0.2)"}`,
+                                    background: isChecked ? accentColor : "transparent",
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    flexShrink: 0,
+                                  }}>
+                                    {isChecked && <span style={{ color: "#fff", fontSize: "0.6rem", lineHeight: 1, fontWeight: 700 }}>✓</span>}
+                                  </span>
+                                )}
+                                {isMaking
+                                  ? <span style={{ textDecoration: isChecked ? "line-through" : "none" }}><strong style={{ color: headerColor, opacity: 0.5, marginRight: 4 }}>{j + 1}.</strong>{step}</span>
+                                  : step
+                                }
+                              </li>
+                            );
+                          })}
                         </ol>
                       </div>
                     )}
